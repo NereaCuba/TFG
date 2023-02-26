@@ -1,0 +1,20 @@
+@import './../../variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;700&display=swap');
+
+button {
+  box-sizing: border-box;
+  width: 477px;
+  height: 72px;
+  left: 0px;
+  top: 0px;
+  color: $color-light;
+  text-transform: uppercase;
+  font-family: "Karla",  sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: 0.25em;
+  line-height: 72px;
+  background: #34385E;
+  border: 1px solid #000000;
+}

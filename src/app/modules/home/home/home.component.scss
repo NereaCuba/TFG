@@ -1,0 +1,136 @@
+@import './../../../variables';
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200..900');
+.first{
+  margin-top: 6em;
+}
+.imageChart{
+  img {
+    height: 33em;
+    width: 100%;
+    object-fit: cover;
+  }
+  .centered {
+    position: absolute;
+    top: 12.5em;
+    left: 18em;
+    font-family: "Karla", sans-serif;
+    text-align: center;
+    color: $color-dark;
+    .subtitleImg {
+      font-size: 15px;
+      line-height: 23px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    .titleImg {
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-style: normal;
+      font-size: 43px;
+      line-height: 72px;
+    }
+  }
+}
+.best-sellers{
+  .card{
+      border-radius: 0;
+  }
+  .card-header, .card-footer{
+      background-color: #fff;
+      border-bottom: 0;
+      border-top: 0;
+      img{
+          width: 100%;
+          height: 27em;
+          object-fit: cover;
+      }
+  }
+}
+.hidden{
+	opacity: 0;
+}
+.btnOn, .btnOnProducts{
+	position: absolute;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	padding: 1em;
+	border: none;
+	cursor: pointer;
+	background-color: $color-dark;
+  color: $color-light;
+}
+.btnOnProducts{
+	top: 90%;
+	left: 50%;
+	width: 90%;
+	font-size: 1em;
+}
+.hovered{
+  .card{
+      box-shadow: 2px 2px 2px 1px $border-shadow;
+      width: 100%;
+      margin-bottom: 10px;
+      &:hover{
+          border: 1px solid $base-color;
+          cursor: pointer;
+          filter: contrast(120%);
+      }
+      &:last-child{
+          margin-bottom: 0px;
+      }
+
+      .card-header {
+          position: relative;
+          &:hover .btnOnProducts{
+              opacity: 1;
+          }
+      }
+  }
+}
+.context, .heuristics, .articles{
+  margin-top: 5em;
+  font-family: "Raleway", sans-serif;
+  justify-content: center;
+  text-justify: distribute;
+  font-weight: 200;
+  padding: 3em;
+  h2 {
+    font-weight: 300;
+    font-size: 35px;
+    line-height: 68px;
+    color: $color-black;
+  }
+  .contextText {
+    font-size: 20px;
+    line-height: 56px;
+    color: $color-black;
+  }
+  .readMore {
+    background: none;
+    border: none;
+    color: $color-dark;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $color-dark;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    font-size: 1.2em;
+    width: auto;
+  }
+  .titleSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1em;
+    hr{
+        width: 70%;
+        margin:auto;
+    }
+    .titles{
+        font-size: 1em;
+        text-align: center;
+        font-weight: bold;
+    }
+  }
+
+}
