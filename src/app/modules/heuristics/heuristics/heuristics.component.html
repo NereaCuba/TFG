@@ -1,1 +1,29 @@
-<p>heuristics works!</p>
+<div class="introduction">
+  <h2 class="text-center">Introducción a las heurísticas</h2>
+  <p class="text-center">La lista de indicadores heurísticos propuesta está formada por 18 indicadores que cubren aspectos de la información
+    que transmite el gráfico (título, ejes, alternativas de texto…), su presentación visual (fuente tipográfica, colores…) y el
+    comportamiento y funciones presentes (personalización, compatibilidad con los lectores de pantalla…).
+    </p>
+    <p class="text-center">En relación con el perfil de baja visión al que benefician, la distribución de los indicadores es la siguiente:</p>
+    <span class="d-flex justify-content-center pr-5 pl-5">
+      <ul>
+        <li>3 indicadores pensados para usuarios que presentan un resto visual muy bajo y que emplean un lector de pantalla
+          como ayuda técnica principal o como complemento al magnificador de pantalla;</li>
+        <li>5 indicadores que contemplan aspectos que pueden beneficiar a usuarios con un resto visual no tan bajo como el
+          anterior, pero que aun así precisan del uso de ayudas como magnificadores de pantalla;</li>
+        <li>1 indicador pensado para satisfacer las necesidades de los usuarios con VCD;</li>
+        <li>1 indicador que cubre la sensibilidad al contraste; y</li>
+        <li>8 indicadores de carácter más general que constituyen buenas prácticas que benefician a cualquier tipo de lector.</li>
+      </ul>
+    </span>
+</div>
+<div class="listHeuristics">
+  <h2>Lista de heurísticas</h2>
+  <hr>
+  <div class="list">
+    <div class="container d-flex flex-column"  *ngFor="let heuristic of _listHeuristics;">
+      <span><h4>{{heuristic.id}}</h4>{{heuristic.name}}</span>
+      <p>{{heuristic.brief}}</p>
+    </div>
+  </div>
+</div>

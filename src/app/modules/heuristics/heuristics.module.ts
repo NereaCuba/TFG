@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HeuristicsComponent } from './heuristics/heuristics.component';
 import { RouterModule } from '@angular/router';
 import { heuristicsRoutingModule } from './heuristics-routing.module';
+import { HeuristicsService } from './services/heuristics.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -10,10 +12,12 @@ import { heuristicsRoutingModule } from './heuristics-routing.module';
   ],
   imports: [
     CommonModule,
-    heuristicsRoutingModule
+    heuristicsRoutingModule,
+    HttpClientModule
   ],
   providers: [
-    RouterModule
+    RouterModule,
+    HeuristicsService
   ]
 })
 export class heuristicsStatusModule { }

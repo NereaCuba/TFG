@@ -1,0 +1,128 @@
+@import './../../../variables';
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200..900');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200..900');
+
+h2 {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: $color-dark;
+}
+.blue-block {
+  font-family: "Raleway", sans-serif;
+  font-weight: 200;
+  padding: 5em;
+  position  : relative;         /* Make any child element will be positioned relative to this container */
+  &::before {
+    content          : '';       /* Set empty content                      */
+    position         : absolute; /* Position the pseudo-element absolutely */
+    height           : 30em;      /* Set height and width as desired        */
+    width            : 96%;
+    top              : 0;       /* Set the offset as desired              */
+    left             : 2%;
+    z-index          : -1;       /* Send element to back                   */
+    background-color : $light-blue;
+  }
+  .articleSelection {
+    margin-top: 2em;
+  }
+  .titleSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1em;
+    .titles{
+      font-size: 1.2em;
+      text-align: center;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: $color-dark;
+    }
+    .articleTitles {
+      display: flex;
+      flex-direction: row;
+      &::before, &::after {
+        content:"";
+        flex: 1 1;
+        border-bottom: 1px solid;
+        margin: auto;
+        width: 2em;
+        color: $color-dark;
+      }
+      &::before {
+        margin-right: 10px
+      }
+      &::after {
+        margin-left: 10px
+      }
+    }
+  }
+}
+.lastArticles {
+  padding: 5em 14em;
+  hr, div.listArticles {
+    margin-bottom: 3em;
+    font-family: 'Karla', sans-serif;;
+    font-style: normal;
+    .articleItem {
+      .titleArticle {
+        letter-spacing: 0.15em;
+        font-weight: 500;
+        font-size: 1em;
+        line-height: 30px;
+      }
+      .briefArticle {
+        font-weight: 300;
+        font-size: 0.9em;
+        line-height: 30px;
+        color: #505050;
+      }
+      .dateArticle {
+        font-weight: 700;
+        font-size: 0.5em;
+        line-height: 12px;
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+
+        color: #656565;
+      }
+      &:hover {
+        cursor:pointer;
+        .titleArticle {
+          font-weight: 700;
+        }
+        .briefArticle {
+          font-weight: 500;
+        }
+        .dateArticle {
+          font-weight: 900;
+        }
+      }
+    }
+  }
+  .listAuthors {
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 0.15em;
+    font-style: normal;
+    .titleAuthors {
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 23px;
+    }
+    .authorsList {
+      border-left: 1px solid $color-light;
+      padding: 1em;
+      .authorItem {
+        img.authorImg {
+          height: 5em;
+          width: 5em;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

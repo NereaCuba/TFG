@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ArticleBasicInfo, ArticlesResponse } from 'app/models/general.interfaces';
+import { HomeService } from '../services/home.service';
 
 @Component({
   selector: 'app-home',
@@ -7,8 +9,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit{
-  constructor(private router: Router) {}
+  articles: any = [];
+  articlesCarousel: ArticleBasicInfo[] = [];
+  constructor(
+    private router: Router,
+    private homeService: HomeService) {}
   ngOnInit() {
+    this.homeService.getArticles().subscribe((res: ArticlesResponse) => {
+    this.articles = res.articles;
+    console.log(res);
+    this.articlesCarousel = this.articles.slice(0,2);
+    })
+
   }
   evaluateButton(): void {
     this.redirectTo('/evaluate', "");

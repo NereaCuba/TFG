@@ -13,7 +13,6 @@
   top: 0; // Required for "position: sticky" to take effect.
   width: 100%;
 }
-
 :host {
   ::ng-deep div > p-menubar > div {
     font-family: 'Karla', sans-serif;
@@ -29,7 +28,7 @@
     p-menubarsub.p-element {
       width: 100%;
     }
-    * {        
+    * {
       .p-menubar-root-list {
         display: flex;
         font-weight: bold;

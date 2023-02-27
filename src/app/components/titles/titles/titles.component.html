@@ -1,0 +1,9 @@
+<div class="hovered {{comesFromList ? 'fromList' : article ? 'article' : 'home'}}">
+  <div class="card">
+    <div class="card-header">
+      <img src={{image_source}} alt="Ejemplo artículo COVID 1">
+      <button class="btnOnProducts hidden">Explora este artículo</button>
+    </div>
+  </div>
+  <p class="{{article ? 'text-left articleText' : comesFromList ? 'd-none' : 'text-center'}} mt-3">{{_title}}</p>
+</div>

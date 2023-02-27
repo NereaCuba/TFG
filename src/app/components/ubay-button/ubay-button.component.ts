@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class UbayButtonComponent implements OnInit {
    _data!: string;
-  @Input() 
+  @Input()
   get data(): string {
     return this._data;
   }
@@ -17,7 +17,6 @@ export class UbayButtonComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this._data)
   }
 
 }
