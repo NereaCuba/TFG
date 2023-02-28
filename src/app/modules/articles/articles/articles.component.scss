@@ -61,7 +61,10 @@ h2 {
   }
 }
 .lastArticles {
-  padding: 5em 14em;
+  padding: 5em 6em;
+  .lessSize {
+    height: 2em;
+  }
   hr, div.listArticles {
     margin-bottom: 3em;
     font-family: 'Karla', sans-serif;;

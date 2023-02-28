@@ -6,6 +6,8 @@ import { articlesRoutingModule } from './articles-routing.module';
 import { TitleModule } from 'app/components/titles/titles.module';
 import { ArticleService } from './services/articles.service';
 import { HttpClientModule } from '@angular/common/http';
+import {InputTextModule} from 'primeng/inputtext';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     articlesRoutingModule,
     TitleModule,
-    HttpClientModule
+    HttpClientModule,
+    InputTextModule,
+    FormsModule
   ],
   providers: [
     RouterModule,

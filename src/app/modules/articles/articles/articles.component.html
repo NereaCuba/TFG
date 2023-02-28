@@ -17,15 +17,21 @@
     </div>
   </div>
   <div class="lastArticles">
-    <h2>ÚLTIMOS ARTÍCULOS</h2>
+    <div class="d-flex flex-row justify-content-between">
+      <h2>ÚLTIMOS ARTÍCULOS</h2>
+      <span class="p-input-icon-right">
+        <i class="pi pi-search"></i>
+        <input class="lessSize" type="text" pInputText [(ngModel)]="data" (input)="filterByName()"/>
+      </span>
+    </div>
     <hr>
     <div class="row">
       <div class="col-9 listArticles">
         <div class="row align-items-stretch mb-5" *ngFor="let article of articles;">
-          <div class="col-4 col-lg-3" >
+          <div class="col-4" >
             <titles-inline [image]="article.image!" [title]="article.title!" [comesFromList]="true"></titles-inline>
           </div>
-          <div class="col-8 col-lgl-9 articleItem">
+          <div class="col-8 articleItem">
               <p class="titleArticle">{{article.title!}}</p>
               <p class="briefArticle">{{article.briefing!}}</p>
               <p class="dateArticle">{{article.date!}}</p>

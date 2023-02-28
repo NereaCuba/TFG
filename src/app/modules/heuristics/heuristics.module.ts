@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 import { heuristicsRoutingModule } from './heuristics-routing.module';
 import { HeuristicsService } from './services/heuristics.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import {PaginatorModule} from 'primeng/paginator';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     heuristicsRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    PaginatorModule,
+    FormsModule
   ],
   providers: [
     RouterModule,
