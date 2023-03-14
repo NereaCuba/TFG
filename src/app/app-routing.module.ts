@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+import { GlobalErrorHandler } from './error-handler';
 const routes: Routes = [
   {
     path: '',
@@ -41,7 +41,14 @@ const routes: Routes = [
       import(
         './modules/about/about.module'
       ).then( m => m.aboutStatusModule),
-  }
+  },
+  {
+    path: 'heuristic-detail',
+    loadChildren: () =>
+      import(
+        './modules/heuristic-detail/heuristic-detail.module'
+      ).then((m) => m.heuristicsDetailStatusModule),
+  },
 ];
 
 @NgModule({
@@ -49,6 +56,7 @@ const routes: Routes = [
     scrollPositionRestoration: 'top',
     useHash: false
   })],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [{provide: ErrorHandler, useClass: GlobalErrorHandler}]
 })
 export class AppRoutingModule { }

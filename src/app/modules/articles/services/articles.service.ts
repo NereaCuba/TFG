@@ -8,6 +8,6 @@ export class ArticleService {
     constructor(private http: HttpClient){}
 
 	getArticles(): Observable<any>{
-        return this.http.get('./../../../../assets/api/articlesCarousel.json');
+        return this.http.get('./../../../../assets/articlesCarousel.json');
     }
 }

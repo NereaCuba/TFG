@@ -3,11 +3,11 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable()
-export class HeuristicsService {
+export class AboutService {
 
     constructor(private http: HttpClient){}
 
-	getHeuristics(): Observable<any>{
-        return this.http.get('./../../../../assets/heuristicsList.json');
+	getContext(): Observable<any>{
+        return this.http.get('./../../../../assets/introduction.json');
     }
 }

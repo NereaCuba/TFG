@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable()
-export class HeuristicsService {
+export class DetailHeuristicsService {
 
     constructor(private http: HttpClient){}
 

@@ -10,5 +10,20 @@ h2 {
   font-weight: 700;
   letter-spacing: 0.2em;
   color: $color-dark;
+  i {
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
-
+.heuristicDetail {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  padding: 5em;
+  .container {
+    margin-top: 3em;
+    h2 {
+      margin-bottom: 1em;
+    }
+  }
+}

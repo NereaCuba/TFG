@@ -40,7 +40,7 @@
   </div>
   <hr>
   <div class="list">
-    <div class="heuristicDetail"  *ngFor="let heuristic of _listHeuristics;">
+    <div class="heuristicDetail"  *ngFor="let heuristic of _listHeuristics;" (click)="heuristicInformationShow(heuristic)">
       <div class="d-flex flex-row"><h2>{{heuristic.id}} - {{heuristic.name}}</h2></div>
       <p>{{heuristic.brief}}</p>
     </div>

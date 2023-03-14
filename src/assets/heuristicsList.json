@@ -22,7 +22,8 @@
           "definition":"El gráfico debe ofrecer leyendas que asocian unívocamente esquemas de color, patrones o formas utilizados en el gráfico con sus respectivas variables, siempre que sea necesario.",
           "verification_list":[
               "El gráfico cuenta con una leyenda.",
-              "La leyenda explica la codificación empleada en el gráfico.","La leyenda es texto real y no una imagen de texto."
+              "La leyenda explica la codificación empleada en el gráfico.",
+              "La leyenda es texto real y no una imagen de texto."
           ],
           "benefied_user": "Cualquier usuario.",
           "weigth": {

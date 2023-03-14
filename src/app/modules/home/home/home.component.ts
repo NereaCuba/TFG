@@ -20,16 +20,15 @@ export class HomeComponent implements OnInit{
     console.log(res);
     this.articlesCarousel = this.articles.slice(0,2);
     })
-
   }
   evaluateButton(): void {
-    this.redirectTo('/evaluate', "");
+    this.redirectTo('/evaluate');
   }
   goToAbout(): void {
-    this.redirectTo('/about', "");
+    this.redirectTo('/about');
   }
-  redirectTo(uri: string, additionalInfo?: any) {
+  redirectTo(uri: string) {
     this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
-    this.router.navigate([uri], {queryParams: {title: additionalInfo}}));
+    this.router.navigate([uri]));
   }
 }

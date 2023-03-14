@@ -1,0 +1,28 @@
+<div class="container heuristicDetail">
+  <div class="container mt-0">
+    <h2 class="text-center">{{_heuristic.id}} - {{_heuristic.name}}</h2>
+    <hr>
+  </div>
+  <div class="container">
+    <h2 class="titles">Definición</h2>
+    <p>{{_heuristic.definition}}</p>
+  </div>
+  <div class="container">
+    <h2 class="titles">Lista de verificación <i class="pi pi-info-circle" pTooltip="Criterios a utilizar para la evaluación de un gráfico estadístico" tooltipPosition="right"></i></h2>
+    <div *ngFor="let verificationPoint of _heuristic.verification_list;">
+      <p><i class="pi pi-check"></i> {{verificationPoint}}</p>
+    </div>
+  </div>
+  <div class="container">
+    <h2 class="titles">Usuario beneficiado <i class="pi pi-info-circle" pTooltip="Tipo de usuario beneficiado en caso de que se cumplan los criterios de la lista de verificación" tooltipPosition="right"></i></h2>
+    <p>{{_heuristic.benefied_user}}</p>
+  </div>
+  <div class="container">
+    <h2 class="titles">Peso {{_heuristic.weigth?.id}}</h2>
+    <p>{{_heuristic.weigth?.description}}</p>
+  </div>
+  <div class="container">
+    <h2 class="titles">Ejemplo</h2>
+    <p>Lore ipsum...</p>
+  </div>
+</div>

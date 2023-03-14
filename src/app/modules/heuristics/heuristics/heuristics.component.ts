@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HeuristicBasicInfo, HeuristicsResponse } from 'app/models/general.interfaces';
 import { HeuristicsService } from '../services/heuristics.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-heuristics',
@@ -12,7 +13,10 @@ export class HeuristicsComponent implements OnInit {
   _listHeuristicsStatics: HeuristicBasicInfo[] = [];
   data: string = '';
   totalRecords: number = 3;
-  constructor (private heuristicsService: HeuristicsService) {}
+  constructor (
+    private heuristicsService: HeuristicsService,
+    private route: ActivatedRoute,
+    private router: Router) {}
 
   ngOnInit() {
     this.heuristicsService.getHeuristics().subscribe((res: HeuristicsResponse) => {
@@ -26,5 +30,12 @@ export class HeuristicsComponent implements OnInit {
         return element;
       }
     });
+  }
+  redirectTo(uri: string, additionalInfo?: any) {
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
+    this.router.navigate([uri], {queryParams: {heuristicID: additionalInfo}}));
+  }
+  heuristicInformationShow(value?: any) {
+    this.redirectTo('/heuristic-detail', value?.id);
   }
 }
