@@ -8,6 +8,6 @@ export class HeuristicsService {
     constructor(private http: HttpClient){}
 
 	getHeuristics(): Observable<any>{
-        return this.http.get('./../../../../assets/heuristicsList.json');
+        return this.http.get('./assets/heuristicsList.json');
     }
 }
