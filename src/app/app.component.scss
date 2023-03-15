@@ -6,6 +6,19 @@
   display: flex;
   justify-content: center;
 }
+footer {
+  background-color: $light-blue;
+  margin-top: 6em;
+  font-family: 'Karla', sans-serif;
+  font-size: 16px;
+  line-height: 23px;
+  letter-spacing: 0.25em;
+  color: $color-dark !important;
+
+ img {
+  width: 20em;
+ }
+}
 :host ::ng-deep .p-menubar {
   position: sticky;
   position: -webkit-sticky; // Needed for Safari browsers.
@@ -13,7 +26,6 @@
   top: 0; // Required for "position: sticky" to take effect.
   width: 100%;
 }
-
 :host {
   ::ng-deep div > p-menubar > div {
     font-family: 'Karla', sans-serif;
@@ -29,11 +41,16 @@
     p-menubarsub.p-element {
       width: 100%;
     }
-    * {        
+    * {
       .p-menubar-root-list {
         display: flex;
         font-weight: bold;
         gap: 3em;
+      }
+      @media screen and (max-width: 800px) {
+        .p-menubar-root-list {
+          display: none;
+        }
       }
       li {
         &:first-child {
@@ -49,6 +66,11 @@
         font-weight: bold;
         &:last-child {
           margin: 0 3em;
+        }
+        @media screen and (max-width: 600px) {
+          &:last-child {
+            margin: 0 1em;
+          }
         }
       }
     }

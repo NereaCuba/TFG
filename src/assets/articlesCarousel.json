@@ -1,0 +1,49 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Evaluación de la accesibilidad de los gráficos estadísticos de Covid-19 de los gobiernos y organizaciones de la salud para personas con baja visión",
+      "briefing": "La mayor parte de información proporcionada a lo largo de la pandemia ayudó a reducir la propagación del virus. En este estudio se comprobará la accesibilidad de los gráficos usados por el gobierno brasileño, británico, español y europeo, así como por la organización mundial de la salud, y la universidad Johns Hopkins...",
+      "date": "11 junio 2020",
+      "image": "https://1.bp.blogspot.com/-S7Ul6H7CDds/XqsCHUtuh5I/AAAAAAAAOis/9JFES3OiPAMZ_AC3EyzVbUDXZU-DN6TcwCEwYBhgL/s1600/Imagen1.png"
+    },
+    {
+      "id": 2,
+      "title": "Accesibilidad para personas con baja visión de los gráficos estadísticos en la prensa digital: una propuesta metodológica basada en indicadores heurísticos",
+      "briefing": "Estudio que evalúa la accesibilidad de los gráficos proporcionados por la prensa digital y diversos medios de comunicación nacionales e internacionales mediante unas heurísticas dirigidas a las personas con baja visión y visión cromática deficiente (VCD)...",
+      "date": "11 abril 2020",
+      "image": "https://1.bp.blogspot.com/-S7Ul6H7CDds/XqsCHUtuh5I/AAAAAAAAOis/9JFES3OiPAMZ_AC3EyzVbUDXZU-DN6TcwCEwYBhgL/s1600/Imagen1.png"
+    },
+    {
+      "id": 3,
+      "title": "Los gráficos son parte de la ecuación en publicaciones accesibles: Una evaluación heurística de las publicaciones de LIS mas relevantes.",
+      "briefing": "Los gráficos estadísticos tienen un papel clave en los trabajos académicos, ya que se usan para reflejar o mostrar de manera clara los resultados de la investigación realizada por sus autores, sin embargo, presentan algunas barreras para personas con baja visión. En este articulo se realiza una evaluación de la accesibilidad de los gráficos estadísticos usados en los artículos con mayor relevancia)...",
+      "date": "11 marzo 2021",
+      "image": "https://1.bp.blogspot.com/-S7Ul6H7CDds/XqsCHUtuh5I/AAAAAAAAOis/9JFES3OiPAMZ_AC3EyzVbUDXZU-DN6TcwCEwYBhgL/s1600/Imagen1.png"
+      },
+      {
+        "id": 4,
+        "title": "Gráficos estadísticos accesibles para personas con baja visión y visión cromática deficiente",
+        "briefing": "Los gráficos estadísticos tienen un papel crucial en diferentes áreas de nuestra vida diaria, como la información, educación, comunicación o investigación. A pesar de ello, los autores y publicadores de contenido no siempre tienen en cuenta el criterio de la accesibilidad durante el desarrollo de este tipo de contenidos. Este estudio remarca la importancia de tener en cuenta este criterio, además de incluir un acercamiento de como la literatura científica aborda este tema...",
+        "date":"28 junio 2019",
+        "image": "https://1.bp.blogspot.com/-S7Ul6H7CDds/XqsCHUtuh5I/AAAAAAAAOis/9JFES3OiPAMZ_AC3EyzVbUDXZU-DN6TcwCEwYBhgL/s1600/Imagen1.png"
+      }
+  ],
+  "authors": [
+      {
+      "id": "1",
+      "name":"Rubén Alcaraz Martínez",
+      "photo":"https://www.ub.edu/adaptabit/img/rubenalcaraz.jpg"
+      },
+      {
+      "id": "2",
+      "name":"Mireia Ribera-Turró",
+      "photo":"https://i1.rgstatic.net/ii/profile.image/700516204048387-1544027486191_Q512/Mireia-Ribera-Turro.jpg"
+      },
+      {
+      "id": "3",
+      "name":"Toni Granollers-Saltiveri",
+      "photo":"https://www.directorioexit.info/exit/fotos/200/5919.jpg"
+      }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+  "introduction" : {
+    "text": [
+        "La lista de indicadores heurísticos propuesta está formada por 18 indicadores que cubren aspectos de la información que transmite el gráfico (título, ejes, alternativas de texto…), su presentación visual (fuente tipográfica, colores…) y el comportamiento y funciones presentes (personalización, compatibilidad con los lectores de pantalla…).",
+        "En relación con el perfil de baja visión al que benefician, la distribución de los indicadores es la siguiente:"
+    ],
+    "list": [
+        "3 indicadores pensados para usuarios que presentan un resto visual muy bajo y que emplean un lector de pantalla como ayuda técnica principal o como complemento al magnificador de pantalla;",
+        "5 indicadores que contemplan aspectos que pueden beneficiar a usuarios con un resto visual no tan bajo como el anterior, pero que aun así precisan del uso de ayudas como magnificadores de pantalla;",
+        "1 indicador pensado para satisfacer las necesidades de los usuarios con VCD;",
+        "1 indicador que cubre la sensibilidad al contraste; y",
+        "8 indicadores de carácter más general que constituyen buenas prácticas que benefician a cualquier tipo de lector."
+    ]
+  },
+  "instructions" : {
+    "text": [
+        "Se va a utilizar una escala de Likert de 7 puntos para el cálculo del grado de cumplimiento de cada ítem, cuyo rango va de 0 (peor puntuación posible) a 6 (mejor puntuación posible). ",
+        "Adicionalmente, se han añadido las opciones “No aplica” y “No es problema”, para aquellos casos en los cuales no sea pertinente la pregunta, o en los que el hecho de no cumplir con el indicador no deriva en un problema de accesibilidad, respectivamente. ", 
+        "Un ejemplo de caso en el que un indicador no aplica, lo podemos encontrar en la no necesidad de disponer de una leyenda en el caso de gráficos estadísticos con una única serie de datos, o en la no necesidad de utilizar colores seguros o patrones cuando el gráfico sólo muestra una marca.",
+        "Por lo que respecta al valor “No es problema”, aplica en casos como, por ejemplo, cuando se incluyen abreviaturas que no se desarrollan pero que son de uso común y muy conocidas por la audiencia."
+    ],
+    "table" : true 
+  },
+  "nextInstructions" : {
+    "text" : [
+        "Tras la aplicación de la escala, se utiliza un sistema de ponderación que posibilita asignar pesos distintos según la importancia de cada indicador. Su importancia viene determinada por los criterios especificados en la tabla 2.",
+        "La lista de indicadores heurísticos utilizada, junto con su definición, el perfil de usuario beneficiado de su cumplimiento y su ponderación se puede consultar"
+    ],
+    "table": true
+  }
+}

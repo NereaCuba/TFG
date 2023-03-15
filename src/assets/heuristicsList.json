@@ -1,0 +1,363 @@
+{
+  "heuristic_abstract": [
+      {
+          "id":"H1",
+          "name":"Título",
+          "definition":"El gráfico debe contar con un título breve y descriptivo que ayude al lector a identificarlo y diferenciarlo del resto que aparecen en la misma página, permitiéndoles navegar así entre ellos.",
+          "verification_list": [
+              "El gráfico tiene un título.","El título es breve y descriptivo.",
+              "El título ofrece una primera aproximación al contenido del gráfico y ayuda a diferenciarlo del resto de gráficos del documento.",
+              "El título es texto real y no una imagen de texto."
+          ],
+          "benefied_user": "Cualquier usuario.",
+          "weigth": {
+              "id":" x1",
+              "description":"En caso de no cumplirse, uno o más perfiles de usuario no tendrá una experiencia de usuario satisfactoria al consultar el gráfico, comprometiéndose levemente su accesibilidad para uno o mas perfiles de usuario con baja visión. En caso de estar presente la accesibilidad del gráfico mejora levemente."
+          },
+          "brief":"¿El grafico tiene un titulo breve y descriptivo que ayude al usuario a diferenciarlo de otros en la misma página, así como a navegar entre ellos?",
+          "example": {
+            "image": "",
+            "text": []
+          }
+      },
+      {
+          "id":"H2",
+          "name":"Leyenda",
+          "definition":"El gráfico debe ofrecer leyendas que asocian unívocamente esquemas de color, patrones o formas utilizados en el gráfico con sus respectivas variables, siempre que sea necesario.",
+          "verification_list":[
+              "El gráfico cuenta con una leyenda.",
+              "La leyenda explica la codificación empleada en el gráfico.",
+              "La leyenda es texto real y no una imagen de texto."
+          ],
+          "benefied_user": "Cualquier usuario.",
+          "weigth": {
+              "id":" x1",
+              "description":"En caso de no cumplirse, uno o más perfiles de usuario no tendrá una experiencia de usuario satisfactoria al consultar el gráfico, comprometiéndose levemente su accesibilidad para uno o mas perfiles de usuario con baja visión. En caso de estar presente la accesibilidad del gráfico mejora levemente."
+          },
+          "brief":"Si el gráfico usa formas, colores o patrones, ¿hay una leyenda para diferenciarlos?",
+          "example": {
+            "image": "",
+            "text": []
+          }
+      },
+      {
+          "id":"H3",
+          "name":"Ejes",
+          "definition":"Los ejes del gráfico deben ser visibles y sus etiquetas adecuadas concisas y claras.",
+          "verification_list":[
+              "El gráfico cuenta con los ejes necesarios.",
+              "Los ejes están etiquetados.",
+              "Las etiquetas son horizontales.",
+              "Si es pertinente, la escala y la unidad de medida se incluyen en el eje.",
+              "Se incluye una cuadrícula sólo si es necesario."
+          ],
+          "benefied_user": "Cualquier usuario.",
+          "weigth": {
+              "id":" x1",
+              "description":"En caso de no cumplirse, uno o más perfiles de usuario no tendrá una experiencia de usuario satisfactoria al consultar el gráfico, comprometiéndose levemente su accesibilidad para uno o mas perfiles de usuario con baja visión. En caso de estar presente la accesibilidad del gráfico mejora levemente."
+          },
+          "brief":"Si el gráfico tiene ejes, ¿son visibles y tienen etiquetas y titulos apropiados, claros y concisos?",
+          "example": {
+            "image": "",
+            "text": []
+          }
+      },
+      {
+          "id":"H4",
+          "name":"Pie",
+          "definition":"El gráfico debe contar con un pie que contribuya a facilitar la compresión de la información que se comunica, a excepción de que se trate de un gráfico muy simple que no lo precise.",
+          "verification_list":[
+              "El gráfico cuenta con un pie.",
+              "El pie no se limita a repetir el título.",
+              "El pie proporciona información adicional.",
+              "Si corresponde, el pie ofrece información sobre los detalles del análisis estadístico (desviación estándar, valor p...)",
+              "El pie se ofrece como texto y no como una imagen de texto."
+          ],
+          "benefied_user": "Cualquier usuario.",
+          "weigth": {
+              "id":" x1",
+              "description":"En caso de no cumplirse, uno o más perfiles de usuario no tendrá una experiencia de usuario satisfactoria al consultar el gráfico, comprometiéndose levemente su accesibilidad para uno o mas perfiles de usuario con baja visión. En caso de estar presente la accesibilidad del gráfico mejora levemente."
+          },
+          "brief":"¿Cuenta el gráfico con un pie que ayude a comprenderlo?",
+          "example": {
+            "image": "",
+            "text": []
+          }
+      },
+      {
+          "id":"H5",
+          "name":"Abreviaturas",
+          "definition":"Las abreviaturas utilizadas se desarrollan para facilitar su compresión.",
+          "verification_list":[
+              "Las abreviaturas se desarrollan siguiendo un método estándar respaldado por las ayudas técnicas (elemento <abbr>, enlace a la forma desarrollada, etc.)",
+              "Las formas desarrolladas se muestran como texto real y no como una imagen de texto."
+          ],
+          "benefied_user": "Cualquier usuario.",
+          "weigth": {
+              "id":" x1",
+              "description":"En caso de no cumplirse, uno o más perfiles de usuario no tendrá una experiencia de usuario satisfactoria al consultar el gráfico, comprometiéndose levemente su accesibilidad para uno o mas perfiles de usuario con baja visión. En caso de estar presente la accesibilidad del gráfico mejora levemente."
+          },
+          "brief":"¿Están expandidas todas las abreviaciones usadas en el gráfico?",
+          "example": {
+            "image": "",
+            "text": []
+          }
+      },
+      {
+          "id":"H6",
+          "name":"Fuente de datos",
+          "definition":"Junto al gráfico, preferiblemente cerca del pie, se ofrece información acerca de la fuente de los datos (institución, conjunto de datos, fecha y enlace)",
+          "verification_list":[
+              "En algún lugar del gráfico, preferiblemente en el pie o cerca de él, se ofrece información sobre la fuente de los datos.",
+              "En la fuente de datos se identifica la institución o empresa y se enlaza al conjunto de datos del que proceden los datos.",
+              "La fuente de datos se muestra como texto y no como una imagen de texto."
+          ],
+          "benefied_user": "Cualquier usuario.",
+          "weigth": {
+              "id":" x1",
+              "description":"En caso de no cumplirse, uno o más perfiles de usuario no tendrá una experiencia de usuario satisfactoria al consultar el gráfico, comprometiéndose levemente su accesibilidad para uno o mas perfiles de usuario con baja visión. En caso de estar presente la accesibilidad del gráfico mejora levemente."
+          },
+          "brief":"Si el gráfico tiene ejes, ¿son visibles y tienen etiquetas y titulos apropiados, claros y concisos?",
+          "example": {
+            "image": "",
+            "text": []
+          }
+      },
+      {
+          "id":"H7",
+          "name":"Versión impresa",
+          "definition":"Se ofrece una versión del gráfico optimizada para impresión para aquellos usuarios que prefieran la consulta en este otro medio.",
+          "verification_list":[
+              "Es posible imprimir una versión del gráfico optimizada para el medio impreso.",
+              "La versión impresa presenta una buena legibilidad.",
+              "La versión impresa mantiene una buena legibilidad, incluso cuando se imprime en blanco y negro."
+          ],
+          "benefied_user": "Cualquier usuario.",
+          "weigth": {
+              "id":" x1",
+              "description":"En caso de no cumplirse, uno o más perfiles de usuario no tendrá una experiencia de usuario satisfactoria al consultar el gráfico, comprometiéndose levemente su accesibilidad para uno o mas perfiles de usuario con baja visión. En caso de estar presente la accesibilidad del gráfico mejora levemente."
+          },
+          "brief":"¿Hay una versíon optimizada del gráfico para su impresión?",
+          "example": {
+            "image": "",
+            "text": []
+          }
+      },
+      {
+          "id":"H8",
+          "name":"Alternativa textual",
+          "definition":"El gráfico cuenta con un texto alternativo que informa brevemente sobre el contenido del gráfico y ayuda a los usuarios a determinar si desean obtener más información al respecto. Si existe una descripción larga asociada al gráfico, se informa sobre ella.",
+          "verification_list":[
+              "El gráfico cuenta con una alternativa textual.",
+              "La alternativa textual es breve y descriptiva.",
+              "La alternativa textual no es redundante con el título."
+          ],
+          "benefied_user": "Baja visión grave, especialmente usuarios de lector de pantalla.",
+          "weigth": {
+              "id":" x1",
+              "description":"En caso de no cumplirse, uno o más perfiles de usuario no tendrá una experiencia de usuario satisfactoria al consultar el gráfico, comprometiéndose levemente su accesibilidad para uno o mas perfiles de usuario con baja visión. En caso de estar presente la accesibilidad del gráfico mejora levemente."
+          },
+          "brief":"¿Cuenta el gráfico con un texto alternativo que informa brevemente acerca de su contenido y ayuda al usuario a decidir si quiere mas información?",
+          "example": {
+            "image": "",
+            "text": []
+          }
+      },
+      {
+          "id":"H9",
+          "name":"Descripción larga",
+          "definition":"Todo gráfico complejo cuenta con una descripción larga que ofrece información equivalente.",
+          "verification_list":[
+              "La descripción larga proporciona información detallada sobre lo que se presenta visualmente, incluidas escalas, valores, relaciones y tendencias.",
+              "Los valores de los datos se proporcionan a través de una tabla de datos.",
+              "Los gráficos están estructuralmente asociados con la descripción larga."
+          ],
+          "benefied_user": "Baja visión grave, especialmente usuarios de lector de pantalla.",
+          "weigth": {
+              "id":" x3",
+              "description":"En caso de no cumplirse, uno o más perfiles de usuario será incapaz de percibir la información del gráfico, comprometiéndose totalmente su accesibilidad para uno o mas perfiles de usuario con baja visión. Funcionalidad que de estar presente mejora enormemente la accesibilidad del gráfico."
+          },
+          "brief":"En caso de que la alternativa textual no represente adecuadamente la información proporcionada por el gráfico, ¿Ofrece este una descripcion textual más larga con una descripción informativa completa y estructurada acerca de los datos del gráfico?",
+          "example": {
+            "image": "",
+            "text": []
+          }
+      },
+      {
+          "id":"H10",
+          "name":"Colores seguros",
+          "definition":"Los colores empleados en el gráfico para transmitir información pueden ser distinguidos por las personas con diferentes perfiles de VCD.",
+          "verification_list":[
+              "Se emplea un máximo de 5 colores seguros para diferenciar variables cualitativas, ordinales o cuantitativas.",
+              "Alternativamente, los valores se diferencian mediante patrones o texturas."
+          ],
+          "benefied_user": "VCD",
+          "weigth": {
+              "id":" x3",
+              "description":"En caso de no cumplirse, uno o más perfiles de usuario será incapaz de percibir la información del gráfico, comprometiéndose totalmente su accesibilidad para uno o mas perfiles de usuario con baja visión. Funcionalidad que de estar presente mejora enormemente la accesibilidad del gráfico."
+          },
+          "brief":"Si el gráfico usa colores para mostrar información, ¿el esquema de colores es seguro para las distintas deficiencias cromáticas de vision, incluyendo acromatopsia (ausencia total de percepcion del color)?",
+          "example": {
+            "image": "",
+            "text": []
+          }
+      },
+      {
+          "id":"H11",
+          "name":"Contraste",
+          "definition":"Entre el texto y el fondo existe un contraste mínimo de 4,5:1. Entre los elementos no textuales (líneas, barras, etc.) adyacentes del gráfico, existe un contraste mínimo de 3:1.",
+          "verification_list":[
+              "Los colores empleados en el gráfico para transmitir información son distinguibles para los diferentes perfiles de VCD (protanopia, deuteranopia, tritanopia, acromatopsia…)."
+          ],
+          "benefied_user": "Sensibilidad al contraste",
+          "weigth": {
+              "id":" x3",
+              "description":"En caso de no cumplirse, uno o más perfiles de usuario será incapaz de percibir la información del gráfico, comprometiéndose totalmente su accesibilidad para uno o mas perfiles de usuario con baja visión. Funcionalidad que de estar presente mejora enormemente la accesibilidad del gráfico."
+          },
+          "brief":"¿La presentacion visual del texto y el fondo tiene un ratio de contraste de al menos 4.5:1 y los elementos no textuales del gráfico un ratio de contraste de al menos 3:1?",
+          "example": {
+            "image": "",
+            "text": []
+          }
+      },
+      {
+          "id":"H12",
+          "name":"Legibilidad",
+          "definition":"El diseño del gráfico se basa en criterios de composición de textos que aseguran una correcta legibilidad (fuente tipográfica, interlineado, espacio entre letras y palabras, uso comedido de mayúsculas y versalitas, etc.)",
+          "verification_list":[
+              "Se usa una fuente tipográfica adecuada para baja visión (sans serif) como, por ejemplo: Arial, Helvetica, Courier o Verdana, o fuentes diseñadas para baja visión como Tiresias, APHont o Eido.",
+              "Se valora el uso de un tamaño de texto razonable, ampliable si el usuario lo precisa.",
+              "El espacio entre letras y el espacio entre palabras deberían ser suficientes, el espacio entre líneas debería ser 1,5",
+              "El texto debe dejarse alineado a la izquierda.",
+              "Se evita la silabificación.",
+              "Se evita un uso excesivo de mayúsculas, versalitas y cursivas."
+
+          ],
+          "benefied_user": "Baja visión moderada y grave.",
+          "weigth": {
+              "id":" x2",
+              "description":"En caso de no cumplirse, uno o más perfiles de usuario tendrá serias dificultades para percibir la información del gráfico, comprometiéndose gravemente su accesibilidad para uno o más perfiles de usuario con baja visión. Funcionalidad que de estar presente mejora mucho la accesibilidad del gráfico"
+          },
+          "brief":"¿El texto incluido en el gráfico es legible (fuente sans-serif, tamaño de fuente de al menos 16px o 12pt, espacio entre lineas de al menos 1.5, uso no excesivo de mayusculas, negrita o cursiva)?",          
+          "example": {
+            "image": "",
+            "text": []
+          }
+      },
+      {
+          "id":"H13",
+          "name":"Calidad de la imagen",
+          "definition":"Todos los gráficos, en particular los gráficos en formato de mapa de bits cuentan con una calidad suficiente para su correcta visualización y admiten un zoom mínimo de 200% sin desenfocarse, ni pixelarse.",
+          "verification_list":[
+              "El tamaño de imagen (en píxeles) debería ser suficiente para llegar al 200% de zoom sin quese desenfoque o se pixele.",
+              "Los formatos de archivo más adecuados son PNG preferiblemente, o JPG con un nivel de compresión adecuado.",
+              "La resolución es de, al menos, 150 ppp.",
+              "La profundidad de bits es de 8 a 32 bits."
+          ],
+          "benefied_user": "Baja visión moderada y grave.",
+          "weigth": {
+              "id":" x3",
+              "description":"En caso de no cumplirse, uno o más perfiles de usuario será incapaz de percibir la información del gráfico, comprometiéndose totalmente su accesibilidad para uno o mas perfiles de usuario con baja visión. Funcionalidad que de estar presente mejora enormemente la accesibilidad del gráfico."
+          },
+          "brief":"Si el gráfico se ofrece en forma de imagen (mapa de bits), ¿tiene la imágen calidad suficiente para una visualización clara y soporta un zoom de al menos 200% sin presentar borrosidad o pixelación?",
+          "example": {
+            "image": "",
+            "text": []
+          }
+      },
+      {
+          "id":"H14",
+          "name":"Redimensionado",
+          "definition":"El gráfico se puede ampliar hasta un 200% sin la necesidad de contar con ninguna ayuda técnica diferente al navegador. Una vez ampliado, ningún elemento se superpone al gráfico y todas sus funcionalidades originales continúan estando disponibles.",
+          "verification_list":[
+              "Cuando se aplica un zoom de hasta un 200% sobre el gráfico, no se superpone ningún otro elemento presente en la página. El gráfico debe poder leerse sin tener que hacer scroll horizontal."
+          ],
+          "benefied_user": "Baja visión moderada y grave.",
+          "weigth": {
+              "id":" x2",
+              "description":"En caso de no cumplirse, uno o más perfiles de usuario tendrá serias dificultades para percibir la información del gráfico, comprometiéndose gravemente su accesibilidad para uno o más perfiles de usuario con baja visión. Funcionalidad que de estar presente mejora mucho la accesibilidad del gráfico"
+          },
+          "brief":"¿Puede aplicarse al gráfico un zoom de haste 200% sin necesidad de una herramienta de asistencia y sin perdida de contenido o funcionalidad?",
+          "example": {
+            "image": "",
+            "text": []
+          }
+      },
+      {
+          "id":"H15",
+          "name":"Sin obstáculos en la visualización",
+          "definition":"En ocasiones, los editores de contenido utilizan elementos como marcas de agua o de autoría que superponen a las imágenes de texto, SVG o Canvas, dificultando su lectura. El objetivo de este indicador es asegurar que ningún elemento externo al gráfico dificulta o impide parcial o totalmente su lectura",
+          "verification_list":[
+              "No se superpone ningún elemento sobre el gráfico que pudiera comprometer su lectura (marcas de agua, publicidad...)"
+          ],
+          "benefied_user": "Cualquier usuario.",
+          "weigth": {
+              "id":" x3",
+              "description":"En caso de no cumplirse, uno o más perfiles de usuario será incapaz de percibir la información del gráfico, comprometiéndose totalmente su accesibilidad para uno o mas perfiles de usuario con baja visión. Funcionalidad que de estar presente mejora enormemente la accesibilidad del gráfico."
+          },
+          "brief":"¿Tiene el gráfico algun elemento que entorpezca la visualizacion del mismo, como marcas de agua o publicidad?",
+          "example": {
+            "image": "",
+            "text": []
+          }
+      },
+      {
+          "id":"H16",
+          "name":"Foco visible",
+          "definition":"Se muestra un indicador visible para todos aquellos elementos del gráfico que puedan recibir el foco del ratón, teclado o táctil. Este criterio no aplica a los gráficos en formato de mapa de bits, sino sólo a los gráficos en formato SVG o implementados con bibliotecas de JavaScript.",
+          "verification_list":[
+              "Cuando un elemento seleccionable de un gráfico recibe el foco del ratón o el teclado, se muestra algún tipo de indicador que lo destaca."
+          ],
+          "benefied_user": "Baja visión moderada y grave.",
+          "weigth": {
+              "id":" x1",
+              "description":"En caso de no cumplirse, uno o más perfiles de usuario no tendrá una experiencia de usuario satisfactoria al consultar el gráfico, comprometiéndose levemente su accesibilidad para uno o mas perfiles de usuario con baja visión. En caso de estar presente la accesibilidad del gráfico mejora levemente."
+          },
+          "brief":"Cuando un elemento del gráfico (lineas, barras, puntos...) obtiene el foco, ¿hay alguna indicación visual de este hecho?",
+          "example": {
+            "image": "",
+            "text": []
+          }
+      },
+      {
+          "id":"H17",
+          "name":"Navegación independiente del dispositivo",
+          "definition":"Tanto en dispositivos de sobremesa, como en dispositivos móviles es posible navegar mediante distintas interfaces (ratón, teclado o gestos táctiles). Para cumplir este indicador, los tipos de eventos o interacciones disponibles deben ser identificables y poder operarse mediante los diferentes tipos de interfaces disponibles. Este criterio no aplica a los gráficos en formato de mapa de bits, sino sólo a los gráficos en formato SVG o implementados con bibliotecas de JavaScript.",
+          "verification_list":[
+              "Es posible navegar a través de los elementos del gráfico mediante el teclado.",
+              "Es posible navegar a través de los elementos del gráfico mediante el ratón.",
+              "Es posible navegar a través de los elementos del gráfico mediante gestos táctiles."
+          ],
+          "benefied_user": "Baja visión grave, especialmente usuarios de lector de pantalla. También usuarios con discapacidad motriz.",
+          "weigth": {
+              "id":" x3",
+              "description":"En caso de no cumplirse, uno o más perfiles de usuario será incapaz de percibir la información del gráfico, comprometiéndose totalmente su accesibilidad para uno o mas perfiles de usuario con baja visión. Funcionalidad que de estar presente mejora enormemente la accesibilidad del gráfico."
+          },
+          "brief":"¿Es posible navegar entre las marcas y elementos del gráfico con teclado, ratón y gestos?",
+          "example": {
+            "image": "",
+            "text": []
+          }
+      },
+      {
+          "id":"H18",
+          "name":"Personalización",
+          "definition":"Se permite a los usuarios personalizar las características de los gráficos (paleta de colores, contraste, familia tipográfica, tamaño del texto, interlineado, etc.). Cumplir con este indicador implica el uso de tecnologías compatibles con las ayudas técnicas pensadas para para este cometido. Alternativamente, es posible alcanzar el indicador, ofreciendo un sistema propio que permita personalizar la apariencia del gráfico.",
+          "verification_list":[
+              "El gráfico ofrece opciones de personalización específica.",
+              "El gráfico es compatible con su personalización mediante terceras aplicaciones (ayudas técnicas, extensiones de navegador."
+          ],
+          "benefied_user": "Baja visión moderada y grave y VCD",
+          "weigth": {
+              "id":" x2",
+              "description":"En caso de no cumplirse, uno o más perfiles de usuario tendrá serias dificultades para percibir la información del gráfico, comprometiéndose gravemente su accesibilidad para uno o más perfiles de usuario con baja visión. Funcionalidad que de estar presente mejora mucho la accesibilidad del gráfico"
+          },
+          "brief":"¿Es posible personalizar el gráfico (esquema de colores, contraste, tipografía...) con tecnologías asistivas o con un sistema de personalización específico?",
+          "example": {
+            "image": "",
+            "text": []
+          }
+      }
+
+  ]
+}
