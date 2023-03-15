@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AboutService } from '../services/about.service';
 import { Chart, registerables } from 'chart.js';
+import { HeuristicsResponse } from 'app/models/general.interfaces';
 Chart.register(...registerables);
 @Component({
   selector: 'app-about',
@@ -9,12 +10,17 @@ Chart.register(...registerables);
 })
 export class AboutComponent implements OnInit {
   contentInformation: any = {};
-  constructor(private aboutService: AboutService) {}
-  chart:any = [];
+  contentInformationSecond: any = {};
 
-  async ngOnInit() {
-    this.contentInformation = await this.aboutService.getContext().toPromise();
-    this.contentInformation = this.contentInformation.introduction;
+  constructor(private aboutService: AboutService) {}
+  chart:any = {};
+
+  ngOnInit() {
+    this.aboutService.getContext().subscribe((res: any) => {
+      this.contentInformation =  res;
+      this.contentInformation = this.contentInformation.introduction;
+      this.contentInformationSecond = res.continuation;
+      });
     this.chart = new Chart('myChart', {
       type: "line",
       data: {
@@ -24,6 +30,6 @@ export class AboutComponent implements OnInit {
               data: [17589,24156,27165,29541,32146,24563,14743,16230,15636,19999,31545,18354,22895,26746,32565,31050,35241,26124,16923,17028,22712,27351,26558,16607,18729,23027,26966,25407,28548,25197,19885,18207,28065,32033,30104,18817],
           }]
       }
-    });
+    });    
   }
 }

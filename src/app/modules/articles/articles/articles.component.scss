@@ -95,6 +95,9 @@ h2 {
       }
       &:hover {
         cursor:pointer;
+        .itemSelected {
+          background-color: $light-blue;
+        }
         .titleArticle {
           font-weight: 700;
         }

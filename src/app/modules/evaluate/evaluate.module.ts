@@ -4,6 +4,7 @@ import { EvaluateComponent } from './evaluate/evaluate.component';
 import { RouterModule } from '@angular/router';
 import { evaluateRoutingModule } from './evaluate-routing.module';
 
+import {TooltipModule} from 'primeng/tooltip';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { evaluateRoutingModule } from './evaluate-routing.module';
   ],
   imports: [
     CommonModule,
+    TooltipModule,
     evaluateRoutingModule
   ],
   providers: [

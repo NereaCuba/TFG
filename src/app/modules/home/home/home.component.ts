@@ -17,12 +17,14 @@ export class HomeComponent implements OnInit{
   ngOnInit() {
     this.homeService.getArticles().subscribe((res: ArticlesResponse) => {
     this.articles = res.articles;
-    console.log(res);
     this.articlesCarousel = this.articles.slice(0,2);
     })
   }
   evaluateButton(): void {
     this.redirectTo('/evaluate');
+  }
+  heuristicsButton(): void {
+    this.redirectTo('/heuristics-list');
   }
   goToAbout(): void {
     this.redirectTo('/about');

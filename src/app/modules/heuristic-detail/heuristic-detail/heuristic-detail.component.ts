@@ -11,7 +11,6 @@ import { DetailHeuristicsService } from '../services/heuristic-detail.service';
 export class DetailHeuristicsComponent implements OnInit {
   _listHeuristics: HeuristicsResponse = {};
   _heuristic: HeuristicBasicInfo = {} as HeuristicBasicInfo;
-
   constructor (
     private heuristicsService: DetailHeuristicsService,
     private route: ActivatedRoute

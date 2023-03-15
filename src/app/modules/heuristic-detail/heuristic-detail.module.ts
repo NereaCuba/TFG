@@ -8,6 +8,7 @@ import { DetailHeuristicsComponent } from './heuristic-detail/heuristic-detail.c
 import { DetailHeuristicsService } from './services/heuristic-detail.service';
 import { heuristicsDetailRoutingModule } from './heuristic-detail-routing.module';
 import {TooltipModule} from 'primeng/tooltip';
+import { TitleModule } from 'app/components/titles/titles.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {TooltipModule} from 'primeng/tooltip';
     CommonModule,
     heuristicsDetailRoutingModule,
     HttpClientModule,
+    TitleModule,
     PaginatorModule,
     TooltipModule,
     FormsModule

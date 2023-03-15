@@ -9,7 +9,7 @@
     <div class="container mt-5">
       <div class="col-12">
         <div class="row">
-          <div class="col-4"  *ngFor="let article of articlesCarousel; let i = index; first as isFirst"  [class.offset-2]="isFirst">
+          <div class="col-lg-4 col-md-12 articleSingle"  *ngFor="let article of articlesCarousel; let i = index; first as isFirst"  [class.offset-lg-2]="isFirst">
             <titles-inline [image]="article.image!" [title]="article.title!" [article]="true"></titles-inline>
           </div>
         </div>
@@ -27,7 +27,7 @@
     <hr>
     <div class="row">
       <div class="col-9 listArticles">
-        <div class="row align-items-stretch mb-5" *ngFor="let article of articles;">
+        <div class="row align-items-stretch mb-5 itemSelected p-2" *ngFor="let article of articles;">
           <div class="col-4" >
             <titles-inline [image]="article.image!" [title]="article.title!" [comesFromList]="true"></titles-inline>
           </div>
@@ -43,10 +43,10 @@
         <hr class="mb-3">
         <div class="authorsList">
           <div class="row align-items-center mb-3 authorItem" *ngFor="let author of authors;">
-            <div class="col-md-4" >
+            <div class="col-lg-4 col-md-12" >
               <img class="authorImg" src={{author.photo}} alt="">
             </div>
-            <div class="offset-md-1 col-md-7 author">
+            <div class="offset-lg-1 col-lg-7 author col-md-12">
                 <p class="titleArticle">{{author.name!}}</p>
             </div>
           </div>

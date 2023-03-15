@@ -14,7 +14,11 @@
               "id":" x1",
               "description":"En caso de no cumplirse, uno o más perfiles de usuario no tendrá una experiencia de usuario satisfactoria al consultar el gráfico, comprometiéndose levemente su accesibilidad para uno o mas perfiles de usuario con baja visión. En caso de estar presente la accesibilidad del gráfico mejora levemente."
           },
-          "brief":"¿El grafico tiene un titulo breve y descriptivo que ayude al usuario a diferenciarlo de otros en la misma página, así como a navegar entre ellos?"
+          "brief":"¿El grafico tiene un titulo breve y descriptivo que ayude al usuario a diferenciarlo de otros en la misma página, así como a navegar entre ellos?",
+          "example": {
+            "image": "",
+            "text": []
+          }
       },
       {
           "id":"H2",
@@ -30,7 +34,11 @@
               "id":" x1",
               "description":"En caso de no cumplirse, uno o más perfiles de usuario no tendrá una experiencia de usuario satisfactoria al consultar el gráfico, comprometiéndose levemente su accesibilidad para uno o mas perfiles de usuario con baja visión. En caso de estar presente la accesibilidad del gráfico mejora levemente."
           },
-          "brief":"Si el gráfico usa formas, colores o patrones, ¿hay una leyenda para diferenciarlos?"
+          "brief":"Si el gráfico usa formas, colores o patrones, ¿hay una leyenda para diferenciarlos?",
+          "example": {
+            "image": "",
+            "text": []
+          }
       },
       {
           "id":"H3",
@@ -48,7 +56,11 @@
               "id":" x1",
               "description":"En caso de no cumplirse, uno o más perfiles de usuario no tendrá una experiencia de usuario satisfactoria al consultar el gráfico, comprometiéndose levemente su accesibilidad para uno o mas perfiles de usuario con baja visión. En caso de estar presente la accesibilidad del gráfico mejora levemente."
           },
-          "brief":"Si el gráfico tiene ejes, ¿son visibles y tienen etiquetas y titulos apropiados, claros y concisos?"
+          "brief":"Si el gráfico tiene ejes, ¿son visibles y tienen etiquetas y titulos apropiados, claros y concisos?",
+          "example": {
+            "image": "",
+            "text": []
+          }
       },
       {
           "id":"H4",
@@ -66,7 +78,11 @@
               "id":" x1",
               "description":"En caso de no cumplirse, uno o más perfiles de usuario no tendrá una experiencia de usuario satisfactoria al consultar el gráfico, comprometiéndose levemente su accesibilidad para uno o mas perfiles de usuario con baja visión. En caso de estar presente la accesibilidad del gráfico mejora levemente."
           },
-          "brief":"¿Cuenta el gráfico con un pie que ayude a comprenderlo?"
+          "brief":"¿Cuenta el gráfico con un pie que ayude a comprenderlo?",
+          "example": {
+            "image": "",
+            "text": []
+          }
       },
       {
           "id":"H5",
@@ -81,7 +97,11 @@
               "id":" x1",
               "description":"En caso de no cumplirse, uno o más perfiles de usuario no tendrá una experiencia de usuario satisfactoria al consultar el gráfico, comprometiéndose levemente su accesibilidad para uno o mas perfiles de usuario con baja visión. En caso de estar presente la accesibilidad del gráfico mejora levemente."
           },
-          "brief":"¿Están expandidas todas las abreviaciones usadas en el gráfico?"
+          "brief":"¿Están expandidas todas las abreviaciones usadas en el gráfico?",
+          "example": {
+            "image": "",
+            "text": []
+          }
       },
       {
           "id":"H6",
@@ -97,7 +117,11 @@
               "id":" x1",
               "description":"En caso de no cumplirse, uno o más perfiles de usuario no tendrá una experiencia de usuario satisfactoria al consultar el gráfico, comprometiéndose levemente su accesibilidad para uno o mas perfiles de usuario con baja visión. En caso de estar presente la accesibilidad del gráfico mejora levemente."
           },
-          "brief":"Si el gráfico tiene ejes, ¿son visibles y tienen etiquetas y titulos apropiados, claros y concisos?"
+          "brief":"Si el gráfico tiene ejes, ¿son visibles y tienen etiquetas y titulos apropiados, claros y concisos?",
+          "example": {
+            "image": "",
+            "text": []
+          }
       },
       {
           "id":"H7",
@@ -113,7 +137,11 @@
               "id":" x1",
               "description":"En caso de no cumplirse, uno o más perfiles de usuario no tendrá una experiencia de usuario satisfactoria al consultar el gráfico, comprometiéndose levemente su accesibilidad para uno o mas perfiles de usuario con baja visión. En caso de estar presente la accesibilidad del gráfico mejora levemente."
           },
-          "brief":"¿Hay una versíon optimizada del gráfico para su impresión?"
+          "brief":"¿Hay una versíon optimizada del gráfico para su impresión?",
+          "example": {
+            "image": "",
+            "text": []
+          }
       },
       {
           "id":"H8",
@@ -129,7 +157,11 @@
               "id":" x1",
               "description":"En caso de no cumplirse, uno o más perfiles de usuario no tendrá una experiencia de usuario satisfactoria al consultar el gráfico, comprometiéndose levemente su accesibilidad para uno o mas perfiles de usuario con baja visión. En caso de estar presente la accesibilidad del gráfico mejora levemente."
           },
-          "brief":"¿Cuenta el gráfico con un texto alternativo que informa brevemente acerca de su contenido y ayuda al usuario a decidir si quiere mas información?"
+          "brief":"¿Cuenta el gráfico con un texto alternativo que informa brevemente acerca de su contenido y ayuda al usuario a decidir si quiere mas información?",
+          "example": {
+            "image": "",
+            "text": []
+          }
       },
       {
           "id":"H9",
@@ -145,7 +177,11 @@
               "id":" x3",
               "description":"En caso de no cumplirse, uno o más perfiles de usuario será incapaz de percibir la información del gráfico, comprometiéndose totalmente su accesibilidad para uno o mas perfiles de usuario con baja visión. Funcionalidad que de estar presente mejora enormemente la accesibilidad del gráfico."
           },
-          "brief":"En caso de que la alternativa textual no represente adecuadamente la información proporcionada por el gráfico, ¿Ofrece este una descripcion textual más larga con una descripción informativa completa y estructurada acerca de los datos del gráfico?"
+          "brief":"En caso de que la alternativa textual no represente adecuadamente la información proporcionada por el gráfico, ¿Ofrece este una descripcion textual más larga con una descripción informativa completa y estructurada acerca de los datos del gráfico?",
+          "example": {
+            "image": "",
+            "text": []
+          }
       },
       {
           "id":"H10",
@@ -160,7 +196,11 @@
               "id":" x3",
               "description":"En caso de no cumplirse, uno o más perfiles de usuario será incapaz de percibir la información del gráfico, comprometiéndose totalmente su accesibilidad para uno o mas perfiles de usuario con baja visión. Funcionalidad que de estar presente mejora enormemente la accesibilidad del gráfico."
           },
-          "brief":"Si el gráfico usa colores para mostrar información, ¿el esquema de colores es seguro para las distintas deficiencias cromáticas de vision, incluyendo acromatopsia (ausencia total de percepcion del color)?"
+          "brief":"Si el gráfico usa colores para mostrar información, ¿el esquema de colores es seguro para las distintas deficiencias cromáticas de vision, incluyendo acromatopsia (ausencia total de percepcion del color)?",
+          "example": {
+            "image": "",
+            "text": []
+          }
       },
       {
           "id":"H11",
@@ -174,7 +214,11 @@
               "id":" x3",
               "description":"En caso de no cumplirse, uno o más perfiles de usuario será incapaz de percibir la información del gráfico, comprometiéndose totalmente su accesibilidad para uno o mas perfiles de usuario con baja visión. Funcionalidad que de estar presente mejora enormemente la accesibilidad del gráfico."
           },
-          "brief":"¿La presentacion visual del texto y el fondo tiene un ratio de contraste de al menos 4.5:1 y los elementos no textuales del gráfico un ratio de contraste de al menos 3:1?"
+          "brief":"¿La presentacion visual del texto y el fondo tiene un ratio de contraste de al menos 4.5:1 y los elementos no textuales del gráfico un ratio de contraste de al menos 3:1?",
+          "example": {
+            "image": "",
+            "text": []
+          }
       },
       {
           "id":"H12",
@@ -194,7 +238,11 @@
               "id":" x2",
               "description":"En caso de no cumplirse, uno o más perfiles de usuario tendrá serias dificultades para percibir la información del gráfico, comprometiéndose gravemente su accesibilidad para uno o más perfiles de usuario con baja visión. Funcionalidad que de estar presente mejora mucho la accesibilidad del gráfico"
           },
-          "brief":"¿El texto incluido en el gráfico es legible (fuente sans-serif, tamaño de fuente de al menos 16px o 12pt, espacio entre lineas de al menos 1.5, uso no excesivo de mayusculas, negrita o cursiva)?"
+          "brief":"¿El texto incluido en el gráfico es legible (fuente sans-serif, tamaño de fuente de al menos 16px o 12pt, espacio entre lineas de al menos 1.5, uso no excesivo de mayusculas, negrita o cursiva)?",          
+          "example": {
+            "image": "",
+            "text": []
+          }
       },
       {
           "id":"H13",
@@ -211,7 +259,11 @@
               "id":" x3",
               "description":"En caso de no cumplirse, uno o más perfiles de usuario será incapaz de percibir la información del gráfico, comprometiéndose totalmente su accesibilidad para uno o mas perfiles de usuario con baja visión. Funcionalidad que de estar presente mejora enormemente la accesibilidad del gráfico."
           },
-          "brief":"Si el gráfico se ofrece en forma de imagen (mapa de bits), ¿tiene la imágen calidad suficiente para una visualización clara y soporta un zoom de al menos 200% sin presentar borrosidad o pixelación?"
+          "brief":"Si el gráfico se ofrece en forma de imagen (mapa de bits), ¿tiene la imágen calidad suficiente para una visualización clara y soporta un zoom de al menos 200% sin presentar borrosidad o pixelación?",
+          "example": {
+            "image": "",
+            "text": []
+          }
       },
       {
           "id":"H14",
@@ -225,7 +277,11 @@
               "id":" x2",
               "description":"En caso de no cumplirse, uno o más perfiles de usuario tendrá serias dificultades para percibir la información del gráfico, comprometiéndose gravemente su accesibilidad para uno o más perfiles de usuario con baja visión. Funcionalidad que de estar presente mejora mucho la accesibilidad del gráfico"
           },
-          "brief":"¿Puede aplicarse al gráfico un zoom de haste 200% sin necesidad de una herramienta de asistencia y sin perdida de contenido o funcionalidad?"
+          "brief":"¿Puede aplicarse al gráfico un zoom de haste 200% sin necesidad de una herramienta de asistencia y sin perdida de contenido o funcionalidad?",
+          "example": {
+            "image": "",
+            "text": []
+          }
       },
       {
           "id":"H15",
@@ -239,7 +295,11 @@
               "id":" x3",
               "description":"En caso de no cumplirse, uno o más perfiles de usuario será incapaz de percibir la información del gráfico, comprometiéndose totalmente su accesibilidad para uno o mas perfiles de usuario con baja visión. Funcionalidad que de estar presente mejora enormemente la accesibilidad del gráfico."
           },
-          "brief":"¿Tiene el gráfico algun elemento que entorpezca la visualizacion del mismo, como marcas de agua o publicidad?"
+          "brief":"¿Tiene el gráfico algun elemento que entorpezca la visualizacion del mismo, como marcas de agua o publicidad?",
+          "example": {
+            "image": "",
+            "text": []
+          }
       },
       {
           "id":"H16",
@@ -253,7 +313,11 @@
               "id":" x1",
               "description":"En caso de no cumplirse, uno o más perfiles de usuario no tendrá una experiencia de usuario satisfactoria al consultar el gráfico, comprometiéndose levemente su accesibilidad para uno o mas perfiles de usuario con baja visión. En caso de estar presente la accesibilidad del gráfico mejora levemente."
           },
-          "brief":"Cuando un elemento del gráfico (lineas, barras, puntos...) obtiene el foco, ¿hay alguna indicación visual de este hecho?"
+          "brief":"Cuando un elemento del gráfico (lineas, barras, puntos...) obtiene el foco, ¿hay alguna indicación visual de este hecho?",
+          "example": {
+            "image": "",
+            "text": []
+          }
       },
       {
           "id":"H17",
@@ -269,7 +333,11 @@
               "id":" x3",
               "description":"En caso de no cumplirse, uno o más perfiles de usuario será incapaz de percibir la información del gráfico, comprometiéndose totalmente su accesibilidad para uno o mas perfiles de usuario con baja visión. Funcionalidad que de estar presente mejora enormemente la accesibilidad del gráfico."
           },
-          "brief":"¿Es posible navegar entre las marcas y elementos del gráfico con teclado, ratón y gestos?"
+          "brief":"¿Es posible navegar entre las marcas y elementos del gráfico con teclado, ratón y gestos?",
+          "example": {
+            "image": "",
+            "text": []
+          }
       },
       {
           "id":"H18",
@@ -284,7 +352,11 @@
               "id":" x2",
               "description":"En caso de no cumplirse, uno o más perfiles de usuario tendrá serias dificultades para percibir la información del gráfico, comprometiéndose gravemente su accesibilidad para uno o más perfiles de usuario con baja visión. Funcionalidad que de estar presente mejora mucho la accesibilidad del gráfico"
           },
-          "brief":"¿Es posible personalizar el gráfico (esquema de colores, contraste, tipografía...) con tecnologías asistivas o con un sistema de personalización específico?"
+          "brief":"¿Es posible personalizar el gráfico (esquema de colores, contraste, tipografía...) con tecnologías asistivas o con un sistema de personalización específico?",
+          "example": {
+            "image": "",
+            "text": []
+          }
       }
 
   ]

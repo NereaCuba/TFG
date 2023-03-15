@@ -2,6 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@200..900');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200..900');
 
+.container {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  p {
+    text-align: justify;
+  }
+
+}
+.boldPic {
+  font-weight: 600;
+}
 
 h2 {
   font-family: "Raleway", sans-serif;
@@ -11,4 +23,6 @@ h2 {
   letter-spacing: 0.2em;
   color: $color-dark;
 }
-
+.myChart {
+  height: 30em !important;
+}

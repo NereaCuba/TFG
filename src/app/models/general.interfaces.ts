@@ -29,9 +29,15 @@ export interface HeuristicBasicInfo {
   benefied_user?: string;
   weigth?: Weigth;
   brief?: string;
+  example?: ExampleInfo;
 }
 
 export interface Weigth {
   id?: string;
   description?: string;
+}
+
+export interface ExampleInfo {
+  image?: string;
+  text?: Array<string>;
 }
