@@ -8,7 +8,7 @@
       <div class="listIndicators container d-flex flex-column justify-content-center mt-5">
         <div class="d-flex flex-row">
           <i class="pi pi-angle-right mt-1"></i>
-          <p class="mt-0">3 indicadores pensados para usuarios que presentan un <b>resto visual muy bajo</b>y que emplean un lector de pantalla
+          <p class="mt-0">3 indicadores pensados para usuarios que presentan un <b>resto visual muy bajo</b> y que emplean un lector de pantalla
             como ayuda técnica principal o como complemento al magnificador de pantalla.</p>
         </div>
         <div class="d-flex flex-row">
@@ -115,11 +115,32 @@
 </div>
 <div class="evaluate container">
     <div class="row justify-content-center">
-        <div class="col-lg-6 col-md-12">
-            <div class="square"></div>
+        <div class="col-lg-4 col-md-12">
+            <div class="square">
+              <p class="mt-2 text-center">Aquí podrás ver tu gráfico una vez cargado</p>
+            </div>
         </div>
-        <div class="col-lg-6 col-md-12">
+        <div class="col-lg-8 col-md-12 ps-lg-5">
             <h2>Sube una imagen o introduce una URL</h2>
+            <div class="field-radiobutton">
+              <p-radioButton name="typeImport" value="Chicago" [(ngModel)]="typeImport" inputId="typeImport1"></p-radioButton>
+              <div class="containerButton">
+                <div class="button-wrap">
+                  <label class="custom-file-upload">
+                    <input id="upload" (change)="manageImage($event)" type="file">
+                    Carga una imagen
+                </label>
+              </div>
+            </div>
+            <p>{{ nameFile }}</p>
+            </div>
+          <div class="field-radiobutton">
+              <p-radioButton name="typeImport" value="Los Angeles" [(ngModel)]="typeImport" inputId="typeImport2"></p-radioButton>
+              <label for="city2">Los Angeles</label>
+          </div>
         </div>
+        <div *ngIf=dbImage>
+          <img [src]="dbImage">
+      </div>
     </div>
 </div>
