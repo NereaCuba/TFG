@@ -30,6 +30,10 @@ export interface HeuristicBasicInfo {
   weigth?: Weigth;
   brief?: string;
   example?: ExampleInfo;
+  understand?: string;
+  how_to_test?: string;
+  examples?: Array<string>;
+  extra?: string;
 }
 
 export interface Weigth {

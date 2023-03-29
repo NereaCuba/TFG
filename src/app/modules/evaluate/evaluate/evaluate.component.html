@@ -1,125 +1,209 @@
-<div class="introduction">
+<div *ngIf=showIntroduction>
+  <div class="introduction">
     <h2 class="text-center">Introducción a la evaluación</h2>
     <p class="text-center">La lista de indicadores heurísticos propuesta está formada por 18 indicadores que cubren aspectos de la información
       que transmite el gráfico (título, ejes, alternativas de texto…), su presentación visual (fuente tipográfica, colores…) y el
-      comportamiento y funciones presentes (personalización, compatibilidad con los lectores de pantalla…). 
-      </p>
-      <p class="text-center">En relación con el <b>perfil de baja visión al que benefician</b>, la distribución de los indicadores es la siguiente:</p>
-      <div class="listIndicators container d-flex flex-column justify-content-center mt-5">
-        <div class="d-flex flex-row">
-          <i class="pi pi-angle-right mt-1"></i>
-          <p class="mt-0">3 indicadores pensados para usuarios que presentan un <b>resto visual muy bajo</b>y que emplean un lector de pantalla
-            como ayuda técnica principal o como complemento al magnificador de pantalla.</p>
-        </div>
-        <div class="d-flex flex-row">
-          <i class="pi pi-angle-right mt-1"></i>
-          <p class="mt-0">5 indicadores que contemplan aspectos que pueden beneficiar a usuarios con un <b>resto visual no tan bajo</b> como el
-            anterior, pero que aun así precisan del uso de ayudas como magnificadores de pantalla.</p>
-        </div>
-        <div class="d-flex flex-row">
-          <i class="pi pi-angle-right mt-1"></i>
-          <p class="mt-0">1 indicador pensado para satisfacer las necesidades de los usuarios con <b>VCD</b>.</p>
-        </div>
-        <div class="d-flex flex-row">
-          <i class="pi pi-angle-right mt-1"></i>
-          <p class="mt-0">1 indicador que cubre la <b>sensibilidad al contraste.</b></p>
-        </div>
-        <div class="d-flex flex-row">
-          <i class="pi pi-angle-right mt-1"></i>
-          <p class="mt-0">8 indicadores de carácter más general que constituyen <b>buenas prácticas</b> que benefician a cualquier tipo de lector.</p>
-        </div>
+      comportamiento y funciones presentes (personalización, compatibilidad con los lectores de pantalla…).
+    </p>
+    <p class="text-center">En relación con el <b>perfil de baja visión al que benefician</b>, la distribución de los indicadores es la siguiente:</p>
+    <div class="listIndicators container d-flex flex-column justify-content-center mt-5">
+      <div class="d-flex flex-row">
+        <i class="pi pi-angle-right mt-1"></i>
+        <p class="mt-0">3 indicadores pensados para usuarios que presentan un <b>resto visual muy bajo</b> y que emplean un lector de pantalla
+          como ayuda técnica principal o como complemento al magnificador de pantalla.</p>
       </div>
-</div>
-<div class="instructions">
-    <span class="first titleSection">
-    <h2 class="titles articleTitles">Instrucciones</h2>
-    </span>
-    <p class="text-center mb-4">Se va a utilizar una <b>escala de Likert</b> de 7 puntos para el cálculo del grado de cumplimiento de cada ítem, cuyo rango va de 0 (peor puntuación posible) a 6 (mejor puntuación posible). </p>
-    <table class="table text-center table-bordered container">
-        <thead>
-          <tr>
-            <th scope="col">Evaluación</th>
-            <th scope="col">Nivel de cumplimiento</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>-</td>
-            <td>No aplica <i class="pi pi-info-circle" pTooltip="Un ejemplo de caso en el que un indicador no aplica, lo podemos encontrar en la no necesidad de disponer de una leyenda en el caso de gráficos estadísticos con una única serie de datos, o en la no necesidad de utilizar colores seguros o patrones cuando el gráfico sólo muestra una marca." tooltipPosition="right"></i></td>
-          </tr>
-          <tr>
-            <td>-</td>
-            <td>No es problema <i class="pi pi-info-circle" pTooltip="Por lo que respecta al valor “No es problema”, aplica en casos como, por ejemplo, cuando se incluyen abreviaturas que no se desarrollan pero que son de uso común y muy conocidas por la audiencia." tooltipPosition="right"></i></td>
-          </tr>
-          <tr>
-            <td>0</td>
-            <td>No cumplimiento</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Cumplimiento muy bajo</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Cumplimiento bajo</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Cumplimiento aceptable</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Cumplimiento alto</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>Cumplimiento muy alto</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>Cumplimiento excelente</td>
-          </tr>
-        </tbody>
-    </table>
-    <p class="text-center mt-4">Adicionalmente, se han añadido las opciones <b>“No aplica” y “No es problema”</b>, para aquellos casos en los cuales no sea pertinente la pregunta, o en los que el hecho de no cumplir con el indicador no deriva en un problema de accesibilidad, respectivamente.</p>
-    <p class="text-center mb-4">Tras la aplicación de la escala, se utiliza un <b>sistema de ponderación</b> que posibilita asignar pesos distintos según la importancia de cada indicador. Su importancia viene determinada por los criterios especificados en la tabla 2.</p>
-    <table class="table text-center table-bordered container mt-4">
-        <thead>
-          <tr>
-            <th scope="col">Criterio</th>
-            <th scope="col">Ponderación</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>En caso de no cumplirse, uno o más perfiles de usuario <b>no tendrá una experiencia de usuario satisfactoria</b> al consultar el
-                gráfico, comprometiéndose levemente su accesibilidad para uno o más perfiles de usuario con baja visión.
-                En caso de estar presente la accesibilidad del gráfico mejora levemente.</td>
-                <td>x1</td>
-          </tr>
-          <tr>
-            <td>En caso de no cumplirse, uno o más perfiles de usuarios tendrá serias <b>dificultades para percibir la información</b> del gráfico,
-                comprometiéndose gravemente su accesibilidad para uno o más perfiles de usuario con baja visión.
-                Funcionalidad que de estar presente mejora mucho la accesibilidad del gráfico.</td>
-            <td>x2</td>
-          </tr>
-          <tr>
-            <td>En caso de no cumplirse, uno o más perfiles de usuarios será <b>incapaz de percibir la información</b> del gráfico, comprometiéndose
-                totalmente su accesibilidad para uno o más perfiles de usuario con baja visión.
-                Funcionalidad que de estar presente mejora enormemente la accesibilidad del gráfico.</td>
-            <td>x3</td>
-          </tr>
-        </tbody>
-    </table>
-    <p class="text-center mt-4">La lista de indicadores heurísticos utilizada, junto con su definición, el perfil de usuario beneficiado de su cumplimiento y su ponderación se puede consultar <a routerLink="/heuristics-list" (click)="redirectToHeuristics()">en el detalle de las heurísticas</a></p>
-</div>
-<div class="evaluate container">
-    <div class="row justify-content-center">
-        <div class="col-lg-6 col-md-12">
-            <div class="square"></div>
-        </div>
-        <div class="col-lg-6 col-md-12">
-            <h2>Sube una imagen o introduce una URL</h2>
-        </div>
+      <div class="d-flex flex-row">
+        <i class="pi pi-angle-right mt-1"></i>
+        <p class="mt-0">5 indicadores que contemplan aspectos que pueden beneficiar a usuarios con un <b>resto visual no tan bajo</b> como el
+          anterior, pero que aun así precisan del uso de ayudas como magnificadores de pantalla.</p>
+      </div>
+      <div class="d-flex flex-row">
+        <i class="pi pi-angle-right mt-1"></i>
+        <p class="mt-0">1 indicador pensado para satisfacer las necesidades de los usuarios con <b>VCD</b>.</p>
+      </div>
+      <div class="d-flex flex-row">
+        <i class="pi pi-angle-right mt-1"></i>
+        <p class="mt-0">1 indicador que cubre la <b>sensibilidad al contraste.</b></p>
+      </div>
+      <div class="d-flex flex-row">
+        <i class="pi pi-angle-right mt-1"></i>
+        <p class="mt-0">8 indicadores de carácter más general que constituyen <b>buenas prácticas</b> que benefician a cualquier tipo de lector.</p>
+      </div>
     </div>
+  </div>
+  <div class="instructions">
+      <span class="first titleSection">
+        <h2 class="titles articleTitles mt-5">Instrucciones</h2>
+      </span>
+      <p class="text-center mb-4">Se va a utilizar una <b>escala de Likert</b> de 7 puntos para el cálculo del grado de cumplimiento de cada ítem, cuyo rango va de 0 (peor puntuación posible) a 6 (mejor puntuación posible). </p>
+      <table class="table text-center table-bordered container">
+          <thead>
+            <tr>
+              <th scope="col">Evaluación</th>
+              <th scope="col">Nivel de cumplimiento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>-</td>
+              <td>No aplica <i class="pi pi-info-circle" pTooltip="Un ejemplo de caso en el que un indicador no aplica, lo podemos encontrar en la no necesidad de disponer de una leyenda en el caso de gráficos estadísticos con una única serie de datos, o en la no necesidad de utilizar colores seguros o patrones cuando el gráfico sólo muestra una marca." tooltipPosition="right"></i></td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>No es problema <i class="pi pi-info-circle" pTooltip="Por lo que respecta al valor “No es problema”, aplica en casos como, por ejemplo, cuando se incluyen abreviaturas que no se desarrollan pero que son de uso común y muy conocidas por la audiencia." tooltipPosition="right"></i></td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>No cumplimiento</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Cumplimiento muy bajo</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Cumplimiento bajo</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Cumplimiento aceptable</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Cumplimiento alto</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Cumplimiento muy alto</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Cumplimiento excelente</td>
+            </tr>
+          </tbody>
+      </table>
+      <p class="text-center mt-4">Adicionalmente, se han añadido las opciones <b>“No aplica” y “No es problema”</b>, para aquellos casos en los cuales no sea pertinente la pregunta, o en los que el hecho de no cumplir con el indicador no deriva en un problema de accesibilidad, respectivamente.</p>
+      <p class="text-center mb-4">Tras la aplicación de la escala, se utiliza un <b>sistema de ponderación</b> que posibilita asignar pesos distintos según la importancia de cada indicador. Su importancia viene determinada por los criterios especificados en la tabla 2.</p>
+      <table class="table text-center table-bordered container mt-4">
+          <thead>
+            <tr>
+              <th scope="col">Criterio</th>
+              <th scope="col">Ponderación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>En caso de no cumplirse, uno o más perfiles de usuario <b>no tendrá una experiencia de usuario satisfactoria</b> al consultar el
+                  gráfico, comprometiéndose levemente su accesibilidad para uno o más perfiles de usuario con baja visión.
+                  En caso de estar presente la accesibilidad del gráfico mejora levemente.</td>
+                  <td>x1</td>
+            </tr>
+            <tr>
+              <td>En caso de no cumplirse, uno o más perfiles de usuarios tendrá serias <b>dificultades para percibir la información</b> del gráfico,
+                  comprometiéndose gravemente su accesibilidad para uno o más perfiles de usuario con baja visión.
+                  Funcionalidad que de estar presente mejora mucho la accesibilidad del gráfico.</td>
+              <td>x2</td>
+            </tr>
+            <tr>
+              <td>En caso de no cumplirse, uno o más perfiles de usuarios será <b>incapaz de percibir la información</b> del gráfico, comprometiéndose
+                  totalmente su accesibilidad para uno o más perfiles de usuario con baja visión.
+                  Funcionalidad que de estar presente mejora enormemente la accesibilidad del gráfico.</td>
+              <td>x3</td>
+            </tr>
+          </tbody>
+      </table>
+      <p class="text-center mt-4">La lista de indicadores heurísticos utilizada, junto con su definición, el perfil de usuario beneficiado de su cumplimiento y su ponderación se puede consultar <a routerLink="/heuristics-list" (click)="redirectToHeuristics()">en el detalle de las heurísticas</a></p>
+  </div>
+  <div class="evaluate container">
+      <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-12">
+              <div *ngIf=imgURL>
+                  <img class="chartImg" [src]="imgURL">
+              </div>
+              <div class="square" *ngIf=!imgURL>
+                <p class="mt-2 text-center">Aquí podrás ver tu gráfico una vez cargado</p>
+              </div>
+          </div>
+          <div class="col-lg-7 offset-lg-1 col-md-12 ps-lg-5">
+            <h2>Sube una imagen o introduce una URL</h2>
+            <div class="field-radiobutton">
+              <p-radioButton name="typeImport" value="imgUpload" [(ngModel)]="typeImport" inputId="typeImport1"></p-radioButton>
+              <div class="containerButton">
+                <div class="button-wrap">
+                  <label class="custom-file-upload" [ngClass]="typeImport === 'imgURLUpload' ? 'disabledInput' : ''">
+                    <input [attr.disabled]="typeImport === 'imgURLUpload' ? '' : null" id="upload" (change)="manageImage($event)" type="file">
+                    Carga una imagen
+                </label>
+              </div>
+            </div>
+            <p>{{ nameFile }}</p>
+            </div>
+            <div class="field-radiobutton">
+                <p-radioButton name="typeImport" value="imgURLUpload" [(ngModel)]="typeImport" inputId="typeImport2"></p-radioButton>
+                <label>
+                  <div class="d-flex flex-row imgURLUploadClass">
+                    <input [attr.disabled]="typeImport === 'imgUpload' ? '' : null" type="text">
+                    <button [attr.disabled]="typeImport === 'imgUpload' ? '' : null" [ngClass]="typeImport === 'imgUpload' ? 'disabledInput' : ''">BUSCAR IMAGEN</button>
+                  </div>
+                </label>
+            </div>
+            <div class="confirmButtons row mt-5">
+              <button [attr.disabled]="!imgURL ? '' : null"  [ngClass]="!imgURL ? 'disabledConfirm' : ''"  class="offset-1 col-5" (click)="startEvaluationMethod()">EMPEZAR</button>
+              <button [attr.disabled]="!imgURL ? '' : null"  [ngClass]="!imgURL ? 'disabledConfirm' : ''" class="offset-1 col-5" (click)="deleteImage()"><i class="pi pi-times"></i> BORRAR IMAGEN</button>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div *ngIf=startEvaluation>
+  <div class="container mt-5" *ngIf=imgURL>
+    <evaluate-form [srcImg]="imgURL" [idHeuristic]="_idHeuristic" [valueProgressBar]="_idValueProgressBar" (newItemEvent)="pushInfoForm($event)" (backItemEmit)="backButton()"></evaluate-form>
+  </div>
+</div>
+<div class="mt-5" *ngIf=showResultsBrief id=pdfResults>
+  <h2 class="text-center">RESULTADOS</h2>
+  <div class="mt-5 container d-flex align-items-center justify-content-center">
+    <img class="chartImgResult" src={{imgURL}} alt="Gráfico introducido">
+  </div>
+  <div class="container containerResults mt-5">
+    <p class="text-center">
+      El resultado obtenido es el valor ponderado sobre 10 tras haber aplicado una fórmula a las distintas opciones marcadas a lo largo del formulario.</p>
+      <p class="text-center">Este resultado indica la accesibilidad que presenta el gráfico introducido, en ningún caso una nota superior a 5 asegura la accesibilidad del gráfico.</p>
+      <h2 class="smallH2 text-center">El resultado de la ponderación es el siguiente: <b>{{totalResult}}</b></h2>
+      <p class="text-center">Se han calculado además los siguientes valores en relación al gráfico:</p>
+      <div class="container text-center">
+        <p><b>Tasa de problemas únicos</b>: ayuda a descubrir cuál de los dos grupos de heurísticas encuentra más problemas únicos (p)</p>
+        <h2 class="smallH2 text-center">El resultado de la tasa de problemas únicos es el siguiente: <b>{{totalResult}}</b></h2>
+        <p><b>Tasa de dispersión de problemas</b>: mide la distribución de los problemas (δ) en cada grupo de heurísticas a través de la
+          desviación estándar de dicha distribución.</p>
+        <h2 class="smallH2 text-center">El resultado de la tasa de dispersión de problemas es el siguiente: <b>{{totalResult}}</b></h2>
+        <p><b>Tasa de severidad</b>: la relación entre la severidad promedio (λ) de los problemas detectados con uno y otro grupo. Para el
+          cálculo de la severidad se tuvieron en cuenta los tres niveles de ponderación propuestos para el conjunto de heurísticas
+          presentado y los tres niveles de conformidad propios de las WCAG (A, AA y AAA).
+        </p>
+        <h2 class="smallH2 text-center">El resultado de la tasa de severidad es el siguiente: <b>{{totalResult}}</b></h2>
+        <p><b>Tasa de especificidad</b>: relaciona los promedios de especificidad (ε) de ambos grupos. Para calcularlo se tuvieron en cuenta dos niveles de especificidad: uno para los indicadores aplicables a cualquier tipo de sitio web o aplicación, y otro para
+          los indicadores sólo aplicables a gráficos estadísticos.</p>
+        <h2 class="smallH2 text-center">El resultado de la tasa de especificidad es el siguiente: <b>{{totalResult}}</b></h2>
+      </div>
+    </div>
+  <div class="mt-5 container text-center">
+    <div class="containerResults">
+      <div *ngFor="let result of formValue; let i = index">
+        <div class="row">
+          <div class="col-4">
+            <h2 class="smallH2">H{{i+1}} - {{constHeuristicsTitles[i]}}</h2>
+          </div>
+          <div class="offset-2 col-6">
+            <p>{{constLikert[result.optionLinkert]}}</p>
+          </div>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+  <div class="containerButtons row justify-content-center mt-5">
+    <button class="col-5 buttonEndForm" (click)="downloadResults()"><i class="pi pi-download"></i> DESCARGAR</button>
+    <button class="ms-2  col-5 buttonEndForm" (click)="redirectToEvaluate()" >FINALIZAR</button>
+  </div>
 </div>

@@ -9,6 +9,11 @@
       <div class="container">
         <h2 class="titles">Definición</h2>
         <p>{{_heuristic.definition}}</p>
+        <p class="mt-4">{{_heuristic.understand}}</p>
+      </div>
+      <div class="container">
+        <h2 class="titles">Cómo cumplir el objetivo</h2>
+        <p>{{_heuristic.how_to_test}}</p>
       </div>
       <div class="container">
         <h2 class="titles">Lista de verificación <i class="pi pi-info-circle" pTooltip="Criterios a utilizar para la evaluación de un gráfico estadístico" tooltipPosition="right"></i></h2>
@@ -21,12 +26,12 @@
         <p>{{_heuristic.benefied_user}}</p>
       </div>
       <div class="container">
-        <h2 class="titles">Peso {{_heuristic.weigth?.id}}</h2>
+        <h2 class="titles">Peso x{{_heuristic.weigth?.id}}</h2>
         <p>{{_heuristic.weigth?.description}}</p>
       </div>
       <div class="container">
-        <h2 class="titles">Ejemplo</h2>
-        <p>Lore ipsum...</p>
+        <h2 class="titles">Ejemplos de puntuación</h2>
+        <p class="info text-start" *ngFor="let example of _heuristic.examples"><i class="pi pi-angle-right mt-1"></i>{{example}}</p>
       </div>
     </div>
   </div>
@@ -39,4 +44,4 @@
       </div>
     </div>
   </div>
-</div> 
+</div>
