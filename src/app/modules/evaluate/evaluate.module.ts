@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { UbayButtonModule } from 'app/components/ubay-button/ubay-button.module';
 import { HttpClientModule } from '@angular/common/http';
 
+import { EvaluateFormModule } from 'app/components/evaluate-form/evaluate-form.module';
 
 @NgModule({
   declarations: [
@@ -16,15 +17,17 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
+    RouterModule,
     RadioButtonModule,
     TooltipModule,
     evaluateRoutingModule,
     FormsModule,
-    HttpClientModule,
-    UbayButtonModule
+    UbayButtonModule,
+    EvaluateFormModule,
+    evaluateRoutingModule
   ],
   providers: [
-    RouterModule
   ]
 })
 export class evaluateStatusModule { }

@@ -1,5 +1,5 @@
 @import './../../../variables';
-@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200..900');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200..900');
 
 h2 {
@@ -13,7 +13,11 @@ h2 {
 .evaluate {
     margin: 6em auto;
 }
-
+.chartImg {
+  width: 450px;
+  height: 450px;
+  object-fit: cover;
+}
 .instructions, .evaluate {
     .pi-info-circle {
         &:hover {
@@ -27,15 +31,38 @@ h2 {
         }
     }
     .square {
-        width: 400px;
-        height: 400px;
+        width: 450px;
+        height: 450px;
         background-color: $color-hovered;
         border: 1px solid $color-dark;
         position: relative;
         p {
           font-weight: 600;
         }
-    } 
+    }
+    .confirmButtons {
+      .disabledConfirm {
+        cursor: not-allowed;
+        background-color: $light-blue-darkered;
+        color: $color-dark;
+      }
+      button {
+        box-sizing: border-box;
+        height: 72px;
+        left: 0px;
+        top: 0px;
+        color: $color-light;
+        text-transform: uppercase;
+        font-family: "Karla",  sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 16px;
+        letter-spacing: 0.25em;
+        line-height: 72px;
+        background: #34385E;
+        border: 1px solid #000000;
+      }
+    }
     .field-radiobutton {
       gap: 1em;
       display: flex;
@@ -44,6 +71,38 @@ h2 {
       align-items: center;
       input[type="file"] {
         display: none;
+      }
+      .imgURLUploadClass{
+        position: relative;
+        width: 30em;
+        input {
+          width: 100%;
+          height: 5em;
+        }
+        button {
+          position: absolute;
+          right: 3px;
+          top: 3px;
+          bottom: 3px;
+          display: inline-block;
+          padding: 0.8em;
+          z-index: 2;
+          cursor: pointer;
+          color: $color-dark;
+          text-transform: uppercase;
+          font-family: "Karla",  sans-serif;
+          font-weight: 600;
+          font-style: normal;
+          font-size: 15px;
+          letter-spacing: 0.25em;
+          line-height: 50px;
+          background: $light-blue;
+          border: 0.5px solid $color-dark;
+        }
+      }
+      .disabledInput{
+        cursor: not-allowed;
+        background-color: $light-blue-darkered !important;
       }
       .custom-file-upload {
         display: inline-block;
@@ -54,7 +113,7 @@ h2 {
         font-family: "Karla",  sans-serif;
         font-weight: 600;
         font-style: normal;
-        font-size: 16px;
+        font-size: 15px;
         letter-spacing: 0.25em;
         line-height: 50px;
         background: $light-blue;
@@ -132,4 +191,26 @@ h2 {
       }
     }
   }
+}
+.chartImgResult {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+}
+.smallH2{
+  font-size: 12px;
+}
+.buttonEndForm {
+    box-sizing: border-box;
+    height: 49px;
+    width: 13em;
+    color: $color-light;
+    text-transform: uppercase;
+    font-family: "Karla",  sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    letter-spacing: 0.25em;
+    background: #34385E;
+    border: 1px solid #000000;
 }

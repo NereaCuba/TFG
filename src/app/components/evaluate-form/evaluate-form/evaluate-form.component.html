@@ -1,0 +1,71 @@
+<h2 class="text-center">{{_heuristic.id}} - {{_heuristic.name}}</h2>
+<div class="container text-center">
+  <p class="mt-4 info">{{_heuristic.understand}}</p>
+  <p class="subTitle">Cómo cumplir el objetivo</p>
+  <p class="info">{{_heuristic.how_to_test}}</p>
+  <p class="subTitle dropDown" (click)="hideExamples()">Ejemplos de puntuación <i class="ms-1 pi" [ngClass]="showExamples ? 'pi-chevron-down' : 'pi-chevron-up'" ></i></p>
+  <div class="container" *ngIf="showExamples">
+    <p class="info text-start" *ngFor="let example of _heuristic.examples"><i class="pi pi-angle-right mt-1"></i>{{example}}</p>
+  </div>
+</div>
+<hr>
+<div class="row justify-content-md-center mt-4">
+  <div class="col-8 d-flex flex-column justify-content-center">
+    <p class="mt-4 subTitle">PROGRESO DEL FORMULARIO</p>
+    <p-progressBar class="mb-4 mt-4 progressBar" [value]="_valueProgressBar"></p-progressBar>
+    <form #myForm="ngForm" class="text-center mt-4" (submit)="templateForm(myForm.value)">
+      <div class="containerForm">
+        <p class="subTitle mb-4 rateChart">PUNTUA EL GRÁFICO</p>
+        <div class="row text-start mt-2">
+          <div class="col-6 d-flex justify-content-center align-items-center">
+            <img class="chartImg" src={{srcImg}} alt="Gráfico introducido">
+          </div>
+          <div class="col-6 d-flex justify-content-center">
+            <div class="containerForm">
+              <div class="field-radiobutton">
+                <p-radioButton name="optionLinkert" value=0 [(ngModel)]="optionLinkert" inputId="optionLinkert1"></p-radioButton>
+                <label for="optionLinkert1">(-) - No aplica</label>
+              </div>
+              <div class="field-radiobutton">
+                <p-radioButton name="optionLinkert" value=1 [(ngModel)]="optionLinkert" inputId="optionLinkert2"></p-radioButton>
+                <label for="optionLinkert2">(-) - No es problema</label>
+              </div>
+              <div class="field-radiobutton">
+                <p-radioButton name="optionLinkert" value=2 [(ngModel)]="optionLinkert" inputId="optionLinkert3"></p-radioButton>
+                <label for="optionLinkert3">0 - No cumplimiento</label>
+              </div>
+              <div class="field-radiobutton">
+                <p-radioButton name="optionLinkert" value=3 [(ngModel)]="optionLinkert" inputId="optionLinkert4"></p-radioButton>
+                <label for="optionLinkert4">1 - Cumplimiento muy bajo</label>
+              </div>
+              <div class="field-radiobutton">
+                <p-radioButton name="optionLinkert" value=4 [(ngModel)]="optionLinkert" inputId="optionLinkert5"></p-radioButton>
+                <label for="optionLinkert5">2 - Cumplimiento bajo</label>
+              </div>
+              <div class="field-radiobutton">
+                <p-radioButton name="optionLinkert" value=5 [(ngModel)]="optionLinkert" inputId="optionLinkert6"></p-radioButton>
+                <label for="optionLinkert6">3 - Cumplimiento aceptable</label>
+              </div>
+              <div class="field-radiobutton">
+                <p-radioButton name="optionLinkert" value=6 [(ngModel)]="optionLinkert" inputId="optionLinkert6"></p-radioButton>
+                <label for="optionLinkert7">4- Cumplimiento alto</label>
+              </div>
+              <div class="field-radiobutton">
+                <p-radioButton name="optionLinkert" value=7 [(ngModel)]="optionLinkert" inputId="optionLinkert8"></p-radioButton>
+                <label for="optionLinkert8">5 - Cumplimiento muy alto</label>
+              </div>
+              <div class="field-radiobutton">
+                <p-radioButton name="optionLinkert" value=8 [(ngModel)]="optionLinkert" inputId="optionLinkert9"></p-radioButton>
+                <label for="optionLinkert9">6 - Cumplimiento excelente</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="containerButtons row justify-content-center mt-3">
+        <button class="col-5" type="submit" (click)="backButton()"><i class="pi pi-times"></i> ATRÁS</button>
+        <button class="ms-2  col-5" type="submit" >{{_idHeuristic === 'H18' ? 'FINALIZAR' : 'SIGUIENTE'}}</button>
+      </div>
+    </form>
+  </div>
+</div>
