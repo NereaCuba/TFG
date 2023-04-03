@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { DetailHeuristicsService } from './../../modules/heuristic-detail/services/heuristic-detail.service';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { ToastModule } from 'primeng/toast';
+import { MdbModalService } from 'mdb-angular-ui-kit/modal';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ToastModule } from 'primeng/toast';
     EvaluateFormComponent
     ],
   providers: [
-    DetailHeuristicsService
+    DetailHeuristicsService,
+    MdbModalService
   ],
 })
 export class EvaluateFormModule { }

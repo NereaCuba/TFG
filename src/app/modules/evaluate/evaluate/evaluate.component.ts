@@ -12,6 +12,7 @@ export class EvaluateComponent {
   typeImport: string = 'imgUpload';
   nameFile: string = 'No se ha seleccionado ningún archivo';
   file:any = null;
+  inputValue: any = '';
   imgURL: any = null;
   image: any = null;
   @ViewChild('pdfResults')
@@ -19,12 +20,14 @@ export class EvaluateComponent {
   startEvaluation: boolean = false;
   showResultsBrief: boolean = false;
   showTotalResults: boolean = false;
+  showResults: boolean =  false;
   showIntroduction: boolean = true;
-  totalResult: number = 0;
+  totalResult: any = 0;
   _idValueHeuristics: any = 0;
   _idValueProgressBar: any = this.calculateProgress(this._idValueHeuristics);
   _idHeuristic: string = 'H' + (this._idValueHeuristics + 1).toString();
   formValue: any = [];
+  oldFormValue: any = [];
   constLikert: any = ['No aplica', 'No es problema', 'No cumplimiento', 'Cumplimiento muy bajo', 'Cumplimiento bajo', 'Cumplimiento aceptable', 'Cumplimiento alto', 'Cumplimiento muy alto', 'Cumplimiento excelente'];
   constHeuristicsTitles: any = [
     'Título',
@@ -47,6 +50,8 @@ export class EvaluateComponent {
     'Personalización'
   ];
   constWeightHeuristics: any = [1,1,1,1,1,1,1,1,3,3,3,2,3,2,3,1,3,2,];
+  scoreAll:any = [];
+
   constructor(
     private router: Router
   ) {}
@@ -75,8 +80,8 @@ export class EvaluateComponent {
   }
   backButton() {
     if (this.formValue.length > 0) {
-      this.formValue.pop();
       this._idValueHeuristics -= 1;
+      this.formValue.pop();
       this._idHeuristic = 'H' + (this._idValueHeuristics + 1).toString();
       this. _idValueProgressBar = this.calculateProgress(this._idValueHeuristics);
     } else {
@@ -86,6 +91,7 @@ export class EvaluateComponent {
       this.showIntroduction = true;
     }
   }
+
   pushInfoForm(event) {
     if(event) {
       if(this._idValueHeuristics === 17) {
@@ -93,15 +99,12 @@ export class EvaluateComponent {
         this.showResultsBrief = true;
         this.formValue.push(event);
         this.calculatePonderation();
-        this.uniqueProblems();
-        this.problemsDispersion();
-        this.severityRate();
-        this.specifity();
       } else {
         this.formValue.push(event);
         this._idValueHeuristics += 1;
         this._idHeuristic = 'H' + (this._idValueHeuristics + 1).toString();
         this. _idValueProgressBar = this.calculateProgress(this._idValueHeuristics);
+        this.oldFormValue = [...this.formValue];
       }
     } else {
       this.backButton();
@@ -126,31 +129,30 @@ export class EvaluateComponent {
     var summatoryCurrentAsignation = 0;
     var summatoryTotalAsignation = 0;
     this.formValue.forEach((value, index) => {
-      if (value.optionLinkert !== 0 && value.optionLinkert !== 1) {
-        summatoryCurrentAsignation += (value.optionLinkert - 2) *  this.constWeightHeuristics[index];
-        summatoryTotalAsignation += 6 * this.constWeightHeuristics[index]
+      console.log(value.optionLinkert);
+
+      if (value.optionLinkert != 0 && value.optionLinkert != 1) {
+        var currentAssignation = (value.optionLinkert - 2) *  this.constWeightHeuristics[index];
+        var maxAssignation = 6 * this.constWeightHeuristics[index];
+        summatoryCurrentAsignation += currentAssignation;
+        summatoryTotalAsignation += maxAssignation;
+
+        this.scoreAll.push(((currentAssignation * 10)/maxAssignation).toFixed(2));
+      } else {
+        this.scoreAll.push(value.optionLinkert != 0 ? 'NP' : 'NA');
       }
     });
 
-    this.totalResult = (summatoryCurrentAsignation * 10)/summatoryTotalAsignation;
-  }
-  uniqueProblems() {
-
-  }
-  problemsDispersion() {
-
-  }
-  severityRate() {
-
-  }
-  specifity() {
-
+    this.totalResult = ((summatoryCurrentAsignation * 10)/summatoryTotalAsignation).toFixed(2);
   }
 
   deleteImage() {
     this.imgURL = null;
-    this.image = null;
-    this.file = null;
     this.nameFile = 'No se ha seleccionado ningún archivo';
+    this.inputValue = ''
   }
+  goToResults() {
+    console.log(this.formValue);
+  }
+
 }

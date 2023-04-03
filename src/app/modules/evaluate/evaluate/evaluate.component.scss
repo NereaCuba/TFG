@@ -214,3 +214,137 @@ h2 {
     background: #34385E;
     border: 1px solid #000000;
 }
+.Score0, .Score1 {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+    font-family: "Raleway", sans-serif;
+    color: #696969;
+}
+
+.Score2 {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+  color: #f25900;
+}
+.Score3 {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+  color: #f2be00;
+}
+.Score4 {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+  color: #def200;
+}
+.Score5 {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+  color: #79f200;
+}
+.Score6 {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+  color: #65f200;
+}
+.Score7 {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+  color: #24f200;
+}
+.Score8 {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+  color: #00f249;
+}
+.stickyImg {
+  position: sticky;
+  bottom: 2%;
+  align-self: flex-end;
+  .charImgBrief {
+    height: 500px;
+    width: 500px;
+  }
+}
+.globalContainer {
+  border-left: 2px solid lightgrey;
+  .elementSquareRed,  .elementSquareGreen{
+    height: 25px;
+    width: 25px;
+  }
+  .legend {
+    font-weight: 500;
+    color: $color-dark;
+  }
+  .elementSquareRed {
+    background-color: lightcoral;
+    border: 1px solid red;
+  }
+  .elementSquareGreen {
+    background-color: lightgreen;
+    border: 1px solid green;
+  }
+  .containerBrief {
+    margin-bottom: 5em;
+    .circleColor {
+      background: lightgreen;
+      border-radius: 50%;
+      height: 100px;
+      width: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        background-color: rgb(0, 255, 0);
+        cursor: pointer;
+      }
+    }
+    .redirectToAnswer {
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      color: $color-dark;
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+    .noBottom {
+      margin-bottom: 0;
+    }
+    .red {
+      background: lightcoral;
+      &:hover{
+        background: rgb(255, 16, 16);
+        cursor: pointer;
+      }
+    }
+    .circleContainer {
+      color: white;
+      margin-top: auto;
+      font-weight: 700;
+      font-size: 38px;
+      margin-bottom: auto;
+    }
+    .heuristicTitleCircle {
+      margin-bottom: auto;
+      margin-top: auto;
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+    }
+  }
+}
