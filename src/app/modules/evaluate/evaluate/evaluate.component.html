@@ -1,3 +1,4 @@
+<p-toast></p-toast>
 <div *ngIf=showIntroduction>
   <div class="introduction">
     <h2 class="text-center">Introducción a la evaluación</h2>
@@ -117,8 +118,11 @@
   <div class="evaluate container">
       <div class="row justify-content-center">
           <div class="col-lg-4 col-md-12">
-              <div *ngIf=imgURL>
-                  <img class="chartImg" [src]="imgURL">
+              <div *ngIf='imgURL'>
+                  <img class="chartImg" [src]="imgURL" *ngIf="!isIFrame">
+                  <div class="" *ngIf="isIFrame">
+                    <iframe [src]="imgURL | safe " style="width: 100%; height: 600px; border: 0px none;"></iframe>
+                  </div>
               </div>
               <div class="square" *ngIf=!imgURL>
                 <p class="mt-2 text-center">Aquí podrás ver tu gráfico una vez cargado</p>
@@ -127,23 +131,23 @@
           <div class="col-lg-7 offset-lg-1 col-md-12 ps-lg-5">
             <h2>Sube una imagen o introduce una URL</h2>
             <div class="field-radiobutton">
-              <p-radioButton name="typeImport" value="imgUpload" [(ngModel)]="typeImport" inputId="typeImport1"></p-radioButton>
+              <p-radioButton name="typeImport" value="imgUpload" [(ngModel)]="typeImport" inputId="typeImport1" (onClick)="changeTypeInput($event)"></p-radioButton>
               <div class="containerButton">
                 <div class="button-wrap">
                   <label class="custom-file-upload" [ngClass]="typeImport === 'imgURLUpload' ? 'disabledInput' : ''">
-                    <input [attr.disabled]="typeImport === 'imgURLUpload' ? '' : null" id="upload" (change)="manageImage($event)" type="file">
+                    <input [(ngModel)]="inputValue" [attr.disabled]="typeImport === 'imgURLUpload' ? '' : null" id="upload" (input)="manageImage($event)" type="file" >
                     Carga una imagen
                 </label>
               </div>
             </div>
-            <p>{{ nameFile }}</p>
+            <p [ngClass]="_okImageInput ? _loadedImageInput ? 'okInput' : '' : 'errorInput'">{{ nameFile }} <i *ngIf="_loadedImageInput" class="ms-4 pi pi-check"></i></p>
             </div>
             <div class="field-radiobutton">
-                <p-radioButton name="typeImport" value="imgURLUpload" [(ngModel)]="typeImport" inputId="typeImport2"></p-radioButton>
-                <label>
+                <p-radioButton name="typeImport" value="imgURLUpload" [(ngModel)]="typeImport" inputId="typeImport2" (onClick)="changeTypeInput($event)"></p-radioButton>
+                <label class="w-100">
                   <div class="d-flex flex-row imgURLUploadClass">
-                    <input [attr.disabled]="typeImport === 'imgUpload' ? '' : null" type="text">
-                    <button [attr.disabled]="typeImport === 'imgUpload' ? '' : null" [ngClass]="typeImport === 'imgUpload' ? 'disabledInput' : ''">BUSCAR IMAGEN</button>
+                    <input [disabled]="typeImport === 'imgUpload' ? true : null" [(ngModel)]="URLLink" type="text">
+                    <button [disabled]="typeImport === 'imgUpload' ? true : null" [ngClass]="typeImport === 'imgUpload' ? 'disabledInput' : ''" (click)="getImageFromURL()">BUSCAR IMAGEN</button>
                   </div>
                 </label>
             </div>
@@ -157,45 +161,101 @@
 </div>
 <div *ngIf=startEvaluation>
   <div class="container mt-5" *ngIf=imgURL>
-    <evaluate-form [srcImg]="imgURL" [idHeuristic]="_idHeuristic" [valueProgressBar]="_idValueProgressBar" (newItemEvent)="pushInfoForm($event)" (backItemEmit)="backButton()"></evaluate-form>
+    <evaluate-form [srcImg]="imgURL" [isIFrame]="isIFrame" [comesFromBrief]="isComingFromBrief" [idHeuristic]="_idHeuristic" [valueProgressBar]="_idValueProgressBar" [currentValue]="oldFormValue" (newItemEvent)="pushInfoForm($event)" (backItemEmit)="backButton()"></evaluate-form>
   </div>
 </div>
 <div class="mt-5" *ngIf=showResultsBrief id=pdfResults>
-  <h2 class="text-center">RESULTADOS</h2>
-  <div class="mt-5 container d-flex align-items-center justify-content-center">
-    <img class="chartImgResult" src={{imgURL}} alt="Gráfico introducido">
-  </div>
-  <div class="container containerResults mt-5">
-    <p class="text-center">
-      El resultado obtenido es el valor ponderado sobre 10 tras haber aplicado una fórmula a las distintas opciones marcadas a lo largo del formulario.</p>
-      <p class="text-center">Este resultado indica la accesibilidad que presenta el gráfico introducido, en ningún caso una nota superior a 5 asegura la accesibilidad del gráfico.</p>
-      <h2 class="smallH2 text-center">El resultado de la ponderación es el siguiente: <b>{{totalResult}}</b></h2>
-      <p class="text-center">Se han calculado además los siguientes valores en relación al gráfico:</p>
-      <div class="container text-center">
-        <p><b>Tasa de problemas únicos</b>: ayuda a descubrir cuál de los dos grupos de heurísticas encuentra más problemas únicos (p)</p>
-        <h2 class="smallH2 text-center">El resultado de la tasa de problemas únicos es el siguiente: <b>{{totalResult}}</b></h2>
-        <p><b>Tasa de dispersión de problemas</b>: mide la distribución de los problemas (δ) en cada grupo de heurísticas a través de la
-          desviación estándar de dicha distribución.</p>
-        <h2 class="smallH2 text-center">El resultado de la tasa de dispersión de problemas es el siguiente: <b>{{totalResult}}</b></h2>
-        <p><b>Tasa de severidad</b>: la relación entre la severidad promedio (λ) de los problemas detectados con uno y otro grupo. Para el
-          cálculo de la severidad se tuvieron en cuenta los tres niveles de ponderación propuestos para el conjunto de heurísticas
-          presentado y los tres niveles de conformidad propios de las WCAG (A, AA y AAA).
-        </p>
-        <h2 class="smallH2 text-center">El resultado de la tasa de severidad es el siguiente: <b>{{totalResult}}</b></h2>
-        <p><b>Tasa de especificidad</b>: relaciona los promedios de especificidad (ε) de ambos grupos. Para calcularlo se tuvieron en cuenta dos niveles de especificidad: uno para los indicadores aplicables a cualquier tipo de sitio web o aplicación, y otro para
-          los indicadores sólo aplicables a gráficos estadísticos.</p>
-        <h2 class="smallH2 text-center">El resultado de la tasa de especificidad es el siguiente: <b>{{totalResult}}</b></h2>
+  <h2 class="text-center">RESUMEN DE LA EVALUACIÓN</h2>
+  <div class="mt-5 row">
+    <div class="col-6 d-flex justify-content-center">
+      <div class="stickyImg">
+        <img class="charImgBrief" src={{imgURL}} alt="Gráfico introducido" *ngIf="!isIFrame">
+        <div class="" *ngIf="isIFrame">
+          <iframe src={{imgURL}} style="width: 100%; height: 600px; border: 0px none;"></iframe>
+        </div>
       </div>
     </div>
+    <div class="col-6 d-flex justify-content-center globalContainer">
+      <div class="containerResults">
+        <div class="mt-3 d-flex flex-row justify-content-end align-items-center">
+          <div class="col-3 d-flex">
+            <div class="elementSquareRed"></div>
+            <p class="ms-2 legend">No respondido</p>
+          </div>
+          <div class="offset-1 col-3 d-flex">
+            <div class="elementSquareGreen"></div>
+            <p class="ms-2 legend">Respondido</p>
+          </div>
+        </div>
+        <div class="d-flex flex-column mt-5">
+          <div class="containerBrief row" *ngFor="let result of formValue; let i = index">
+            <div class="col-12">
+              <div class="d-flex flex-row align-items-center" (click)="goToAnswer(i)" [ngClass]="!constLikert[result.optionLinkert] ? 'justify-content-start' : 'justify-content-end'">
+                <div *ngIf="constLikert[result.optionLinkert]" class="d-flex flex-column me-4 justify-content-start align-items-end">
+                  <p class="heuristicTitleCircle">{{constHeuristicsTitles[i]}}</p>
+                  <p class="noBottom">{{constLikert[result.optionLinkert]}}</p>
+                  <p class="redirectToAnswer">Ir a la heurística</p>
+                </div>
+                <div class="circleColor" [ngClass]="!constLikert[result.optionLinkert] ? 'red' : ''">
+                    <p class="circleContainer">H{{i+1}}</p>
+                </div>
+                <div *ngIf="!constLikert[result.optionLinkert]" class="d-flex flex-column ms-4 justify-content-start align-items-start">
+                  <p class="heuristicTitleCircle">{{constHeuristicsTitles[i]}}</p>
+                  <p class="noBottom">No respondido</p>
+                  <p class="redirectToAnswer">Ir a la heurística</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="containerButtons row justify-content-center mt-5">
+    <button class="col-5 buttonEndForm" (click)="goToResults()">FINALIZAR</button>
+  </div>
+</div>
+<div class="mt-5" *ngIf=showResults id=pdfResults>
+  <h2 class="text-center">RESULTADOS</h2>
+  <div class="mt-5 container d-flex align-items-center justify-content-center">
+    <div class="" *ngIf="isIFrame">
+      <iframe src={{imgURL}} style="width: 100%; height: 600px; border: 0px none;"></iframe>
+    </div>
+    <img  *ngIf="!isIFrame" class="chartImgResult" src={{imgURL}} alt="Gráfico introducido">
+    <div class="ms-5">
+      <span><p>La puntuación global de tu gráfico es la siguiente:</p><h2 class="smallH2">{{totalResult}}</h2></span>
+    </div>
+  </div>
   <div class="mt-5 container text-center">
     <div class="containerResults">
+      <div class="row">
+        <div class="col-4 d-flex justify-content-center align-items-center">
+          <h2 class="smallH2">Heurística</h2>
+        </div>
+        <div class="col-2 d-flex justify-content-center align-items-center">
+          <h2 class="smallH2">Nota ponderada</h2>
+        </div>
+        <div class="col-4 d-flex justify-content-center align-items-center">
+          <h2 class="smallH2">Resultado seleccionado</h2>
+        </div>
+        <div class="col-2 d-flex justify-content-center align-items-center">
+          <h2 class="smallH2">Peso</h2>
+        </div>
+      </div>
+      <hr>
       <div *ngFor="let result of formValue; let i = index">
         <div class="row">
-          <div class="col-4">
+          <div class="col-4 d-flex justify-content-center align-items-center">
             <h2 class="smallH2">H{{i+1}} - {{constHeuristicsTitles[i]}}</h2>
           </div>
-          <div class="offset-2 col-6">
-            <p>{{constLikert[result.optionLinkert]}}</p>
+          <div class="col-2 d-flex justify-content-center align-items-center">
+            <p>{{scoreAll[i]}}</p>
+          </div>
+          <div class="col-4 d-flex justify-content-center align-items-center">
+            <p [ngClass]="'Score' + result.optionLinkert">{{constLikert[result.optionLinkert]}}</p>
+          </div>
+          <div class="col-2 d-flex justify-content-center align-items-center">
+            <p>x{{constWeightHeuristics[i]}}</p>
           </div>
         </div>
         <hr>
@@ -204,6 +264,6 @@
   </div>
   <div class="containerButtons row justify-content-center mt-5">
     <button class="col-5 buttonEndForm" (click)="downloadResults()"><i class="pi pi-download"></i> DESCARGAR</button>
-    <button class="ms-2  col-5 buttonEndForm" (click)="redirectToEvaluate()" >FINALIZAR</button>
+    <button class="ms-2  col-5 buttonEndForm" pButton pRipple (click)="redirectToEvaluate()" >FINALIZAR</button>
   </div>
 </div>

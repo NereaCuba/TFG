@@ -6,16 +6,21 @@ import {MenubarModule} from 'primeng/menubar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DialogModule } from 'primeng/dialog';
+import { SettingsModule } from './components/settings/settings.module';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
     ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     MenubarModule,
-    NgbModule
+    NgbModule,
+    DialogModule,
+    SettingsModule
   ],
   providers: [
     MdbModalService

@@ -49,6 +49,13 @@ const routes: Routes = [
         './modules/heuristic-detail/heuristic-detail.module'
       ).then((m) => m.heuristicsDetailStatusModule),
   },
+  {
+    path: 'articles-detail',
+    loadChildren: () =>
+      import(
+        './modules/articles-detail/articles-detail.module'
+      ).then((m) => m.articlesDetailStatusModule),
+  }
 ];
 
 @NgModule({

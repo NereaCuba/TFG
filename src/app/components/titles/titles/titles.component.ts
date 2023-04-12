@@ -10,6 +10,7 @@ export class TitlesComponent {
   _title!: string;
   _article!: boolean;
   _comesFromList!: boolean;
+  _comesFromHeuristicDetail!: boolean;
   @Input()
   get image(): string {
     return this.image_source;
@@ -37,6 +38,13 @@ export class TitlesComponent {
   }
   set comesFromList(value: boolean) {
     this._comesFromList = value;
+  }
+  @Input()
+  get comesFromHeuristicDetail(): boolean {
+    return this._comesFromHeuristicDetail;
+  }
+  set comesFromHeuristicDetail(value: boolean) {
+    this._comesFromHeuristicDetail = value;
   }
   constructor() {}
 

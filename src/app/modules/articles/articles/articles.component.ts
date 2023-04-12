@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleService } from '../services/articles.service';
 import { ArticleBasicInfo, ArticlesResponse, Author } from 'app/models/general.interfaces';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-articles',
@@ -14,7 +15,8 @@ export class ArticlesComponent implements OnInit {
   authors: Author[] = [];
   data: string = '';
   constructor(
-    private articleService: ArticleService) {}
+    private articleService: ArticleService,
+    private router: Router) {}
   ngOnInit() {
     this.articleService.getArticles().subscribe((res: ArticlesResponse) => {
     this.articles = res.articles;
@@ -29,5 +31,12 @@ export class ArticlesComponent implements OnInit {
         return element;
       }
     });
+  }
+  redirectTo(uri: string, additionalInfo?: any) {
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
+    this.router.navigate([uri], {queryParams: {articleID: additionalInfo}}));
+  }
+  articleShowInformation(value?: any) {
+    this.redirectTo('/articles-detail', value?.id);
   }
 }
