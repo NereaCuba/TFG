@@ -26,8 +26,8 @@ export class EvaluateFormComponent implements OnInit {
   modalRef: MdbModalRef<ShowMoreImageComponent> | null = null;
   optionLinkert: any = null;
   _heuristic: HeuristicBasicInfo = {} as HeuristicBasicInfo;
-  @Output() newItemEvent = new EventEmitter<string>();
-  @Output() backItemEmit = new EventEmitter<string>();
+  @Output() newItemEvent = new EventEmitter<any>();
+  @Output() backItemEmit = new EventEmitter<any>();
   visible: boolean = false;
   loading:boolean = true;
   loaded:boolean = false;
@@ -94,9 +94,15 @@ export class EvaluateFormComponent implements OnInit {
       this.loaded = false;
       this.ngOnInit();
     } else if(this.comesFromBrief) {
-      this.newItemEvent.emit(value)
+      var response = {
+        optionLinkert: this.optionLinkert
+      }
+      this.newItemEvent.emit(response)
     } else {
-      this.newItemEvent.emit(value)
+      var response = {
+        optionLinkert: this.optionLinkert
+      }
+      this.newItemEvent.emit(response)
       this.loading = true;
       this.loaded = false;
       this.ngOnInit();

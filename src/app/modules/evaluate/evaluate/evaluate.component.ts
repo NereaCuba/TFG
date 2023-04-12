@@ -159,6 +159,8 @@ export class EvaluateComponent {
   }
 
   pushInfoForm(event) {
+    console.log(event);
+    
     if(event) {
       if(this.isComingFromBrief) {
         this.isComingFromBrief = false;
@@ -166,13 +168,14 @@ export class EvaluateComponent {
         this.startEvaluation = false;
         this.showResultsBrief = true;
         this.oldFormValue = [...this.formValue];
+        console.log("HOLA");
+        
       } else {
         this.isComingFromBrief = false;
         if(this._idValueHeuristics === 17) {
           this.startEvaluation = false;
           this.showResultsBrief = true;
           this.formValue.push(event);
-          this.calculatePonderation();
         } else {
           this.formValue.push(event);
           this._idValueHeuristics += 1;
@@ -239,6 +242,7 @@ export class EvaluateComponent {
     if(!isValidForm) {
       this.messageService.add({severity: 'error', summary:'Error', detail: 'Aun quedan heurísticas por responder'});
     } else {
+      this.calculatePonderation();
       this.startEvaluation = false;
       this.showResultsBrief = false;
       this.showResults =  true;
