@@ -27,7 +27,7 @@
     <hr>
     <div class="row">
       <div class="col-9 listArticles">
-        <div class="row align-items-stretch mb-5 itemSelected p-2" *ngFor="let article of articles;">
+        <div class="row align-items-stretch mb-5 itemSelected p-2" *ngFor="let article of articles;" (click)="articleShowInformation(article)">
           <div class="col-4" >
             <titles-inline [image]="article.image!" [title]="article.title!" [comesFromList]="true"></titles-inline>
           </div>

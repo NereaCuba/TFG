@@ -40,6 +40,7 @@
             "3 - El gráfico cuenta con un título que sintetiza su propósito, se ajusta a la extensión recomendada, pero no es suficientemente distintivo del resto de gráficos de la página.",
             "4 - El título se ajusta a la extensión recomendada, sintetiza perfectamente el propósito general del gráfico y permite diferenciar al gráfico del resto de gráficos del documento. "
           ],
+          "forbidden_list": [0,1],
           "extra": "Si el título se proporciona como una imagen de texto se debe bajar un punto la valoración. Por ejemplo, si se le asigna un 4 según los criterios anteriores, pero se proporciona como imagen de texto la puntuación final será de 3. Este problema se debe recoger en los comentarios del principio."
       },
       {
@@ -82,6 +83,7 @@
           "3 - No se utiliza (a excepción de si puntuamos un 4 y restamos 1 por ser imagen de texto)",
           "4 - El gráfico cuenta con una leyenda que asocia inequívocamente los colores o patrones utilizados en el gráfico con sus respectivas series de valores asociados. "
           ],
+          "forbidden_list": [],
           "extra": "Si la leyenda se proporciona como una imagen de texto se debe bajar un punto la valoración. Por ejemplo, si se le asigna un 4 según los criterios anteriores, el resultado final será de 3. "
       },
       {
@@ -138,6 +140,7 @@
             "3 - El gráfico cuenta con los ejes necesarios, pero sólo cumple dos de los siguientes requisitos:  a) los ejes tienen un título conciso y descriptivo, b) el texto de los ejes se muestra horizontalmente, y c) si es necesario, muestran la unidad de medida utilizada.",
             "4 - El gráfico cuenta con los ejes necesarios y cumple con todos los requisitos siguientes: a) los ejes tienen un título conciso y descriptivo, b) el texto de los ejes se muestra horizontalmente, y c) si es necesario, muestran la unidad de medida utilizada."
           ],
+          "forbidden_list": [],
           "extra": ""
       },
       {
@@ -157,10 +160,10 @@
               "description":"En caso de no cumplirse, uno o más perfiles de usuario no tendrá una experiencia de usuario satisfactoria al consultar el gráfico, comprometiéndose levemente su accesibilidad para uno o mas perfiles de usuario con baja visión. En caso de estar presente la accesibilidad del gráfico mejora levemente."
           },
           "brief":"¿Cuenta el gráfico con un pie que ayude a comprenderlo?",
-          "example_images": {
+          "example_images": [{
             "image": "",
             "text": []
-          },
+          }],
           "understand": "El objetivo de este principio es asegurar que el gráfico cuenta con un pie de texto que contribuye a facilitar la comprensión del mensaje que el gráfico transmite.",
           "how_to_test": "Redactar un breve pie que sintetice el mensaje que intenta transmitir el gráfico, preferentemente en formato de texto y no como imagen de texto. Si el gráfico es muy simple y el título ya es descriptivo, es pie de imagen podría no ser necesario. ",
           "examples": [
@@ -172,6 +175,7 @@
             "3 -El gráfico cuenta con un pie que sintetiza el mensaje del gráfico o aporta información adicional o conclusiones.",
             "4 - El gráfico cuenta con un pie que sintetiza el mensaje del gráfico y aporta información adicional o conclusiones."
           ],
+          "forbidden_list": [0],
           "extra": "Si el pie se proporciona como una imagen de texto se debe bajar un punto la valoración. Por ejemplo, si se le asigna un 4 según los criterios anteriores, el resultado final será 3."
       },
       {
@@ -217,6 +221,7 @@
             "3 - Se desarrollan todas las abreviaturas en alguna parte del gráfico, pero la forma completa se muestra en otro idioma o con unidades de medida de otro contexto cultural.",
             "4 - Se desarrollan todas las abreviaturas utilizadas en alguna parte del gráfico mediante uno de los métodos previstos para este principio en el idioma del documento y con unidades de medida locales."
           ],
+          "forbidden_list": [],
           "extra": ""
       },
       {
@@ -267,6 +272,7 @@
             "3 - El gráfico cuenta con una breve referencia a la fuente de datos, pero no incluye una de las siguientes características: a) la fecha; b) información sobre el conjunto de datos; c) un enlace a al conjunto de datos.",
             "4 - El gráfico cuenta con la fuente de datos y proporciona información sobre la autoría, fecha y enlaza al conjunto de datos original."
           ],
+          "forbidden_list": [0],
           "extra": ""
       },
       {
@@ -317,6 +323,7 @@
             "3 - El gráfico cuenta con una versión para impresión que presenta uno de los siguientes problemas: a) no aprovecha todo el ancho de la página; b) no presenta una legibilidad y calidad de imagen adecuada; o c) se corta entre varias páginas.",
             "4 - El gráfico cuenta con una versión para impresión totalmente optimizada."
           ],
+          "forbidden_list": [0],
           "extra": ""
       },
       {
@@ -359,6 +366,7 @@
             "3 - El gráfico cuenta con un texto alternativo corto pero que no cumple con uno de los tres requisitos siguientes: a) se incluye mediante una o más formas estandarizadas y compatibles con las ayudas técnicas (alt, ARIA…); b) se identifica el tipo de gráfico; c) avanza el contenido para que el usuario decida si quiere consultar el gráfico en detalle o no.",
             "4 - El gráfico cuenta con un texto alternativo corto y que cumple con los tres requisitos siguientes: a) se incluye mediante una o más formas estandarizadas y compatibles con las ayudas técnicas (alt, ARIA…); b) se identifica el tipo de gráfico; c) avanza el contenido para que el usuario decida si quiere consultar el gráfico en detalle o no."
           ],
+          "forbidden_list": [0],
           "extra": ""
       },
       {
@@ -397,6 +405,7 @@
             "3 - El gráfico cuenta con una descripción larga que cumple dos de las tres características siguientes: a) cumple el mismo propósito que el gráfico; b) incluye acceso a una tabla de datos equivalente; y c) se utiliza alguno de los métodos descritos en 2.2.2. para vincular gráfico y descripción.",
             "4 - El gráfico cuenta con una descripción larga que cumple las tres características siguientes: a) cumple el mismo propósito que el gráfico, b) incluye acceso a una tabla de datos equivalente; y c) se utiliza alguno de los métodos descritos en 2.2.2. para vincular gráfico y descripción."
           ],
+          "forbidden_list": [0],
           "extra": "Si la descripción larga se proporciona como una imagen de texto se debe bajar un punto la valoración. Por ejemplo, si se le asigna un 4 según los criterios anteriores, el resultado final será de 3."
       },
       {
@@ -413,10 +422,10 @@
               "description":"En caso de no cumplirse, uno o más perfiles de usuario será incapaz de percibir la información del gráfico, comprometiéndose totalmente su accesibilidad para uno o mas perfiles de usuario con baja visión. Funcionalidad que de estar presente mejora enormemente la accesibilidad del gráfico."
           },
           "brief":"Si el gráfico usa colores para mostrar información, ¿el esquema de colores es seguro para las distintas deficiencias cromáticas de vision, incluyendo acromatopsia (ausencia total de percepcion del color)?",
-          "example_images": {
+          "example_images": [{
             "image": "",
             "text": []
-          },
+          }],
           "understand": "El objetivo de este principio es asegurar que los usuarios con diferentes tipos de discapacidades asociadas a la percepción del color son capaces de diferenciar los colores utilizados en las marcas. Se entiende por colores seguros, aquellas combinaciones de colores que cualquier persona es capaz de distinguir con independencia de si presenta algún síndrome asociado a la percepción del color o no.",
           "how_to_test": "Para cumplir con el principio se debe seleccionar una paleta de colores adecuada para los usuarios con diferentes tipos de visión cromática deficiente (VCD), incluida la acromatopsia (visión en escala de grises). Algunos ejemplos de paletas accesibles los encontramos en http://colorbrewer2.org/ o https://projects.susielu.com/viz-palette. \n Para la evaluación de este principio se pueden utilizar simuladores como NoCoffee Vision Simulator o Colorblinding.",
           "examples": [
@@ -428,6 +437,7 @@
             "3 - Los colores utilizados se distinguen sólo por parte de los siguientes perfiles de VCD: a) protanopia, b) deuteranopia o, c) tritanopia, pero no por los usuarios con acromatopsia.",
             "4 - Se utiliza un conjunto de colores diferenciables para todos los tipos de VCD. Alternativamente, se utilizan patrones o texturas que permiten diferenciar las marcas."
           ],
+          "forbidden_list": [0],
           "extra": ""
       },
       {
@@ -443,10 +453,10 @@
               "description":"En caso de no cumplirse, uno o más perfiles de usuario será incapaz de percibir la información del gráfico, comprometiéndose totalmente su accesibilidad para uno o mas perfiles de usuario con baja visión. Funcionalidad que de estar presente mejora enormemente la accesibilidad del gráfico."
           },
           "brief":"¿La presentacion visual del texto y el fondo tiene un ratio de contraste de al menos 4.5:1 y los elementos no textuales del gráfico un ratio de contraste de al menos 3:1?",
-          "example_images": {
+          "example_images": [{
             "image": "",
             "text": []
-          },
+          }],
           "understand": "Para el contraste entre texto y fondo ver: https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html \n Para el contraste entre elementos no textuales ver: https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html",
           "how_to_test": "La presentación visual del texto y las imágenes de texto presentan, al menos, un contraste de 4.5:1. \n Para más información sobre como cumplir este principio ver: https://www.w3.org/WAI/WCAG21/quickref/#contrast-minimum \n La presentación visual de los elementos esenciales de un gráfico, requeridos para comprender el contenido, presenta un contraste mínimo de 3:1 entre colores adyacentes. \n Para más información sobre como cumplir este principio ver: https://www.w3.org/WAI/WCAG21/quickref/#non-text-contrast",
           "examples": [
@@ -458,6 +468,7 @@
             "3 - Algunos contrastes alcanzan justo la ratio mínima, mientras que otros presentan un contraste superior.",
             "4 - Todos los contrastes presentan ratios superiores a las mínimas."
           ],
+          "forbidden_list": [0,1],
           "extra": ""
       },
       {
@@ -479,10 +490,10 @@
               "description":"En caso de no cumplirse, uno o más perfiles de usuario tendrá serias dificultades para percibir la información del gráfico, comprometiéndose gravemente su accesibilidad para uno o más perfiles de usuario con baja visión. Funcionalidad que de estar presente mejora mucho la accesibilidad del gráfico"
           },
           "brief":"¿El texto incluido en el gráfico es legible (fuente sans-serif, tamaño de fuente de al menos 16px o 12pt, espacio entre lineas de al menos 1.5, uso no excesivo de mayusculas, negrita o cursiva)?",
-          "example_images": {
+          "example_images": [{
             "image": "",
             "text": []
-          },
+          }],
           "understand": "El objetivo de este principio es asegurar que para todo el texto que se muestra como parte o acompañando al gráfico estadístico, se respetan criterios tipográficos y de composición de textos que aseguran una buena legibilidad.",
           "how_to_test": "Para cumplir el principio, el texto utilizado en el gráfico, en el pie, así como el de las tablas o descripciones que lo acompañan debe utilizar una fuente tipográfica adecuada para baja visión: familia sans serif, evitar el uso de fuentes de fantasía y decorativas, seleccionar fuentes con suficiente diferencia entre caracteres, cuerpo ancho y grandes blancos internos y ojales, evitar el uso de variantes light o thin, evitar el uso excesivo de negritas, cursivas y versalitas electrónicas, así como limitar el número de fuentes diferentes en el mismo documento. \n Se aconseja un tamaño de fuente mínimo de 16 px en documentos web y de 12 pt en documentos ofimáticos (Kitchel, 2019; Nielsen, 2002). Si se utilizan tamaños inferiores se debe comprobar que el indicador 4.3 (Redimensionado) se cumple. \n El espacio mínimo entre letras y palabras, así como el interlineado debe ser de al menos 1,5 (W3C, 2017a). \n Debe evitarse el uso de palabras separadas por guiones. \n No se debe abusar del uso de versalitas o cursivas (Johansson, 2010; W3C, 2017b).",
           "examples": [
@@ -494,6 +505,7 @@
             "3 - No se cumple con uno de los cuatro requisitos siguientes: a) se utiliza una fuente sans serif adecuada; b) el tamaño mínimo es superior de 16px/12pt; c) el interlineado es de como mínimo 1.5 o suficiente para el tamaño del texto, también el espacio entre letras y palabras; y d) no se abusa de cursivas, versales y mayúsculas.",
             "4 -Se cumple con los cuatro requisitos siguientes: a) se utiliza una fuente sans serif adecuada; b) el tamaño mínimo es superior de 16px/12pt; c) el interlineado es de como mínimo 1.5 o suficiente para el tamaño del texto, también el espacio entre letras y palabras; y d) no se abusa de cursivas, versales y mayúsculas."
           ],
+          "forbidden_list": [0,1],
           "extra": "Si el gráfico no cumple con alguno de los requisitos, pero cumple con el indicador H14 (Redimensionado) se debe subir un punto la valoración. Por ejemplo, si se le asigna un 2 porque el tamaño del texto es inferior a 16px y por un interlineado inferior al requerido, el resultado final será de 3, entendiendo que la posibilidad de aumentar el tamaño del gráfico mejora su legibilidad."
       },
       {
@@ -512,10 +524,10 @@
               "description":"En caso de no cumplirse, uno o más perfiles de usuario será incapaz de percibir la información del gráfico, comprometiéndose totalmente su accesibilidad para uno o mas perfiles de usuario con baja visión. Funcionalidad que de estar presente mejora enormemente la accesibilidad del gráfico."
           },
           "brief":"Si el gráfico se ofrece en forma de imagen (mapa de bits), ¿tiene la imágen calidad suficiente para una visualización clara y soporta un zoom de al menos 200% sin presentar borrosidad o pixelación?",
-          "example_images": {
+          "example_images": [{
             "image": "",
             "text": []
-          },
+          }],
           "understand": "El objetivo de este principio es asegurar que los gráficos, especialmente aquellos en formato de mapa de bits, cuentan con una calidad suficiente para su visualización en pantalla, y son capaces de soportar un redimensionado suficiente.",
           "how_to_test": "Cumplir con el principio requiere prestar atención a diversos aspectos de las imágenes:  \n - Dimensiones del píxel: un tamaño que permita aumentar la imagen hasta 200 veces sin que se pixele o aparezca borrosa. \n - Formato: PNG preferentemente, o JPG con un nivel de compresión adecuado que asegure que la imagen no se pixela, aparece borrosa o con artefactos, incluso tras aumentar su tamaño hasta 200 veces. \n - Resolución: 150 dpi, como mínimo. \n Estas características se pueden observar en las propiedades de la imagen o mediante programas de análisis como MediaInfo.",
           "examples": [
@@ -527,6 +539,7 @@
             "3 - La imagen presenta una calidad suficiente, si bien menos de la mitad de los parámetros evaluados no cumplen con los requisitos descritos en 4.2.2.",
             "4 - La imagen presenta una calidad excelente al cumplir con todos los parámetros descritos en 4.2.2."
           ],
+          "forbidden_list": [0,1],
           "extra": ""
       },
       {
@@ -542,10 +555,10 @@
               "description":"En caso de no cumplirse, uno o más perfiles de usuario tendrá serias dificultades para percibir la información del gráfico, comprometiéndose gravemente su accesibilidad para uno o más perfiles de usuario con baja visión. Funcionalidad que de estar presente mejora mucho la accesibilidad del gráfico"
           },
           "brief":"¿Puede aplicarse al gráfico un zoom de haste 200% sin necesidad de una herramienta de asistencia y sin perdida de contenido o funcionalidad?",
-          "example_images": {
+          "example_images": [{
             "image": "",
             "text": []
-          },
+          }],
           "understand": "El objetivo de este principio es que, sin el uso de ningún tipo de ayuda técnica, los gráficos puedan redimensionarse hasta un 200% sin que el contenido desaparezca o se solape con otros elementos de la interfaz, pudiéndose utilizar en las mismas condiciones que el gráfico en su tamaño inicial.",
           "how_to_test": "Cumplir el objetivo implica la posibilidad de hacer zoom con las herramientas nativas del navegador sin que la composición de la página se desconfigure de tal manera que el gráfico deje de poder consultarse u operar con él.",
           "examples": [
@@ -557,6 +570,7 @@
             "3 - El gráfico se puede aumentar hasta un 200% sin solaparse o desaparecer, y sin provocar scroll horizontal al adaptarse la interfaz (responsive).",
             "4 - El gráfico se puede aumentar incluso hasta más de un 200% sin solaparse ningún otro elemento, desaparecer parcialmente y adaptándose de manera responsiva a la pantalla de consulta."
           ],
+          "forbidden_list": [0,1],
           "extra": ""
       },
       {
@@ -597,6 +611,7 @@
             "3 - Nunca se asignará este valor.",
             "4 - No se muestra o aparece ningún obstáculo para la visualización del gráfico."
           ],
+          "forbidden_list": [0,1],
           "extra": ""
       },
       {
@@ -637,6 +652,7 @@
             "3 - Nunca se asignará este valor.",
             "4 - El foco del cursor o teclado es visible y presenta un contraste suficiente."
           ],
+          "forbidden_list": [1],
           "extra": ""
       },
       {
@@ -654,10 +670,10 @@
               "description":"En caso de no cumplirse, uno o más perfiles de usuario será incapaz de percibir la información del gráfico, comprometiéndose totalmente su accesibilidad para uno o mas perfiles de usuario con baja visión. Funcionalidad que de estar presente mejora enormemente la accesibilidad del gráfico."
           },
           "brief":"¿Es posible navegar entre las marcas y elementos del gráfico con teclado, ratón y gestos?",
-          "example_images": {
+          "example_images": [{
             "image": "",
             "text": []
-          },
+          }],
           "understand": "El objetivo de este principio es permitir a los usuarios que consultan gráficos dinámicos navegar entre las marcas y elementos del gráfico con diferentes interfaces como el ratón, el teclado o mediante gestos táctiles.",
           "how_to_test": "Para cumplir este principio los eventos o interacciones disponibles deben poder ser identificables y operarse mediante los diferentes tipos de interfaces disponibles. La compatibilidad con los lectores de pantalla es imprescindible en este punto. En este sentido, es necesario que, al menos, sea compatible con alguno de los dos lectores de pantalla más utilizados en la actualidad (JAWS y NVDA) (WebAIM, 2019).",
           "examples": [
@@ -669,6 +685,7 @@
             "3 - Es posible navegar a través de de las tres interfaces siguientes: ratón, gestos táctiles, o teclado, aunque se utilizan atributos o elementos que el lector de pantallas no es capaz de anunciar.",
             "4 - Es posible navegar entre los elementos y marcas del gráfico con cualquier tipo de interfaz y el lector de pantallas es capaz de anunciar todos los elementos disponibles."
           ],
+          "forbidden_list": [1],
           "extra": ""
       },
       {
@@ -685,10 +702,10 @@
               "description":"En caso de no cumplirse, uno o más perfiles de usuario tendrá serias dificultades para percibir la información del gráfico, comprometiéndose gravemente su accesibilidad para uno o más perfiles de usuario con baja visión. Funcionalidad que de estar presente mejora mucho la accesibilidad del gráfico"
           },
           "brief":"¿Es posible personalizar el gráfico (esquema de colores, contraste, tipografía...) con tecnologías asistivas o con un sistema de personalización específico?",
-          "example_images": {
+          "example_images": [{
             "image": "",
             "text": []
-          },
+          }],
           "understand": "El objetivo de este principio es permitir a los usuarios personalizar las características de los gráficos, modificando elementos relacionados con la paleta de colores utilizada, el contraste o el texto (fuente tipográfica, tamaño, interlineado, etc.)",
           "how_to_test": "Cumplir con este principio implica la utilización de estándares y tecnologías en la creación de los gráficos estadísticos y las páginas web en las que se encuentran, de manera que las ayudas técnicas pensadas para su personalización sean compatibles con ellos. Alternativamente, se puede alcanzar el principio, ofreciendo un sistema propio que permita personalizar la apariencia del gráfico.",
           "examples": [
@@ -700,6 +717,7 @@
             "3 - Se ofrecen múltiples opciones de personalización que cubren varios de los aspectos contemplados en 5.2.2.",
             "4 - Se ofrecen múltiples opciones de personalización que cubren todos los aspectos contemplados en 5.2.2."
           ],
+          "forbidden_list": [0,1],
           "extra": "*Asignamos un 1 (low compliance) porque este tipo de filtros sólo ayudarán a unos pocos usuarios y para algunos casos muy concretos (por ejemplo, gráficos muy simples en los que el color no se utiliza para transmitir información.) Cuando el gráfico se crea mediante estándares web, es más factible que las ayudas técnicas puedan modificar las características del texto, cosa difícil o imposible con imágenes en formato de mapa de bits. En este caso, se podría sumar un punto y llegar a una puntuación de 2, valorando así el uso de texto real (personalizable) en lugar de una imagen de texto (no personalizable)."
       }
 

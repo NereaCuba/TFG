@@ -33,13 +33,22 @@
         <h2 class="titles">Ejemplos de puntuación</h2>
         <p class="info text-start" *ngFor="let example of _heuristic.examples"><i class="pi pi-angle-right mt-1"></i>{{example}}</p>
       </div>
+      <div class="container">
+        <h2 class="titles">Ejemplos con un gráfico</h2>
+        <div class="row gap-2">
+          <div class="card info col p-4" *ngFor="let example of _heuristic.example_images">
+            <img src={{example.image}} alt={{example.text}}>
+            <p class="text-center info mt-3">{{example.text}}</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="col-sm-12 col-lg-3  mt-5">
     <div class="container heuristicDetail">
       <div class="row">
-        <div class="col-12" *ngFor="let heuristic of _listHeuristics.heuristic_abstract; let i = index">
-          <titles-inline *ngIf="i < 4" [image]="heuristic.example.image!" [title]="heuristic.name!"></titles-inline>
+        <div class="col-12" *ngFor="let heuristic of _listHeuristicsRedirects; let i = index">
+          <titles-inline [image]="heuristic.example_images[0].image!" [comesFromHeuristicDetail]="true" [title]="heuristic.name!" (click)="heuristicInformationShow(heuristic)"></titles-inline>
         </div>
       </div>
     </div>

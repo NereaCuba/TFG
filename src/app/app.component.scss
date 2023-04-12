@@ -76,4 +76,7 @@ footer {
     }
   }
 }
+:host ::ng-deep .modal-dialog {
+    top:40%;
+}
 

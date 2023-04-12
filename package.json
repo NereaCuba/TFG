@@ -24,6 +24,7 @@
     "bootstrap": "^5.2.3",
     "canvg": "^4.0.1",
     "chart.js": "^4.2.1",
+    "file-saver": "^2.0.5",
     "jspdf": "^2.5.1",
     "mdb-angular-ui-kit": "^4.0.0",
     "primeicons": "^6.0.1",

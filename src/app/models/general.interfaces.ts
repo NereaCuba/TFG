@@ -4,6 +4,7 @@ export interface ArticleBasicInfo {
   briefing?: string;
   date?: string;
   image?: string;
+  abstract?:  Array<string>;
 }
 
 export interface ArticlesResponse {
@@ -29,7 +30,8 @@ export interface HeuristicBasicInfo {
   benefied_user?: string;
   weigth?: Weigth;
   brief?: string;
-  example?: ExampleInfo;
+  example_images?: Array<ExampleInfo>;
+  forbidden_list?: Array<number>
   understand?: string;
   how_to_test?: string;
   examples?: Array<string>;

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { SettingsComponent } from './components/settings/settings/settings.component';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,8 +12,12 @@ export class AppComponent implements OnInit {
   title = 'angular-tfg';
   items: MenuItem[] = [];
   modalRef: MdbModalRef<SettingsComponent> | null = null;
-
-    constructor(private modalService: MdbModalService) {}
+  visible: boolean = false;
+  paletteSelected: number = 0;
+    constructor(
+      private modalService: MdbModalService,
+      private router: Router
+      ) {}
 
     ngOnInit(): void {
       this.items = [
@@ -34,14 +39,25 @@ export class AppComponent implements OnInit {
         },
         {
             label: 'Evalua',
-            routerLink: 'evaluate'
+            command: () => this.goToEvaluate(),
+            skipLocationChange: true,
         }
       ];
     }
     openModal() {
-      this.modalRef = this.modalService.open(SettingsComponent);
-      this.modalRef.onClose.subscribe((message: any) => {
-        console.log(message);
-      });
+      this.visible = true;
+    }
+    closeModal() {
+      this.visible = false;
+    }
+    goToEvaluate() {
+      event.preventDefault();
+
+      this.router.navigateByUrl('/', {skipLocationChange: false})
+        .then(() => this.router.navigate(['/evaluate']));
+    }
+    setPalete(value) {
+      console.log(value)
+      this.paletteSelected = value;
     }
 }

@@ -1,3 +1,4 @@
+<p-toast></p-toast>
 <div *ngIf=showIntroduction>
   <div class="introduction">
     <h2 class="text-center">Introducción a la evaluación</h2>
@@ -117,8 +118,11 @@
   <div class="evaluate container">
       <div class="row justify-content-center">
           <div class="col-lg-4 col-md-12">
-              <div *ngIf=imgURL>
-                  <img class="chartImg" [src]="imgURL">
+              <div *ngIf='imgURL'>
+                  <img class="chartImg" [src]="imgURL" *ngIf="!isIFrame">
+                  <div class="" *ngIf="isIFrame">
+                    <iframe [src]="imgURL | safe " style="width: 100%; height: 600px; border: 0px none;"></iframe>
+                  </div>
               </div>
               <div class="square" *ngIf=!imgURL>
                 <p class="mt-2 text-center">Aquí podrás ver tu gráfico una vez cargado</p>
@@ -127,23 +131,23 @@
           <div class="col-lg-7 offset-lg-1 col-md-12 ps-lg-5">
             <h2>Sube una imagen o introduce una URL</h2>
             <div class="field-radiobutton">
-              <p-radioButton name="typeImport" value="imgUpload" [(ngModel)]="typeImport" inputId="typeImport1"></p-radioButton>
+              <p-radioButton name="typeImport" value="imgUpload" [(ngModel)]="typeImport" inputId="typeImport1" (onClick)="changeTypeInput($event)"></p-radioButton>
               <div class="containerButton">
                 <div class="button-wrap">
                   <label class="custom-file-upload" [ngClass]="typeImport === 'imgURLUpload' ? 'disabledInput' : ''">
-                    <input [(ngModel)]="inputValue" [attr.disabled]="typeImport === 'imgURLUpload' ? '' : null" id="upload" (input)="manageImage($event)" type="file">
+                    <input [(ngModel)]="inputValue" [attr.disabled]="typeImport === 'imgURLUpload' ? '' : null" id="upload" (input)="manageImage($event)" type="file" >
                     Carga una imagen
                 </label>
               </div>
             </div>
-            <p>{{ nameFile }}</p>
+            <p [ngClass]="_okImageInput ? _loadedImageInput ? 'okInput' : '' : 'errorInput'">{{ nameFile }} <i *ngIf="_loadedImageInput" class="ms-4 pi pi-check"></i></p>
             </div>
             <div class="field-radiobutton">
-                <p-radioButton name="typeImport" value="imgURLUpload" [(ngModel)]="typeImport" inputId="typeImport2"></p-radioButton>
-                <label>
+                <p-radioButton name="typeImport" value="imgURLUpload" [(ngModel)]="typeImport" inputId="typeImport2" (onClick)="changeTypeInput($event)"></p-radioButton>
+                <label class="w-100">
                   <div class="d-flex flex-row imgURLUploadClass">
-                    <input [attr.disabled]="typeImport === 'imgUpload' ? '' : null" type="text">
-                    <button [attr.disabled]="typeImport === 'imgUpload' ? '' : null" [ngClass]="typeImport === 'imgUpload' ? 'disabledInput' : ''">BUSCAR IMAGEN</button>
+                    <input [disabled]="typeImport === 'imgUpload' ? true : null" [(ngModel)]="URLLink" type="text">
+                    <button [disabled]="typeImport === 'imgUpload' ? true : null" [ngClass]="typeImport === 'imgUpload' ? 'disabledInput' : ''" (click)="getImageFromURL()">BUSCAR IMAGEN</button>
                   </div>
                 </label>
             </div>
@@ -157,7 +161,7 @@
 </div>
 <div *ngIf=startEvaluation>
   <div class="container mt-5" *ngIf=imgURL>
-    <evaluate-form [srcImg]="imgURL" [idHeuristic]="_idHeuristic" [valueProgressBar]="_idValueProgressBar" [currentValue]="oldFormValue" (newItemEvent)="pushInfoForm($event)" (backItemEmit)="backButton()"></evaluate-form>
+    <evaluate-form [srcImg]="imgURL" [isIFrame]="isIFrame" [comesFromBrief]="isComingFromBrief" [idHeuristic]="_idHeuristic" [valueProgressBar]="_idValueProgressBar" [currentValue]="oldFormValue" (newItemEvent)="pushInfoForm($event)" (backItemEmit)="backButton()"></evaluate-form>
   </div>
 </div>
 <div class="mt-5" *ngIf=showResultsBrief id=pdfResults>
@@ -165,7 +169,10 @@
   <div class="mt-5 row">
     <div class="col-6 d-flex justify-content-center">
       <div class="stickyImg">
-        <img class="charImgBrief" src={{imgURL}} alt="Gráfico introducido">
+        <img class="charImgBrief" src={{imgURL}} alt="Gráfico introducido" *ngIf="!isIFrame">
+        <div class="" *ngIf="isIFrame">
+          <iframe src={{imgURL}} style="width: 100%; height: 600px; border: 0px none;"></iframe>
+        </div>
       </div>
     </div>
     <div class="col-6 d-flex justify-content-center globalContainer">
@@ -183,7 +190,7 @@
         <div class="d-flex flex-column mt-5">
           <div class="containerBrief row" *ngFor="let result of formValue; let i = index">
             <div class="col-12">
-              <div class="d-flex flex-row align-items-center" [ngClass]="!constLikert[result.optionLinkert] ? 'justify-content-start' : 'justify-content-end'">
+              <div class="d-flex flex-row align-items-center" (click)="goToAnswer(i)" [ngClass]="!constLikert[result.optionLinkert] ? 'justify-content-start' : 'justify-content-end'">
                 <div *ngIf="constLikert[result.optionLinkert]" class="d-flex flex-column me-4 justify-content-start align-items-end">
                   <p class="heuristicTitleCircle">{{constHeuristicsTitles[i]}}</p>
                   <p class="noBottom">{{constLikert[result.optionLinkert]}}</p>
@@ -211,7 +218,10 @@
 <div class="mt-5" *ngIf=showResults id=pdfResults>
   <h2 class="text-center">RESULTADOS</h2>
   <div class="mt-5 container d-flex align-items-center justify-content-center">
-    <img class="chartImgResult" src={{imgURL}} alt="Gráfico introducido">
+    <div class="" *ngIf="isIFrame">
+      <iframe src={{imgURL}} style="width: 100%; height: 600px; border: 0px none;"></iframe>
+    </div>
+    <img  *ngIf="!isIFrame" class="chartImgResult" src={{imgURL}} alt="Gráfico introducido">
     <div class="ms-5">
       <span><p>La puntuación global de tu gráfico es la siguiente:</p><h2 class="smallH2">{{totalResult}}</h2></span>
     </div>
@@ -254,6 +264,6 @@
   </div>
   <div class="containerButtons row justify-content-center mt-5">
     <button class="col-5 buttonEndForm" (click)="downloadResults()"><i class="pi pi-download"></i> DESCARGAR</button>
-    <button class="ms-2  col-5 buttonEndForm" (click)="redirectToEvaluate()" >FINALIZAR</button>
+    <button class="ms-2  col-5 buttonEndForm" pButton pRipple (click)="redirectToEvaluate()" >FINALIZAR</button>
   </div>
 </div>

@@ -1,11 +1,13 @@
+<app-settings [visible]="visible" (isClosed)="closeModal()" [selectedPalette]="paletteSelected" (paletteSelecteed)="setPalete($event)"></app-settings>
 <div class="m-0 p-0">
   <p-menubar [model]="items">
     <ng-template pTemplate="end">
-        <button class="settings" (click)="openModal()"><i class="pi pi-cog"></i></button>
+      <button class="settings" (click)="openModal()"><i class="pi pi-cog"></i></button>
     </ng-template>
+
   </p-menubar>
   <router-outlet></router-outlet>
-
+  
 <footer class="text-center text-lg-start text-muted">
   <section class="border-top">
     <div class="container text-center text-md-start mt-5">

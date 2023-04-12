@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-settings',
@@ -7,12 +6,31 @@ import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
   styleUrls: ['./settings.component.scss']
 })
 export class SettingsComponent {
-  title: string | null = null;
+  _visible: boolean = false;
+  _selectedPalette: number = 0;
+  @Output() isClosed = new EventEmitter<boolean>();
+  @Output() paletteSelecteed = new EventEmitter<boolean>();
 
-  constructor(public modalRef: MdbModalRef<SettingsComponent>) {}
+  constructor() {}
 
-  close(): void {
-    const closeMessage = 'Modal closed';
-    this.modalRef.close(closeMessage)
+  @Input()
+  get visible(): boolean {
+    return this._visible;
+  }
+  set visible(value: boolean) {
+    this._visible = value;
+  }
+  @Input()
+  get selectedPalette(): number {
+    return this._selectedPalette;
+  }
+  set selectedPalette(value: number) {
+    this._selectedPalette = value;
+  }
+  sendIsClosed() {
+    this.isClosed.emit(true);
+  }
+  sendPaletteSelected(event) {
+    this.paletteSelecteed.emit(event);
   }
 }

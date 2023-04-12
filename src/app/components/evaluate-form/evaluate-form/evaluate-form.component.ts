@@ -5,6 +5,7 @@ import { DetailHeuristicsService } from 'app/modules/heuristic-detail/services/h
 import { Output, EventEmitter } from '@angular/core';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { ShowMoreImageComponent } from 'app/components/show-more-image/show-more-image.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'evaluate-form',
@@ -18,6 +19,8 @@ export class EvaluateFormComponent implements OnInit {
   nextValue: number = 2;
   lastValue: number = 1;
   _currentValue!: any;
+  _comesFromBrief: boolean = false;
+  _isIFrame: boolean = false;
   name = new FormControl('');
   backButtonBoolean: boolean = false;
   modalRef: MdbModalRef<ShowMoreImageComponent> | null = null;
@@ -25,13 +28,20 @@ export class EvaluateFormComponent implements OnInit {
   _heuristic: HeuristicBasicInfo = {} as HeuristicBasicInfo;
   @Output() newItemEvent = new EventEmitter<string>();
   @Output() backItemEmit = new EventEmitter<string>();
-
+  visible: boolean = false;
+  loading:boolean = true;
+  loaded:boolean = false;
   showExamples: boolean = false;
   constructor(
     private heuristicsService: DetailHeuristicsService,
-    private modalService: MdbModalService
+    private modalService: MdbModalService,
+    private router: Router
   ) {}
-
+  showDialog() {
+    if (this._heuristic.example_images.length > 0) {
+      this.visible = true;
+    }
+  }
   @Input()
   get idHeuristic(): string {
     return this._idHeuristic;
@@ -53,7 +63,20 @@ export class EvaluateFormComponent implements OnInit {
   set valueProgressBar(value: number) {
     this._valueProgressBar = value;
   }
-
+  @Input()
+  get comesFromBrief(): boolean {
+    return this._comesFromBrief;
+  }
+  set comesFromBrief(value: boolean) {
+    this._comesFromBrief = value;
+  }
+  @Input()
+  get isIFrame(): boolean {
+    return this._isIFrame;
+  }
+  set isIFrame(value: boolean) {
+    this._isIFrame = value;
+  }
   @Input()
   get srcImg(): string {
     return this._srcImg;
@@ -63,32 +86,45 @@ export class EvaluateFormComponent implements OnInit {
   }
   templateForm(value: any) {
     if(this.backButtonBoolean) {
+      if(this._heuristic.id === 'H1') {
+        this.redirectToEvaluate()
+      }
       this.newItemEvent.emit(null);
+      this.loading = true;
+      this.loaded = false;
+      this.ngOnInit();
+    } else if(this.comesFromBrief) {
+      this.newItemEvent.emit(value)
     } else {
       this.newItemEvent.emit(value)
+      this.loading = true;
+      this.loaded = false;
+      this.ngOnInit();
     }
-    this.ngOnInit();
   }
-  ngOnInit() {
+  async ngOnInit() {
     window.scroll({
       top: 0,
       left: 0,
       behavior: 'smooth'
     });
-
-    this.heuristicsService.getHeuristics().subscribe((res:any) => {
-      var _listHeuristics = res;
-      this._heuristic = _listHeuristics!.heuristic_abstract!.find((heuristic, index) => {
-        if(heuristic.id === this._idHeuristic){
-          this.nextValue = index+2;
-          this.lastValue = index;
-          this.optionLinkert = this._currentValue.length > 0 && this._currentValue.at(this.lastValue) && this._currentValue.at(this.lastValue).optionLinkert ? Number(this._currentValue.at(this.lastValue).optionLinkert) : null;
-
-          return heuristic;
-        }
+    try {
+      var _listHeuristics = await this.heuristicsService.getHeuristics().toPromise();
+      this._heuristic = _listHeuristics.heuristic_abstract!.find((heuristic, index) => {
+          if(heuristic.id === this._idHeuristic){
+            this.nextValue = index+2;
+            this.lastValue = index;
+            this.optionLinkert = this._currentValue.length > 0 && this._currentValue.at(this.lastValue) && this._currentValue.at(this.lastValue).optionLinkert ? Number(this._currentValue.at(this.lastValue).optionLinkert) : null;
+  
+            return heuristic;
+          }
       });
-    });
-    this.backButtonBoolean = false;
+      this.backButtonBoolean = false;
+    } catch (e) {
+      console.log(e);
+    }
+    this.loaded = true;
+    this.loading = false;
   }
   hideExamples() {
     this.showExamples = !this.showExamples;
@@ -96,10 +132,14 @@ export class EvaluateFormComponent implements OnInit {
   backButton() {
     this.backButtonBoolean = true;
   }
-  openModal() {
-    this.modalRef = this.modalService.open(ShowMoreImageComponent);
-    this.modalRef.onClose.subscribe((message: any) => {
-      console.log(message);
-    });
+  redirectTo(uri: string) {
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
+    this.router.navigate([uri]));
   }
+  redirectToEvaluate() {
+    this.redirectTo('/evaluate')
+   }
+   checkIfDisabled(value) {
+    return this._heuristic.forbidden_list.includes(value);
+   }
 }

@@ -8,16 +8,23 @@ import {TooltipModule} from 'primeng/tooltip';
 import { FormsModule } from '@angular/forms';
 import { UbayButtonModule } from 'app/components/ubay-button/ubay-button.module';
 import { HttpClientModule } from '@angular/common/http';
-
+import { AvatarModule } from 'primeng/avatar';
+import { ToastModule } from 'primeng/toast';
 import { EvaluateFormModule } from 'app/components/evaluate-form/evaluate-form.module';
+import { MessageService } from 'primeng/api';
+import { EvaluateService } from './services/evaluate.service';
+import { SafePipe } from './safepipe';
 
 @NgModule({
   declarations: [
-    EvaluateComponent
+    EvaluateComponent,
+    SafePipe
   ],
   imports: [
     CommonModule,
     HttpClientModule,
+    AvatarModule,
+    ToastModule,
     RouterModule,
     RadioButtonModule,
     TooltipModule,
@@ -28,6 +35,8 @@ import { EvaluateFormModule } from 'app/components/evaluate-form/evaluate-form.m
     evaluateRoutingModule
   ],
   providers: [
+    MessageService,
+    EvaluateService
   ]
 })
 export class evaluateStatusModule { }

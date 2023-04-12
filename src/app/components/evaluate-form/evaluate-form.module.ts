@@ -8,7 +8,9 @@ import { DetailHeuristicsService } from './../../modules/heuristic-detail/servic
 import { ProgressBarModule } from 'primeng/progressbar';
 import { ToastModule } from 'primeng/toast';
 import { MdbModalService } from 'mdb-angular-ui-kit/modal';
-
+import { DialogModule } from 'primeng/dialog';
+import { ButtonModule } from 'primeng/button';
+import { AvatarModule } from 'primeng/avatar';
 @NgModule({
   declarations: [
     EvaluateFormComponent
@@ -16,8 +18,11 @@ import { MdbModalService } from 'mdb-angular-ui-kit/modal';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    AvatarModule,
     FormsModule,
     RadioButtonModule,
+    ButtonModule,
+    DialogModule,
     ProgressBarModule,
     ToastModule
   ],

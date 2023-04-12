@@ -72,21 +72,13 @@ h2 {
       input[type="file"] {
         display: none;
       }
-      .imgURLUploadClass{
-        position: relative;
-        width: 30em;
+      .imgURLUploadClass {
         input {
           width: 100%;
           height: 5em;
         }
         button {
-          position: absolute;
-          right: 3px;
-          top: 3px;
-          bottom: 3px;
-          display: inline-block;
           padding: 0.8em;
-          z-index: 2;
           cursor: pointer;
           color: $color-dark;
           text-transform: uppercase;
@@ -98,6 +90,7 @@ h2 {
           line-height: 50px;
           background: $light-blue;
           border: 0.5px solid $color-dark;
+          width: 50%;
         }
       }
       .disabledInput{
@@ -118,11 +111,21 @@ h2 {
         line-height: 50px;
         background: $light-blue;
         border: 0.5px solid $color-dark;
-    }
-    p {
-      margin-bottom: auto !important;
-      margin-top: auto !important;
-    }
+      }
+      p {
+        margin-bottom: auto !important;
+        margin-top: auto !important;
+      }
+      .errorInput {
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #731902;
+      }
+      .okInput {
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #085701;
+      }
     }
     .articleTitles {
         display: flex;
@@ -215,61 +218,101 @@ h2 {
     border: 1px solid #000000;
 }
 .Score0, .Score1 {
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    font-weight: 600;
-    font-family: "Raleway", sans-serif;
-    color: #696969;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  font-family: "Raleway", sans-serif;
+  background-color: #525252;
+  padding: 1em;
+  border-radius: 1em;
+  color: white;
+  margin-bottom: auto;
+  margin-top: auto;
 }
 
 .Score2 {
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  font-weight: 600;
+  font-weight: 700;
   font-family: "Raleway", sans-serif;
-  color: #f25900;
+  background-color: #A32B27;
+  padding: 1em;
+  border-radius: 1em;
+  color: white;
+  margin-bottom: auto;
+  margin-top: auto;
 }
 .Score3 {
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  font-weight: 600;
+  font-weight: 700;
   font-family: "Raleway", sans-serif;
-  color: #f2be00;
+  background-color: #7D4A3B;
+  padding: 1em;
+  border-radius: 1em;
+  color: white;
+  margin-bottom: auto;
+  margin-top: auto;
 }
 .Score4 {
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  font-weight: 600;
+  font-weight: 700;
   font-family: "Raleway", sans-serif;
-  color: #def200;
+  background-color: #024F00;
+  padding: 1em;
+  border-radius: 1em;
+  color: white;
+  margin-bottom: auto;
+  margin-top: auto;
 }
 .Score5 {
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  font-weight: 600;
+  font-weight: 700;
   font-family: "Raleway", sans-serif;
-  color: #79f200;
+  background-color: #023D01;
+  padding: 1em;
+  border-radius: 1em;
+  color: white;
+  margin-bottom: auto;
+  margin-top: auto;
 }
 .Score6 {
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  font-weight: 600;
+  font-weight: 700;
   font-family: "Raleway", sans-serif;
-  color: #65f200;
+  background-color: #000091;
+  padding: 1em;
+  border-radius: 1em;
+  color: white;
+  margin-bottom: auto;
+  margin-top: auto;
 }
 .Score7 {
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  font-weight: 600;
+  font-weight: 700;
   font-family: "Raleway", sans-serif;
-  color: #24f200;
+  background-color: #000059;
+  padding: 1em;
+  border-radius: 1em;
+  color: white;
+  margin-bottom: auto;
+  margin-top: auto;
 }
 .Score8 {
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  font-weight: 600;
+  font-weight: 700;
   font-family: "Raleway", sans-serif;
-  color: #00f249;
+  background-color: #400059;
+  padding: 1em;
+  border-radius: 1em;
+  color: white;
+  margin-bottom: auto;
+  margin-top: auto;
 }
 .stickyImg {
   position: sticky;
@@ -347,4 +390,7 @@ h2 {
       letter-spacing: 0.15em;
     }
   }
+}
+:host ::ng-deep .p-toast-top-right {
+  top: 80px;
 }
