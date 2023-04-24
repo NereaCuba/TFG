@@ -8,7 +8,7 @@ h2 {
   font-size: 1.2em;
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: $color-dark;
+  color: var(--app-primary-color);
 }
 .evaluate {
     margin: 6em auto;
@@ -25,7 +25,7 @@ h2 {
         }
     }
     .link {
-        color: $color-dark;
+        color: var(--app-primary-color);
         &:hover {
             cursor: pointer;
         }
@@ -34,7 +34,7 @@ h2 {
         width: 450px;
         height: 450px;
         background-color: $color-hovered;
-        border: 1px solid $color-dark;
+        border: 1px solid var(--app-primary-color);
         position: relative;
         p {
           font-weight: 600;
@@ -43,8 +43,8 @@ h2 {
     .confirmButtons {
       .disabledConfirm {
         cursor: not-allowed;
-        background-color: $light-blue-darkered;
-        color: $color-dark;
+        background-color: var(--app-secondary-color)-darkered;
+        color: var(--app-primary-color);
       }
       button {
         box-sizing: border-box;
@@ -59,7 +59,7 @@ h2 {
         font-size: 16px;
         letter-spacing: 0.25em;
         line-height: 72px;
-        background: #34385E;
+        background: var(--app-primary-color);
         border: 1px solid #000000;
       }
     }
@@ -80,7 +80,7 @@ h2 {
         button {
           padding: 0.8em;
           cursor: pointer;
-          color: $color-dark;
+          color: var(--app-primary-color);
           text-transform: uppercase;
           font-family: "Karla",  sans-serif;
           font-weight: 600;
@@ -88,20 +88,20 @@ h2 {
           font-size: 15px;
           letter-spacing: 0.25em;
           line-height: 50px;
-          background: $light-blue;
-          border: 0.5px solid $color-dark;
+          background: var(--app-secondary-color);
+          border: 0.5px solid var(--app-primary-color);
           width: 50%;
         }
       }
       .disabledInput{
         cursor: not-allowed;
-        background-color: $light-blue-darkered !important;
+        background-color: var(--app-secondary-color)-darkered !important;
       }
       .custom-file-upload {
         display: inline-block;
         padding: 0.8em;
         cursor: pointer;
-        color: $color-dark;
+        color: var(--app-primary-color);
         text-transform: uppercase;
         font-family: "Karla",  sans-serif;
         font-weight: 600;
@@ -109,8 +109,8 @@ h2 {
         font-size: 15px;
         letter-spacing: 0.25em;
         line-height: 50px;
-        background: $light-blue;
-        border: 0.5px solid $color-dark;
+        background: var(--app-secondary-color);
+        border: 0.5px solid var(--app-primary-color);
       }
       p {
         margin-bottom: auto !important;
@@ -135,7 +135,7 @@ h2 {
             border-bottom: 1px solid;
             margin: auto;
             width: 2em;
-            color: $color-dark;
+            color: var(--app-primary-color);
         }
         &::before {
             margin-right: 10px
@@ -166,7 +166,7 @@ h2 {
     top              : 0;       /* Set the offset as desired              */
     left             : 2%;
     z-index          : -1;       /* Send element to back                   */
-    background-color : $light-blue;
+    background-color : var(--app-secondary-color);
   }
   p {
     margin-top: 2em;
@@ -188,7 +188,7 @@ h2 {
     padding: 2em 1.3em;
     &:hover {
       cursor: pointer;
-      background-color: $light-white-blue;
+      background-color: var(--app-light-color);
       h2 {
         font-weight: 900;
       }
@@ -214,67 +214,77 @@ h2 {
     font-style: normal;
     font-size: 16px;
     letter-spacing: 0.25em;
-    background: #34385E;
+    background: var(--app-primary-color);
     border: 1px solid #000000;
 }
 .Score0, .Score1 {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   font-weight: 700;
+  border: 2px solid black;
   font-family: "Raleway", sans-serif;
-  background-color: #525252;
+  background-color: #d3d3d3;
   padding: 1em;
   border-radius: 1em;
-  color: white;
+  color: black;
   margin-bottom: auto;
   margin-top: auto;
+  width: 100%;
 }
 
 .Score2 {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   font-weight: 700;
+  width: 100%;
+  border: 2px solid black;
   font-family: "Raleway", sans-serif;
-  background-color: #A32B27;
+  background-color: #fb7272;
   padding: 1em;
   border-radius: 1em;
-  color: white;
+  color: black;
   margin-bottom: auto;
   margin-top: auto;
 }
 .Score3 {
   text-transform: uppercase;
+  border: 2px solid black;
   letter-spacing: 0.15em;
   font-weight: 700;
   font-family: "Raleway", sans-serif;
-  background-color: #7D4A3B;
+  background-color: #ffb453;
   padding: 1em;
+  width: 100%;
   border-radius: 1em;
-  color: white;
+  color: black;
   margin-bottom: auto;
   margin-top: auto;
 }
 .Score4 {
   text-transform: uppercase;
   letter-spacing: 0.15em;
+  width: 100%;
   font-weight: 700;
+  border: 2px solid black;
   font-family: "Raleway", sans-serif;
-  background-color: #024F00;
+  background-color: #fff559;
   padding: 1em;
   border-radius: 1em;
-  color: white;
+  color: black;
   margin-bottom: auto;
   margin-top: auto;
 }
 .Score5 {
   text-transform: uppercase;
   letter-spacing: 0.15em;
+  border: 2px solid black;
   font-weight: 700;
+  width: 100%;
   font-family: "Raleway", sans-serif;
-  background-color: #023D01;
+  background-color: #b6fb62;
   padding: 1em;
   border-radius: 1em;
-  color: white;
+  color: black;
   margin-bottom: auto;
   margin-top: auto;
 }
@@ -282,35 +292,13 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   font-weight: 700;
+  width: 100%;
   font-family: "Raleway", sans-serif;
-  background-color: #000091;
+  background-color: #7beaa6;
   padding: 1em;
+  border: 2px solid black;
   border-radius: 1em;
-  color: white;
-  margin-bottom: auto;
-  margin-top: auto;
-}
-.Score7 {
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-weight: 700;
-  font-family: "Raleway", sans-serif;
-  background-color: #000059;
-  padding: 1em;
-  border-radius: 1em;
-  color: white;
-  margin-bottom: auto;
-  margin-top: auto;
-}
-.Score8 {
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-weight: 700;
-  font-family: "Raleway", sans-serif;
-  background-color: #400059;
-  padding: 1em;
-  border-radius: 1em;
-  color: white;
+  color: black;
   margin-bottom: auto;
   margin-top: auto;
 }
@@ -331,7 +319,7 @@ h2 {
   }
   .legend {
     font-weight: 500;
-    color: $color-dark;
+    color: var(--app-primary-color);
   }
   .elementSquareRed {
     background-color: lightcoral;
@@ -359,7 +347,7 @@ h2 {
     .redirectToAnswer {
       font-weight: 500;
       letter-spacing: 0.15em;
-      color: $color-dark;
+      color: var(--app-primary-color);
       &:hover {
         text-decoration: underline;
         cursor: pointer;

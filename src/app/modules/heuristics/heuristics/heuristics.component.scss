@@ -8,7 +8,7 @@ h2 {
   font-size: 1.2em;
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: $color-dark;
+  color: var(--app-primary-color);
 }
 .introduction {
   font-family: "Raleway", sans-serif;
@@ -23,7 +23,7 @@ h2 {
     top              : 0;       /* Set the offset as desired              */
     left             : 2%;
     z-index          : -1;       /* Send element to back                   */
-    background-color : $light-blue;
+    background-color : var(--app-secondary-color);
   }
   p {
     margin-top: 2em;
@@ -45,7 +45,7 @@ h2 {
     padding: 2em 1.3em;
     &:hover {
       cursor: pointer;
-      background-color: $light-white-blue;
+      background-color: var(--app-light-color);
       h2 {
         font-weight: 900;
       }

@@ -8,7 +8,7 @@ h2 {
   font-size: 1.2em;
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: $color-dark;
+  color: var(--app-primary-color);
 }
 .card {
     &:hover {
@@ -23,56 +23,50 @@ h2 {
     }
 }
 .selected {
-    border: 2px solid $color-dark;
+    border: 2px solid var(--app-primary-color);
 }
 .palette1 {
     padding: 1em;
     * {
         margin-left: 1em;
-        height: 25px;
-        width: 25px;
+        height: 30px;
+        width: 30px;
         border: 1px solid black;
     }
     .square1 {
-        background-color: #6E3F68;
+        background-color: #500342;
     }
     .square2 {
-        background-color: #732473;
+        background-color: #f3e2f1;
     }
     .square4 {
-        background-color: #70045D;
-    }
-    .square5 {
-        background-color: #5D4C55;
+        background-color: #efe4f3;
     }
 }
 .palette3 {
     padding: 1em;
     * {
         margin-left: 1em;
-        height: 25px;
-        width: 25px;
+        height: 30px;
+        width: 30px;
         border: 1px solid black;
     }
     .square1 {
-        background-color: #003004;
+        background-color: #262626;
     }
     .square2 {
-        background-color: #4A4A4A;
+        background-color: #f3f3f3;
     }
     .square4 {
-        background-color: #383838;
-    }
-    .square5 {
-        background-color: #262626;
+        background-color: #e2e2e2;
     }
 }
 .palette4 {
     padding: 1em;
     * {
         margin-left: 1em;
-        height: 25px;
-        width: 25px;
+        height: 30px;
+        width: 30px;
         border: 1px solid black;
     }
     .square1 {
@@ -83,8 +77,5 @@ h2 {
     }
     .square4 {
         background-color: #DAE9F0;
-    }
-    .square5 {
-        background-color: #98a1a5;
     }
 }

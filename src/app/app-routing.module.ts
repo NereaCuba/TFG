@@ -5,10 +5,12 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: '/home-page',
-    pathMatch: 'full'
+    pathMatch: 'full',
+    data: {title: "Evaluación de un gráfico estadístico"}
   },
   {
     path: 'home-page',
+    data: {title: "Evaluación de un gráfico estadístico"},
     loadChildren: () =>
       import(
         './modules/home/home.module'
@@ -16,6 +18,7 @@ const routes: Routes = [
   },
   {
     path: 'articles-list',
+    data: {title: "Artículos | Evaluación de un gráfico estadístico"},
     loadChildren: () =>
       import(
         './modules/articles/articles.module'
@@ -23,6 +26,7 @@ const routes: Routes = [
   },
   {
     path: 'heuristics-list',
+    data: {title: "Heurísticas | Evaluación de un gráfico estadístico"},
     loadChildren: () =>
       import(
         './modules/heuristics/heuristics.module'
@@ -30,6 +34,7 @@ const routes: Routes = [
   },
   {
     path: 'evaluate',
+    data: {title: "Evalúa | Evaluación de un gráfico estadístico"},
     loadChildren: () =>
       import(
         './modules/evaluate/evaluate.module'
@@ -37,6 +42,7 @@ const routes: Routes = [
   },
   {
     path: 'about',
+    data: {title: "Contexto | Evaluación de un gráfico estadístico"},
     loadChildren: () =>
       import(
         './modules/about/about.module'
@@ -44,6 +50,7 @@ const routes: Routes = [
   },
   {
     path: 'heuristic-detail',
+    data: {title: "Evaluación de un gráfico estadístico"},
     loadChildren: () =>
       import(
         './modules/heuristic-detail/heuristic-detail.module'
@@ -51,6 +58,7 @@ const routes: Routes = [
   },
   {
     path: 'articles-detail',
+    data: {title: "Evaluación de un gráfico estadístico"},
     loadChildren: () =>
       import(
         './modules/articles-detail/articles-detail.module'

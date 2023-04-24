@@ -7,16 +7,16 @@
   justify-content: center;
 }
 footer {
-  background-color: $light-blue;
+  background-color: var(--app-secondary-color);
   margin-top: 6em;
   font-family: 'Karla', sans-serif;
   font-size: 16px;
   line-height: 23px;
   letter-spacing: 0.25em;
-  color: $color-dark !important;
+  color: var(--app-primary-color) !important;
 
  img {
-  width: 20em;
+  width: 20em;       
  }
 }
 :host ::ng-deep .p-menubar {
@@ -29,7 +29,7 @@ footer {
 :host {
   ::ng-deep div > p-menubar > div {
     font-family: 'Karla', sans-serif;
-    background-color: $color-dark;
+    background-color: var(--app-primary-color);
     font-style: normal;
     font-size: 16px;
     line-height: 23px;

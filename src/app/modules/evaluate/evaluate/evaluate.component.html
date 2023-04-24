@@ -59,26 +59,18 @@
             </tr>
             <tr>
               <td>1</td>
-              <td>Cumplimiento muy bajo</td>
-            </tr>
-            <tr>
-              <td>2</td>
               <td>Cumplimiento bajo</td>
             </tr>
             <tr>
-              <td>3</td>
+              <td>2</td>
               <td>Cumplimiento aceptable</td>
             </tr>
             <tr>
-              <td>4</td>
+              <td>3</td>
               <td>Cumplimiento alto</td>
             </tr>
             <tr>
-              <td>5</td>
-              <td>Cumplimiento muy alto</td>
-            </tr>
-            <tr>
-              <td>6</td>
+              <td>4</td>
               <td>Cumplimiento excelente</td>
             </tr>
           </tbody>
@@ -232,14 +224,14 @@
         <div class="col-4 d-flex justify-content-center align-items-center">
           <h2 class="smallH2">Heurística</h2>
         </div>
-        <div class="col-2 d-flex justify-content-center align-items-center">
-          <h2 class="smallH2">Nota ponderada</h2>
-        </div>
         <div class="col-4 d-flex justify-content-center align-items-center">
           <h2 class="smallH2">Resultado seleccionado</h2>
         </div>
         <div class="col-2 d-flex justify-content-center align-items-center">
           <h2 class="smallH2">Peso</h2>
+        </div>
+        <div class="col-2 d-flex justify-content-center align-items-center">
+          <h2 class="smallH2">Nota ponderada</h2>
         </div>
       </div>
       <hr>
@@ -248,14 +240,14 @@
           <div class="col-4 d-flex justify-content-center align-items-center">
             <h2 class="smallH2">H{{i+1}} - {{constHeuristicsTitles[i]}}</h2>
           </div>
-          <div class="col-2 d-flex justify-content-center align-items-center">
-            <p>{{scoreAll[i]}}</p>
-          </div>
           <div class="col-4 d-flex justify-content-center align-items-center">
             <p [ngClass]="'Score' + result.optionLinkert">{{constLikert[result.optionLinkert]}}</p>
           </div>
           <div class="col-2 d-flex justify-content-center align-items-center">
             <p>x{{constWeightHeuristics[i]}}</p>
+          </div>
+          <div class="col-2 d-flex justify-content-center align-items-center">
+            <p>{{scoreAll[i]}}</p>
           </div>
         </div>
         <hr>

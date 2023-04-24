@@ -33,7 +33,7 @@ export class EvaluateComponent {
   _idHeuristic: string = 'H' + (this._idValueHeuristics + 1).toString();
   formValue: any = [];
   oldFormValue: any = [];
-  constLikert: any = ['No aplica', 'No es problema', 'No cumplimiento', 'Cumplimiento muy bajo', 'Cumplimiento bajo', 'Cumplimiento aceptable', 'Cumplimiento alto', 'Cumplimiento muy alto', 'Cumplimiento excelente'];
+  constLikert: any = ['NA - No aplica', 'NP - No es problema', '0 - No cumplimiento', '1 - Cumplimiento bajo', '2 - Cumplimiento aceptable', '3 - Cumplimiento alto', '4 - Cumplimiento excelente'];
   constHeuristicsTitles: any = [
     'Título',
     'Leyenda',
@@ -57,7 +57,7 @@ export class EvaluateComponent {
   constWeightHeuristics: any = [1,1,1,1,1,1,1,1,3,3,3,2,3,2,3,1,3,2,];
   scoreAll:any = [];
   globalResults: any = [];
-  headers: any[] = ['Heuristica', 'Nota', 'Seleccion', 'Peso'];
+  headers: any[] = ['Heuristica', 'Seleccion', 'Peso', 'Nota'];
   constructor(
     private router: Router,
     private messageService: MessageService,
@@ -168,7 +168,6 @@ export class EvaluateComponent {
         this.startEvaluation = false;
         this.showResultsBrief = true;
         this.oldFormValue = [...this.formValue];
-        console.log("HOLA");
         
       } else {
         this.isComingFromBrief = false;
@@ -218,13 +217,17 @@ export class EvaluateComponent {
       }
       this.globalResults.push({
         heuristica: 'H' + (index+1) + ' - ' + this.constHeuristicsTitles[index],
-        nota: this.scoreAll.at(index),
         seleccion: this.constLikert[value.optionLinkert],
-        peso: this.constWeightHeuristics[index]
+        peso: this.constWeightHeuristics[index],
+        nota: this.scoreAll.at(index)
       })
     });
 
     this.totalResult = ((summatoryCurrentAsignation * 10)/summatoryTotalAsignation).toFixed(2);
+    this.globalResults.push({
+      heuristica: "NOTA GLOBAL",
+      nota: this.totalResult
+    })
   }
 
   deleteImage() {

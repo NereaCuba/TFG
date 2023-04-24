@@ -51,17 +51,20 @@
       {
       "id": "1",
       "name":"Rubén Alcaraz Martínez",
-      "photo":"https://www.ub.edu/adaptabit/img/rubenalcaraz.jpg"
+      "photo":"https://www.ub.edu/adaptabit/img/rubenalcaraz.jpg",
+      "mail": "mailto:ralcaraz@ub.edu"
       },
       {
       "id": "2",
       "name":"Mireia Ribera-Turró",
-      "photo":"https://i1.rgstatic.net/ii/profile.image/700516204048387-1544027486191_Q512/Mireia-Ribera-Turro.jpg"
+      "photo":"https://i1.rgstatic.net/ii/profile.image/700516204048387-1544027486191_Q512/Mireia-Ribera-Turro.jpg",
+      "mail": "ribera@ub.edu"
       },
       {
       "id": "3",
       "name":"Toni Granollers-Saltiveri",
-      "photo":"https://www.directorioexit.info/exit/fotos/200/5919.jpg"
+      "photo":"https://www.directorioexit.info/exit/fotos/200/5919.jpg",
+      "mail": ""
       }
     ]
 }

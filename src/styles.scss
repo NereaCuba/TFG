@@ -1,3 +1,155 @@
+@import '@angular/material/theming';
+
+@include mat-core();
+
+$default-palette: (
+    50 : #e9f0f1,
+    100 : #c7d9dd,
+    200 : #a2c0c6,
+    300 : #7da7af,
+    400 : #61949d,
+    500 : #000036,
+    600 : #E8E8E8,
+    700 : #DAE9F0,
+    800 : #2e646f,
+    900 : #1f515c,
+    A100 : #e4eef3,
+    A200 : #69e3ff,
+    A400 : #36d9ff,
+    A700 : #1dd4ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+$violet-palette: (
+    50 : #e9f0f1,
+    100 : #c7d9dd,
+    200 : #a2c0c6,
+    300 : #7da7af,
+    400 : #61949d,
+    500 : #000036,
+    600 : #3e7984,
+    700 : #1e2122,
+    800 : #2e646f,
+    900 : #1f515c,
+    A100 : #f3e2f1,
+    A200 : #500342,
+    A400 : #efe4f3,
+    A700 : #1dd4ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+$gray-palette: (
+    50 : #e9f0f1,
+    100 : #c7d9dd,
+    200 : #a2c0c6,
+    300 : #7da7af,
+    400 : #61949d,
+    500 : #000036,
+    600 : #3e7984,
+    700 : #1e2122,
+    800 : #2e646f,
+    900 : #1f515c,
+    A100 : #e2e2e2,
+    A200 : #c5c5c5,
+    A400 : #262626,
+    A700 : #f3f3f3,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$gray-app-theme: mat-light-theme((
+  color: (
+    primary: mat-palette($gray-palette, A400),
+    accent: mat-palette($gray-palette, A100),
+    warn: mat-palette($gray-palette, A700)
+  )
+));
+
+// Define an alternate dark theme.
+$violet-app-theme: mat-dark-theme((
+  color: (
+    primary: mat-palette($violet-palette, A200),
+    accent: mat-palette($violet-palette, A100),
+    warn: mat-palette($violet-palette, A400)
+  )
+));
+
+$default-app-theme: mat-dark-theme((
+  color: (
+    primary: mat-palette($default-palette, 500),
+    accent: mat-palette($default-palette, 700),
+    warn: mat-palette($default-palette, A100)
+  )
+));
+
+@mixin theme-colors($theme) {
+  $_primary: map-get($theme, primary);
+  $_secondary: map-get($theme, accent);
+  $_light: map-get($theme, warn);
+  $primary-color: mat-color($_primary);
+  $secondary-color: mat-color($_secondary);
+  $light-color: mat-color($_light);
+  --app-primary-color: #{$primary-color};
+  --app-secondary-color: #{$secondary-color};
+  --app-light-color: #{$light-color};
+}
+
+:root {
+  @include angular-material-color($default-app-theme);
+  @include theme-colors($default-app-theme);
+}
+
+.violet-theme {
+  @include angular-material-color($violet-app-theme);
+  @include theme-colors($violet-app-theme);
+}
+.gray-theme {
+  @include angular-material-color($gray-app-theme);
+  @include theme-colors($gray-app-theme);
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -5,3 +157,6 @@ body {
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

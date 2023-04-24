@@ -16,7 +16,7 @@
     left: 18em;
     font-family: "Karla", sans-serif;
     text-align: center;
-    color: $color-dark;
+    color: var(--app-primary-color);
     .subtitleImg {
       font-size: 15px;
       line-height: 23px;
@@ -52,9 +52,9 @@
   .readMore {
     background: none;
     border: none;
-    color: $color-dark;
+    color: var(--app-primary-color);
     padding-bottom: 5px;
-    border-bottom: 1px solid $color-dark;
+    border-bottom: 1px solid var(--app-primary-color);
     font-weight: 600;
     letter-spacing: 0.1em;
     font-size: 1.2em;
@@ -74,7 +74,7 @@
         text-align: center;
         font-weight: 700;
         letter-spacing: 0.2em;
-        color: $color-dark;
+        color: var(--app-primary-color);
     }
     .articleTitles {
       display: flex;
@@ -85,7 +85,7 @@
         border-bottom: 1px solid;
         margin: auto;
         width: 2em;
-        color: $color-dark;
+        color: var(--app-primary-color);
       }
       &::before {
         margin-right: 10px

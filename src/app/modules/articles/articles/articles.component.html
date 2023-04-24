@@ -42,14 +42,14 @@
         <h3 class="titleAuthors">Autores</h3>
         <hr class="mb-3">
         <div class="authorsList">
-          <div class="row align-items-center mb-3 authorItem" *ngFor="let author of authors;">
+          <a class="row align-items-center mb-3 authorItem authorMail" *ngFor="let author of authors;" href={{author.mail}}>
             <div class="col-lg-4 col-md-12" >
               <img class="authorImg" src={{author.photo}} alt="">
             </div>
             <div class="offset-lg-1 col-lg-7 author col-md-12">
                 <p class="titleArticle">{{author.name!}}</p>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </div>

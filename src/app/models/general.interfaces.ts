@@ -16,6 +16,7 @@ export interface Author {
   id?: number;
   name?: string;
   photo?: string;
+  mail?: string;
 }
 
 export interface HeuristicsResponse {

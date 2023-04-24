@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {MenubarModule} from 'primeng/menubar';
@@ -8,6 +8,7 @@ import { MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DialogModule } from 'primeng/dialog';
 import { SettingsModule } from './components/settings/settings.module';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SettingsModule } from './components/settings/settings.module';
     SettingsModule
   ],
   providers: [
-    MdbModalService
+    MdbModalService,
+    Title
   ],
   bootstrap: [AppComponent]
 })

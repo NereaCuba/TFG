@@ -64,7 +64,7 @@
 	padding: 1em;
 	border: none;
 	cursor: pointer;
-	background-color: $color-dark;
+	background-color: var(--app-primary-color);
   color: $color-light;
 }
 .btnOnProducts{
@@ -85,7 +85,7 @@
       width: 100%;
       margin-bottom: 10px;
       &:hover{
-          border: 1px solid $color-dark;
+          border: 1px solid var(--app-primary-color);
           cursor: pointer;
           filter: contrast(120%);
       }
