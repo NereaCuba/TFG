@@ -1,12 +1,11 @@
-
-<div class="d-flex justify-content-center" *ngIf="loading">
-  <div class="spinner-border" role="status">
-    <span class="visually-hidden">Loading...</span>
+<div class="d-flex justify-content-center flex-column align-items-center mt-4"  *ngIf="loading">
+  <div class="spinner-border mt-4 mb-4" role="status">
   </div>
+  <h5 class="text-center mt-4 loadingFont">Cargando...</h5>
 </div>
 <ng-container *ngIf="loaded">
   <button class="stickyButton d-none d-lg-block" (click)="redirectTo('/articles-list')"><i class="pi pi-arrow-left"></i></button>    
-  <iframe src="./../../../../assets/COVID19-EPI.pdf" style="border: 0; height: 100vw; width: 100vw;">
+  <iframe src={{_article.pdf}} style="border: 0; height: 100vw; width: 100vw;">
       <p>
           Your browser does not support PDF files.
           <a href={{_article.pdf}}>Download the file instead</a>
