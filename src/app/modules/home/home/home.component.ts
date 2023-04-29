@@ -4,7 +4,7 @@ import { ArticleBasicInfo, ArticlesResponse } from 'app/models/general.interface
 import { HomeService } from '../services/home.service';
 import {DOCUMENT} from '@angular/common';
 import { AppComponent } from 'app/app.component';
-
+import AOS from "aos";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -17,13 +17,18 @@ export class HomeComponent implements OnInit{
   grayBackground:string = "./../../../../assets/Fondo_bueno_gris.png";
   purpleBackground:string = "./../../../../assets/Fondo_bueno_violeta.png";
   image: string = this.blueBackground;
+  loading:boolean = true;
+  loaded:boolean = false;
 
   constructor(
     private router: Router,
     private homeService: HomeService,
     @Inject(DOCUMENT) private document: Document
     ) {}
-  async ngOnInit() {
+    async ngOnInit() {
+    this.loading = true;
+    this.loaded = false;
+    AOS.init();
     this.homeService.getArticles().subscribe((res: ArticlesResponse) => {
     this.articles = res.articles;
     this.articlesCarousel = this.articles.slice(0,2);
@@ -35,6 +40,8 @@ export class HomeComponent implements OnInit{
     } else {
       this.image = this.blueBackground;
     }
+    this.loaded = true;
+    this.loading = false;
   }
   evaluateButton(): void {
     this.redirectTo('/evaluate');
@@ -46,7 +53,22 @@ export class HomeComponent implements OnInit{
     this.redirectTo('/about');
   }
   redirectTo(uri: string) {
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
+    this.loading = true;
+    this.loaded = false;
+    this.router.navigateByUrl('/', {skipLocationChange: false}).then(() =>
     this.router.navigate([uri]));
+    this.loading = false;
+    this.loaded = true;
+  }
+  redirectToArticles(uri: string, additionalInfo?: any) {
+    this.loading = true;
+    this.loaded = false;
+    this.router.navigateByUrl('/', {skipLocationChange: false}).then(() =>
+    this.router.navigate([uri], {queryParams: {articleID: additionalInfo}}));
+    this.loading = false;
+    this.loaded = true;
+  }
+  articleShowInformation(value?: any) {
+    this.redirectToArticles('/articles-detail', value?.id);
   }
 }

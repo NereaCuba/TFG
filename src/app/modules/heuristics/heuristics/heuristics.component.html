@@ -1,49 +1,63 @@
-<div class="introduction">
-  <h2 class="text-center">Introducción a las heurísticas</h2>
-  <p class="text-center">La lista de indicadores heurísticos propuesta está formada por 18 indicadores que cubren aspectos de la información
-    que transmite el gráfico (título, ejes, alternativas de texto…), su presentación visual (fuente tipográfica, colores…) y el
-    comportamiento y funciones presentes (personalización, compatibilidad con los lectores de pantalla…).
-    </p>
-    <p class="text-center">En relación con el perfil de baja visión al que benefician, la distribución de los indicadores es la siguiente:</p>
-    <div class="listIndicators">
-      <div class="d-flex flex-row">
-        <i class="pi pi-angle-right mt-1"></i>
-        <p class="mt-0">3 indicadores pensados para usuarios que presentan un resto visual muy bajo y que emplean un lector de pantalla
-          como ayuda técnica principal o como complemento al magnificador de pantalla.</p>
-      </div>
-      <div class="d-flex flex-row">
-        <i class="pi pi-angle-right mt-1"></i>
-        <p class="mt-0">5 indicadores que contemplan aspectos que pueden beneficiar a usuarios con un resto visual no tan bajo como el
-          anterior, pero que aun así precisan del uso de ayudas como magnificadores de pantalla.</p>
-      </div>
-      <div class="d-flex flex-row">
-        <i class="pi pi-angle-right mt-1"></i>
-        <p class="mt-0">1 indicador pensado para satisfacer las necesidades de los usuarios con VCD.</p>
-      </div>
-      <div class="d-flex flex-row">
-        <i class="pi pi-angle-right mt-1"></i>
-        <p class="mt-0">1 indicador que cubre la sensibipdad al contraste.</p>
-      </div>
-      <div class="d-flex flex-row">
-        <i class="pi pi-angle-right mt-1"></i>
-        <p class="mt-0">8 indicadores de carácter más general que constituyen buenas prácticas que benefician a cualquier tipo de lector.</p>
+
+<div class="d-flex justify-content-center flex-column align-items-center mt-4"  *ngIf="loading">
+  <div class="spinner-border mt-4 mb-4" role="status">
+  </div>
+  <h5 class="text-center mt-4 loadingFont">Cargando...</h5>
+</div>
+<ng-container *ngIf="loaded">
+  <div>
+    <div class="introduction">
+      <h5 class="text-center">Introducción a las heurísticas</h5>
+      <p class="text-center">La lista de indicadores heurísticos propuesta está formada por 18 indicadores que cubren aspectos de la información
+        que transmite el gráfico (título, ejes, alternativas de texto…), su presentación visual (fuente tipográfica, colores…) y el
+        comportamiento y funciones presentes (personalización, compatibilidad con los lectores de pantalla…).
+        </p>
+        <p class="text-center">En relación con el perfil de baja visión al que benefician, la distribución de los indicadores es la siguiente:</p>
+        <div class="listIndicators">
+          <div class="d-flex flex-row">
+            <i class="pi pi-angle-right mt-1"></i>
+            <p class="mt-0">3 indicadores pensados para usuarios que presentan un resto visual muy bajo y que emplean un lector de pantalla
+              como ayuda técnica principal o como complemento al magnificador de pantalla.</p>
+          </div>
+          <div class="d-flex flex-row">
+            <i class="pi pi-angle-right mt-1"></i>
+            <p class="mt-0">5 indicadores que contemplan aspectos que pueden beneficiar a usuarios con un resto visual no tan bajo como el
+              anterior, pero que aun así precisan del uso de ayudas como magnificadores de pantalla.</p>
+          </div>
+          <div class="d-flex flex-row">
+            <i class="pi pi-angle-right mt-1"></i>
+            <p class="mt-0">1 indicador pensado para satisfacer las necesidades de los usuarios con VCD.</p>
+          </div>
+          <div class="d-flex flex-row">
+            <i class="pi pi-angle-right mt-1"></i>
+            <p class="mt-0">1 indicador que cubre la sensibipdad al contraste.</p>
+          </div>
+          <div class="d-flex flex-row">
+            <i class="pi pi-angle-right mt-1"></i>
+            <p class="mt-0">8 indicadores de carácter más general que constituyen buenas prácticas que benefician a cualquier tipo de lector.</p>
+          </div>
+        </div>
+    </div>
+    <div class="heuristic parallax index mt-5">
+      <div class="listHeuristics" data-aos="fade-up" data-aos-duration="2000">
+        <div class="d-flex flex-row justify-content-between align-items-center">
+          <h5 class="mt-0">Lista de heurísticas</h5>
+          <span class="p-input-icon-right">
+            <i class="pi pi-search"></i>
+            <input class="lessSize" type="text" pInputText [(ngModel)]="data" (input)="filterByName()"/>
+          </span>
+        </div>
+        <hr>
+        <div class="list">
+          <div class="heuristicDetail"  *ngFor="let heuristic of _listHeuristics  | slice:first3:rows3+first3; let i = index;" (click)="heuristicInformationShow(heuristic)">
+            <div>
+              <div class="d-flex flex-row"><h5>{{heuristic.id}} - {{heuristic.name}}</h5></div>
+              <p>{{heuristic.brief}}</p>
+            </div>
+          </div>
+          <p-paginator (onPageChange)="onPageChange3($event)" [first]="first3" [rows]="rows3" [totalRecords]="totalRecords" [showFirstLastIcon]="false" ></p-paginator>
+        </div>
       </div>
     </div>
-</div>
-<div class="listHeuristics">
-  <div class="d-flex flex-row justify-content-between">
-    <h2>Lista de heurísticas</h2>
-    <span class="p-input-icon-right">
-      <i class="pi pi-search"></i>
-      <input class="lessSize" type="text" pInputText [(ngModel)]="data" (input)="filterByName()"/>
-    </span>
   </div>
-  <hr>
-  <div class="list">
-    <div class="heuristicDetail"  *ngFor="let heuristic of _listHeuristics;" (click)="heuristicInformationShow(heuristic)">
-      <div class="d-flex flex-row"><h2>{{heuristic.id}} - {{heuristic.name}}</h2></div>
-      <p>{{heuristic.brief}}</p>
-    </div>
-    <!-- <p-paginator [rows]="6" [totalRecords]="totalRecords"></p-paginator> -->
-  </div>
-</div>
+</ng-container>

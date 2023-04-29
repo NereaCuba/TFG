@@ -139,7 +139,7 @@ export class EvaluateFormComponent implements OnInit {
     this.backButtonBoolean = true;
   }
   redirectTo(uri: string) {
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
+    this.router.navigateByUrl('/', {skipLocationChange: false}).then(() =>
     this.router.navigate([uri]));
   }
   redirectToEvaluate() {

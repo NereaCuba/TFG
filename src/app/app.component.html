@@ -1,58 +1,64 @@
-<app-settings [visible]="visible" (isClosed)="closeModal()" [selectedPalette]="paletteSelected" (paletteSelecteed)="setPalete($event)"></app-settings>
-<div class="m-0 p-0">
-  <p-menubar [model]="items">
-    <ng-template pTemplate="end">
-      <button class="settings" (click)="openModal()"><i class="pi pi-cog"></i></button>
-    </ng-template>
 
-  </p-menubar>
-  <router-outlet></router-outlet>
+<div class={{size}}>
+  <app-settings [visible]="visible" (isClosed)="closeModal()" [selectedPalette]="paletteSelected" (sizeSelected)="setSize($event)" (paletteSelecteed)="setPalete($event)"></app-settings>
+  <div class="m-0 p-0">
+    <p-menubar [model]="items">
+      <ng-template pTemplate="end">
+        <button class="settings" (click)="openModal()"><i class="pi pi-cog"></i></button>
+      </ng-template>
   
-<footer class="text-center text-lg-start text-muted">
-  <section class="border-top">
-    <div class="container text-center text-md-start mt-5">
-      <div class="row mt-3">
-
-        <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
-            <img src="./../assets/LOGO_ADAPTABIT-Quadrat1760x1760.png">
-        </div>
-        <div class="col d-flex align-items-center justify-content-between">
-          <div class="row w-100">
-            <div class="col">
-              <h6 class="text-uppercase fw-bold mb-4 titleLink">Enlaces de interés</h6>
-              <p><a routerLink="/about" class="text-reset">Sobre la web</a></p>
-              <p><a routerLink="/heuristics-list" class="text-reset">Heurísticas</a></p>
-              <p><a routerLink="/articles-list" class="text-reset">Artículos</a></p>
-              <p><a routerLink="/evaluate" class="text-reset">Evalua</a></p>
-            </div>
-            <div class="col">
-              <h6 class="text-uppercase fw-bold mb-4 titleLink">Contacta con nosotros</h6>
-              <div class="row">
-                <div class="col-1">
-                  <i class="pi pi-envelope" style="font-size: 1.5rem"></i>
-                </div>
-                <div class="col ms-2">
-                  <p><a href="mailto:adaptabit@ub.edu" class="text-reset">adaptabit@ub.edu</a></p>
-                </div>
+    </p-menubar>
+    <router-outlet></router-outlet>
+    
+  <footer class="text-center text-lg-start text-muted">
+    <section class="border-top">
+      <div class="container text-center text-md-start mt-3">
+        <div class="row mt-3">
+  
+          <div class="col-lg-4 col-12 mb-4">
+              <img src="./../assets/LOGO_ADAPTABIT-Quadrat1760x1760.png">
+          </div>
+          <div class="col-lg-8 col-12 d-flex align-items-center justify-content-between">
+            <div class="row w-100">
+              <div class="col-md-6 col-sm-12">
+                <h6 class="text-uppercase fw-bold mb-4 titleLink">Enlaces de interés</h6>
+                <p><a routerLink="/about" class="text-reset">Sobre la web</a></p>
+                <p><a routerLink="/heuristics-list" class="text-reset">Heurísticas</a></p>
+                <p><a routerLink="/articles-list" class="text-reset">Artículos</a></p>
+                <p><a routerLink="/evaluate" class="text-reset">Evalua</a></p>
               </div>
-              <div class="row">
-                <div class="col-1">
-                  <i class="pi pi-twitter" style="font-size: 1.5rem"></i>
+              <div class="col-md-6 col-sm-12">
+                <h6 class="text-uppercase fw-bold mb-4 titleLink">Contacta con nosotros</h6>
+                <div class="row">
+                  <div class="col-1">
+                    <i class="pi pi-envelope" style="font-size: 1.5rem"></i>
+                  </div>
+                  <div class="col ms-2">
+                    <p><a href="mailto:adaptabit@ub.edu" class="text-reset">adaptabit@ub.edu</a></p>
+                  </div>
                 </div>
-                <div class="col ms-2">
-                  <p><a href="https://twitter.com/GAdaptabit" class="text-reset" target="_blank">Grup Adaptabit</a></p>
+                <div class="row">
+                  <div class="col-1">
+                    <i class="pi pi-twitter" style="font-size: 1.5rem"></i>
+                  </div>
+                  <div class="col ms-2">
+                    <p><a href="https://twitter.com/GAdaptabit" class="text-reset" target="_blank">Grup Adaptabit</a></p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </section>
+    <div class="text-center p-4 pb-1">
+      © 2023 Copyright:
+      <a class="text-reset fw-bold"  target="_blank" href="https://www.ub.edu/adaptabit/">Adaptabit</a>
     </div>
-  </section>
-  <div class="text-center p-4">
-    © 2023 Copyright:
-    <a class="text-reset fw-bold"  target="_blank" href="https://www.ub.edu/adaptabit/">Adaptabit</a>
+    <div class="text-center pb-4 pt-2">
+      Desarrollo web realizado por: Nerea Cuba Aixalà
+    </div>
+  </footer>
   </div>
-</footer>
 </div>
 

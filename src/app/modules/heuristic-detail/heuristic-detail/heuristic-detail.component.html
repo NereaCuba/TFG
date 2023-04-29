@@ -1,56 +1,62 @@
-
-<div class="row">
-  <div class="col-sm-12 col-lg-9">
-    <div class="container heuristicDetail">
-      <div class="container mt-0">
-        <h2 class="text-center">{{_heuristic.id}} - {{_heuristic.name}}</h2>
-        <hr>
-      </div>
-      <div class="container">
-        <h2 class="titles">Definición</h2>
-        <p>{{_heuristic.definition}}</p>
-        <p class="mt-4">{{_heuristic.understand}}</p>
-      </div>
-      <div class="container">
-        <h2 class="titles">Cómo cumplir el objetivo</h2>
-        <p>{{_heuristic.how_to_test}}</p>
-      </div>
-      <div class="container">
-        <h2 class="titles">Lista de verificación <i class="pi pi-info-circle" pTooltip="Criterios a utilizar para la evaluación de un gráfico estadístico" tooltipPosition="right"></i></h2>
-        <div *ngFor="let verificationPoint of _heuristic.verification_list;">
-          <p><i class="pi pi-check"></i> {{verificationPoint}}</p>
+<div class="d-flex justify-content-center" *ngIf="loading">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+<ng-container *ngIf="loaded">
+  <div class="row">
+    <div class="col-sm-12 col-lg-9">
+      <div class="container heuristicDetail">
+        <div class="container mt-0">
+          <h5 class="text-center">{{_heuristic.id}} - {{_heuristic.name}}</h5>
+          <hr>
+        </div>
+        <div class="container">
+          <h5 class="titles">Definición</h5>
+          <p>{{_heuristic.definition}}</p>
+          <p class="mt-4">{{_heuristic.understand}}</p>
+        </div>
+        <div class="container">
+          <h5 class="titles">Cómo cumplir el objetivo</h5>
+          <p>{{_heuristic.how_to_test}}</p>
+        </div>
+        <div class="container">
+          <h5 class="titles">Lista de verificación <i class="pi pi-info-circle" pTooltip="Criterios a utilizar para la evaluación de un gráfico estadístico" tooltipPosition="right"></i></h5>
+          <div *ngFor="let verificationPoint of _heuristic.verification_list;">
+            <p><i class="pi pi-check"></i> {{verificationPoint}}</p>
+          </div>
+        </div>
+        <div class="container"  data-aos="fade-up" data-aos-duration="2000">
+          <h5 class="titles">Usuario beneficiado <i class="pi pi-info-circle" pTooltip="Tipo de usuario beneficiado en caso de que se cumplan los criterios de la lista de verificación" tooltipPosition="right"></i></h5>
+          <p>{{_heuristic.benefied_user}}</p>
+        </div>
+        <div class="container"  data-aos="fade-up" data-aos-duration="2000">
+          <h5 class="titles">Peso x{{_heuristic.weigth?.id}}</h5>
+          <p>{{_heuristic.weigth?.description}}</p>
+        </div>
+        <div class="container"  data-aos="fade-up" data-aos-duration="2000">
+          <h5 class="titles">Ejemplos de puntuación</h5>
+          <p class="info text-start" *ngFor="let example of _heuristic.examples"><i class="pi pi-angle-right mt-1"></i>{{example}}</p>
+        </div>
+        <div class="container" *ngIf=" _heuristic.example_images.length > 0">
+          <h5 class="titles">Ejemplos con un gráfico</h5>
+          <div class="row wrap-content">
+            <div class="card info p-4 mb-4 d-flex flex-column justify-content-between" *ngFor="let example of _heuristic.example_images; let i = index " [ngClass]="_heuristic.is_col_12? 'col-12' : i%2 === 0 ? 'col-lg-5 col-md-12' : ' col-lg-5 offset-lg-2 col-sm-12'"  data-aos="fade-up" data-aos-duration="2000">
+              <img src={{example.image}} alt={{example.text}}>
+              <p class="text-center info">{{example.text}}</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="container">
-        <h2 class="titles">Usuario beneficiado <i class="pi pi-info-circle" pTooltip="Tipo de usuario beneficiado en caso de que se cumplan los criterios de la lista de verificación" tooltipPosition="right"></i></h2>
-        <p>{{_heuristic.benefied_user}}</p>
-      </div>
-      <div class="container">
-        <h2 class="titles">Peso x{{_heuristic.weigth?.id}}</h2>
-        <p>{{_heuristic.weigth?.description}}</p>
-      </div>
-      <div class="container">
-        <h2 class="titles">Ejemplos de puntuación</h2>
-        <p class="info text-start" *ngFor="let example of _heuristic.examples"><i class="pi pi-angle-right mt-1"></i>{{example}}</p>
-      </div>
-      <div class="container">
-        <h2 class="titles">Ejemplos con un gráfico</h2>
-        <div class="row gap-2">
-          <div class="card info col p-4" *ngFor="let example of _heuristic.example_images">
-            <img src={{example.image}} alt={{example.text}}>
-            <p class="text-center info mt-3">{{example.text}}</p>
+    </div>
+    <div class="col-sm-12 col-lg-3  mt-5">
+      <div class="container heuristicDetail"  data-aos="fade-up" data-aos-duration="2000">
+        <div class="row">
+          <div class="col-12" *ngFor="let heuristic of _listHeuristicsRedirects; let i = index">
+            <titles-inline *ngIf="heuristic.example_images.length > 0" [image]="heuristic.example_images[0].image!" [comesFromHeuristicDetail]="true" [title]="heuristic.name!" (click)="heuristicInformationShow(heuristic)"></titles-inline>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-sm-12 col-lg-3  mt-5">
-    <div class="container heuristicDetail">
-      <div class="row">
-        <div class="col-12" *ngFor="let heuristic of _listHeuristicsRedirects; let i = index">
-          <titles-inline [image]="heuristic.example_images[0].image!" [comesFromHeuristicDetail]="true" [title]="heuristic.name!" (click)="heuristicInformationShow(heuristic)"></titles-inline>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+</ng-container>

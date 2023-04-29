@@ -14,7 +14,15 @@ import { EvaluateFormModule } from 'app/components/evaluate-form/evaluate-form.m
 import { MessageService } from 'primeng/api';
 import { EvaluateService } from './services/evaluate.service';
 import { SafePipe } from './safepipe';
+// Import FusionCharts library and chart modules
+import { FusionChartsModule } from 'angular-fusioncharts';
+import * as FusionCharts from 'fusioncharts';
+import * as Widgets from 'fusioncharts/fusioncharts.widgets';
 
+import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+
+// Pass the fusioncharts library and chart modules
+FusionChartsModule.fcRoot(FusionCharts, Widgets, FusionTheme);
 @NgModule({
   declarations: [
     EvaluateComponent,
@@ -25,6 +33,7 @@ import { SafePipe } from './safepipe';
     HttpClientModule,
     AvatarModule,
     ToastModule,
+    FusionChartsModule,
     RouterModule,
     RadioButtonModule,
     TooltipModule,
@@ -36,7 +45,6 @@ import { SafePipe } from './safepipe';
   ],
   providers: [
     MessageService,
-    EvaluateService
-  ]
+    EvaluateService  ]
 })
 export class evaluateStatusModule { }

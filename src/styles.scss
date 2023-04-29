@@ -1,5 +1,4 @@
 @import '@angular/material/theming';
-
 @include mat-core();
 
 $default-palette: (
@@ -98,13 +97,12 @@ $gray-palette: (
         A700 : #000000,
     )
 );
-
 $gray-app-theme: mat-light-theme((
   color: (
     primary: mat-palette($gray-palette, A400),
     accent: mat-palette($gray-palette, A100),
     warn: mat-palette($gray-palette, A700)
-  )
+  ),
 ));
 
 // Define an alternate dark theme.
@@ -113,7 +111,7 @@ $violet-app-theme: mat-dark-theme((
     primary: mat-palette($violet-palette, A200),
     accent: mat-palette($violet-palette, A100),
     warn: mat-palette($violet-palette, A400)
-  )
+  ),
 ));
 
 $default-app-theme: mat-dark-theme((
@@ -160,3 +158,181 @@ body {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.size1 {
+  h1 {
+    font-size: 3em;
+  }
+  h2 {
+    font-size: 2.5em;
+  }
+  h3 {
+    font-size: 2.25em;
+  }
+  h4 {
+    font-size: 2em;
+  }
+  h5 {
+    font-size: 1.75em;
+  }
+  h6 {
+    font-size: 1.5em;
+  }
+  p, th, td, button, input, .sizeParahgraph {
+    font-size: 1.25em;
+  }
+  .imageChart {
+    img {
+      height: 37em !important;
+    }
+  }
+  .evaluate {
+    .square {
+      margin-top: 1em;
+      width: 550px !important;
+      height: 550px !important;
+    }
+  }
+  .settingCard {
+    flex: 0 0 auto !important;
+  }
+  .heuristic.parallax {
+    height: 40vw; 
+  }
+}
+.size2 {
+  h1 {
+    font-size: 3.5em;
+  }
+  h2 {
+    font-size: 2.75em;
+  }
+  h3 {
+    font-size: 2.5em;
+  }
+  h4 {
+    font-size: 2.25em;
+  }
+  h5 {
+    font-size: 2em;
+  }
+  h6 {
+    font-size: 1.25em;
+  }
+  p, th, td, button, input, .sizeParahgraph  {
+    font-size: 1.5em;
+  }
+  p, th, td {
+    margin-bottom: 2em;
+  }
+  // .introduction {
+  //   &::before {
+  //     height: 47em !important;
+  //   }
+  // }
+  .imageChart {
+    img {
+      height: 40em !important;
+    }
+  }
+  .submitButtons, .submitButtonsBrief {
+    padding: auto !important;
+  }
+  .evaluate {
+    .square {
+      margin-top: 2.5em;
+      width: 550px !important;
+      height: 550px !important;
+    }
+  }
+  .fromList .btnOnProducts.hidden {
+    position: relative;
+    bottom: 1em;
+  }
+  .settingCard {
+    flex: 0 0 auto !important;
+  }
+  .heuristic.parallax {
+    height: 48vw; 
+  }
+}
+.size1Parahgraph {
+  font-size: 1.25em;
+}
+.size2Parahgraph {
+  font-size: 1.5em;
+}
+.size3Parahgraph {
+  font-size: 1.75em;
+}
+.size3 {
+  h1 {
+    font-size: 4em;
+  }
+  h2 {
+    font-size: 3.25em;
+  }
+  h3 {
+    font-size: 3em;
+  }
+  h4 {
+    font-size: 2.75em;
+  }
+  h5 {
+    font-size: 2.5em;
+  }
+  h6 {
+    font-size: 2.25em;
+  }
+  p, th, td, button, input, .sizeParahgraph {
+    font-size: 1.75em;
+  }
+  p, th, td {
+    margin-bottom: 2em;
+  }
+  // .introduction {
+  //   &::before {
+  //     height: 55em !important;
+  //   }
+  // }
+  .imageChart {
+    img {
+      height: 50em !important;
+    }
+  }
+  .evaluate {
+    .square {
+      margin-top: 4em;
+      width: 550px !important;
+      height: 550px !important;
+    }
+  }
+  .submitButtons, .submitButtonsBrief {
+    padding: auto !important;
+  }
+  .circleColor {
+    height: 150px !important;
+    width: 150px !important;
+  }
+  .buttonEndForm {
+    padding: 0.5em;
+  }
+  .fromList .btnOnProducts.hidden {
+    position: relative;
+    bottom: 1em;
+  }
+  .settingCard {
+    flex: 0 0 auto !important;
+  }
+  .heuristic.parallax {
+    height: 54vw; 
+  }
+}
+.spinner-border {
+  color: var(--app-primary-color);
+  --bs-spinner-width: 20rem;
+  --bs-spinner-height: 20rem;
+  --bs-spinner-vertical-align: 28.875em;
+  --bs-spinner-border-width: 0.5em;
+  --bs-spinner-animation-speed: 3s;
+}

@@ -11,7 +11,6 @@ Chart.register(...registerables);
 export class AboutComponent implements OnInit {
   contentInformation: any = {};
   contentInformationSecond: any = {};
-
   constructor(private aboutService: AboutService) {}
   chart:any = {};
 
@@ -30,6 +29,6 @@ export class AboutComponent implements OnInit {
               data: [17589,24156,27165,29541,32146,24563,14743,16230,15636,19999,31545,18354,22895,26746,32565,31050,35241,26124,16923,17028,22712,27351,26558,16607,18729,23027,26966,25407,28548,25197,19885,18207,28065,32033,30104,18817],
           }]
       }
-    });    
+    }); 
   }
 }

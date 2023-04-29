@@ -1,18 +1,16 @@
 
-<div class="row">
-    <div class="col-sm-12 col-lg-9">
-      <div class="container heuristicDetail">
-        <div class="container mt-0">
-          <h2 class="text-center">{{_article.title}}</h2>
-          <hr>
-        </div>
-        <div class="container">
-          <h2 class="titles">Abstract</h2>
-        <div *ngFor="let paragraph of _article.abstract;">
-            <p>{{paragraph}}</p>
-        </div>
-        </div>
-      </div>
-    </div>
+<div class="d-flex justify-content-center" *ngIf="loading">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
   </div>
-  
+</div>
+<ng-container *ngIf="loaded">
+  <button class="stickyButton d-none d-lg-block" (click)="redirectTo('/articles-list')"><i class="pi pi-arrow-left"></i></button>    
+  <iframe src="./../../../../assets/COVID19-EPI.pdf" style="border: 0; height: 100vw; width: 100vw;">
+      <p>
+          Your browser does not support PDF files.
+          <a href={{_article.pdf}}>Download the file instead</a>
+      </p>
+    </iframe>
+    <p-scrollTop target="parent"></p-scrollTop>
+</ng-container>

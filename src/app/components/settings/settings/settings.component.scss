@@ -2,10 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200..900');
 
-h2 {
+h5 {
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
-  font-size: 1.2em;
   font-weight: 700;
   letter-spacing: 0.2em;
   color: var(--app-primary-color);
@@ -28,7 +27,6 @@ h2 {
 .palette1 {
     padding: 1em;
     * {
-        margin-left: 1em;
         height: 30px;
         width: 30px;
         border: 1px solid black;
@@ -38,15 +36,16 @@ h2 {
     }
     .square2 {
         background-color: #f3e2f1;
+        margin-left: 1em;
     }
     .square4 {
         background-color: #efe4f3;
+        margin-left: 1em;
     }
 }
 .palette3 {
     padding: 1em;
     * {
-        margin-left: 1em;
         height: 30px;
         width: 30px;
         border: 1px solid black;
@@ -56,15 +55,16 @@ h2 {
     }
     .square2 {
         background-color: #f3f3f3;
+        margin-left: 1em;
     }
     .square4 {
         background-color: #e2e2e2;
+        margin-left: 1em;
     }
 }
 .palette4 {
     padding: 1em;
     * {
-        margin-left: 1em;
         height: 30px;
         width: 30px;
         border: 1px solid black;
@@ -74,8 +74,36 @@ h2 {
     }
     .square2 {
         background-color: #E8E8E8;
+        margin-left: 1em;
     }
     .square4 {
         background-color: #DAE9F0;
+        margin-left: 1em;
     }
+}
+:host ::ng-deep div.p-element.p-dialog.p-component {
+    top: 2em;
+    @media screen and (max-width: 1200px) {
+        width: 90vw !important;
+      }
+}
+:host ::ng-deep .p-steps .p-steps-item { 
+
+    &:before {
+        top: 40% !important;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+    .p-steps-number {
+        background-color: var(--app-secondary-color) !important;
+        font-weight: 700;
+    }
+}
+:host ::ng-deep .p-steps .p-steps-item.p-highlight .p-steps-number{
+    color: var(--app-primary-color) !important;
+    border: 2px solid var(--app-primary-color);
+}
+:host ::ng-deep .p-steps .p-steps-item .p-menuitem-link:not(.p-disabled):focus {
+    box-shadow: none;
 }

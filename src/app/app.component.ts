@@ -6,7 +6,6 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import {DOCUMENT} from '@angular/common';
 import { Title } from '@angular/platform-browser';
 import { filter, map } from 'rxjs/operators';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -18,10 +17,11 @@ export class AppComponent implements OnInit {
   modalRef: MdbModalRef<SettingsComponent> | null = null;
   visible: boolean = false;
   paletteSelected: number = 0;
+  fontSize:number = 16;
+  size: string = null;
   public static readonly DEFAULT_THEME = 'default-theme';
   public static readonly GRAY_THEME = 'gray-theme';
   public static readonly VIOLET_THEME = 'violet-theme';
-
   public theme: string;
     constructor(
       private modalService: MdbModalService,
@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
       private titleService: Title,
       private activatedRoute: ActivatedRoute,
       @Inject(DOCUMENT) private document: Document
-      ) {
+      ) {       
         this.theme = this.document.documentElement.classList.contains(AppComponent.GRAY_THEME) ? AppComponent.GRAY_THEME : this.document.documentElement.classList.contains(AppComponent.VIOLET_THEME) ?  AppComponent.VIOLET_THEME : AppComponent.DEFAULT_THEME;
       }
     setDocTitle(title: string) {
@@ -39,27 +39,37 @@ export class AppComponent implements OnInit {
       this.items = [
         {
             icon: 'pi pi-chart-bar',
-            routerLink: 'home-page'
+            styleClass: 'sizeParahgraph',
+            command: () => this.redirectTo('/home-page'),
+            skipLocationChange: false,
         },
         {
             label: 'Home',
-            routerLink: 'home-page'
+            styleClass: 'sizeParahgraph',
+            command: () => this.redirectTo('/home-page'),
+            skipLocationChange: false,
         },
         {
             label: 'Heurísticas',
-            routerLink: 'heuristics-list'
+            styleClass: 'sizeParahgraph',
+            command: () => this.redirectTo('/heuristics-list'),
+            skipLocationChange: false,
         },
         {
             label: 'Artículos',
-            routerLink: 'articles-list'
+            styleClass: 'sizeParahgraph',
+            command: () => this.redirectTo('/articles-list'),
+            skipLocationChange: false,
         },
         {
             label: 'Evalua',
-            command: () => this.goToEvaluate(),
-            skipLocationChange: true,
+            styleClass: 'sizeParahgraph',
+            command: () => this.redirectTo('/evaluate'),
+            skipLocationChange: false,
         }
       ];
       const appTitle = this.titleService.getTitle();
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
       this.router.events.pipe(filter(event => event instanceof NavigationEnd), map(() => {
             const child = this.activatedRoute.firstChild;
             if (child.snapshot.data['title']) {
@@ -77,12 +87,6 @@ export class AppComponent implements OnInit {
     closeModal() {
       this.visible = false;
     }
-    goToEvaluate() {
-      event.preventDefault();
-
-      this.router.navigateByUrl('/', {skipLocationChange: false})
-        .then(() => this.router.navigate(['/evaluate']));
-    }
     setPalete(value) {
       this.paletteSelected = value;
       if(value === 1) {
@@ -92,7 +96,7 @@ export class AppComponent implements OnInit {
       } else {
         this.selectDefaultTheme();
       }
-      this.ngOnInit();
+      this.refreshSite();
     }
   
     public selectGrayTheme(): void {
@@ -123,5 +127,28 @@ export class AppComponent implements OnInit {
       }
       this.document.documentElement.classList.add(AppComponent.DEFAULT_THEME);
       this.theme = AppComponent.DEFAULT_THEME;
+    }
+    refreshSite() {
+      var routeArray = this.router.url.split('/');
+      var currentRoute = routeArray[routeArray.length-1];
+      if(currentRoute !== 'evaluate') {
+        event.preventDefault();
+        this.redirectTo('/' + currentRoute);
+      }
+    }
+    redirectTo(uri: string) {
+      this.router.navigateByUrl('/', {skipLocationChange: false}).then(() =>
+      this.router.navigate([uri]));
+    }
+    setSize(value) {
+      if (value === 0) {
+        this.size = null;
+      } else if(value === 1) {
+        this.size = 'size1';
+      } else if( value === 2){
+        this.size = 'size2';
+      } else {
+        this.size = 'size3';
+      }
     }
 }

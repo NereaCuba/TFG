@@ -1,8 +1,3 @@
-<!-- <div class="d-flex justify-content-center">
-  <div class="spinner-border" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-</div> -->
 <div class="d-flex justify-content-center" *ngIf="loading">
   <div class="spinner-border" role="status">
     <span class="visually-hidden">Loading...</span>
@@ -16,17 +11,17 @@
     <p class="info">{{_heuristic.how_to_test}}</p>
     <p class="subTitle dropDown" (click)="hideExamples()">Ejemplos de puntuación <i class="ms-1 pi" [ngClass]="showExamples ? 'pi-chevron-up' : 'pi-chevron-down'" ></i></p>
     <div class="container" *ngIf="showExamples">
-      <p class="info text-start" *ngFor="let example of _heuristic.examples"><i class="pi pi-angle-right mt-1"></i>{{example}}</p>
+      <p class="info text-start" *ngFor="let example of _heuristic.examples"><i class="pi pi-angle-right mt-1" style="font-size: 19px;"></i>{{example}}</p>
     </div>
   </div>
   <hr>
   <div class="row justify-content-md-center mt-4">
-    <div class="col-8 d-flex flex-column justify-content-center">
+    <div class="col-lg-8 col-md-12 d-flex flex-column justify-content-center">
       <p class="mt-4 subTitle">PROGRESO DEL FORMULARIO</p>
       <p-progressBar class="mb-4 mt-4 progressBar" [value]="_valueProgressBar"></p-progressBar>
       <form #myForm="ngForm" class="text-center mt-4" (submit)="templateForm(myForm.value)">
         <div class="containerForm">
-          <p class="subTitle mb-4 rateChart">PUNTUA EL GRÁFICO - {{_idHeuristic}} {{_heuristic.name}}        <button type="button" class="circleButton" (click)="showDialog()"><i class="pi pi-question-circle"></i></button></p>
+          <p class="subTitle mb-4 rateChart">PUNTUA EL GRÁFICO - {{_idHeuristic}} {{_heuristic.name}}        <button type="button" class="circleButton" (click)="showDialog()" *ngIf="_heuristic.example_images.length > 0"><i class="pi pi-question-circle"></i></button></p>
           <div *ngIf=" _heuristic.example_images.length > 0">
             <p-dialog [(visible)]="visible" [draggable]="false" [resizable]="false" [breakpoints]="{ '960px': '80vw'}" [modal]="true">
               <div class="d-flex flex-column align-items-center justify-content-center p-3 addBorder" *ngFor="let example of _heuristic.example_images; let i = index" [ngClass]="i === 0 ? '': 'mt-4'">
@@ -37,13 +32,13 @@
             </p-dialog>        
           </div>
           <div class="row text-start mt-2">
-            <div class="col-6 d-flex justify-content-center align-items-center">
+            <div class="col-lg-6 col-md-12 d-flex justify-content-center align-items-center">
               <div class="" *ngIf="isIFrame">
                 <iframe src="https://ourworldindata.org/grapher/covid-confirmed-cases-since-100th-case?country=USA+ESP+ITA+KOR+TWN+GBR+NOR" style="width: 100%; height: 600px; border: 0px none;"></iframe>
               </div>
               <img class="chartImg" src={{srcImg}} alt="Gráfico introducido" *ngIf="!isIFrame">
             </div>
-            <div class="col-6 d-flex justify-content-center">
+            <div class="col-lg-6 col-md-12 d-flex justify-content-center">
               <div class="containerForm">
                 <div class="field-radiobutton">
                   <p-radioButton name="optionLinkert0" [disabled]="checkIfDisabled(0)" value=0 [(ngModel)]="optionLinkert" inputId="optionLinkert1"></p-radioButton>
@@ -78,11 +73,11 @@
           </div>
         </div>
         <div class="containerButtons row justify-content-center mt-3" *ngIf="!comesFromBrief">
-          <button class="col-5 submitButtons" type="submit" (click)="backButton()"><i class="pi pi-times"></i> {{_idHeuristic === 'H1' ? 'IR AL INICIO' : 'VOLVER A '}}{{_idHeuristic === 'H1' ? '' : 'H' + lastValue}}</button>
-          <button class="ms-2  col-5 submitButtons" type="submit" >{{_idHeuristic === 'H18' ? 'FINALIZAR' : 'CONTINUAR EN '}}{{_idHeuristic === 'H18' ? '' : ('H' + nextValue)}}</button>
+          <button class="col-lg-5 col-12 submitButtons mb-2 mb-lg-0" type="submit" (click)="backButton()"><i class="pi pi-times"></i> {{_idHeuristic === 'H1' ? 'IR AL INICIO' : 'VOLVER A '}}{{_idHeuristic === 'H1' ? '' : 'H' + lastValue}}</button>
+          <button class="ms-lg-2  col-lg-5 col-12 submitButtons" type="submit" >{{_idHeuristic === 'H18' ? 'FINALIZAR' : 'CONTINUAR EN '}}{{_idHeuristic === 'H18' ? '' : ('H' + nextValue)}}</button>
         </div>
         <div class="containerButtons row justify-content-center mt-3" *ngIf="comesFromBrief">
-          <button class="col-5 submitButtonsBrief" type="submit" >VOLVER AL RESUMEN</button>
+          <button class="col-lg-5 col-12 submitButtonsBrief" type="submit" >VOLVER AL RESUMEN</button>
         </div>
       </form>
     </div>

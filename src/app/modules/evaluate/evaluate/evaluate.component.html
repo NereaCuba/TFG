@@ -1,154 +1,161 @@
 <p-toast></p-toast>
 <div *ngIf=showIntroduction>
   <div class="introduction">
-    <h2 class="text-center">Introducción a la evaluación</h2>
-    <p class="text-center">La lista de indicadores heurísticos propuesta está formada por 18 indicadores que cubren aspectos de la información
-      que transmite el gráfico (título, ejes, alternativas de texto…), su presentación visual (fuente tipográfica, colores…) y el
-      comportamiento y funciones presentes (personalización, compatibilidad con los lectores de pantalla…).
-    </p>
-    <p class="text-center">En relación con el <b>perfil de baja visión al que benefician</b>, la distribución de los indicadores es la siguiente:</p>
-    <div class="listIndicators container d-flex flex-column justify-content-center mt-5">
-      <div class="d-flex flex-row">
-        <i class="pi pi-angle-right mt-1"></i>
-        <p class="mt-0">3 indicadores pensados para usuarios que presentan un <b>resto visual muy bajo</b> y que emplean un lector de pantalla
-          como ayuda técnica principal o como complemento al magnificador de pantalla.</p>
-      </div>
-      <div class="d-flex flex-row">
-        <i class="pi pi-angle-right mt-1"></i>
-        <p class="mt-0">5 indicadores que contemplan aspectos que pueden beneficiar a usuarios con un <b>resto visual no tan bajo</b> como el
-          anterior, pero que aun así precisan del uso de ayudas como magnificadores de pantalla.</p>
-      </div>
-      <div class="d-flex flex-row">
-        <i class="pi pi-angle-right mt-1"></i>
-        <p class="mt-0">1 indicador pensado para satisfacer las necesidades de los usuarios con <b>VCD</b>.</p>
-      </div>
-      <div class="d-flex flex-row">
-        <i class="pi pi-angle-right mt-1"></i>
-        <p class="mt-0">1 indicador que cubre la <b>sensibilidad al contraste.</b></p>
-      </div>
-      <div class="d-flex flex-row">
-        <i class="pi pi-angle-right mt-1"></i>
-        <p class="mt-0">8 indicadores de carácter más general que constituyen <b>buenas prácticas</b> que benefician a cualquier tipo de lector.</p>
+    <div class="ps-lg-5 ms-5 me-5 pe-lg-5">
+      <h5 class="text-center">Introducción a la evaluación</h5>
+      <p class="text-center">La lista de indicadores heurísticos propuesta está formada por 18 indicadores que cubren aspectos de la información
+        que transmite el gráfico (título, ejes, alternativas de texto…), su presentación visual (fuente tipográfica, colores…) y el
+        comportamiento y funciones presentes (personalización, compatibilidad con los lectores de pantalla…).
+      </p>
+      <p class="text-center">En relación con el <b>perfil de baja visión al que benefician</b>, la distribución de los indicadores es la siguiente:</p>
+      <div class="listIndicators container d-flex flex-column justify-content-center mt-5">
+        <div class="d-flex flex-row">
+          <i class="pi pi-angle-right mt-1"></i>
+          <p class="mt-0">3 indicadores pensados para usuarios que presentan un <b>resto visual muy bajo</b> y que emplean un lector de pantalla
+            como ayuda técnica principal o como complemento al magnificador de pantalla.</p>
+        </div>
+        <div class="d-flex flex-row">
+          <i class="pi pi-angle-right mt-1"></i>
+          <p class="mt-0">5 indicadores que contemplan aspectos que pueden beneficiar a usuarios con un <b>resto visual no tan bajo</b> como el
+            anterior, pero que aun así precisan del uso de ayudas como magnificadores de pantalla.</p>
+        </div>
+        <div class="d-flex flex-row">
+          <i class="pi pi-angle-right mt-1"></i>
+          <p class="mt-0">1 indicador pensado para satisfacer las necesidades de los usuarios con <b>VCD</b>.</p>
+        </div>
+        <div class="d-flex flex-row">
+          <i class="pi pi-angle-right mt-1"></i>
+          <p class="mt-0">1 indicador que cubre la <b>sensibilidad al contraste.</b></p>
+        </div>
+        <div class="d-flex flex-row">
+          <i class="pi pi-angle-right mt-1"></i>
+          <p class="mt-0">8 indicadores de carácter más general que constituyen <b>buenas prácticas</b> que benefician a cualquier tipo de lector.</p>
+        </div>
       </div>
     </div>
   </div>
   <div class="instructions">
-      <span class="first titleSection">
-        <h2 class="titles articleTitles mt-5">Instrucciones</h2>
-      </span>
-      <p class="text-center mb-4">Se va a utilizar una <b>escala de Likert</b> de 7 puntos para el cálculo del grado de cumplimiento de cada ítem, cuyo rango va de 0 (peor puntuación posible) a 6 (mejor puntuación posible). </p>
-      <table class="table text-center table-bordered container">
-          <thead>
-            <tr>
-              <th scope="col">Evaluación</th>
-              <th scope="col">Nivel de cumplimiento</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>-</td>
-              <td>No aplica <i class="pi pi-info-circle" pTooltip="Un ejemplo de caso en el que un indicador no aplica, lo podemos encontrar en la no necesidad de disponer de una leyenda en el caso de gráficos estadísticos con una única serie de datos, o en la no necesidad de utilizar colores seguros o patrones cuando el gráfico sólo muestra una marca." tooltipPosition="right"></i></td>
-            </tr>
-            <tr>
-              <td>-</td>
-              <td>No es problema <i class="pi pi-info-circle" pTooltip="Por lo que respecta al valor “No es problema”, aplica en casos como, por ejemplo, cuando se incluyen abreviaturas que no se desarrollan pero que son de uso común y muy conocidas por la audiencia." tooltipPosition="right"></i></td>
-            </tr>
-            <tr>
-              <td>0</td>
-              <td>No cumplimiento</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Cumplimiento bajo</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Cumplimiento aceptable</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Cumplimiento alto</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Cumplimiento excelente</td>
-            </tr>
-          </tbody>
-      </table>
-      <p class="text-center mt-4">Adicionalmente, se han añadido las opciones <b>“No aplica” y “No es problema”</b>, para aquellos casos en los cuales no sea pertinente la pregunta, o en los que el hecho de no cumplir con el indicador no deriva en un problema de accesibilidad, respectivamente.</p>
-      <p class="text-center mb-4">Tras la aplicación de la escala, se utiliza un <b>sistema de ponderación</b> que posibilita asignar pesos distintos según la importancia de cada indicador. Su importancia viene determinada por los criterios especificados en la tabla 2.</p>
-      <table class="table text-center table-bordered container mt-4">
-          <thead>
-            <tr>
-              <th scope="col">Criterio</th>
-              <th scope="col">Ponderación</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>En caso de no cumplirse, uno o más perfiles de usuario <b>no tendrá una experiencia de usuario satisfactoria</b> al consultar el
-                  gráfico, comprometiéndose levemente su accesibilidad para uno o más perfiles de usuario con baja visión.
-                  En caso de estar presente la accesibilidad del gráfico mejora levemente.</td>
-                  <td>x1</td>
-            </tr>
-            <tr>
-              <td>En caso de no cumplirse, uno o más perfiles de usuarios tendrá serias <b>dificultades para percibir la información</b> del gráfico,
-                  comprometiéndose gravemente su accesibilidad para uno o más perfiles de usuario con baja visión.
-                  Funcionalidad que de estar presente mejora mucho la accesibilidad del gráfico.</td>
-              <td>x2</td>
-            </tr>
-            <tr>
-              <td>En caso de no cumplirse, uno o más perfiles de usuarios será <b>incapaz de percibir la información</b> del gráfico, comprometiéndose
-                  totalmente su accesibilidad para uno o más perfiles de usuario con baja visión.
-                  Funcionalidad que de estar presente mejora enormemente la accesibilidad del gráfico.</td>
-              <td>x3</td>
-            </tr>
-          </tbody>
-      </table>
-      <p class="text-center mt-4">La lista de indicadores heurísticos utilizada, junto con su definición, el perfil de usuario beneficiado de su cumplimiento y su ponderación se puede consultar <a routerLink="/heuristics-list" (click)="redirectToHeuristics()">en el detalle de las heurísticas</a></p>
-  </div>
-  <div class="evaluate container">
-      <div class="row justify-content-center">
-          <div class="col-lg-4 col-md-12">
-              <div *ngIf='imgURL'>
-                  <img class="chartImg" [src]="imgURL" *ngIf="!isIFrame">
-                  <div class="" *ngIf="isIFrame">
-                    <iframe [src]="imgURL | safe " style="width: 100%; height: 600px; border: 0px none;"></iframe>
+    <div class="heuristic parallax index mt-5">
+      <div class="backgroundWhite" data-aos="fade-up" data-aos-duration="2000">
+          <span class="first titleSection">
+            <h5 class="titles articleTitles mt-5">Instrucciones</h5>
+          </span>
+          <p class="text-center mb-4">Se va a utilizar una <b>escala de Likert</b> de 7 puntos para el cálculo del grado de cumplimiento de cada ítem, cuyo rango va de 0 (peor puntuación posible) a 6 (mejor puntuación posible). </p>
+          <table class="table text-center table-bordered container"  >
+              <thead>
+                <tr>
+                  <th scope="col">Evaluación</th>
+                  <th scope="col">Nivel de cumplimiento</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>-</td>
+                  <td>No aplica <i class="pi pi-info-circle" pTooltip="Un ejemplo de caso en el que un indicador no aplica, lo podemos encontrar en la no necesidad de disponer de una leyenda en el caso de gráficos estadísticos con una única serie de datos, o en la no necesidad de utilizar colores seguros o patrones cuando el gráfico sólo muestra una marca." tooltipPosition="right"></i></td>
+                </tr>
+                <tr>
+                  <td>-</td>
+                  <td>No es problema <i class="pi pi-info-circle" pTooltip="Por lo que respecta al valor “No es problema”, aplica en casos como, por ejemplo, cuando se incluyen abreviaturas que no se desarrollan pero que son de uso común y muy conocidas por la audiencia." tooltipPosition="right"></i></td>
+                </tr>
+                <tr>
+                  <td>0</td>
+                  <td>No cumplimiento</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Cumplimiento bajo</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Cumplimiento aceptable</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Cumplimiento alto</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Cumplimiento excelente</td>
+                </tr>
+              </tbody>
+          </table>
+          <p class="text-center mt-4 p-3" >Adicionalmente, se han añadido las opciones <b>“No aplica” y “No es problema”</b>, para aquellos casos en los cuales no sea pertinente la pregunta, o en los que el hecho de no cumplir con el indicador no deriva en un problema de accesibilidad, respectivamente.</p>
+          <p class="text-center mb-4 p-3" >Tras la aplicación de la escala, se utiliza un <b>sistema de ponderación</b> que posibilita asignar pesos distintos según la importancia de cada indicador. Su importancia viene determinada por los criterios especificados en la tabla 2.</p>
+          <table class="table text-center table-bordered container mt-4" >
+              <thead>
+                <tr>
+                  <th scope="col">Criterio</th>
+                  <th scope="col">Ponderación</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>En caso de no cumplirse, uno o más perfiles de usuario <b>no tendrá una experiencia de usuario satisfactoria</b> al consultar el
+                      gráfico, comprometiéndose levemente su accesibilidad para uno o más perfiles de usuario con baja visión.
+                      En caso de estar presente la accesibilidad del gráfico mejora levemente.</td>
+                      <td>x1</td>
+                </tr>
+                <tr>
+                  <td>En caso de no cumplirse, uno o más perfiles de usuarios tendrá serias <b>dificultades para percibir la información</b> del gráfico,
+                      comprometiéndose gravemente su accesibilidad para uno o más perfiles de usuario con baja visión.
+                      Funcionalidad que de estar presente mejora mucho la accesibilidad del gráfico.</td>
+                  <td>x2</td>
+                </tr>
+                <tr>
+                  <td>En caso de no cumplirse, uno o más perfiles de usuarios será <b>incapaz de percibir la información</b> del gráfico, comprometiéndose
+                      totalmente su accesibilidad para uno o más perfiles de usuario con baja visión.
+                      Funcionalidad que de estar presente mejora enormemente la accesibilidad del gráfico.</td>
+                  <td>x3</td>
+                </tr>
+              </tbody>
+          </table>
+          <p class="text-center mt-4">La lista de indicadores heurísticos utilizada, junto con su definición, el perfil de usuario beneficiado de su cumplimiento y su ponderación se puede consultar <a routerLink="/heuristics-list" (click)="redirectToHeuristics()">en el detalle de las heurísticas</a></p>
+          <div class="evaluate container">
+              <div class="row justify-content-center">
+                  <div class="col-md-12 mb-4 d-flex justify-content-center">
+                      <div *ngIf='imgURL'>
+                          <img class="chartImg" [src]="imgURL" *ngIf="!isIFrame">
+                          <div class="" *ngIf="isIFrame">
+                            <iframe [src]="imgURL | safe " style="width: 100vw; height: 600px; border: 0px none;"></iframe>
+                          </div>
+                      </div>
+                      <div class="square" *ngIf=!imgURL>
+                        <p class="mt-4 text-center">Aquí podrás ver tu gráfico una vez cargado</p>
+                      </div>
+                  </div>
+                  <div class="col-md-12 ps-lg-5 mt-4 d-flex flex-column align-items-center justify-content-center">
+                    <h5 class="text-center ms-2">Sube una imagen o introduce una URL</h5>
+                    <div class="field-radiobutton w-100">
+                      <p-radioButton  name="typeImport" value="imgUpload" [(ngModel)]="typeImport" inputId="typeImport1" (onClick)="changeTypeInput($event)"></p-radioButton>
+                      <div class="containerButton">
+                        <div class="button-wrap">
+                          <label class="custom-file-upload" [ngClass]="typeImport === 'imgURLUpload' ? 'disabledInput' : ''">
+                            <input [(ngModel)]="inputValue" [attr.disabled]="typeImport === 'imgURLUpload' ? '' : null" id="upload" (input)="manageImage($event)" type="file" >
+                            <p>Carga una imagen</p>
+                        </label>
+                      </div>
+                    </div>
+                    <p [ngClass]="_okImageInput ? (_loadedImageInput ? 'okInput' : '' ) : 'errorInput'">{{nameFile}} <i *ngIf="_loadedImageInput" class="ms-4 pi pi-check"></i></p>
+                    </div>
+                    <div class="field-radiobutton w-100">
+                        <p-radioButton name="typeImport" value="imgURLUpload" [(ngModel)]="typeImport" inputId="typeImport2" (onClick)="changeTypeInput($event)"></p-radioButton>
+                        <label class="w-100">
+                          <div class="d-flex flex-row imgURLUploadClass">
+                            <input [disabled]="typeImport === 'imgUpload' ? true : null" [(ngModel)]="URLLink" type="text">
+                            <button [disabled]="typeImport === 'imgUpload' ? true : null" [ngClass]="typeImport === 'imgUpload' ? 'disabledInput' : ''" (click)="getImageFromURL()">BUSCAR IMAGEN</button>
+                          </div>
+                        </label>
+                    </div>
+                    <div class="confirmButtons row mt-5 w-100 justify-content-between">
+                      <button [attr.disabled]="!imgURL ? '' : null"  [ngClass]="!imgURL ? 'disabledConfirm' : ''"  class="ms-md-5 col-md-5 col-12 mb-2" (click)="startEvaluationMethod()">EMPEZAR</button>
+                      <button [attr.disabled]="!imgURL ? '' : null"  [ngClass]="!imgURL ? 'disabledConfirm' : ''" class="col-md-5 col-12" (click)="deleteImage()"><i class="pi pi-times"></i> BORRAR IMAGEN</button>
+                    </div>
                   </div>
               </div>
-              <div class="square" *ngIf=!imgURL>
-                <p class="mt-2 text-center">Aquí podrás ver tu gráfico una vez cargado</p>
-              </div>
           </div>
-          <div class="col-lg-7 offset-lg-1 col-md-12 ps-lg-5">
-            <h2>Sube una imagen o introduce una URL</h2>
-            <div class="field-radiobutton">
-              <p-radioButton name="typeImport" value="imgUpload" [(ngModel)]="typeImport" inputId="typeImport1" (onClick)="changeTypeInput($event)"></p-radioButton>
-              <div class="containerButton">
-                <div class="button-wrap">
-                  <label class="custom-file-upload" [ngClass]="typeImport === 'imgURLUpload' ? 'disabledInput' : ''">
-                    <input [(ngModel)]="inputValue" [attr.disabled]="typeImport === 'imgURLUpload' ? '' : null" id="upload" (input)="manageImage($event)" type="file" >
-                    Carga una imagen
-                </label>
-              </div>
-            </div>
-            <p [ngClass]="_okImageInput ? _loadedImageInput ? 'okInput' : '' : 'errorInput'">{{ nameFile }} <i *ngIf="_loadedImageInput" class="ms-4 pi pi-check"></i></p>
-            </div>
-            <div class="field-radiobutton">
-                <p-radioButton name="typeImport" value="imgURLUpload" [(ngModel)]="typeImport" inputId="typeImport2" (onClick)="changeTypeInput($event)"></p-radioButton>
-                <label class="w-100">
-                  <div class="d-flex flex-row imgURLUploadClass">
-                    <input [disabled]="typeImport === 'imgUpload' ? true : null" [(ngModel)]="URLLink" type="text">
-                    <button [disabled]="typeImport === 'imgUpload' ? true : null" [ngClass]="typeImport === 'imgUpload' ? 'disabledInput' : ''" (click)="getImageFromURL()">BUSCAR IMAGEN</button>
-                  </div>
-                </label>
-            </div>
-            <div class="confirmButtons row mt-5">
-              <button [attr.disabled]="!imgURL ? '' : null"  [ngClass]="!imgURL ? 'disabledConfirm' : ''"  class="offset-1 col-5" (click)="startEvaluationMethod()">EMPEZAR</button>
-              <button [attr.disabled]="!imgURL ? '' : null"  [ngClass]="!imgURL ? 'disabledConfirm' : ''" class="offset-1 col-5" (click)="deleteImage()"><i class="pi pi-times"></i> BORRAR IMAGEN</button>
-            </div>
-          </div>
+        </div>
       </div>
+      
   </div>
 </div>
 <div *ngIf=startEvaluation>
@@ -157,24 +164,24 @@
   </div>
 </div>
 <div class="mt-5" *ngIf=showResultsBrief id=pdfResults>
-  <h2 class="text-center">RESUMEN DE LA EVALUACIÓN</h2>
+  <h5 class="text-center">RESUMEN DE LA EVALUACIÓN</h5>
   <div class="mt-5 row">
-    <div class="col-6 d-flex justify-content-center">
+    <div class="col-12 col-lg-6 d-flex justify-content-center">
       <div class="stickyImg">
         <img class="charImgBrief" src={{imgURL}} alt="Gráfico introducido" *ngIf="!isIFrame">
         <div class="" *ngIf="isIFrame">
-          <iframe src={{imgURL}} style="width: 100%; height: 600px; border: 0px none;"></iframe>
+          <iframe src={{imgURL}} style="width: 100vw; height: 600px; border: 0px none;"></iframe>
         </div>
       </div>
     </div>
-    <div class="col-6 d-flex justify-content-center globalContainer">
+    <div class="col-12 col-lg-6 d-flex justify-content-center globalContainer">
       <div class="containerResults">
         <div class="mt-3 d-flex flex-row justify-content-end align-items-center">
-          <div class="col-3 d-flex">
+          <div class="col-5 col-lg-3 d-flex">
             <div class="elementSquareRed"></div>
             <p class="ms-2 legend">No respondido</p>
           </div>
-          <div class="offset-1 col-3 d-flex">
+          <div class="offset-1 col-5 col-lg-3 d-flex">
             <div class="elementSquareGreen"></div>
             <p class="ms-2 legend">Respondido</p>
           </div>
@@ -182,9 +189,9 @@
         <div class="d-flex flex-column mt-5">
           <div class="containerBrief row" *ngFor="let result of formValue; let i = index">
             <div class="col-12">
-              <div class="d-flex flex-row align-items-center" (click)="goToAnswer(i)" [ngClass]="!constLikert[result.optionLinkert] ? 'justify-content-start' : 'justify-content-end'">
+              <div class="d-flex flex-row align-items-start" (click)="goToAnswer(i)" [ngClass]="!constLikert[result.optionLinkert] ? 'justify-content-start' : 'justify-content-end'">
                 <div *ngIf="constLikert[result.optionLinkert]" class="d-flex flex-column me-4 justify-content-start align-items-end">
-                  <p class="heuristicTitleCircle">{{constHeuristicsTitles[i]}}</p>
+                  <p class="heuristicTitleCircle text-end">{{constHeuristicsTitles[i]}}</p>
                   <p class="noBottom">{{constLikert[result.optionLinkert]}}</p>
                   <p class="redirectToAnswer">Ir a la heurística</p>
                 </div>
@@ -192,7 +199,7 @@
                     <p class="circleContainer">H{{i+1}}</p>
                 </div>
                 <div *ngIf="!constLikert[result.optionLinkert]" class="d-flex flex-column ms-4 justify-content-start align-items-start">
-                  <p class="heuristicTitleCircle">{{constHeuristicsTitles[i]}}</p>
+                  <p class="heuristicTitleCircle text-start">{{constHeuristicsTitles[i]}}</p>
                   <p class="noBottom">No respondido</p>
                   <p class="redirectToAnswer">Ir a la heurística</p>
                 </div>
@@ -209,44 +216,54 @@
 </div>
 <div class="mt-5" *ngIf=showResults id=pdfResults>
   <h2 class="text-center">RESULTADOS</h2>
-  <div class="mt-5 container d-flex align-items-center justify-content-center">
-    <div class="" *ngIf="isIFrame">
-      <iframe src={{imgURL}} style="width: 100%; height: 600px; border: 0px none;"></iframe>
-    </div>
-    <img  *ngIf="!isIFrame" class="chartImgResult" src={{imgURL}} alt="Gráfico introducido">
-    <div class="ms-5">
-      <span><p>La puntuación global de tu gráfico es la siguiente:</p><h2 class="smallH2">{{totalResult}}</h2></span>
+  <div class="mt-5 container">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-12 col-md-6" *ngIf="isIFrame">
+        <iframe src={{imgURL}} style="width: 100vw; height: 600px; border: 0px none;"></iframe>
+      </div>
+      <img  *ngIf="!isIFrame" class="chartImgResult col-12 col-md-6" src={{imgURL}} alt="Gráfico introducido">
+      <div class="col-12 col-md-6 ms-1 text-center">
+        <span class="mt-2"><p>La puntuación global de tu gráfico es la siguiente:</p><h4>{{totalResult}}/10</h4></span>
+        <fusioncharts class="d-none d-lg-block" width="700" height="400" type="angulargauge" dataFormat="json" [dataSource]="dataSource"></fusioncharts>
+        <span class="mt-2"><p>Se ha calculado utilizando la siguiente fórmula matemática</p></span>
+        <div class="mt-2">
+          <img class="w-100" src='./../../../../assets/formula.png' alt="Formula utilizada">
+        </div>
+      </div>
     </div>
   </div>
   <div class="mt-5 container text-center">
     <div class="containerResults">
       <div class="row">
-        <div class="col-4 d-flex justify-content-center align-items-center">
-          <h2 class="smallH2">Heurística</h2>
+        <div class="col-lg-4 col d-flex justify-content-center align-items-center">
+          <h6>Heurística</h6>
         </div>
-        <div class="col-4 d-flex justify-content-center align-items-center">
-          <h2 class="smallH2">Resultado seleccionado</h2>
+        <div class="col-lg-4 col d-flex justify-content-center align-items-center">
+          <h6>Resultado seleccionado</h6>
         </div>
-        <div class="col-2 d-flex justify-content-center align-items-center">
-          <h2 class="smallH2">Peso</h2>
+        <div class="col-lg-2 col d-flex justify-content-center align-items-center">
+          <h6>Peso</h6>
         </div>
-        <div class="col-2 d-flex justify-content-center align-items-center">
-          <h2 class="smallH2">Nota ponderada</h2>
+        <div class="col-lg-2 col d-flex justify-content-center align-items-center">
+          <h6>Nota ponderada</h6>
         </div>
       </div>
       <hr>
       <div *ngFor="let result of formValue; let i = index">
         <div class="row">
-          <div class="col-4 d-flex justify-content-center align-items-center">
-            <h2 class="smallH2">H{{i+1}} - {{constHeuristicsTitles[i]}}</h2>
+          <div class="col-lg-4 col d-flex justify-content-center align-items-center">
+            <h6 class="d-none d-md-block">H{{i+1}}  - </h6><h6>{{constHeuristicsTitles[i]}}</h6>
           </div>
-          <div class="col-4 d-flex justify-content-center align-items-center">
+          <div class="col-lg-4 col d-flex justify-content-center align-items-center d-lg-none">
+            <p>{{constLikertValues[result.optionLinkert]}}</p>
+          </div>
+          <div class="col-lg-4 col d-flex justify-content-center align-items-center d-none d-lg-block">
             <p [ngClass]="'Score' + result.optionLinkert">{{constLikert[result.optionLinkert]}}</p>
           </div>
-          <div class="col-2 d-flex justify-content-center align-items-center">
+          <div class="col-lg-2 col d-flex justify-content-center align-items-center">
             <p>x{{constWeightHeuristics[i]}}</p>
           </div>
-          <div class="col-2 d-flex justify-content-center align-items-center">
+          <div class="col-lg-2 col d-flex justify-content-center align-items-center">
             <p>{{scoreAll[i]}}</p>
           </div>
         </div>
@@ -255,7 +272,7 @@
     </div>
   </div>
   <div class="containerButtons row justify-content-center mt-5">
-    <button class="col-5 buttonEndForm" (click)="downloadResults()"><i class="pi pi-download"></i> DESCARGAR</button>
-    <button class="ms-2  col-5 buttonEndForm" pButton pRipple (click)="redirectToEvaluate()" >FINALIZAR</button>
+    <button class="col-12 col-lg-5 buttonEndForm" (click)="downloadResults()"><i class="pi pi-download"></i> DESCARGAR</button>
+    <button class="ms-lg-2 col-12 col-lg-5 buttonEndForm" pButton pRipple (click)="redirectToEvaluate()" >FINALIZAR</button>
   </div>
 </div>

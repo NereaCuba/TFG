@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ArticleService } from '../services/articles.service';
 import { ArticleBasicInfo, ArticlesResponse, Author } from 'app/models/general.interfaces';
 import { Router } from '@angular/router';
+import AOS from "aos";
 
 @Component({
   selector: 'app-articles',
@@ -14,15 +15,22 @@ export class ArticlesComponent implements OnInit {
   articlesCarousel: ArticleBasicInfo[] = [];
   authors: Author[] = [];
   data: string = '';
+  loading:boolean = true;
+  loaded:boolean = false;
   constructor(
     private articleService: ArticleService,
     private router: Router) {}
   ngOnInit() {
+    this.loading = true;
+    this.loaded = false;
     this.articleService.getArticles().subscribe((res: ArticlesResponse) => {
     this.articles = res.articles;
     this.articlesStatic = res.articles;
     this.authors = res.authors!;
     this.articlesCarousel = this.articles.slice(0,2);
+    this.loading = false;
+    this.loaded = true;
+    AOS.init();
     })
   }
   filterByName() {
@@ -33,7 +41,7 @@ export class ArticlesComponent implements OnInit {
     });
   }
   redirectTo(uri: string, additionalInfo?: any) {
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
+    this.router.navigateByUrl('/', {skipLocationChange: false}).then(() =>
     this.router.navigate([uri], {queryParams: {articleID: additionalInfo}}));
   }
   articleShowInformation(value?: any) {

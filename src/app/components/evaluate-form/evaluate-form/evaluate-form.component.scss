@@ -20,7 +20,6 @@ h2 {
 }
 .info {
   font-weight: 200;
-  font-size: 19px;
   text-align: center
 }
 .containerForm {
@@ -32,6 +31,9 @@ h2 {
   .field-radiobutton {
     margin-top: 2em;
     label {
+      @media screen and (max-width: 960px) {
+        margin-left: 0em;
+      }
       margin-left: 0.5em;
     }
   }
@@ -40,21 +42,18 @@ h2 {
   }
   .chartImg {
     width: 350px;
-    height: 350px;
     object-fit: cover;
     border: 1px solid var(--app-primary-color)
   }
 }
 .submitButtons, .submitButtonsBrief {
   box-sizing: border-box;
-  height: 49px;
-  width: 16em;
+  padding: 1em;
   color: $color-light;
   text-transform: uppercase;
   font-family: "Karla",  sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 16px;
   letter-spacing: 0.25em;
   background: var(--app-primary-color);
   border: 1px solid #000000;
@@ -98,18 +97,20 @@ h2 {
   margin-bottom: 3em;
 }
 :host ::ng-deep .p-dialog-mask {
+  @media screen and (max-width: 960px) {
+    top: 41px;
+  }
   top: 61px;
 }
 .circleButton {
   background: var(--app-primary-color);
   border-radius: 50%;
-  height: 32px;
-  width: 32px;
+  height: 32px !important;
+  width: 32px !important;
   margin-left: 1em;
   border: none;
   line-height: 1px;
   i {
     color: white;
-    font-size: 1.5em;
   }
 }

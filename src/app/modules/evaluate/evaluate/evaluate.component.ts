@@ -1,9 +1,9 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
 import { MessageService } from 'primeng/api';
 import { EvaluateService } from '../services/evaluate.service';
+import AOS from "aos";
+
 @Component({
   selector: 'app-evaluate',
   templateUrl: './evaluate.component.html',
@@ -19,6 +19,7 @@ export class EvaluateComponent {
   image: any = null;
   @ViewChild('pdfResults')
   pdfResults!: ElementRef;
+  dataSource: Object;
   startEvaluation: boolean = false;
   showResultsBrief: boolean = false;
   showResults: boolean =  false;
@@ -33,6 +34,7 @@ export class EvaluateComponent {
   _idHeuristic: string = 'H' + (this._idValueHeuristics + 1).toString();
   formValue: any = [];
   oldFormValue: any = [];
+  constLikertValues: any = ['NA', 'NP', '0', '1', '2', '3', '4']
   constLikert: any = ['NA - No aplica', 'NP - No es problema', '0 - No cumplimiento', '1 - Cumplimiento bajo', '2 - Cumplimiento aceptable', '3 - Cumplimiento alto', '4 - Cumplimiento excelente'];
   constHeuristicsTitles: any = [
     'Título',
@@ -85,9 +87,10 @@ export class EvaluateComponent {
     this._idHeuristic = 'H' + (this._idValueHeuristics + 1).toString();
     this.formValue = [];
     this.oldFormValue = [];
+    AOS.init();
   }
   redirectTo(uri: string) {
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
+    this.router.navigateByUrl('/', {skipLocationChange: false}).then(() =>
     this.router.navigate([uri]));
   }
   calculateProgress(currentIndex) {
@@ -138,7 +141,6 @@ export class EvaluateComponent {
       }
     } catch(e) {
       this.isIFrame = false;
-      console.log(e);
     }
   }
   startEvaluationMethod() {
@@ -158,9 +160,7 @@ export class EvaluateComponent {
     }
   }
 
-  pushInfoForm(event) {
-    console.log(event);
-    
+  pushInfoForm(event) {    
     if(event) {
       if(this.isComingFromBrief) {
         this.isComingFromBrief = false;
@@ -207,7 +207,7 @@ export class EvaluateComponent {
     this.formValue.forEach((value, index) => {
       if (value.optionLinkert != 0 && value.optionLinkert != 1) {
         var currentAssignation = (value.optionLinkert - 2) *  this.constWeightHeuristics[index];
-        var maxAssignation = 6 * this.constWeightHeuristics[index];
+        var maxAssignation = 4 * this.constWeightHeuristics[index];
         summatoryCurrentAsignation += currentAssignation;
         summatoryTotalAsignation += maxAssignation;
         
@@ -227,7 +227,65 @@ export class EvaluateComponent {
     this.globalResults.push({
       heuristica: "NOTA GLOBAL",
       nota: this.totalResult
-    })
+    });
+    const dataSource = {
+      chart: {
+        caption: "Puntuación global del gráfico",
+        subcaption: "Valor ponderado en base 10",
+        lowerLimit: "0",
+        upperLimit: "10",
+        showGaugeBorder: "1",
+        gaugeBorderThickness: "2",
+        theme: "fusion"
+      },
+      colorRange: {
+        color: [
+          {
+            minValue: "0",
+            maxValue: "2",
+            code: "#fb7272",
+            borderColor: "#00000",
+            borderAlpha: "100"
+          },
+          {
+            minValue: "2",
+            maxValue: "4",
+            code: "#ffb453",
+            borderColor: "#00000",
+            borderAlpha: "100"
+          },
+          {
+            minValue: "4",
+            maxValue: "6",
+            code: "#f8bd19",
+            borderColor: "#00000",
+            borderAlpha: "100"
+          },
+          {
+            minValue: "6",
+            maxValue: "8",
+            code: "#fff559",
+            borderColor: "#00000",
+            borderAlpha: "100"
+          },
+          {
+            minValue: "8",
+            maxValue: "10",
+            code: "#7beaa6",
+            borderColor: "#00000",
+            borderAlpha: "100"
+          }
+        ]
+      },
+      dials: {
+        dial: [
+          {
+            value: this.totalResult.toString()
+          }
+        ]
+      }
+    }
+    this.dataSource = dataSource;
   }
 
   deleteImage() {

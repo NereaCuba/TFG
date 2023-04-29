@@ -9,6 +9,7 @@ import { articlesDetailRoutingModule } from './articles-detail-routing.module';
 import {TooltipModule} from 'primeng/tooltip';
 import { TitleModule } from 'app/components/titles/titles.module';
 import { DetailArticleService } from './services/articles-detail.service';
+import { ScrollTopModule } from 'primeng/scrolltop';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { DetailArticleService } from './services/articles-detail.service';
     HttpClientModule,
     TitleModule,
     PaginatorModule,
+    ScrollTopModule,
     TooltipModule,
     FormsModule
   ],

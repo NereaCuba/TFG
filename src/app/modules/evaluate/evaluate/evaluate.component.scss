@@ -2,10 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200..900');
 
-h2 {
+h5,h2,h4 {
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
-  font-size: 1.2em;
   font-weight: 700;
   letter-spacing: 0.2em;
   color: var(--app-primary-color);
@@ -15,10 +14,10 @@ h2 {
 }
 .chartImg {
   width: 450px;
-  height: 450px;
   object-fit: cover;
 }
 .instructions, .evaluate {
+  position: relative;
     .pi-info-circle {
         &:hover {
             cursor: pointer;
@@ -48,17 +47,13 @@ h2 {
       }
       button {
         box-sizing: border-box;
-        height: 72px;
-        left: 0px;
-        top: 0px;
         color: $color-light;
         text-transform: uppercase;
         font-family: "Karla",  sans-serif;
         font-weight: 700;
+        padding: 1.5em;
         font-style: normal;
-        font-size: 16px;
         letter-spacing: 0.25em;
-        line-height: 72px;
         background: var(--app-primary-color);
         border: 1px solid #000000;
       }
@@ -78,16 +73,14 @@ h2 {
           height: 5em;
         }
         button {
-          padding: 0.8em;
+          padding: 0.5em;
           cursor: pointer;
           color: var(--app-primary-color);
           text-transform: uppercase;
           font-family: "Karla",  sans-serif;
           font-weight: 600;
           font-style: normal;
-          font-size: 15px;
           letter-spacing: 0.25em;
-          line-height: 50px;
           background: var(--app-secondary-color);
           border: 0.5px solid var(--app-primary-color);
           width: 50%;
@@ -99,16 +92,14 @@ h2 {
       }
       .custom-file-upload {
         display: inline-block;
-        padding: 0.8em;
+        padding: 1.5em;
         cursor: pointer;
         color: var(--app-primary-color);
         text-transform: uppercase;
         font-family: "Karla",  sans-serif;
         font-weight: 600;
         font-style: normal;
-        font-size: 15px;
         letter-spacing: 0.25em;
-        line-height: 50px;
         background: var(--app-secondary-color);
         border: 0.5px solid var(--app-primary-color);
       }
@@ -157,11 +148,17 @@ h2 {
   font-family: "Raleway", sans-serif;
   font-weight: 400;
   padding: 5em;
+  @media screen and (max-width: 960px) {
+    padding: 1em !important;
+    .listIndicators {
+      padding: 0 !important;
+    }
+  }
   position  : relative;         /* Make any child element will be positioned relative to this container */
   &::before {
     content          : '';       /* Set empty content                      */
     position         : absolute; /* Position the pseudo-element absolutely */
-    height           : 36em;      /* Set height and width as desired        */
+    height           : 95%;      /* Set height and width as desired        */
     width            : 96%;
     top              : 0;       /* Set the offset as desired              */
     left             : 2%;
@@ -182,26 +179,25 @@ h2 {
 .listHeuristics {
   padding: 3em;
   .lessSize {
-    height: 2em;
+    width: 100%;
   }
   .heuristicDetail {
     padding: 2em 1.3em;
     &:hover {
       cursor: pointer;
       background-color: var(--app-light-color);
-      h2 {
+      h5 {
         font-weight: 900;
       }
     }
   }
 }
 .chartImgResult {
-  height: 250px;
   width: 250px;
-  object-fit: cover;
-}
-.smallH2{
-  font-size: 12px;
+  @media screen and (min-width: 960px) {
+    padding: 1em !important;
+    width: 550px;
+  }
 }
 .buttonEndForm {
     box-sizing: border-box;
@@ -212,7 +208,6 @@ h2 {
     font-family: "Karla",  sans-serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 16px;
     letter-spacing: 0.25em;
     background: var(--app-primary-color);
     border: 1px solid #000000;
@@ -309,6 +304,10 @@ h2 {
   .charImgBrief {
     height: 500px;
     width: 500px;
+    @media screen and (max-width: 799px) {
+      height: 300px;
+      width: 300px;
+    }
   }
 }
 .globalContainer {
@@ -322,6 +321,7 @@ h2 {
     color: var(--app-primary-color);
   }
   .elementSquareRed {
+    border-radius: 50%;
     background-color: lightcoral;
     border: 1px solid red;
   }
@@ -333,10 +333,10 @@ h2 {
     margin-bottom: 5em;
     .circleColor {
       background: lightgreen;
-      border-radius: 50%;
       height: 100px;
       width: 100px;
       display: flex;
+      border: 1px solid green;
       align-items: center;
       justify-content: center;
       &:hover {
@@ -357,6 +357,8 @@ h2 {
       margin-bottom: 0;
     }
     .red {
+      border: 1px solid red;
+      border-radius: 50%;
       background: lightcoral;
       &:hover{
         background: rgb(255, 16, 16);
@@ -381,4 +383,28 @@ h2 {
 }
 :host ::ng-deep .p-toast-top-right {
   top: 80px;
+}
+.parallax {
+  /* The image used */ 
+  height: 100vw; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin:0;
+  position:relative;
+  margin-bottom: 3em;
+  overflow: auto;
+  .backgroundWhite {
+    overflow: auto;
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    top: 5%;
+    bottom: 5%;
+    background-color: white;
+  }
+}
+.index{
+  background-image: url('./../../../../assets/nicholas-cappello-Wb63zqJ5gnE-unsplash.jpg');
 }

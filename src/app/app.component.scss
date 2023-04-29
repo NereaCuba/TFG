@@ -9,8 +9,12 @@
 footer {
   background-color: var(--app-secondary-color);
   margin-top: 6em;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
   font-family: 'Karla', sans-serif;
-  font-size: 16px;
   line-height: 23px;
   letter-spacing: 0.25em;
   color: var(--app-primary-color) !important;
@@ -31,25 +35,50 @@ footer {
     font-family: 'Karla', sans-serif;
     background-color: var(--app-primary-color);
     font-style: normal;
-    font-size: 16px;
     line-height: 23px;
     border-radius: 0;
     margin: 0;
     padding: 10;
     letter-spacing: 0.25em;
     text-transform: uppercase;
+    @media screen and (max-width: 800px) {
+      .p-menubar-button
+      {
+        box-shadow: none !important;
+      }
+    }
     p-menubarsub.p-element {
       width: 100%;
     }
     * {
-      .p-menubar-root-list {
-        display: flex;
-        font-weight: bold;
-        gap: 3em;
-      }
-      @media screen and (max-width: 800px) {
+      @media screen and (min-width: 960px) {
         .p-menubar-root-list {
-          display: none;
+          display: flex;
+          font-weight: bold;
+          gap: 3em;
+        }
+      }
+      @media screen and (max-width: 960px) {
+        .p-menubar.p-element div.p-menubar.p-component a.p-menubar-button
+        {
+          box-shadow: none !important;
+        }
+        .p-menubar-root-list {
+          li {
+            &:first-child {
+              display: none;
+            }
+          }
+          color: var(--app-primary-color);
+          background-color: var(--app-primary-color) !important;
+          &:hover {
+            background-color: var(--app-primary-color) !important;
+          }
+          font-weight: bold;
+          li { 
+            border-top: 1px solid white;
+          }
+          border-bottom: 1px solid white;
         }
       }
       li {
@@ -65,7 +94,7 @@ footer {
         font-size: 1.3em;
         font-weight: bold;
         &:last-child {
-          margin: 0 3em;
+          margin: 0 1em;
         }
         @media screen and (max-width: 600px) {
           &:last-child {

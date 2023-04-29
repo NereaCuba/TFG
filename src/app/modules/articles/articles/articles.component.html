@@ -1,57 +1,68 @@
 
-<div class="articlesSite">
-  <div class="blue-block">
-    <h2 class="text-center">Lee los estudios en distintos ejemplos</h2>
-    <p class="text-center mt-5">En esta sección encontraras distintos estudios versados en diferentes áreas de la accesibilidad, donde se aplican heurísticas para la evaluación de la accesibilidad de los gráficos estadísticos en medios de comunicación, publicaciones científicas, etc.</p>
-    <span class="first titleSection mt-5">
-      <h2 class="titles articleTitles">Publicaciones destacadas</h2>
-    </span>
-    <div class="container mt-5">
-      <div class="col-12">
-        <div class="row">
-          <div class="col-lg-4 col-md-12 articleSingle"  *ngFor="let article of articlesCarousel; let i = index; first as isFirst"  [class.offset-lg-2]="isFirst">
-            <titles-inline [image]="article.image!" [title]="article.title!" [article]="true"></titles-inline>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="lastArticles">
-    <div class="d-flex flex-row justify-content-between">
-      <h2>ÚLTIMOS ARTÍCULOS</h2>
-      <span class="p-input-icon-right">
-        <i class="pi pi-search"></i>
-        <input class="lessSize" type="text" pInputText [(ngModel)]="data" (input)="filterByName()"/>
-      </span>
-    </div>
-    <hr>
-    <div class="row">
-      <div class="col-9 listArticles">
-        <div class="row align-items-stretch mb-5 itemSelected p-2" *ngFor="let article of articles;" (click)="articleShowInformation(article)">
-          <div class="col-4" >
-            <titles-inline [image]="article.image!" [title]="article.title!" [comesFromList]="true"></titles-inline>
-          </div>
-          <div class="col-8 articleItem">
-              <p class="titleArticle">{{article.title!}}</p>
-              <p class="briefArticle">{{article.briefing!}}</p>
-              <p class="dateArticle">{{article.date!}}</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-3 listAuthors">
-        <h3 class="titleAuthors">Autores</h3>
-        <hr class="mb-3">
-        <div class="authorsList">
-          <a class="row align-items-center mb-3 authorItem authorMail" *ngFor="let author of authors;" href={{author.mail}}>
-            <div class="col-lg-4 col-md-12" >
-              <img class="authorImg" src={{author.photo}} alt="">
-            </div>
-            <div class="offset-lg-1 col-lg-7 author col-md-12">
-                <p class="titleArticle">{{author.name!}}</p>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
+<div class="d-flex justify-content-center" *ngIf="loading">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
   </div>
 </div>
+<ng-container *ngIf="loaded">
+  <div class="articlesSite">
+    <div class="blue-block">
+      <h5 class="text-center">Lee los estudios en distintos ejemplos</h5>
+      <p class="text-center mt-5">En esta sección encontraras distintos estudios versados en diferentes áreas de la accesibilidad, donde se aplican heurísticas para la evaluación de la accesibilidad de los gráficos estadísticos en medios de comunicación, publicaciones científicas, etc.</p>
+      <span class="first titleSection mt-5">
+        <h5 class="titles articleTitles">Publicaciones destacadas</h5>
+      </span>
+      <div class="container mt-5">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-lg-4 col-md-12 articleSingle"  *ngFor="let article of articlesCarousel; let i = index; first as isFirst"  [class.offset-lg-2]="isFirst">
+              <titles-inline [image]="article.image!" [title]="article.title!" [article]="true"></titles-inline>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lastArticles">
+      <div class="d-flex flex-row justify-content-between align-items-center">
+        <h5 class="mt-0">ÚLTIMOS ARTÍCULOS</h5>
+        <span class="p-input-icon-right">
+          <i class="pi pi-search"></i>
+          <input class="lessSize" type="text" pInputText [(ngModel)]="data" (input)="filterByName()"/>
+        </span>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-lg-9 col-sm-12 listArticles">
+          <div class="row align-items-stretch mb-5 itemSelected p-2" *ngFor="let article of articles;" (click)="articleShowInformation(article)">
+            <div class="col-lg-4 col-sm-12 d-none d-lg-block" >
+              <titles-inline [image]="article.image!" [title]="article.title!" [comesFromList]="true"></titles-inline>
+            </div>
+            <div class="col-lg-8 col-sm-12 articleItem">
+                <h6 class="titleArticle">{{article.title!}}</h6>
+                <p class="briefArticle">{{article.briefing!}}</p>
+                <p class="dateArticle">{{article.date!}}</p>
+            </div>
+            <div class="col-lg-4 col-sm-12 d-lg-none" >
+              <titles-inline [image]="article.image!" [title]="article.title!" [comesFromList]="true"></titles-inline>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-12 listAuthors">
+          <h3 class="titleAuthors">Autores</h3>
+          <hr class="mb-3">
+          <div class="authorsList">
+            <a class="row align-items-center mb-3 authorItem authorMail" *ngFor="let author of authors;" href={{author.mail}}>
+              <div class="col-4" >
+                <img class="authorImg" src={{author.photo}} alt="">
+              </div>
+              <div class="col-7 offset-1  author">
+                  <p class="titleArticle">{{author.name!}}</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+

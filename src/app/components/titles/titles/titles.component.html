@@ -1,9 +1,14 @@
 <div class="hovered {{comesFromList ? 'fromList' : article ? 'article' : 'home'}}">
-  <div class="card">
+  <div class="card d-none d-lg-block">
     <div class="card-header">
       <img [ngClass]="_comesFromHeuristicDetail ? 'imgHeuristicDetail': ''" src={{image_source}} alt={{_title}}>
-      <button class="btnOnProducts hidden">Explora este artículo</button>
+      <button class="btnOnProducts hidden">{{!comesFromHeuristicDetail ? 'Explora este artículo' : 'Explora esta heurística'}}</button>
     </div>
   </div>
   <p class="{{article ? 'text-left articleText' : comesFromList  && !_comesFromHeuristicDetail ? 'd-none' : 'text-center'}} mt-3">{{_title}}</p>
+  <div class="card d-lg-none">
+    <div class="card-header">
+      <button class="btnOnProducts hidden">{{!comesFromHeuristicDetail ? 'Explora este artículo' : 'Explora esta heurística'}}</button>
+    </div>
+  </div>
 </div>
