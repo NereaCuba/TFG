@@ -1,0 +1,25 @@
+  <div class="container card p-4">
+    <div class="row">
+        <div class="col-12 col-md-6 d-none d-md-block">
+            <img class="welcomeImg" src={{image}}>
+        </div>
+        <div class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center containerForm">
+            <h4 class="mb-4 text-center">GRACIAS POR REGISTRARTE</h4>
+            <div class="formGroup" *ngIf="authService.userData as user">
+              <p class="text-center">Te hemos mandando un correo de verificación a <strong>{{user.email}}</strong>.</p>
+              <p class="text-center">Por favor comprueba tu bandeja de entrada y haz click sobre el enlace para verificar tu dirección de correo electrónico.</p>
+            </div>
+            <div class="formGroup buttonForm d-flex justify-content-center align-items-center">
+                <input
+                type="button"
+                class="btn btnPrimary"
+                value="Volver a recibir correo"
+                (click)="authService.SendVerificationMail()"                
+                />
+            </div>
+            <div class="redirectToLogin mt-5 d-flex justify-content-center align-items-center" (click)="redirectTo('/sign-in')">
+                <p>¿Quieres volver? <strong> Log In </strong> </p>
+            </div>
+        </div>
+    </div>
+</div>

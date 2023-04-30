@@ -158,7 +158,7 @@ h5,h2,h4 {
   &::before {
     content          : '';       /* Set empty content                      */
     position         : absolute; /* Position the pseudo-element absolutely */
-    height           : 95%;      /* Set height and width as desired        */
+    height           : 100%;      /* Set height and width as desired        */
     width            : 96%;
     top              : 0;       /* Set the offset as desired              */
     left             : 2%;
@@ -202,7 +202,6 @@ h5,h2,h4 {
 .buttonEndForm {
     box-sizing: border-box;
     height: 49px;
-    width: 13em;
     color: $color-light;
     text-transform: uppercase;
     font-family: "Karla",  sans-serif;
@@ -302,10 +301,8 @@ h5,h2,h4 {
   bottom: 2%;
   align-self: flex-end;
   .charImgBrief {
-    height: 500px;
     width: 500px;
     @media screen and (max-width: 799px) {
-      height: 300px;
       width: 300px;
     }
   }

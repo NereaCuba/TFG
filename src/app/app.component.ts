@@ -6,6 +6,8 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import {DOCUMENT} from '@angular/common';
 import { Title } from '@angular/platform-browser';
 import { filter, map } from 'rxjs/operators';
+import { AuthService } from './shared/services/auth.service';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -19,6 +21,7 @@ export class AppComponent implements OnInit {
   paletteSelected: number = 0;
   fontSize:number = 16;
   size: string = null;
+
   public static readonly DEFAULT_THEME = 'default-theme';
   public static readonly GRAY_THEME = 'gray-theme';
   public static readonly VIOLET_THEME = 'violet-theme';
@@ -28,8 +31,10 @@ export class AppComponent implements OnInit {
       private router: Router,
       private titleService: Title,
       private activatedRoute: ActivatedRoute,
+      private authService: AuthService,
+      public afAuth: AngularFireAuth,
       @Inject(DOCUMENT) private document: Document
-      ) {       
+      ) {     
         this.theme = this.document.documentElement.classList.contains(AppComponent.GRAY_THEME) ? AppComponent.GRAY_THEME : this.document.documentElement.classList.contains(AppComponent.VIOLET_THEME) ?  AppComponent.VIOLET_THEME : AppComponent.DEFAULT_THEME;
       }
     setDocTitle(title: string) {

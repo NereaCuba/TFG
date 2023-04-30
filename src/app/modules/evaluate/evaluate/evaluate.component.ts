@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { EvaluateService } from '../services/evaluate.service';
 import AOS from "aos";
+import { AuthService } from 'app/shared/services/auth.service';
+import { fireStoreService } from 'app/shared/services/fireStore.service';
 
 @Component({
   selector: 'app-evaluate',
@@ -25,6 +27,7 @@ export class EvaluateComponent {
   showResults: boolean =  false;
   showIntroduction: boolean = true;
   isComingFromBrief: boolean = false;
+  visible: boolean = false;
   isIFrame:boolean = false;
   totalResult: any = 0;
   _idValueHeuristics: any = 0;
@@ -64,6 +67,8 @@ export class EvaluateComponent {
     private router: Router,
     private messageService: MessageService,
     private evaluateService: EvaluateService,
+    public authService: AuthService,
+    public fireStoreSvc: fireStoreService
   ) {}
 
   ngOnInit() {
@@ -88,6 +93,9 @@ export class EvaluateComponent {
     this.formValue = [];
     this.oldFormValue = [];
     AOS.init();
+  }
+  showDialog() {
+      this.visible = true;
   }
   redirectTo(uri: string) {
     this.router.navigateByUrl('/', {skipLocationChange: false}).then(() =>
@@ -118,6 +126,12 @@ export class EvaluateComponent {
     try {
       this.file = event.target.files[0];
       this.nameFile = this.file.name;
+      var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif|\.svg|\.pjeg|\.ico|\.apng)$/i;
+      console.log(this.file);
+      
+      if (!allowedExtensions.exec(this.nameFile)) {
+          return false;
+      } 
       var reader = new FileReader();
       reader.readAsDataURL(this.file);
       reader.onload = (_event) => {
@@ -143,9 +157,16 @@ export class EvaluateComponent {
       this.isIFrame = false;
     }
   }
-  startEvaluationMethod() {
+  startWithotuRegister() {
     this.startEvaluation = true;
     this.showIntroduction = false;
+  }
+  startEvaluationMethod() {
+    if(!this.authService.isLoggedIn) {
+      this.showDialog();
+    } else {
+      this.startWithotuRegister();
+    }
   }
   backButton() {
     if (this.formValue.length > 0) {
@@ -285,13 +306,18 @@ export class EvaluateComponent {
         ]
       }
     }
-    this.dataSource = dataSource;
+    this.dataSource = dataSource;    
+    if(this.authService.isLoggedIn) {
+      this.fireStoreSvc.updateUserCharts(this.authService.userData.email, this.formValue, this.URLLink || this.imgURL, this.isIFrame);
+    }
   }
 
   deleteImage() {
     this.imgURL = null;
     this.nameFile = 'No se ha seleccionado ningún archivo';
-    this.inputValue = ''
+    this.inputValue = '';
+    this._loadedImageInput = false;
+    this._okImageInput = false;
   }
   goToResults() {
     var isValidForm = true;
@@ -308,6 +334,7 @@ export class EvaluateComponent {
       this.showResultsBrief = false;
       this.showResults =  true;
       this.showIntroduction = false;
+      document.getElementsByClassName('wrapper')[0].scrollTo(0,0);    
     }
   }
 

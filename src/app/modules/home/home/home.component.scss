@@ -4,6 +4,17 @@
 .first{
   margin-top: 4.5em;
 }
+.iconsSection {
+  i::before {
+    font-size: 3em;
+    color: var(--app-primary-color);
+    margin-bottom: 2em;
+  }
+}
+.letterSection {
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
 .imageChart{
   img {
     height: 33em;

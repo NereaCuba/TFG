@@ -8,7 +8,9 @@ import { MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DialogModule } from 'primeng/dialog';
 import { SettingsModule } from './components/settings/settings.module';
-
+import { environment } from './../environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AuthService } from './shared/services/auth.service';
 
 @NgModule({
   declarations: [
@@ -21,11 +23,16 @@ import { SettingsModule } from './components/settings/settings.module';
     MenubarModule,
     NgbModule,
     DialogModule,
-    SettingsModule
+    SettingsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'tfgheuristics'),
+    AngularFireModule, // Only required for database features
+    AngularFireModule, // Only required for auth features,
+    AngularFireModule // Only required for storage features
   ],
   providers: [
     MdbModalService,
-    Title
+    Title,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

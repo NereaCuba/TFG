@@ -5,7 +5,7 @@
 </div>
 <ng-container *ngIf="loaded">
   <button class="stickyButton d-none d-lg-block" (click)="redirectTo('/articles-list')"><i class="pi pi-arrow-left"></i></button>    
-  <iframe src={{_article.pdf}} style="border: 0; height: 100vw; width: 100vw;">
+  <iframe [src]="_article.pdf | safe" style="border: 0; height: 100vw; width: 100vw;">
       <p>
           Your browser does not support PDF files.
           <a href={{_article.pdf}}>Download the file instead</a>

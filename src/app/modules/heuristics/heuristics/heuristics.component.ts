@@ -35,11 +35,19 @@ export class HeuristicsComponent implements OnInit {
       AOS.init();
     })
   }
+  removeAccents(value) {
+    return value
+        .replace(/á/g, 'a')            
+        .replace(/é/g, 'e')
+        .replace(/í/g, 'i')
+        .replace(/ó/g, 'o')
+        .replace(/ú/g, 'u');
+  }
     filterByName() { 
     this.first3 = 0;
     this.rows3 = 6;     
     this._listHeuristics = this._listHeuristicsStatics.filter((element:any) => {
-      if(element.name!.toLowerCase().indexOf(this.data.toLowerCase()) > -1) {
+      if(this.removeAccents(element.name!.toLowerCase()).indexOf(this.removeAccents(this.data.toLowerCase())) > -1) {
         return element;
       }
     });
@@ -53,9 +61,9 @@ export class HeuristicsComponent implements OnInit {
     this.redirectTo('/heuristic-detail', value?.id);
   }
   onPageChange3(event) {
-    console.log(event);
-    
+    document.getElementsByClassName('wrapper')[0].scrollTo(0,0);    
     this.first3 = event.first;
     this.rows3 = event.rows;
 }
+
 }

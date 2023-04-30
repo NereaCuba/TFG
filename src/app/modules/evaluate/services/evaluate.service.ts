@@ -20,6 +20,7 @@ export class EvaluateService {
 
     exportFile(data: any, fileType: string) {
         const blob =  new Blob([data], {type: fileType});
-        FileSaver.saveAs(blob, 'Downloaded CSV');
+        var date = new Date().toISOString().split('T')[0];
+        FileSaver.saveAs(blob, 'ChartEvaluation'+date);
     }
 }

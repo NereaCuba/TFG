@@ -16,12 +16,12 @@
   </div>
   <hr>
   <div class="row justify-content-md-center mt-4">
-    <div class="col-lg-8 col-md-12 d-flex flex-column justify-content-center">
+    <div class="col-12 d-flex flex-column justify-content-center">
       <p class="mt-4 subTitle">PROGRESO DEL FORMULARIO</p>
       <p-progressBar class="mb-4 mt-4 progressBar" [value]="_valueProgressBar"></p-progressBar>
       <form #myForm="ngForm" class="text-center mt-4" (submit)="templateForm(myForm.value)">
         <div class="containerForm">
-          <p class="subTitle mb-4 rateChart">PUNTUA EL GRÁFICO - {{_idHeuristic}} {{_heuristic.name}}        <button type="button" class="circleButton" (click)="showDialog()" *ngIf="_heuristic.example_images.length > 0"><i class="pi pi-question-circle"></i></button></p>
+          <p class="subTitle mb-4 rateChart">PUNTUA EL GRÁFICO - {{_idHeuristic}} {{_heuristic.name}}  <button pButton icon="pi pi-question-circle" (click)="showDialog()" class="circleButton p-button-rounded"></button></p>
           <div *ngIf=" _heuristic.example_images.length > 0">
             <p-dialog [(visible)]="visible" [draggable]="false" [resizable]="false" [breakpoints]="{ '960px': '80vw'}" [modal]="true">
               <div class="d-flex flex-column align-items-center justify-content-center p-3 addBorder" *ngFor="let example of _heuristic.example_images; let i = index" [ngClass]="i === 0 ? '': 'mt-4'">
@@ -32,9 +32,9 @@
             </p-dialog>        
           </div>
           <div class="row text-start mt-2">
-            <div class="col-lg-6 col-md-12 d-flex justify-content-center align-items-center">
-              <div class="" *ngIf="isIFrame">
-                <iframe src="https://ourworldindata.org/grapher/covid-confirmed-cases-since-100th-case?country=USA+ESP+ITA+KOR+TWN+GBR+NOR" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+            <div class="col-lg-6 col-md-12 d-flex justify-content-center align-items-center w-100 h-100">
+              <div class="w-100 h-100 overflow-scroll" *ngIf="isIFrame">
+                <iframe [src]="srcImg | safe " style="width: 100%; height: 50em; border: 0px none; overflow: scroll;"></iframe>
               </div>
               <img class="chartImg" src={{srcImg}} alt="Gráfico introducido" *ngIf="!isIFrame">
             </div>
@@ -73,8 +73,9 @@
           </div>
         </div>
         <div class="containerButtons row justify-content-center mt-3" *ngIf="!comesFromBrief">
-          <button class="col-lg-5 col-12 submitButtons mb-2 mb-lg-0" type="submit" (click)="backButton()"><i class="pi pi-times"></i> {{_idHeuristic === 'H1' ? 'IR AL INICIO' : 'VOLVER A '}}{{_idHeuristic === 'H1' ? '' : 'H' + lastValue}}</button>
-          <button class="ms-lg-2  col-lg-5 col-12 submitButtons" type="submit" >{{_idHeuristic === 'H18' ? 'FINALIZAR' : 'CONTINUAR EN '}}{{_idHeuristic === 'H18' ? '' : ('H' + nextValue)}}</button>
+          <button class="col-lg-5 col-12 submitButtons mb-2 mb-lg-0n d-none d-lg-block" type="submit" (click)="backButton()"><i class="pi pi-times"></i> {{_idHeuristic === 'H1' ? 'IR AL INICIO' : 'VOLVER A '}}{{_idHeuristic === 'H1' ? '' : 'H' + lastValue}}</button>
+          <button class="ms-lg-2  col-lg-5 col-12 submitButtons mb-2" type="submit" >{{_idHeuristic === 'H18' ? 'FINALIZAR' : 'CONTINUAR EN '}}{{_idHeuristic === 'H18' ? '' : ('H' + nextValue)}}</button>
+          <button class="col-lg-5 col-12 submitButtons mb-2 mb-lg-0 d-lg-none" type="submit" (click)="backButton()"><i class="pi pi-times"></i> {{_idHeuristic === 'H1' ? 'IR AL INICIO' : 'VOLVER A '}}{{_idHeuristic === 'H1' ? '' : 'H' + lastValue}}</button>
         </div>
         <div class="containerButtons row justify-content-center mt-3" *ngIf="comesFromBrief">
           <button class="col-lg-5 col-12 submitButtonsBrief" type="submit" >VOLVER AL RESUMEN</button>

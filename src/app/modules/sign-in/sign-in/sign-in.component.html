@@ -1,0 +1,53 @@
+<div class="d-flex justify-content-center flex-column align-items-center mt-4"  *ngIf="loading">
+    <div class="spinner-border mt-4 mb-4" role="status">
+    </div>
+    <h5 class="text-center mt-4 loadingFont">Cargando...</h5>
+</div>
+<div class="container card p-4"  *ngIf="loaded">
+    <div class="row">
+        <div class="col-12 col-md-6 d-none d-md-block">
+            <img class="welcomeImg" src={{image}}>
+        </div>
+        <div class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center containerForm">
+            <h4 class="mb-4">INICIA SESIÓN</h4>
+            <div class="formGroup mb-4">
+                <input
+                type="email"
+                class="formControl"
+                placeholder="Dirección de correo eléctronico"
+                #userName
+                required/>
+            </div>
+            <div class="formGroup mb-4">
+                <input
+                type="password"
+                class="formControl"
+                placeholder="Contraseña"
+                #userPwd
+                required
+                />
+            </div>
+            <div class="formGroup buttonForm d-flex justify-content-center align-items-center">
+                <input
+                type="button"
+                class="btn btnPrimary"
+                value="Entrar"
+                (click)="authService.SignIn(userName.value, userPwd.value)"
+                />
+            </div>
+            <!-- Continue with Google -->
+            <div class="formGroup googleInput d-flex justify-content-center align-items-center mt-4" (click)="logInWithGoogle()">
+                <div class="imgContainer">
+                    <img class="icon" src="./../../../../assets/7123953_logo_google_g_icon.png" alt="Google icon">
+                </div>
+                <p class="ms-2 mb-0 mt-0">Log in con Google</p>
+            </div>
+            <div class="redirectToLogin mt-5 d-flex justify-content-center align-items-center" (click)="redirectTo('/sign-up')">
+                <p>¿No tienes una cuenta? <strong> Create una </strong> </p>
+            </div>
+            <div class="redirectToLogin mt-2 d-flex justify-content-center align-items-center" (click)="redirectTo('/forgot-password')">
+                <p>¿No recuerdas tu contraseña? <strong> Recuperala </strong> </p>
+            </div>
+        </div>
+    </div>
+</div>

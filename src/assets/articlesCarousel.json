@@ -20,7 +20,7 @@
         "Se presenta un nuevo conjunto de indicadores heurísticos para la evaluación de la accesibilidad de los gráficos estadísticos para personas con baja visión y visión cromática deficiente (VCD), así como un método para su aplicación. Con el objetivo de validar la propuesta, se ha realizado una evaluación heurística de la accesibilidad de 35 gráficos publicados en 5 diarios españoles y 2 internacionales. Los resultados muestran que los indicadores propuestos consiguen detectar una mayor cantidad de problemas únicos, presentan una mejor distribución de los problemas entre heurísticos y consiguen detectar problemas más severos y específicos que las Web content accessibility guidelines (WCAG). En relación con los problemas detectados, destaca la prácticamente nula presencia de alternativas textuales en los gráficos publicados como imágenes en formato de mapa de bits, un problema que también se da en el caso de los gráficos publicados en formato SVG, donde destaca el nulo etiquetado de las marcas con estándares como WAI-ARIA. En estos últimos también se observa el pobre uso de indicadores para remarcar los elementos que reciben el foco, o su inaccesibilidad mediante una interfaz de teclado. Otros problemas comunes en ambos tipos de gráficos son la ratio de contraste entre elementos no textuales, por debajo en muchos casos del mínimo requerido, un tamaño de fuente demasiado pequeño o la no sistematización del uso de paletas de colores seguras para personas con VCD. Por lo que respecta a la comparación entre medios nacionales e internacionales, si bien las puntuaciones obtenidas por los internacionales son superiores, éstos comparten"
       ],
       "pdf": "./assets/PrensaDigital-EPI.pdf",
-      "image": "https://1.bp.blogspot.com/-S7Ul6H7CDds/XqsCHUtuh5I/AAAAAAAAOis/9JFES3OiPAMZ_AC3EyzVbUDXZU-DN6TcwCEwYBhgL/s1600/Imagen1.png"
+      "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/02elpais.PNG"
     },
     {
       "id": 3,
@@ -37,7 +37,7 @@
         "Paper type:  Research paper"
       ],
       "pdf": "./assets/LISJournals-LibraryHiTech.pdf",
-      "image": "https://1.bp.blogspot.com/-S7Ul6H7CDds/XqsCHUtuh5I/AAAAAAAAOis/9JFES3OiPAMZ_AC3EyzVbUDXZU-DN6TcwCEwYBhgL/s1600/Imagen1.png"
+      "image": "./assets/LISPNG.png"
       },
       {
         "id": 4,
@@ -48,7 +48,7 @@
           "Statistical charts play a primordial role in different areas of our life, such as information, education, communication or research. However, authors and content publishers do not always follow the accessibility criteria in the design and creation of this type of content. Considering these premises, this work includes the main approaches in which the scientific literature has focused so far to improve the accessibility of statistical charts: text alternatives, sonification, tactile alternatives and multimodal alternatives, with the purpose of evaluating their suitability for people with low vision and color blindness. Finally, some solutions are suggested that seem technologically viable and that start from the use of JavaScript libraries for the creation of interactive charts, in combination with other standards such as WAI-ARIA and the use of patterns to fill areas as a strategy to differentiate visual variables."
         ],
         "pdf": "./assets/AccesibleStatisticalCharts2019-Interaccion.pdf",
-        "image": "https://1.bp.blogspot.com/-S7Ul6H7CDds/XqsCHUtuh5I/AAAAAAAAOis/9JFES3OiPAMZ_AC3EyzVbUDXZU-DN6TcwCEwYBhgL/s1600/Imagen1.png"
+        "image": "./assets/Acc.png"
       }
   ],
   "authors": [
@@ -62,19 +62,19 @@
       "id": "2",
       "name":"Mireia Ribera-Turró",
       "photo":"https://i1.rgstatic.net/ii/profile.image/700516204048387-1544027486191_Q512/Mireia-Ribera-Turro.jpg",
-      "mail": "ribera@ub.edu"
+      "mail": "mailto:ribera@ub.edu"
       },
       {
       "id": "3",
       "name":"Toni Granollers-Saltiveri",
       "photo":"https://www.directorioexit.info/exit/fotos/200/5919.jpg",
-      "mail": "antoni.granollers@udl.cat"
+      "mail": "mailto:antoni.granollers@udl.cat"
       },
       {
         "id": "4",
         "name":"Afra Pascual",
         "photo":"https://www.eps.udl.cat/export/sites/Eps/afra-pascual.jpg",
-        "mail": "apascual@udl.cat"
+        "mail": "mailto:apascual@udl.cat"
         }
     ]
 }

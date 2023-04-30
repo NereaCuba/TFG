@@ -1,0 +1,67 @@
+<nav class="breadcrumb" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item" (click)="redirectTo('/dashboard')">Perfil</li>
+    <li class="breadcrumb-item active" aria-current="page">Detalle del resultado de la evaluación</li>
+  </ol>
+</nav>
+<div class="mt-5" id=pdfResults>
+    <h2 class="text-center">RESULTADOS</h2>
+    <div class="mt-5 container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-12 col-md-6 ovHidden" *ngIf="isIFrame">
+          <iframe [src]="imgURL | safe " style="width: 100vw; height: 600px; border: 0px none;"></iframe>
+        </div>
+        <img  *ngIf="!isIFrame" class="chartImgResult col-12 col-md-6" src={{imgURL}} alt="Gráfico introducido">
+        <div class="col-12 col-md-6 ps-1 text-center">
+          <span class="mt-2"><p>La puntuación global de tu gráfico es la siguiente:</p><h4>{{totalResult}}/10</h4></span>
+          <fusioncharts class="d-none d-lg-block" width="700" height="400" type="angulargauge" dataFormat="json" [dataSource]="dataSource"></fusioncharts>
+          <span class="mt-2"><p>Se ha calculado utilizando la siguiente fórmula matemática</p></span>
+          <div class="mt-2">
+            <img class="w-100" src='./../../../../assets/formula.png' alt="Formula utilizada">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5 container text-center">
+      <div class="containerResults">
+        <div class="row">
+          <div class="col-lg-4 col d-flex justify-content-center align-items-center">
+            <h6>Heurística</h6>
+          </div>
+          <div class="col-lg-4 col d-flex justify-content-center align-items-center">
+            <h6>Resultado seleccionado</h6>
+          </div>
+          <div class="col-lg-2 col d-flex justify-content-center align-items-center">
+            <h6>Peso</h6>
+          </div>
+          <div class="col-lg-2 col d-flex justify-content-center align-items-center">
+            <h6>Nota ponderada</h6>
+          </div>
+        </div>
+        <hr>
+        <div *ngFor="let result of formValue; let i = index">
+          <div class="row">
+            <div class="col-lg-4 col d-flex justify-content-center align-items-center">
+              <h6 class="d-none d-md-block">H{{i+1}}  - </h6><h6>{{constHeuristicsTitles[i]}}</h6>
+            </div>
+            <div class="col-lg-4 col d-flex justify-content-center align-items-center d-lg-none">
+              <p>{{constLikertValues[result.optionLinkert]}}</p>
+            </div>
+            <div class="col-lg-4 col d-flex justify-content-center align-items-center d-none d-lg-block">
+              <p [ngClass]="'Score' + result.optionLinkert">{{constLikert[result.optionLinkert]}}</p>
+            </div>
+            <div class="col-lg-2 col d-flex justify-content-center align-items-center">
+              <p>x{{constWeightHeuristics[i]}}</p>
+            </div>
+            <div class="col-lg-2 col d-flex justify-content-center align-items-center">
+              <p>{{scoreAll[i]}}</p>
+            </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <div class="containerButtons row justify-content-center mt-5">
+      <button class="col-12 col-lg-5 buttonEndForm" (click)="downloadResults()"><i class="pi pi-download"></i> DESCARGAR</button>
+    </div>
+</div>

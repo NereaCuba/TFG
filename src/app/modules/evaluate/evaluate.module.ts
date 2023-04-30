@@ -20,6 +20,9 @@ import * as FusionCharts from 'fusioncharts';
 import * as Widgets from 'fusioncharts/fusioncharts.widgets';
 
 import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+import { AuthService } from 'app/shared/services/auth.service';
+import { DialogModule } from 'primeng/dialog';
+import { fireStoreService } from 'app/shared/services/fireStore.service';
 
 // Pass the fusioncharts library and chart modules
 FusionChartsModule.fcRoot(FusionCharts, Widgets, FusionTheme);
@@ -40,11 +43,14 @@ FusionChartsModule.fcRoot(FusionCharts, Widgets, FusionTheme);
     evaluateRoutingModule,
     FormsModule,
     UbayButtonModule,
+    DialogModule,
     EvaluateFormModule,
     evaluateRoutingModule
   ],
   providers: [
     MessageService,
-    EvaluateService  ]
+    AuthService,
+    EvaluateService,
+  fireStoreService  ]
 })
 export class evaluateStatusModule { }

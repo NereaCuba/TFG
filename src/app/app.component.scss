@@ -4,7 +4,10 @@
   background: none;
   border: none;
   display: flex;
+  font-family: 'Karla', sans-serif;
   justify-content: center;
+  line-height: 23px;
+  text-transform: uppercase;
 }
 footer {
   background-color: var(--app-secondary-color);
@@ -51,7 +54,7 @@ footer {
       width: 100%;
     }
     * {
-      @media screen and (min-width: 960px) {
+      @media screen and (min-width: 961px) {
         .p-menubar-root-list {
           display: flex;
           font-weight: bold;

@@ -1,5 +1,16 @@
 <p-toast></p-toast>
 <div *ngIf=showIntroduction>
+  <p-dialog [(visible)]="visible" [draggable]="false" [resizable]="false" [breakpoints]="{ '960px': '80vw'}" [modal]="true">
+    <h4 class="text-center">ATENCIÓN</h4>
+    <div class="container mt-4">
+      <p>Estás a punto de empezar el formulario de evaluación de tu gráfico. Inicia sesión o regístrate antes de iniciar para poder guardar los resultados obtenidos en tu perfil y poder consultarlos en cualquier momento.</p>
+      <p>Si continuas sin iniciar sesión solo podrás descargar los resultados en CSV.</p>
+      <div class="row mt-4 d-flex justify-content-center">
+        <button class="col-12 col-lg-5 buttonEndForm" (click)="startWithotuRegister()">ENTENDIDO</button>
+        <button class="col-12 col-lg-5 offset-lg-2 buttonEndForm" (click)="redirectTo('/sign-in')">INICIAR SESIÓN</button>
+      </div>
+    </div>
+</p-dialog>
   <div class="introduction">
     <div class="ps-lg-5 ms-5 me-5 pe-lg-5">
       <h5 class="text-center">Introducción a la evaluación</h5>
@@ -35,8 +46,128 @@
     </div>
   </div>
   <div class="instructions">
-    <div class="heuristic parallax index mt-5">
-      <div class="backgroundWhite" data-aos="fade-up" data-aos-duration="2000">
+    <div class="heuristic parallax index mt-5 d-none d-lg-block" >
+      <div class="backgroundWhite ps-4 pe-4" data-aos="fade-up" data-aos-duration="2000">
+          <span class="first titleSection">
+            <h5 class="titles articleTitles mt-5">Instrucciones</h5>
+          </span>
+          <p class="text-center mb-4">Se va a utilizar una <b>escala de Likert</b> de 7 puntos para el cálculo del grado de cumplimiento de cada ítem, cuyo rango va de 0 (peor puntuación posible) a 6 (mejor puntuación posible). </p>
+          <table class="table text-center table-bordered container"  >
+              <thead>
+                <tr>
+                  <th scope="col">Evaluación</th>
+                  <th scope="col">Nivel de cumplimiento</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>-</td>
+                  <td>No aplica <i class="pi pi-info-circle" pTooltip="Un ejemplo de caso en el que un indicador no aplica, lo podemos encontrar en la no necesidad de disponer de una leyenda en el caso de gráficos estadísticos con una única serie de datos, o en la no necesidad de utilizar colores seguros o patrones cuando el gráfico sólo muestra una marca." tooltipPosition="right"></i></td>
+                </tr>
+                <tr>
+                  <td>-</td>
+                  <td>No es problema <i class="pi pi-info-circle" pTooltip="Por lo que respecta al valor “No es problema”, aplica en casos como, por ejemplo, cuando se incluyen abreviaturas que no se desarrollan pero que son de uso común y muy conocidas por la audiencia." tooltipPosition="right"></i></td>
+                </tr>
+                <tr>
+                  <td>0</td>
+                  <td>No cumplimiento</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Cumplimiento bajo</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Cumplimiento aceptable</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Cumplimiento alto</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Cumplimiento excelente</td>
+                </tr>
+              </tbody>
+          </table>
+          <p class="text-center mt-4 p-3" >Adicionalmente, se han añadido las opciones <b>“No aplica” y “No es problema”</b>, para aquellos casos en los cuales no sea pertinente la pregunta, o en los que el hecho de no cumplir con el indicador no deriva en un problema de accesibilidad, respectivamente.</p>
+          <p class="text-center mb-4 p-3" >Tras la aplicación de la escala, se utiliza un <b>sistema de ponderación</b> que posibilita asignar pesos distintos según la importancia de cada indicador. Su importancia viene determinada por los criterios especificados en la tabla 2.</p>
+          <table class="table text-center table-bordered container mt-4" >
+              <thead>
+                <tr>
+                  <th scope="col">Criterio</th>
+                  <th scope="col">Ponderación</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>En caso de no cumplirse, uno o más perfiles de usuario <b>no tendrá una experiencia de usuario satisfactoria</b> al consultar el
+                      gráfico, comprometiéndose levemente su accesibilidad para uno o más perfiles de usuario con baja visión.
+                      En caso de estar presente la accesibilidad del gráfico mejora levemente.</td>
+                      <td>x1</td>
+                </tr>
+                <tr>
+                  <td>En caso de no cumplirse, uno o más perfiles de usuarios tendrá serias <b>dificultades para percibir la información</b> del gráfico,
+                      comprometiéndose gravemente su accesibilidad para uno o más perfiles de usuario con baja visión.
+                      Funcionalidad que de estar presente mejora mucho la accesibilidad del gráfico.</td>
+                  <td>x2</td>
+                </tr>
+                <tr>
+                  <td>En caso de no cumplirse, uno o más perfiles de usuarios será <b>incapaz de percibir la información</b> del gráfico, comprometiéndose
+                      totalmente su accesibilidad para uno o más perfiles de usuario con baja visión.
+                      Funcionalidad que de estar presente mejora enormemente la accesibilidad del gráfico.</td>
+                  <td>x3</td>
+                </tr>
+              </tbody>
+          </table>
+          <p class="text-center mt-4">La lista de indicadores heurísticos utilizada, junto con su definición, el perfil de usuario beneficiado de su cumplimiento y su ponderación se puede consultar <a routerLink="/heuristics-list" (click)="redirectToHeuristics()">en el detalle de las heurísticas</a></p>
+          <div class="evaluate container">
+              <div class="row justify-content-center">
+                  <div class="col-md-12 mb-4 d-flex justify-content-center">
+                      <div *ngIf='imgURL'>
+                          <img class="chartImg" [src]="imgURL" *ngIf="!isIFrame">
+                          <div class="" *ngIf="isIFrame">
+                            <iframe [src]="imgURL | safe " style="width: 100vw; height: 600px; border: 0px none;"></iframe>
+                          </div>
+                      </div>
+                      <div class="square" *ngIf=!imgURL>
+                        <p class="mt-4 text-center">Aquí podrás ver tu gráfico una vez cargado</p>
+                      </div>
+                  </div>
+                  <div class="col-md-12 ps-lg-5 mt-4 d-flex flex-column align-items-center justify-content-center">
+                    <h5 class="text-center ms-2">Sube una imagen o introduce una URL</h5>
+                    <div class="field-radiobutton w-100">
+                      <p-radioButton  name="typeImport" value="imgUpload" [(ngModel)]="typeImport" inputId="typeImport1" (onClick)="changeTypeInput($event)"></p-radioButton>
+                      <div class="containerButton">
+                        <div class="button-wrap">
+                          <label class="custom-file-upload" [ngClass]="typeImport === 'imgURLUpload' ? 'disabledInput' : ''">
+                            <input [(ngModel)]="inputValue" [attr.disabled]="typeImport === 'imgURLUpload' ? '' : null" id="upload" (input)="manageImage($event)" type="file" accept="image/*" >
+                            <p>Carga una imagen</p>
+                        </label>
+                      </div>
+                    </div>
+                    <p [ngClass]="_okImageInput ? (_loadedImageInput ? 'okInput' : '' ) : 'errorInput'">{{nameFile}} <i *ngIf="_loadedImageInput" class="ms-4 pi pi-check"></i></p>
+                    </div>
+                    <div class="field-radiobutton w-100">
+                        <p-radioButton name="typeImport" value="imgURLUpload" [(ngModel)]="typeImport" inputId="typeImport2" (onClick)="changeTypeInput($event)"></p-radioButton>
+                        <label class="w-100">
+                          <div class="d-flex flex-row imgURLUploadClass">
+                            <input [disabled]="typeImport === 'imgUpload' ? true : null" [(ngModel)]="URLLink" type="text">
+                            <button [disabled]="typeImport === 'imgUpload' ? true : null" [ngClass]="typeImport === 'imgUpload' ? 'disabledInput' : ''" (click)="getImageFromURL()">BUSCAR IMAGEN</button>
+                          </div>
+                        </label>
+                    </div>
+                    <div class="confirmButtons row mt-5 w-100 justify-content-between">
+                      <button [attr.disabled]="!imgURL ? '' : null"  [ngClass]="!imgURL ? 'disabledConfirm' : ''"  class="col-md-5 col-12 mb-md-0  mb-lg-0 mb-xl-0 mb-2" (click)="startEvaluationMethod()">EMPEZAR</button>
+                      <button [attr.disabled]="!imgURL ? '' : null"  [ngClass]="!imgURL ? 'disabledConfirm' : ''" class="col-md-5 col-12" (click)="deleteImage()"><i class="pi pi-times"></i> BORRAR IMAGEN</button>
+                    </div>
+                  </div>
+              </div>
+          </div>     
+      </div>
+    </div> 
+    <div class="heuristic mt-5 d-lg-none">
+      <div class="backgroundWhite p-4" data-aos="fade-up" data-aos-duration="2000">
           <span class="first titleSection">
             <h5 class="titles articleTitles mt-5">Instrucciones</h5>
           </span>
@@ -147,15 +278,14 @@
                         </label>
                     </div>
                     <div class="confirmButtons row mt-5 w-100 justify-content-between">
-                      <button [attr.disabled]="!imgURL ? '' : null"  [ngClass]="!imgURL ? 'disabledConfirm' : ''"  class="ms-md-5 col-md-5 col-12 mb-2" (click)="startEvaluationMethod()">EMPEZAR</button>
+                      <button [attr.disabled]="!imgURL ? '' : null"  [ngClass]="!imgURL ? 'disabledConfirm' : ''"  class="col-md-5 col-12 mb-md-0  mb-lg-0 mb-xl-0 mb-2" (click)="startEvaluationMethod()">EMPEZAR</button>
                       <button [attr.disabled]="!imgURL ? '' : null"  [ngClass]="!imgURL ? 'disabledConfirm' : ''" class="col-md-5 col-12" (click)="deleteImage()"><i class="pi pi-times"></i> BORRAR IMAGEN</button>
                     </div>
                   </div>
               </div>
-          </div>
-        </div>
+          </div>     
       </div>
-      
+    </div> 
   </div>
 </div>
 <div *ngIf=startEvaluation>
@@ -163,25 +293,25 @@
     <evaluate-form [srcImg]="imgURL" [isIFrame]="isIFrame" [comesFromBrief]="isComingFromBrief" [idHeuristic]="_idHeuristic" [valueProgressBar]="_idValueProgressBar" [currentValue]="oldFormValue" (newItemEvent)="pushInfoForm($event)" (backItemEmit)="backButton()"></evaluate-form>
   </div>
 </div>
-<div class="mt-5" *ngIf=showResultsBrief id=pdfResults>
+<div class="mt-5 wrapper" *ngIf=showResultsBrief id=pdfResults>
   <h5 class="text-center">RESUMEN DE LA EVALUACIÓN</h5>
   <div class="mt-5 row">
-    <div class="col-12 col-lg-6 d-flex justify-content-center">
-      <div class="stickyImg">
+    <div class="col-12 d-flex justify-content-center" [ngClass]="isIFrame ? '' : 'col-lg-6'">
+      <div class="stickyImg overflow-scroll" [ngClass]="isIFrame ? 'h-100 w-100 ' : ''">
         <img class="charImgBrief" src={{imgURL}} alt="Gráfico introducido" *ngIf="!isIFrame">
-        <div class="" *ngIf="isIFrame">
-          <iframe src={{imgURL}} style="width: 100vw; height: 600px; border: 0px none;"></iframe>
+        <div class="overflow-scroll h-100 w-100" *ngIf="isIFrame">
+          <iframe [src]="imgURL | safe " style="width: 100%; height: 50vw; border: 0px none;"></iframe>
         </div>
       </div>
     </div>
-    <div class="col-12 col-lg-6 d-flex justify-content-center globalContainer">
+    <div class="col-12 d-flex justify-content-center globalContainer"  [ngClass]="isIFrame ? '' : 'col-lg-6'">
       <div class="containerResults">
-        <div class="mt-3 d-flex flex-row justify-content-end align-items-center">
-          <div class="col-5 col-lg-3 d-flex">
+        <div class="mt-3 d-flex row justify-content-end align-items-center">
+          <div class="col-12 col-lg-3 d-flex">
             <div class="elementSquareRed"></div>
             <p class="ms-2 legend">No respondido</p>
           </div>
-          <div class="offset-1 col-5 col-lg-3 d-flex">
+          <div class="offset-1 col-12 col-lg-3 d-flex">
             <div class="elementSquareGreen"></div>
             <p class="ms-2 legend">Respondido</p>
           </div>
@@ -218,8 +348,8 @@
   <h2 class="text-center">RESULTADOS</h2>
   <div class="mt-5 container">
     <div class="row align-items-center justify-content-center">
-      <div class="col-12 col-md-6" *ngIf="isIFrame">
-        <iframe src={{imgURL}} style="width: 100vw; height: 600px; border: 0px none;"></iframe>
+      <div class="col-12 overflow-scroll" *ngIf="isIFrame">
+        <iframe [src]="imgURL | safe " style="width: 100vw; height: 600px; border: 0px none;"></iframe>
       </div>
       <img  *ngIf="!isIFrame" class="chartImgResult col-12 col-md-6" src={{imgURL}} alt="Gráfico introducido">
       <div class="col-12 col-md-6 ms-1 text-center">
@@ -271,8 +401,8 @@
       </div>
     </div>
   </div>
-  <div class="containerButtons row justify-content-center mt-5">
-    <button class="col-12 col-lg-5 buttonEndForm" (click)="downloadResults()"><i class="pi pi-download"></i> DESCARGAR</button>
-    <button class="ms-lg-2 col-12 col-lg-5 buttonEndForm" pButton pRipple (click)="redirectToEvaluate()" >FINALIZAR</button>
+  <div class="containerButtons row justify-content-around mt-5 p-4">
+    <button class="col-12 col-lg-5 buttonEndForm w-md-25 mb-4" (click)="downloadResults()"><i class="pi pi-download"></i> DESCARGAR</button>
+    <button class="ms-lg-2 col-12 col-lg-5 buttonEndForm w-md-25 mb-4" pButton pRipple (click)="redirectToEvaluate()" >FINALIZAR</button>
   </div>
 </div>

@@ -242,7 +242,7 @@
                 "text": "Con fuente de datos, con fecha de la fuente y sin enlance a la fuente"
             },
             {
-                "image": "",
+                "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/03lavanguardia.PNG",
                 "text": "NA"
             },
             {
@@ -447,18 +447,18 @@
           "example_images": [
             {
                 "image": "Contraste textual suficiente",
-                "text": ""
+                "text": "https://www.ub.edu/adaptabit/charts-accessibility/press/04elpais.PNG"
             },
             {
                 "image": "Contraste textual insuficiente",
-                "text": ""
+                "text": "https://www.ub.edu/adaptabit/charts-accessibility/press/05_elpais.jpg"
             },
             {
-                "image": "",
+                "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/01elpais.PNG",
                 "text": "Contraste no textual insuficiente"
             },
             {
-                "image": "",
+                "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/02elpais.PNG",
                 "text": "Contraste no textual suficiente"
             }
         ],
@@ -568,11 +568,11 @@
           "brief":"¿Puede aplicarse al gráfico un zoom de haste 200% sin necesidad de una herramienta de asistencia y sin perdida de contenido o funcionalidad?",
           "example_images": [
                 {
-                    "image": "",
+                    "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/02_elmundo.jpg",
                     "text": "El gráfico se puede redimensionar, pero la imagen pierde calidad."
                 },
                 {
-                    "image": "",
+                    "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/03_elmundo.jpg",
                     "text": "El gráfico se puede redimensionar."
                 },
                 {
@@ -610,7 +610,7 @@
           "brief":"¿Tiene el gráfico algun elemento que entorpezca la visualizacion del mismo, como marcas de agua o publicidad?",
           "example_images": [
             {
-                "image": "https://imagenes.elpais.com/resizer/vPlObVv3VSzw2gjrs61u_iUtyxg=/1960x0/arc-anglerfish-eu-central-1-prod-prisa.s3.amazonaws.com/public/WCVO57GCJ4NI54N22PLZQUHWPU.jpg",
+                "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/02elpais.PNG",
                 "text": "Sin elementos que obstaculizan la visión del gráfico"
             },
             {
@@ -652,15 +652,15 @@
           "brief":"Cuando un elemento del gráfico (lineas, barras, puntos...) obtiene el foco, ¿hay alguna indicación visual de este hecho?",
           "example_images": [
             {
-                "image": "H16_NA.png",
+                "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/02_elmundo.jpg",
                 "text": "NA"
             },
             {
-                "image": "H16_No.png",
+                "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/03_abc.PNG",
                 "text": "No"
             },
             {
-                "image": "H16_Si.png",
+                "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/05A_elmundo.PNG",
                 "text": "Si"
             }
           ],
@@ -696,11 +696,11 @@
           "brief":"¿Es posible navegar entre las marcas y elementos del gráfico con teclado, ratón y gestos?",
           "example_images": [
                 {
-                    "image": "",
+                    "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/02elpais.PNG",
                     "text": "NA"
                 },
                 {
-                    "image": "",
+                    "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/03elpais.PNG",
                     "text": "No"
                 }
             ],

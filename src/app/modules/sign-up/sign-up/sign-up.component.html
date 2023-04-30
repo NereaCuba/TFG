@@ -1,0 +1,45 @@
+<div class="container card p-4">
+    <div class="row">
+        <div class="col-12 col-md-6 d-none d-md-block">
+            <img class="welcomeImg" src={{image}}>
+        </div>
+        <div class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center containerForm">
+            <h4 class="mb-4">CREA TU CUENTA</h4>
+            <div class="formGroup mb-4">
+                <input
+                type="email"
+                class="formControl"
+                placeholder="Dirección de correo eléctronico"
+                #userEmail
+                required/>
+            </div>
+            <div class="formGroup mb-4">
+                <input
+                type="password"
+                class="formControl"
+                placeholder="Contraseña"
+                #userPwd
+                required
+                />
+            </div>
+            <div class="formGroup buttonForm d-flex justify-content-center align-items-center">
+                <input
+                type="button"
+                class="btn btnPrimary"
+                value="Registrarse"
+                (click)="authService.SignUp(userEmail.value, userPwd.value)"
+                />
+            </div>
+            <!-- Continue with Google -->
+            <div class="formGroup googleInput d-flex justify-content-center align-items-center mt-4" (click)="authService.GoogleAuth()">
+                <div class="imgContainer">
+                    <img class="icon" src="./../../../../assets/7123953_logo_google_g_icon.png" alt="Google icon">
+                </div>
+                <p class="ms-2 mb-0 mt-0">Continuar con Google</p>
+            </div>
+            <div class="redirectToLogin mt-5 d-flex justify-content-center align-items-center" (click)="redirectTo('/sign-in')">
+                <p>¿Ya tienes una cuenta? <strong> Log In </strong> </p>
+            </div>
+        </div>
+    </div>
+</div>

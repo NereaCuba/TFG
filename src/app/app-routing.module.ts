@@ -1,6 +1,7 @@
 import { ErrorHandler, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GlobalErrorHandler } from './error-handler';
+import { AuthGuard } from './shared/guard/auth.guard';
 const routes: Routes = [
   {
     path: '',
@@ -63,6 +64,56 @@ const routes: Routes = [
       import(
         './modules/articles-detail/articles-detail.module'
       ).then((m) => m.articlesDetailStatusModule),
+  },
+  {
+    path: 'dashboard',
+    canActivate: [AuthGuard],
+    data: {title: "Dashboard"},
+    loadChildren: () =>
+      import(
+        './modules/dashboard/dashboard.module'
+      ).then((m) => m.dashboardStatusModule),
+  },
+  {
+    path: 'forgot-password',
+    data: {title: "Contraseña olvidada"},
+    loadChildren: () =>
+      import(
+        './modules/forgot-password/forgot-password.module'
+      ).then((m) => m.forgotPasswordStatusModule),
+  },
+  {
+    path: 'sign-up',
+    data: {title: "Sign Up"},
+    loadChildren: () =>
+      import(
+        './modules/sign-up/sign-up.module'
+      ).then((m) => m.signUpStatusModule),
+  },
+  {
+    path: 'sign-in',
+    data: {title: "Sign In"},
+    loadChildren: () =>
+      import(
+        './modules/sign-in/sign-in.module'
+      ).then((m) => m.signInStatusModule),
+  },
+  {
+    path: 'verify-email',
+    data: {title: "Verifica tu correo"},
+    loadChildren: () =>
+      import(
+        './modules/verify-email/verify-email.module'
+      ).then((m) => m.verifyEmailStatusModule),
+  },
+  {
+    path: 'evaluate-detail',
+    canActivate: [AuthGuard],
+    data: {title: "Detalle del resultado"},
+    loadChildren: () =>
+      import(
+        './modules/evaluate-detail/evaluate-detail.module'
+      ).then((m) => m.evaluateDetailStatusModule),
   }
 ];
 

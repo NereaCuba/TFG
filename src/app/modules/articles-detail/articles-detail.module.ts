@@ -10,10 +10,12 @@ import {TooltipModule} from 'primeng/tooltip';
 import { TitleModule } from 'app/components/titles/titles.module';
 import { DetailArticleService } from './services/articles-detail.service';
 import { ScrollTopModule } from 'primeng/scrolltop';
+import { SafePipeArticleDetail } from './safepipe';
 
 @NgModule({
   declarations: [
-    ArticlesDetailComponent
+    ArticlesDetailComponent,
+    SafePipeArticleDetail
   ],
   imports: [
     CommonModule,

@@ -62,14 +62,14 @@ h5 {
   background-size: cover;
   margin:0;
   position:relative;
-  overflow: auto;
+  overflow: scroll;
   margin-bottom: 3em; 
   padding: 1em;
   @media screen and (max-width:960px) {
     height: 100vw;
   }
   .listHeuristics {
-    overflow: auto;
+    overflow: scroll;
     position: absolute;
     width: 90%;
     left: 5%;

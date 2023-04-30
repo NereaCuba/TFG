@@ -11,9 +11,11 @@ import { MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { AvatarModule } from 'primeng/avatar';
+import { SafePipeDetail } from './safepipe';
 @NgModule({
   declarations: [
-    EvaluateFormComponent
+    EvaluateFormComponent,
+    SafePipeDetail
   ],
   imports: [
     CommonModule,

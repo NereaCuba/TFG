@@ -114,6 +114,8 @@ export class EvaluateFormComponent implements OnInit {
       left: 0,
       behavior: 'smooth'
     });
+    console.log(this.srcImg);
+    
     try {
       var _listHeuristics = await this.heuristicsService.getHeuristics().toPromise();
       this._heuristic = _listHeuristics.heuristic_abstract!.find((heuristic, index) => {

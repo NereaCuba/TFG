@@ -4,7 +4,10 @@
   <div class="m-0 p-0">
     <p-menubar [model]="items">
       <ng-template pTemplate="end">
-        <button class="settings" (click)="openModal()"><i class="pi pi-cog"></i></button>
+        <div class="d-flex">
+          <button class="settings" (click)="redirectTo('/dashboard')"><i class="pi pi-user"></i></button>
+          <button class="settings" (click)="openModal()"><i class="pi pi-cog"></i></button>
+        </div>
       </ng-template>
   
     </p-menubar>
