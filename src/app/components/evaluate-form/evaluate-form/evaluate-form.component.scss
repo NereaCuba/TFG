@@ -22,6 +22,9 @@ h2 {
   font-weight: 200;
   text-align: center
 }
+.disabledButton {
+  background-color: gray !important;
+}
 .containerForm {
   background-color : var(--app-secondary-color);
   padding: 0 2em 2em 2em;

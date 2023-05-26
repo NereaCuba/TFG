@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import {  arrayUnion } from "firebase/firestore";
+import {  arrayRemove, arrayUnion } from "firebase/firestore";
 import {Timestamp } from 'firebase/firestore';
 
 import { collection, query, where } from "firebase/firestore";
@@ -28,13 +28,21 @@ export class fireStoreService {
             }
         });
     }
-    updateUserCharts(_id:any, formValue:any, image:string, isIframe:boolean) {
-        var newEl = { 
-            formValue:formValue,
-            image:image,
-            fechaCreacion: Timestamp.now(),
-            isIframe: isIframe
-        };
-        this.db.collection('Users').doc(_id).update({charts: arrayUnion(newEl)});
+    async updateUserCharts(_id:any, formValue:any, image:string, isIframe:boolean): Promise<boolean> {
+        try {
+            var newEl = { 
+                formValue:formValue,
+                image:image,
+                fechaCreacion: Timestamp.now(),
+                isIframe: isIframe
+            };
+            var a = await this.db.collection('Users').doc(_id).update({charts: arrayUnion(newEl)}) 
+            return false;
+        } catch (error) {
+            return true;
+        }
+    }
+    deleteUserChart(_id:any, elementDelete: any) {
+        this.db.collection('Users').doc(_id).update({charts: arrayRemove(elementDelete)});
     }
 }

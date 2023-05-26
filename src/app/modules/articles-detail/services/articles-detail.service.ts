@@ -8,6 +8,6 @@ export class DetailArticleService {
     constructor(private http: HttpClient){}
 
 	getArticles(): Observable<any>{
-        return this.http.get('./../../../../assets/articlesCarousel.json');
+        return this.http.get('./assets/articlesCarousel.json');
     }
 }

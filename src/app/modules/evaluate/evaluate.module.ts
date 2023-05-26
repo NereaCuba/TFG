@@ -23,6 +23,12 @@ import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
 import { AuthService } from 'app/shared/services/auth.service';
 import { DialogModule } from 'primeng/dialog';
 import { fireStoreService } from 'app/shared/services/fireStore.service';
+import { MdbModalService } from 'mdb-angular-ui-kit/modal';
+import { DataViewModule } from 'primeng/dataview';
+import { PaginatorModule } from 'primeng/paginator';
+import { ButtonModule } from 'primeng/button';
+import { DropdownModule } from 'primeng/dropdown';
+import { ModalChartsModule } from 'app/components/modal-charts/modal-charts.module';
 
 // Pass the fusioncharts library and chart modules
 FusionChartsModule.fcRoot(FusionCharts, Widgets, FusionTheme);
@@ -40,16 +46,21 @@ FusionChartsModule.fcRoot(FusionCharts, Widgets, FusionTheme);
     RouterModule,
     RadioButtonModule,
     TooltipModule,
-    evaluateRoutingModule,
+    DataViewModule,
     FormsModule,
+    DropdownModule,
+    ButtonModule,
+    PaginatorModule,
     UbayButtonModule,
     DialogModule,
+    ModalChartsModule,
     EvaluateFormModule,
     evaluateRoutingModule
   ],
   providers: [
     MessageService,
     AuthService,
+    MdbModalService,
     EvaluateService,
   fireStoreService  ]
 })

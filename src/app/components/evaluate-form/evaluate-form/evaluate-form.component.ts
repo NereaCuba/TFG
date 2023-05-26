@@ -4,7 +4,6 @@ import { HeuristicBasicInfo } from 'app/models/general.interfaces';
 import { DetailHeuristicsService } from 'app/modules/heuristic-detail/services/heuristic-detail.service';
 import { Output, EventEmitter } from '@angular/core';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
-import { ShowMoreImageComponent } from 'app/components/show-more-image/show-more-image.component';
 import { Router } from '@angular/router';
 
 @Component({
@@ -22,8 +21,8 @@ export class EvaluateFormComponent implements OnInit {
   _comesFromBrief: boolean = false;
   _isIFrame: boolean = false;
   name = new FormControl('');
+  isAnswered: boolean = false;
   backButtonBoolean: boolean = false;
-  modalRef: MdbModalRef<ShowMoreImageComponent> | null = null;
   optionLinkert: any = null;
   _heuristic: HeuristicBasicInfo = {} as HeuristicBasicInfo;
   @Output() newItemEvent = new EventEmitter<any>();
@@ -37,7 +36,8 @@ export class EvaluateFormComponent implements OnInit {
     private modalService: MdbModalService,
     private router: Router
   ) {}
-  showDialog() {
+  showDialog($event) {
+    $event.preventDefault()
     if (this._heuristic.example_images.length > 0) {
       this.visible = true;
     }
@@ -105,6 +105,7 @@ export class EvaluateFormComponent implements OnInit {
       this.newItemEvent.emit(response)
       this.loading = true;
       this.loaded = false;
+      this.isAnswered = false;
       this.ngOnInit();
     }
   }
@@ -113,9 +114,7 @@ export class EvaluateFormComponent implements OnInit {
       top: 0,
       left: 0,
       behavior: 'smooth'
-    });
-    console.log(this.srcImg);
-    
+    });    
     try {
       var _listHeuristics = await this.heuristicsService.getHeuristics().toPromise();
       this._heuristic = _listHeuristics.heuristic_abstract!.find((heuristic, index) => {
@@ -146,8 +145,8 @@ export class EvaluateFormComponent implements OnInit {
   }
   redirectToEvaluate() {
     this.redirectTo('/evaluate')
-   }
-   checkIfDisabled(value) {
+  }
+  checkIfDisabled(value) {
     return this._heuristic.forbidden_list.includes(value);
-   }
+  }
 }

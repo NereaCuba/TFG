@@ -3,12 +3,12 @@
   <app-settings [visible]="visible" (isClosed)="closeModal()" [selectedPalette]="paletteSelected" (sizeSelected)="setSize($event)" (paletteSelecteed)="setPalete($event)"></app-settings>
   <div class="m-0 p-0">
     <p-menubar [model]="items">
-      <ng-template pTemplate="end">
-        <div class="d-flex">
-          <button class="settings" (click)="redirectTo('/dashboard')"><i class="pi pi-user"></i></button>
-          <button class="settings" (click)="openModal()"><i class="pi pi-cog"></i></button>
-        </div>
-      </ng-template>
+      <div class="d-flex justify-content-end w-100">
+        <button class="settings" btn btn-button *ngIf="!(isLoggedIn | async)" (click)="redirectTo('/dashboard')">Log In</button>
+        <button class="settings" btn btn-button *ngIf="isLoggedIn | async" (click)="authService.SignOut()">Log Out</button>
+        <button *ngIf="isLoggedIn | async" class="settings" (click)="redirectTo('/dashboard')"><i class="pi pi-user"></i></button>
+        <button class="settings" (click)="openModal()"><i class="pi pi-cog"></i></button>   
+      </div>
   
     </p-menubar>
     <router-outlet></router-outlet>
@@ -19,7 +19,7 @@
         <div class="row mt-3">
   
           <div class="col-lg-4 col-12 mb-4">
-              <img src="./../assets/LOGO_ADAPTABIT-Quadrat1760x1760.png">
+              <img src="./assets/LOGO_ADAPTABIT-Quadrat1760x1760.png">
           </div>
           <div class="col-lg-8 col-12 d-flex align-items-center justify-content-between">
             <div class="row w-100">

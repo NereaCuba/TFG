@@ -6,6 +6,10 @@ export interface ArticleBasicInfo {
   image?: string;
   abstract?:  Array<string>;
   pdf?: string;
+  authors?: string;
+  year?: string;
+  cita?: string;
+  url?: string;
 }
 
 export interface ArticlesResponse {
@@ -27,6 +31,7 @@ export interface HeuristicsResponse {
 export interface HeuristicBasicInfo {
   id?: string;
   name?: string;
+  full_name?: string;
   definition?: string;
   verification_list?: Array<string>;
   benefied_user?: string;
@@ -49,4 +54,5 @@ export interface Weigth {
 export interface ExampleInfo {
   image?: string;
   text?: Array<string>;
+  source?: string;
 }

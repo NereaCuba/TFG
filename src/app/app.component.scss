@@ -8,6 +8,7 @@
   justify-content: center;
   line-height: 23px;
   text-transform: uppercase;
+  font-weight: bold;
 }
 footer {
   background-color: var(--app-secondary-color);
@@ -84,11 +85,6 @@ footer {
           border-bottom: 1px solid white;
         }
       }
-      li {
-        &:first-child {
-        margin-right: auto;
-        }
-      }
       color: $color-light !important;
       &:hover {
         background: none !important;
@@ -106,6 +102,11 @@ footer {
         }
       }
     }
+  }
+}
+:host {
+  ::ng-deep div.p-menubar-end{
+    width: 100%;
   }
 }
 :host ::ng-deep .modal-dialog {

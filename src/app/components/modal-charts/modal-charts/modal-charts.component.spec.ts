@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShowMoreImageComponent } from './show-more-image.component';
+import { ModalChartsComponent } from './modal-charts.component';
 
-describe('ShowMoreImageComponent', () => {
-  let component: ShowMoreImageComponent;
-  let fixture: ComponentFixture<ShowMoreImageComponent>;
+describe('ModalChartsComponent', () => {
+  let component: ModalChartsComponent;
+  let fixture: ComponentFixture<ModalChartsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ShowMoreImageComponent ]
+      declarations: [ ModalChartsComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ShowMoreImageComponent);
+    fixture = TestBed.createComponent(ModalChartsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -8,9 +8,9 @@ export class HomeService {
     constructor(private http: HttpClient){}
 
 	getArticles(): Observable<any>{
-        return this.http.get('./../../../../assets/articlesCarousel.json');
+        return this.http.get('./assets/articlesCarousel.json');
     }
   getHeuristics(): Observable<any>{
-      return this.http.get('./../../../../assets/heuristicsCarousel.json');
+      return this.http.get('./assets/heuristicsCarousel.json');
   }
 }

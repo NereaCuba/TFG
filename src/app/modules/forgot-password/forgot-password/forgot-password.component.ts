@@ -10,9 +10,9 @@ import { AuthService } from 'app/shared/services/auth.service';
   styleUrls: ['./forgot-password.component.scss']
 })
 export class ForgotPasswordComponent {
-  blueBackground:string = "./../../../../assets/Fondo_bueno_azul.png";
-  grayBackground:string = "./../../../../assets/Fondo_bueno_gris.png";
-  purpleBackground:string = "./../../../../assets/Fondo_bueno_violeta.png";
+  blueBackground:string = "./assets/Fondo_bueno_azul.png";
+  grayBackground:string = "./assets/Fondo_bueno_gris.png";
+  purpleBackground:string = "./assets/Fondo_bueno_violeta.png";
   image: string = this.blueBackground;
   constructor(
     private router: Router,

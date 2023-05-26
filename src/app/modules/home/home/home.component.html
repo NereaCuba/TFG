@@ -34,7 +34,7 @@
     <div class="row text-center justify-content-center">
       <span class="col-9 contextText ">
         <p class="mt-3"> Los gráficos estadísticos son una herramienta imprescindible en el día a día de distintas áreas de la vida: comunicaciones, investigaciones, educación, información, etc.
-          Es por ello que desde el ámbito científico se ha tratado de facilitar esta información para personas con problemas severos, como la ceguera; sin embargo, hay otras enfermedades o defectos visuales encontrados en la sociedad, que no pueden ser corregidos con lentes.
+          Es por ello que desde el ámbito científico se ha tratado de facilitar esta información para personas con problemas severos, como la ceguera; sin embargo, hay otras patologías o dificultades visuales encontrados en la sociedad, que no pueden ser corregidos con lentes.
           Esto supone distintos escenarios, ya que según el caso puede ser necesario el uso de lectores de pantalla, amplificadores de texto, etc.
           Mediante el uso de distintas heurísticas, podemos evaluar la accesibilidad que tiene un grafico para todos estos escenarios, donde el lector presenta dificultades debido a su enfermedad o defectos visuales, y así, tratar de adaptarlo para facilitar su uso a todo el mundo.
         </p>
@@ -52,7 +52,7 @@
       <div class="col-12">
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2">
           <div class="col-lg-6 col-md-12 mb-2" *ngFor="let article of articlesCarousel" (click)="articleShowInformation(article)">
-            <titles-inline [image]="article.image!" [title]="article.title!" ></titles-inline>
+            <titles-inline [image]="article.image!" [title]="article!" [comesFromHeuristicDetail]="false"></titles-inline>
           </div>
         </div>
       </div>
@@ -61,7 +61,7 @@
   <div class="parallax index mt-5  d-none d-lg-block">
     <h1 id="header"></h1>
   </div>
-  <div class="heuristics text-center" data-aos="fade-up" data-aos-duration="2000">
+  <div class="heuristics text-center cursor" data-aos="fade-up" data-aos-duration="2000" (click)="evaluateButton()">
     <span class="titleSection">
       <h4 class="titles">COMPRUEBA LA ACCESIBILIDAD DE TU GRÁFICO EN PERSONAS DE BAJA VISIÓN</h4>
     </span>

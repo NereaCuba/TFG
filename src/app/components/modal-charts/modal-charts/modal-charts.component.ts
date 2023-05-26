@@ -1,24 +1,22 @@
 import { Component } from '@angular/core';
-import { AuthService } from 'app/shared/services/auth.service';
-import AOS from "aos";
-import { fireStoreService } from 'app/shared/services/fireStore.service';
-import { SelectItem } from 'primeng/api';
-import { EvaluateService } from 'app/modules/evaluate/services/evaluate.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { EvaluateService } from 'app/modules/evaluate/services/evaluate.service';
+import { AuthService } from 'app/shared/services/auth.service';
+import { fireStoreService } from 'app/shared/services/fireStore.service';
+import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
+import { SelectItem } from 'primeng/api';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  selector: 'app-modal-charts',
+  templateUrl: './modal-charts.component.html',
+  styleUrls: ['./modal-charts.component.scss']
 })
-export class DashboardComponent {
-  allUsers: any = [];
-  currentUser: any = [];
+export class ModalChartsComponent {
+  sortField: string;
   sortOptions: SelectItem[];
   sortKey:any;
-  sortOrder: number;
   scoreAll:any = [];
-  numAproved: number = 0;
+  sortOrder: number;
   constHeuristicsTitles: any = [
     'Título',
     'Leyenda',
@@ -44,35 +42,24 @@ export class DashboardComponent {
   constLinkertBrief: any = ['No cumplimiento', 'Cumplimiento bajo','Cumplimiento aceptable', 'Cumplimiento alto', 'Cumplimiento excelente']
   constLikert: any = ['NA - No aplica', 'NP - No es problema', '0 - No cumplimiento', '1 - Cumplimiento bajo', '2 - Cumplimiento aceptable', '3 - Cumplimiento alto', '4 - Cumplimiento excelente'];
   constWeightHeuristics: any = [1,1,1,1,1,1,1,1,3,3,3,2,3,2,3,1,3,2,];
-  sortField: string;
-  loading:boolean = true;
-  loaded:boolean = false;
-  constructor(
+
+  constructor(    
     private router: Router,
     public authService: AuthService,
     public fireStoreSvc: fireStoreService,
     private route: ActivatedRoute,
-    private evaluateService: EvaluateService
-    ) {
-    AOS.init();
-  }
-  async ngOnInit() {
-    this.loading = true;
-    this.loaded = false;
-    this.sortOptions = [
-      { label: 'Fecha ascendente', value: '!fechaCreacion' },
-      { label: 'Fecha descendente', value: 'fechaCreacion' }
-    ];
-    var userInformationSession  = JSON.parse(localStorage.getItem('user'));
-    this.authService.userInfo =  await this.authService.getUserData(userInformationSession.email);
-    if(this.authService.userInfo && this.authService.userInfo.charts) {
-      this.numAproved = this.authService.userInfo.charts.filter((result) => parseInt(this.getPunctuation(result.formValue)) >= 8).length;
+    public evaluateService: EvaluateService
+    ) {}
+    async ngOnInit() {
+      this.sortOptions = [
+        { label: 'Fecha ascendente', value: '!fechaCreacion' },
+        { label: 'Fecha descendente', value: 'fechaCreacion' }
+      ];
+      var userInformationSession  = JSON.parse(localStorage.getItem('user'));
+      this.authService.userInfo =  await this.authService.getUserData(userInformationSession.email);
+      
     }
-    
-    this.loading = false;
-    this.loaded = true;
-  }
-  onSortChange(event) {
+    onSortChange(event) {
       let value = event.value;    
       if (value.indexOf('!') === 0) {
         this.sortOrder = -1;
@@ -81,8 +68,6 @@ export class DashboardComponent {
           this.sortOrder = 1;
           this.sortField = value;
       }
-      console.log(this.sortOrder);
-      
   }
   getCurrentDate(currentDate) {
     var dateFormat = new Date(currentDate.seconds * 1000 + currentDate.nanoseconds/1000000);    
@@ -110,13 +95,6 @@ export class DashboardComponent {
       }
     });
     return ((summatoryCurrentAsignation * 10)/summatoryTotalAsignation).toFixed(2);
-  }
-  redirectTo(uri: string, additionalInfo?: any) {
-    this.router.navigateByUrl('/', {skipLocationChange: false}).then(() =>
-    this.router.navigate([uri], {queryParams: {chartID: additionalInfo}}));
-  }
-  evaluateShow(value?: any) {
-    this.redirectTo('/evaluate-detail', value);
   }
   downloadResults(form) {
     var globalResults = [];
@@ -149,6 +127,6 @@ export class DashboardComponent {
   }
   deleteElement(email, product) {
     this.fireStoreSvc.deleteUserChart(email, product);
-    this.ngOnInit();
+    this.ngOnInit()
   }
 }

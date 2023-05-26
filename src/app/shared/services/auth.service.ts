@@ -8,12 +8,17 @@ import {
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { fireStoreService } from './fireStore.service';
+import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   userData: any; // Save logged in user data
   userInfo: any;
+  isSigningUp: boolean = false;
+  isLoginSubject  = new BehaviorSubject<boolean>(this.hasToken());
+  public currentUserSubjectTest: BehaviorSubject<any> = new BehaviorSubject<any>(!localStorage.getItem('user'));
+  public currentUserSubject: BehaviorSubject<any> = new BehaviorSubject<any>(!localStorage.getItem('user'));
   constructor(
     public fireStoresvc: fireStoreService,
     public afs: AngularFirestore, // Inject Firestore service
@@ -21,40 +26,58 @@ export class AuthService {
     public router: Router,
     public ngZone: NgZone // NgZone service to remove outside scope warning
   ) {
+
     /* Saving user data in localstorage when 
-    logged in and setting up null when logged out */
+    logged in and setting up null when logged out */ 
     this.afAuth.authState.subscribe(async (user) => {
       if (user) {
         this.userData = user;        
         this.userInfo = await this.getUserData(this.userData._delegate.email);
-        
         localStorage.setItem('user', JSON.stringify(this.userData));
-        JSON.parse(localStorage.getItem('user')!);
-      } else {
-        localStorage.setItem('user', 'null');
-        JSON.parse(localStorage.getItem('user')!);
+        if(!localStorage.getItem('signUp')) {
+          this.isLoginSubject.next(true);
+        }
       }
     });
   }
   // Sign in with email/password
   SignIn(email: string, password: string) {
+    localStorage.removeItem('signUp');
+    this.isLoginSubject.next(true);
     return this.afAuth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
-        console.log(result);
         this.SetUserData(result.user);
+        this.login();
+        this.isLoginSubject.next(true);
+        this.router.navigate(['']);
         this.afAuth.authState.subscribe((user) => {
           if (user) {
-            this.router.navigate(['dashboard']);
+            this.router.navigate(['']);
           }
         });
+        this.router.navigate(['']);
       })
       .catch((error) => {
         window.alert(error.message);
       });
   }
+  private hasToken (): boolean {    
+    return !!localStorage.getItem('token');
+  }
+  login ():void {
+    localStorage.setItem('token', 'JWT');
+    this.isLoginSubject.next(true);
+
+  }
+  logout (): void {
+    this.router.navigate(['']);
+    localStorage.removeItem('token');
+    this.isLoginSubject.next(false);
+  }
   // Sign up with email/password
   SignUp(email: string, password: string) {
+    localStorage.setItem('signUp', '0');
     return this.afAuth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {        
@@ -91,10 +114,13 @@ export class AuthService {
     const user = JSON.parse(localStorage.getItem('user')!);
     return user !== null && user.emailVerified !== false ? true : false;
   }
+  isLoggedInTest() : Observable<boolean> {
+    return this.isLoginSubject.asObservable();
+  }
   // Sign in with Google
   GoogleAuth() {
     return this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
-      this.router.navigate(['dashboard']);
+      this.router.navigate(['']);
     });
   }
   // Auth logic to run auth providers
@@ -102,7 +128,7 @@ export class AuthService {
     return this.afAuth
       .signInWithPopup(provider)
       .then((result) => {
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['']);
         this.SetUserData(result.user);
       })
       .catch((error) => {
@@ -133,9 +159,15 @@ export class AuthService {
     return this.fireStoresvc.getUserByID(email);
   }
   SignOut() {
+    this.logout();
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
+      this.isLoginSubject.next(false);
       this.router.navigate(['sign-in']);
     });
+  }
+  redirectTo(uri: string) {
+    this.router.navigateByUrl('/', {skipLocationChange: false}).then(() =>
+    this.router.navigate([uri]));
   }
 }

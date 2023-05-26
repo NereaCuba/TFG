@@ -10,9 +10,9 @@ import { AuthService } from 'app/shared/services/auth.service';
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent {
-  blueBackground:string = "./../../../../assets/Fondo_bueno_azul.png";
-  grayBackground:string = "./../../../../assets/Fondo_bueno_gris.png";
-  purpleBackground:string = "./../../../../assets/Fondo_bueno_violeta.png";
+  blueBackground:string = "./assets/Fondo_bueno_azul.png";
+  grayBackground:string = "./assets/Fondo_bueno_gris.png";
+  purpleBackground:string = "./assets/Fondo_bueno_violeta.png";
   image: string = this.blueBackground;
   loading:boolean = true;
   loaded:boolean = false;
@@ -38,11 +38,9 @@ export class SignInComponent {
     this.router.navigate([uri]));
   }
   logInWithGoogle() {
-    this.loading = true;
-    this.loaded = false;
-    this.authService.GoogleAuth().then(result   => {
-      this.loading = false;
-      this.loaded = true;
-    });
+    this.authService.GoogleAuth();
+    setTimeout(() => {
+      this.redirectTo('dashboard')
+    }, 5000); 
   }
 }

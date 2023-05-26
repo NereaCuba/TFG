@@ -62,14 +62,11 @@ export class EvaluateDetailComponent {
         var userInformationSession  = JSON.parse(localStorage.getItem('user'));
         var userInformation = await this.authService.getUserData(userInformationSession.email);
         let value = parseInt(this.route.snapshot.queryParams['chartID']);
-        console.log(value);
-        
         var info = userInformation.charts[value];
-        
+
         this.formValue = info.formValue;
         await this.calculatePonderation();
         this.URLLink = info.image;
-        console.log(this.URLLink);
         
         this.getImageFromURL();
         

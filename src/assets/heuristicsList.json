@@ -3,6 +3,7 @@
       {
           "id":"H1",
           "name":"Título",
+          "full_name": "H1 - Título",
           "definition":"El gráfico debe contar con un título breve y descriptivo que ayude al lector a identificarlo y diferenciarlo del resto que aparecen en la misma página, permitiéndoles navegar así entre ellos.",
           "verification_list": [
               "El gráfico tiene un título.","El título es breve y descriptivo.",
@@ -18,15 +19,18 @@
           "example_images": [
             {
                 "image": "https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2019/09/30/15698331707129.jpg",
-                "text": "Con título"
+                "text": "Con título",
+                "source": "https://www.elmundo.es/pais-vasco/2019/09/30/5d91c052fc6c83db238b4672.html"
             },
             {
                 "image": "https://www.lavanguardia.com/files/content_image_desktop_filter/uploads/2019/05/30/5fa53ad21ff6d.png",
-                "text": "Con título, pero no breve ni descriptivo"
+                "text": "Con título, pero no breve ni descriptivo",
+                "source": "https://www.lavanguardia.com/tecnologia/20190530/462567641011/napster-20-aniversario-musica-gratis.html"
             },
             {
                 "image": "https://estaticos-cdn.elperiodico.com/clip/a9593567-edc4-4229-9d24-79ec63183eee_alta-libre-aspect-ratio_default_0.jpg",
-                "text": "Sin título"
+                "text": "Sin título",
+                "source": "https://www.elperiodico.com/es/politica/20191005/encuesta-elecciones-generales-2019-espana-7668120"
             }
           ],
           "understand": "El objetivo de este principio es asegurar que todo gráfico disponga de un título breve y descriptivo –entre 6 y 12 palabras aproximadamente– (Evergreen y Emery, 2018) que represente fielmente su contenido, y ayude a diferenciarlo de otros gráficos que se muestran en la misma página, pudiendo navegar así rápidamente entre ellos.",
@@ -47,6 +51,7 @@
       {
           "id":"H2",
           "name":"Leyenda",
+          "full_name": "H2 - Leyenda",
           "definition":"El gráfico debe ofrecer leyendas que asocian unívocamente esquemas de color, patrones o formas utilizados en el gráfico con sus respectivas variables, siempre que sea necesario.",
           "verification_list":[
               "El gráfico cuenta con una leyenda.",
@@ -78,6 +83,7 @@
       {
           "id":"H3",
           "name":"Ejes",
+          "full_name": "H3 - Ejes",
           "definition":"Los ejes del gráfico deben ser visibles y sus etiquetas adecuadas concisas y claras.",
           "verification_list":[
               "El gráfico cuenta con los ejes necesarios.",
@@ -95,27 +101,33 @@
           "example_images": [
             {
                 "image": "https://e00-elmundo.uecdn.es/elmundo/2019/graficos/sep/s4/niveldelmar.jpg",
-                "text": "Con ejes"
+                "text": "Con ejes",
+                "source": "https://www.elmundo.es/ciencia-y-salud/ciencia/2019/09/25/5d8a4183fdddff25b18b46d0.html"
             },
             {
                 "image": "https://e00-elmundo.uecdn.es/elmundo/2019/graficos/oct/s1/exportaciones360.jpg",
-                "text": "Con ejes, pero sin indicar las unidades de medida"
+                "text": "Con ejes, pero sin indicar las unidades de medida",
+                "source": "https://www.elmundo.es/economia/2019/10/04/5d963e4421efa0a16a8b4604.html"
             },
             {
                 "image": "https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2019/09/30/15698331707129.jpg",
-                "text": "Con ejes, pero sin etiquetar"
+                "text": "Con ejes, pero sin etiquetar",
+                "source": "https://www.elmundo.es/pais-vasco/2019/09/30/5d91c052fc6c83db238b4672.html"
             },
             {
                 "image": "https://estaticos-cdn.elperiodico.com/clip/b4714e58-62a1-4f6c-ba98-dbb8b9ba8b9b_alta-libre-aspect-ratio_default_0.jpg",
-                "text": "Con ejes pero texto inclinado"
+                "text": "Con ejes pero texto inclinado",
+                "source": "https://www.elperiodico.com/es/politica/20191006/encuesta-sentencia-proces-7668336"
             },
             {
                 "image": "https://www.lavanguardia.com/files/content_image_desktop_filter/uploads/2019/10/04/5fa535097d184.png",
-                "text": "NA"
+                "text": "NA",
+                "source": "https://www.lavanguardia.com/economia/20191004/47793185853/aranceles-eeuu-espana-impacto-productos-millones.html"
             },
             {
                 "image": "https://s2.abcstatics.com/media/sociedad/2019/10/09/encuesta-eutanasia-BBVA-k0zC-U303145629284Y1B-510x300@abc.jpg",
-                "text": "NP"
+                "text": "NP",
+                "source": "https://www.abc.es/sociedad/abci-espanoles-aceptan-mejor-eutanasia-aborto-201910091110_noticia.html"
             }
           ],
           "understand": "El objetivo de este principio es asegurar que se muestran los diferentes ejes del gráfico (datos, categorías, tiempo...) y que todos se encuentran etiquetados de manera pertinente, preferentemente en formato de texto y no como imagen de texto.",
@@ -136,6 +148,7 @@
       {
           "id":"H4",
           "name":"Pie",
+          "full_name": "H4 - Pie",
           "definition":"El gráfico debe contar con un pie que contribuya a facilitar la compresión de la información que se comunica, a excepción de que se trate de un gráfico muy simple que no lo precise.",
           "verification_list":[
               "El gráfico cuenta con un pie.",
@@ -169,6 +182,7 @@
       {
           "id":"H5",
           "name":"Abreviaturas",
+          "full_name": "H5 - Abreviaturas",
           "definition":"Las abreviaturas utilizadas se desarrollan para facilitar su compresión.",
           "verification_list":[
               "Las abreviaturas se desarrollan siguiendo un método estándar respaldado por las ayudas técnicas (elemento <abbr>, enlace a la forma desarrollada, etc.)",
@@ -183,19 +197,23 @@
           "example_images": [
             {
                 "image": "https://e00-elmundo.uecdn.es/elmundo/2019/graficos/oct/s1/exportaciones360.jpg",
-                "text": "NA"
+                "text": "NA",
+                "source": "https://www.elmundo.es/economia/2019/10/04/5d963e4421efa0a16a8b4604.html"
             },
             {
                 "image": "https://e00-elmundo.uecdn.es/elmundo/2019/graficos/sep/internet.jpg",
-                "text": "Sin desarrollar, pero de uso común"
+                "text": "Abreviaturas sin desarrollar, pero de uso común",
+                "source": "https://www.elmundo.es/television/2019/09/18/5d8271a3fdddffb2798b45ae.html"
             },
             {
                 "image": "https://s1.abcstatics.com/media/economia/2019/10/02/evolucion-afilicacion-septiembre--1240x698.jpg",
-                "text": "Sin desarrollar"
+                "text": "Abreviaturas sin desarrollar",
+                "source": "https://www.abc.es/economia/abci-empleo-crece-menor-ritmo-desde-2014-y-confirma-desaceleracion-201910020859_noticia.html"
             },
             {
                 "image": "https://estaticos-cdn.elperiodico.com/clip/2842bb10-8d6a-4e9c-af32-136ea68f4de7_alta-libre-aspect-ratio_default_0.jpg",
-                "text": "Desarrolladas"
+                "text": "Abreviaturas desarrolladas",
+                "source": "https://www.elperiodico.com/es/politica/20191010/encuesta-autonomicas-comunidad-valenciana-7675510"
             }
           ],
           "understand": "El objetivo de este principio es asegurar que todas las abreviaturas utilizadas se desarrollen para que los usuarios puedan comprenderlas. Entendiendo que el gráfico se debe poder entender por sí mismo, las abreviaturas deberían desarrollarse en el mismo gráfico con alguna de las técnicas que se muestran a continuación.",
@@ -216,6 +234,7 @@
       {
           "id":"H6",
           "name":"Fuente de datos",
+          "full_name": "H6 - Fuente de datos",
           "definition":"Junto al gráfico, preferiblemente cerca del pie, se ofrece información acerca de la fuente de los datos (institución, conjunto de datos, fecha y enlace)",
           "verification_list":[
               "En algún lugar del gráfico, preferiblemente en el pie o cerca de él, se ofrece información sobre la fuente de los datos.",
@@ -231,23 +250,28 @@
           "example_images": [
             {
                 "image": "https://e00-elmundo.uecdn.es/elmundo/2019/graficos/oct/s1/exportaciones360.jpg",
-                "text": "Con fuente de datos, sin fecha de la fuente y sin enlance a la fuente"
+                "text": "Con fuente de datos, sin fecha de la fuente y sin enlance a la fuente",
+                "source": "https://www.elmundo.es/economia/2019/10/04/5d963e4421efa0a16a8b4604.html"
             },
             {
                 "image": "https://imagenes.elpais.com/resizer/NuSFjO68Ca0SRKwJboAaXlAUz3w=/1960x0/arc-anglerfish-eu-central-1-prod-prisa.s3.amazonaws.com/public/IMLB3CVE7HEHEK2GIAT3WTJIOY.jpg",
-                "text": "Con fuente de datos, sin fecha de la fuente y con enlace a la fuente"
+                "text": "Con fuente de datos, sin fecha de la fuente y con enlace a la fuente",
+                "source": "https://www.elperiodico.com/es/politica/20191010/encuesta-autonomicas-comunidad-valenciana-7675510"
             },
             {
                 "image": "https://e00-elmundo.uecdn.es/elmundo/2019/graficos/sep/internet.jpg",
-                "text": "Con fuente de datos, con fecha de la fuente y sin enlance a la fuente"
+                "text": "Con fuente de datos, con fecha de la fuente y sin enlance a la fuente",
+                "source": "https://www.elmundo.es/television/2019/09/18/5d8271a3fdddffb2798b45ae.html"
             },
             {
                 "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/03lavanguardia.PNG",
-                "text": "NA"
+                "text": "NA",
+                "source": "https://www.lavanguardia.com/servicios/bolsa/index.html"
             },
             {
                 "image": "https://estaticos-cdn.elperiodico.com/clip/a9593567-edc4-4229-9d24-79ec63183eee_alta-libre-aspect-ratio_default_0.jpg",
-                "text": "Sin fuente de datos, sin fecha de la fuente y sin enlance a la fuente"
+                "text": "Sin fuente de datos, sin fecha de la fuente y sin enlance a la fuente",
+                "source": "https://www.elperiodico.com/es/politica/20191005/encuesta-elecciones-generales-2019-espana-7668120"
             }
           ],
           "understand": "El objetivo de este principio es asegurar que todo gráfico cuente con una referencia a la fuente de datos a partir de la cual se ha elaborado. Asegurar el acceso al conjunto de datos original permite a los usuarios disponer de los datos en bruto en otros formatos, ofreciendo vías alternativas de acceso al mismo contenido como, por ejemplo, la posibilidad de descargarlos para abrirlos mediante una tercera aplicación. Por otro lado, la inclusión de la fuente es una buena práctica que da credibilidad a la información mostrada.",
@@ -268,6 +292,7 @@
       {
           "id":"H7",
           "name":"Versión impresa",
+          "full_name": "H7 - Versión impresa",
           "definition":"Se ofrece una versión del gráfico optimizada para impresión para aquellos usuarios que prefieran la consulta en este otro medio.",
           "verification_list":[
               "Es posible imprimir una versión del gráfico optimizada para el medio impreso.",
@@ -282,24 +307,29 @@
           "brief":"¿Hay una versíon optimizada del gráfico para su impresión?",
           "example_images": [
             {
-                "iframe": "https://interactive.guim.co.uk/charts/embed/oct/2019-10-07T15:09:57/embed.html",
-                "text": "Sin versión para impresión"
+                "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/01theguardian.PNG",
+                "text": "Sin versión para impresión",
+                "source": "https://www.theguardian.com/politics/2019/oct/08/no-deal-brexit-would-push-national-debt-to-levels-last-seen-in-60s"
             },
             {
                 "image": "https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2019/09/30/15698331707129.jpg",
-                "text": "Con versión para impresión. Sin versión para impresion cortada. Sin versión para impresión con solapamientos"
+                "text": "Con versión para impresión. Sin versión para impresion cortada. Sin versión para impresión con solapamientos",
+                "source": "https://www.elmundo.es/pais-vasco/2019/09/30/5d91c052fc6c83db238b4672.html"
             },
             {
                 "image": "https://www.lavanguardia.com/files/content_image_desktop_filter/uploads/2019/10/05/5fa53d92e96db.png",
-                "text": "Con versión para impresión. Con versión para impresion cortada. Sin versión para impresión con solapamientos"
+                "text": "Con versión para impresión. Con versión para impresion cortada. Sin versión para impresión con solapamientos",
+                "source": "https://www.lavanguardia.com/internacional/20191005/47804274949/elecciones-portugal-antonio-costa-sondeos.html"
             },
             {
                 "image": "https://estaticos-cdn.elperiodico.com/clip/f546f016-8f66-4190-a076-6a7a60ac4bb5_alta-libre-aspect-ratio_default_0.jpg",
-                "text": "Con versión para impresión. Sin versión para impresion cortada. Con versión para impresión con solapamientos"
+                "text": "Con versión para impresión. Sin versión para impresion cortada. Con versión para impresión con solapamientos", 
+                "source": "https://www.elperiodico.com/es/politica/20191005/sondeo-espana-gobierno-investidura-7667832"
             },
             {
                 "image": "https://e00-elmundo.uecdn.es/elmundo/2019/graficos/oct/s1/exportaciones360.jpg",
-                "text": "Con versión para impresión. Con versión para impresion cortada. Con versión para impresión con solapamientos"
+                "text": "Con versión para impresión. Con versión para impresion cortada. Con versión para impresión con solapamientos",
+                "source": "https://www.elmundo.es/economia/2019/10/04/5d963e4421efa0a16a8b4604.html"
             }
           ],
           "understand": "El objetivo de este principio es asegurar que aquellos usuarios que prefieran consultar el gráfico sobre papel dispongan de una versión optimizada para este medio.",
@@ -320,6 +350,7 @@
       {
           "id":"H8",
           "name":"Alternativa textual",
+          "full_name": "H8 - Alternativa textual",
           "definition":"El gráfico cuenta con un texto alternativo que informa brevemente sobre el contenido del gráfico y ayuda a los usuarios a determinar si desean obtener más información al respecto. Si existe una descripción larga asociada al gráfico, se informa sobre ella.",
           "verification_list":[
               "El gráfico cuenta con una alternativa textual.",
@@ -335,15 +366,18 @@
           "example_images": [
             {
                 "image": "./assets/H8_NoAlt.png",
-                "text": "No"
+                "text": "No",
+                "source": "https://www.elmundo.es/economia/2019/10/04/5d963e4421efa0a16a8b4604.html"
             },
             {
                 "image": "./assets/H8_InadecuateAlt.png",
-                "text": "Con texto alternativo pero inadecuado"
+                "text": "Con texto alternativo pero inadecuado", 
+                "source": "https://www.lavanguardia.com/tecnologia/20190530/462567641011/napster-20-aniversario-musica-gratis.html"
             },
             {
                 "image": "./assets/H8_Alt.png",
-                "text": "Con texto alternativo corto"
+                "text": "Con texto alternativo corto",
+                "source": "https://www.elperiodico.com/es/politica/20191006/encuesta-sentencia-proces-7668336"
             }
           ],
           "understand": "El objetivo de este principio es asegurar que todo gráfico cuenta con una descripción alternativa breve en formato texto. Este texto alternativo debe sintetizar la información que busca transmitir el gráfico, así como ayudar a los usuarios a identificar el tipo de gráfico utilizado. Si el gráfico es muy sencillo, un texto alternativo breve puede ser suficiente como alternativa textual, haciendo innecesario el indicador H9 (descripción larga). Por ejemplo, el siguiente texto alternativo podría ser suficiente como alternativa a un gráfico de sectores con dos valores: “gráfico circular con el porcentaje de contratos firmados por personas con discapacidad en España durante el año 2020: hombres 61% y mujeres (39%)”. \nCuando el gráfico es más complejo, el texto alternativo breve avanza el contenido del gráfico, permitiendo al lector decidir si quiere saber más a través de la consulta de la imagen o de su descripción larga. De acuerdo con el W3C (2019), también es posible indicar en él la ubicación de la descripción larga. A continuación, se reproducen un par de ejemplos del W3C (2019): \n Opción A \n Bar chart showing monthly and total visitors for the first quarter 2014 for sites 1 to 3.  \n Opción B \n Bar chart showing monthly and total visitors for the first quarter 2014 for sites 1 to 3. Described under the heading site visitors full text.",
@@ -364,6 +398,7 @@
       {
           "id":"H9",
           "name":"Descripción larga",
+          "full_name": "H9 - Descripción larga",
           "definition":"Todo gráfico complejo cuenta con una descripción larga que ofrece información equivalente.",
           "verification_list":[
               "La descripción larga proporciona información detallada sobre lo que se presenta visualmente, incluidas escalas, valores, relaciones y tendencias.",
@@ -379,11 +414,13 @@
           "example_images": [
             {
                 "image": "./assets/H9_NoLongDescription.png",
-                "text": "No"
+                "text": "No", 
+                "source": "https://www.elmundo.es/ciencia-y-salud/ciencia/2019/09/25/5d8a4183fdddff25b18b46d0.html"
             },
             {
                 "image": "./assets/H9_LongDescription.png",
-                "text": "Si"
+                "text": "Si",
+                "source": "https://www.abc.es/economia/abci-comprueba-si-vives-encima-o-debajo-renta-media-localidad-201910021046_noticia.html"
             }
           ],
           "understand": "El objetivo de este principio es asegurar que todo gráfico complejo cuenta con una descripción larga en formato texto que cumple el mismo propósito que el gráfico.",
@@ -404,6 +441,7 @@
       {
           "id":"H10",
           "name":"Colores seguros",
+          "full_name": "H10 - Colores seguros",
           "definition":"Los colores empleados en el gráfico para transmitir información pueden ser distinguidos por las personas con diferentes perfiles de VCD.",
           "verification_list":[
               "Se emplea un máximo de 5 colores seguros para diferenciar variables cualitativas, ordinales o cuantitativas.",
@@ -434,6 +472,7 @@
       {
           "id":"H11",
           "name":"Contraste",
+          "full_name": "H11 - Contraste",
           "definition":"Entre el texto y el fondo existe un contraste mínimo de 4,5:1. Entre los elementos no textuales (líneas, barras, etc.) adyacentes del gráfico, existe un contraste mínimo de 3:1.",
           "verification_list":[
               "Los colores empleados en el gráfico para transmitir información son distinguibles para los diferentes perfiles de VCD (protanopia, deuteranopia, tritanopia, acromatopsia…)."
@@ -446,20 +485,24 @@
           "brief":"¿La presentacion visual del texto y el fondo tiene un ratio de contraste de al menos 4.5:1 y los elementos no textuales del gráfico un ratio de contraste de al menos 3:1?",
           "example_images": [
             {
-                "image": "Contraste textual suficiente",
-                "text": "https://www.ub.edu/adaptabit/charts-accessibility/press/04elpais.PNG"
+                "text": "Contraste textual suficiente",
+                "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/04elpais.PNG", 
+                "source": "https://elpais.com/politica/2019/09/13/actualidad/1568392009_467154.html"
             },
             {
-                "image": "Contraste textual insuficiente",
-                "text": "https://www.ub.edu/adaptabit/charts-accessibility/press/05_elpais.jpg"
+                "text": "Contraste textual insuficiente",
+                "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/05_elpais.jpg", 
+                "source": "https://elpais.com/tecnologia/2019/09/24/actualidad/1569332904_298329.html"
             },
             {
                 "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/01elpais.PNG",
-                "text": "Contraste no textual insuficiente"
+                "text": "Contraste no textual insuficiente", 
+                "source": "https://elpais.com/elpais/2019/09/27/ciencia/1569574792_048614.html"
             },
             {
                 "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/02elpais.PNG",
-                "text": "Contraste no textual suficiente"
+                "text": "Contraste no textual suficiente",
+                "source": "https://elpais.com/tecnologia/2019/09/26/actualidad/1569509603_511250.html"
             }
         ],
           "understand": "Para el contraste entre texto y fondo ver: https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html \n Para el contraste entre elementos no textuales ver: https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html",
@@ -480,6 +523,7 @@
       {
           "id":"H12",
           "name":"Legibilidad",
+          "full_name": "H12 - Legibilidad",
           "definition":"El diseño del gráfico se basa en criterios de composición de textos que aseguran una correcta legibilidad (fuente tipográfica, interlineado, espacio entre letras y palabras, uso comedido de mayúsculas y versalitas, etc.)",
           "verification_list":[
               "Se usa una fuente tipográfica adecuada para baja visión (sans serif) como, por ejemplo: Arial, Helvetica, Courier o Verdana, o fuentes diseñadas para baja visión como Tiresias, APHont o Eido.",
@@ -498,12 +542,14 @@
           "brief":"¿El texto incluido en el gráfico es legible (fuente sans-serif, tamaño de fuente de al menos 16px o 12pt, espacio entre lineas de al menos 1.5, uso no excesivo de mayusculas, negrita o cursiva)?",
           "example_images": [
                 {
-                    "image": "",
-                    "text": "Tamaño de la fuente adecuado"
+                    "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/04elpais.PNG",
+                    "text": "Tamaño de la fuente adecuado",
+                    "source": "https://elpais.com/politica/2019/09/13/actualidad/1568392009_467154.html"
                 },
                 {
-                    "image": "",
-                    "text": "Tamaño de la fuente inadecuado"
+                    "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/03elpais.PNG",
+                    "text": "Tamaño de la fuente inadecuado",
+                    "source": "https://elpais.com/sociedad/2019/09/25/actualidad/1569402395_914747.html"
                 }
             ],
           "understand": "El objetivo de este principio es asegurar que para todo el texto que se muestra como parte o acompañando al gráfico estadístico, se respetan criterios tipográficos y de composición de textos que aseguran una buena legibilidad.",
@@ -524,6 +570,7 @@
       {
           "id":"H13",
           "name":"Calidad de la imagen",
+          "full_name": "H13 - Calidad de la imagen",
           "definition":"Todos los gráficos, en particular los gráficos en formato de mapa de bits cuentan con una calidad suficiente para su correcta visualización y admiten un zoom mínimo de 200% sin desenfocarse, ni pixelarse.",
           "verification_list":[
               "El tamaño de imagen (en píxeles) debería ser suficiente para llegar al 200% de zoom sin quese desenfoque o se pixele.",
@@ -556,6 +603,7 @@
       {
           "id":"H14",
           "name":"Redimensionado",
+          "full_name": "H14 - Redimensionado",
           "definition":"El gráfico se puede ampliar hasta un 200% sin la necesidad de contar con ninguna ayuda técnica diferente al navegador. Una vez ampliado, ningún elemento se superpone al gráfico y todas sus funcionalidades originales continúan estando disponibles.",
           "verification_list":[
               "Cuando se aplica un zoom de hasta un 200% sobre el gráfico, no se superpone ningún otro elemento presente en la página. El gráfico debe poder leerse sin tener que hacer scroll horizontal."
@@ -569,15 +617,13 @@
           "example_images": [
                 {
                     "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/02_elmundo.jpg",
-                    "text": "El gráfico se puede redimensionar, pero la imagen pierde calidad."
+                    "text": "El gráfico se puede redimensionar, pero la imagen pierde calidad.",
+                    "source": "https://www.elmundo.es/pais-vasco/2019/09/30/5d91c052fc6c83db238b4672.html"
                 },
                 {
                     "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/03_elmundo.jpg",
-                    "text": "El gráfico se puede redimensionar."
-                },
-                {
-                    "image": "",
-                    "text": "El gráfico se puede redimensionar, pero se solapa con otros elementos."
+                    "text": "El gráfico se puede redimensionar.",
+                    "source": "https://www.elmundo.es/ciencia-y-salud/ciencia/2019/09/25/5d8a4183fdddff25b18b46d0.html"
                 }
             ],
           "understand": "El objetivo de este principio es que, sin el uso de ningún tipo de ayuda técnica, los gráficos puedan redimensionarse hasta un 200% sin que el contenido desaparezca o se solape con otros elementos de la interfaz, pudiéndose utilizar en las mismas condiciones que el gráfico en su tamaño inicial.",
@@ -598,6 +644,7 @@
       {
           "id":"H15",
           "name":"Sin obstáculos en la visualización",
+          "full_name": "H15 - Sin obstáculos en la visualización",
           "definition":"En ocasiones, los editores de contenido utilizan elementos como marcas de agua o de autoría que superponen a las imágenes de texto, SVG o Canvas, dificultando su lectura. El objetivo de este indicador es asegurar que ningún elemento externo al gráfico dificulta o impide parcial o totalmente su lectura",
           "verification_list":[
               "No se superpone ningún elemento sobre el gráfico que pudiera comprometer su lectura (marcas de agua, publicidad...)"
@@ -611,15 +658,18 @@
           "example_images": [
             {
                 "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/02elpais.PNG",
-                "text": "Sin elementos que obstaculizan la visión del gráfico"
+                "text": "Sin elementos que obstaculizan la visión del gráfico",
+                "source": "https://elpais.com/tecnologia/2019/09/26/actualidad/1569509603_511250.html"
             },
             {
                 "image": "https://imagenes.elpais.com/resizer/d_d68qxikLHNgAhBW-7OpASQCrs=/1960x0/arc-anglerfish-eu-central-1-prod-prisa.s3.amazonaws.com/public/VUWPCK3HWQURE7PQBKGF2F2Y24.jpg",
-                "text": "Marca de agua"
+                "text": "Marca de agua",
+                "source": "https://elpais.com/elpais/2019/09/27/ciencia/1569574792_048614.html"
             },
             {
-                "image": "AdsObstaculizando.png",
-                "text": "Banners publicitarios"
+                "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/02_elmundo.jpg",
+                "text": "Banners publicitarios",
+                "source": "https://www.elmundo.es/pais-vasco/2019/09/30/5d91c052fc6c83db238b4672.html"
             }
           ],
           "understand": "En ocasiones, los editores de contenido utilizan elementos como marcas de agua o de autoría que superponen a las imágenes dificultando su lectura. El objetivo de este principio es asegurar que ningún elemento externo al gráfico dificulte o impida parcialmente su lectura.",
@@ -640,6 +690,7 @@
       {
           "id":"H16",
           "name":"Foco visible",
+          "full_name": "H16 - Foco visible",
           "definition":"Se muestra un indicador visible para todos aquellos elementos del gráfico que puedan recibir el foco del ratón, teclado o táctil. Este criterio no aplica a los gráficos en formato de mapa de bits, sino sólo a los gráficos en formato SVG o implementados con bibliotecas de JavaScript.",
           "verification_list":[
               "Cuando un elemento seleccionable de un gráfico recibe el foco del ratón o el teclado, se muestra algún tipo de indicador que lo destaca."
@@ -653,15 +704,18 @@
           "example_images": [
             {
                 "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/02_elmundo.jpg",
-                "text": "NA"
+                "text": "NA",
+                "source": "https://www.elmundo.es/pais-vasco/2019/09/30/5d91c052fc6c83db238b4672.html"
             },
             {
                 "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/03_abc.PNG",
-                "text": "No"
+                "text": "No", 
+                "source": "https://www.abc.es/espana/madrid/abci-ayuntamiento-madrid-reordenara-trafico-plaza-eliptica-para-reducir-contaminacion-201910082002_noticia.html"
             },
             {
                 "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/05A_elmundo.PNG",
-                "text": "Si"
+                "text": "Si", 
+                "source": "https://www.elmundo.es/economia/macroeconomia/2019/10/02/5d944bc7fc6c83c26d8b4630.html"
             }
           ],
           "understand": "El objetivo de este principio es asegurar que se muestra algún tipo de indicar visible para los elementos de un gráfico capaces de recibir el foco del ratón o el teclado.",
@@ -682,6 +736,7 @@
       {
           "id":"H17",
           "name":"Navegación independiente del dispositivo",
+          "full_name": "H17 - Navegación independiente del dispositivo",
           "definition":"Tanto en dispositivos de sobremesa, como en dispositivos móviles es posible navegar mediante distintas interfaces (ratón, teclado o gestos táctiles). Para cumplir este indicador, los tipos de eventos o interacciones disponibles deben ser identificables y poder operarse mediante los diferentes tipos de interfaces disponibles. Este criterio no aplica a los gráficos en formato de mapa de bits, sino sólo a los gráficos en formato SVG o implementados con bibliotecas de JavaScript.",
           "verification_list":[
               "Es posible navegar a través de los elementos del gráfico mediante el teclado.",
@@ -697,11 +752,13 @@
           "example_images": [
                 {
                     "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/02elpais.PNG",
-                    "text": "NA"
+                    "text": "NA",
+                    "source": "https://elpais.com/tecnologia/2019/09/26/actualidad/1569509603_511250.html"
                 },
                 {
                     "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/03elpais.PNG",
-                    "text": "No"
+                    "text": "No",
+                    "source": "https://elpais.com/sociedad/2019/09/25/actualidad/1569402395_914747.html"
                 }
             ],
           "understand": "El objetivo de este principio es permitir a los usuarios que consultan gráficos dinámicos navegar entre las marcas y elementos del gráfico con diferentes interfaces como el ratón, el teclado o mediante gestos táctiles.",
@@ -722,6 +779,7 @@
       {
           "id":"H18",
           "name":"Personalización",
+          "full_name": "H18 - Personalización",
           "definition":"Se permite a los usuarios personalizar las características de los gráficos (paleta de colores, contraste, familia tipográfica, tamaño del texto, interlineado, etc.). Cumplir con este indicador implica el uso de tecnologías compatibles con las ayudas técnicas pensadas para para este cometido. Alternativamente, es posible alcanzar el indicador, ofreciendo un sistema propio que permita personalizar la apariencia del gráfico.",
           "verification_list":[
               "El gráfico ofrece opciones de personalización específica.",

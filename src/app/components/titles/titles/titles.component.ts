@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class TitlesComponent {
   image_source!: string;
-  _title!: string;
+  _title!: any;
   _article!: boolean;
   _comesFromList!: boolean;
   _comesFromHeuristicDetail!: boolean;
@@ -19,10 +19,10 @@ export class TitlesComponent {
     this.image_source = value;
   }
   @Input()
-  get title(): string {
+  get title(): any {
     return this._title;
   }
-  set title(value: string) {
+  set title(value: any) {
     this._title = value;
   }
   @Input()

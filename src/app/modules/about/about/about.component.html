@@ -14,6 +14,76 @@
   </div>
   <div class="context mt-5 mb-2">
     <div class="row justify-content-center">
+      <table class="table text-center table-bordered container"  >
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Ene</th>
+            <th scope="col">Feb</th>
+            <th scope="col">Mar</th>
+            <th scope="col">Abr</th>
+            <th scope="col">May</th>
+            <th scope="col">Jun</th>
+            <th scope="col">Jul</th>
+            <th scope="col">Ago</th>
+            <th scope="col">Sep</th>
+            <th scope="col">Oct</th>
+            <th scope="col">Nov</th>
+            <th scope="col">Dic</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>2013</b></td>
+            <td>17.589</td>
+            <td>24.156</td>
+            <td>27.165</td>
+            <td>29.541</td>
+            <td>32.146</td>
+            <td>24.563</td>
+            <td>14.743</td>
+            <td>16.230</td>
+            <td>15.636</td>
+            <td>19.999</td>
+            <td>31.545</td>
+            <td>18.354</td>
+          </tr>
+          <tr>
+              <td><b>2014</b></td>
+              <td>22.895</td>
+              <td>26.746</td>
+              <td>32.565</td>
+              <td>31.050</td>
+              <td>35.241</td>
+              <td>26.124</td>
+              <td>16.923</td>
+              <td>17.028</td>
+              <td>22.712</td>
+              <td>27.351</td>
+              <td>26.558</td>
+              <td>16.607</td>
+          </tr>
+          <tr>
+            <td><b>2015</b></td>
+            <td>18.729</td>
+            <td>23.027</td>
+            <td>26.966</td>
+            <td>25.407</td>
+            <td>28.548</td>
+            <td>25.197</td>
+            <td>19.885</td>
+            <td>18.207</td>
+            <td>28.065</td>
+            <td>32.033</td>
+            <td>30.104</td>
+            <td>18.817</td>
+          </tr>
+        </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="context mt-5 mb-2">
+    <div class="row justify-content-center">
       <div class="col-9 contextText d-flex justify-content-center">
         <canvas class="myChart" id="myChart">{{ chart }}</canvas>
       </div>
@@ -22,7 +92,7 @@
   <div class="context mb-5">
     <div class="row justify-content-center">
       <div class="col-9">
-        <p class="boldPic text-justify">Comparación entre una representación tabular y una representación gráfica de los mismos datos. Mediante la versión gráfica es posible
+        <p class="boldPic text-justify">Figura 1 - Comparación entre una representación tabular y una representación gráfica de los mismos datos. Mediante la versión gráfica es posible
           observar rápidamente tendencias, cosa que en la tabla requiere un tiempo superior</p>
       </div>
     </div>
@@ -38,6 +108,158 @@
           <p class="mt-3 text-justify" *ngFor="let paragraph of contentPart.paragraphs">{{paragraph}}</p>
         </span>
       </div>
+    </div>
+  </div>
+  <div class="context mt-5">
+    <div class="row justify-content-center">
+      <span class="col-10 text-center">
+        <h5>Referencias</h5>
+        <hr>
+      </span>
+      <div class="row mt-3 justify-content-center">
+        <span class="col-9 contextText">
+          <p><b>Alcaraz-Martínez, Rubén; Ribera-Turró, Mireia; Granollers Saltiveri, Toni</b> (2020). “La accesibilidad de los gráficos estadísticos
+            para personas con baja visión y visión cromática deficiente: revisión de alcance y perspectivas”. Interacción:
+            revista digital de AIPO, n. 1.
+          <a href="http://revista.aipo.es/index.php/INTERACCION/article/view/9" target="_blank">http://revista.aipo.es/index.php/INTERACCION/article/view/9</a>
+           Asociación para la Investigación de Medios de Comunicación (2019). Ranking de diarios, segunda ola 2019.
+          <a href="http://reporting.aimc.es/index.html#/main/diarios" target="_blank">http://reporting.aimc.es/index.html#/main/diarios</a>
+          <p><b>Bourne, Rupert R. A.</b> (2017). “Magnitude, temporal trends, and projections of the global prevalence of blindness and
+            distance and near vision impairment: a systematic review and meta-analysis”. Lancet global health, v. 5, pp. 888-897.
+            <a href="https://doi.org/10.1016/S2214-109X(17)30293-0" target="_blank">https://doi.org/10.1016/S2214-109X(17)30293-0</a>
+          </p>
+          <p><b>Cabañero-Resta, Ángel-Andrés; Luján-Mora, Sergio</b> (2012). Estudio sobre la accesibilidad de los sitios web de medios de
+            comunicación. Alicante: Departamento de Lenguajes y Sistemas Informáticos de la Universidad de Alicante.
+            <a href="http://hdl.handle.net/10045/20343" target="_blank">http://hdl.handle.net/10045/20343</a>
+           </p>
+          <p><b>Cairo, Alberto</b> (2017). “Visualización de datos: una imagen puede valer más que mil números, pero no siempre más que
+            mil palabras”. El profesional de la información, v. 26, n. 6, pp. 1025-1028.
+            <a href="https://doi.org/10.3145/epi.2017.nov.02" target="_blank">https://doi.org/10.3145/epi.2017.nov.02</a>
+            </p>
+          <p><b>Franklin, Fernanda; Breyer, Felipe; Kelner, Judith</b> (2014). “Heurísticas de usabilidade para sistemas colaborativos remotos
+            de realidade aumentada”. In: Proceedings of XVI Symposium on Virtual and Augmented Reality, pp. 53-62.</p>
+          <p><b>González, María-Paula; Pascual, Afra; Lorés, Jesús</b> (2001). “Evaluación heurística”. En: Introducción a la Interacción Persona-
+            Ordenador. AIPO, Asociación Interacción Persona-Ordenador.
+            <a href="https://aipo.es/libro/pdf/15-Evaluacion-Heuristica.pdf" target="_blank">https://aipo.es/libro/pdf/15-Evaluacion-Heuristica.pdf</a>
+            </p>
+          <p><b>González-Perea, Lourdes</b> (2018). “La accesibilidad de los medios de comunicación digitales en España: responsabilidad
+            de los periodistas en la generación de contenidos inclusivos”. Index.comunicación, v. 8, n. 1, pp. 225-253.
+            <a href="http://hdl.handle.net/10115/15759" target="_blank">http://hdl.handle.net/10115/15759</a>
+            </p>
+
+          <p><b>Gutiérrez-Restrepo, Mary-Luz-Emmanuelle</b> (2017). Accesibilidad no intrusiva en la comunicación audiovisual en la web.
+            Tesis de doctorado, Universidad Complutense de Madrid, Facultad de Ciencias de la Información.
+            <a href="https://eprints.ucm.es/42257" target="_blank">https://eprints.ucm.es/42257</a>
+            </p>
+
+          <p><b>Hermawati, Setia; Lawson, Glyn (2015).</b> (2015). “A user-centric methodology to establish usability heuristics for specific domains”.
+            In: Proccedings of the International Conference on Ergonomics & Human Factors, pp. 80-85.
+            <a href="https://doi.org/10.1201/b18293" target="_blank">https://doi.org/10.1201/b18293</a>
+            </p>
+
+          <p><b>Jiménez, Cristhy; Allende-Cid, Hector; Figueroa, Ismael</b> (2017). “Prometheus: PROcedural METhodology for developing
+            Heuristics of Usability”. IEEE Latin America transactions, v. 15, n. 3, pp. 541-549.
+            <a href="https://doi.org/10.1109/TLA.2017.7867606" target="_blank">https://doi.org/10.1109/TLA.2017.7867606</a>
+           </p>
+
+          <p><b>Lechner, Bettina; Fruhling, Ann; Petter, Stacie; Siy, Harvey</b> (2013). “The chicken and the pig: user involvement in developing
+            usability heuristics”. In: 19th Americas Conference on Information Systems, AMCIS 2013 - Hyperconnected World:
+            <a href="" target="_blank"></a>
+            Anything, Anywhere, Anytime, pp. 3263-3270. ISBN: 978 1 629933948</p>
+
+          <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5726769" target="_blank">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5726769</a>
+          <p><b>Legge, Gordon E.</b> (2016). “Reading digital with low vision”. Visible language, v. 50, n. 2, pp. 102-125.</p>
+
+          <p><b>Masip, Llúcia; Oliva, Marta; Granollers, Toni</b> (2012). “The open repository of heuristics”. In: Proceedings of the 13th International
+            Conference on Human-Computer Interaction, pp. 1-2.
+            <a href="http://doi.acm.org/10.1145/2379636.2379640" target="_blank">http://doi.acm.org/10.1145/2379636.2379640</a>
+            </p>
+
+          <p><b>Meeks, Elijah; Cesal, Amy; Pettit, Mollie</b> (2019). “Introducing the Data Visualization Society”. Medium.
+            <a href="https://medium.com/datavisualization-society/introducing-the-data-visualization-society-d13d42ab0bec" target="_blank">https://medium.com/datavisualization-society/introducing-the-data-visualization-society-d13d42ab0bec</a>
+            </p>
+
+          <p><b>Miqueli-Rodríguez, Maritza; López-Hernández, Silvia M.; Rodríguez-Masó, Susana</b> (2016). “Baja visión y envejecimiento
+            de la población”. Revista cubana de oftalmología, v. 29, n. 3.
+            <a href="http://ref.scielo.org/7sm8wq" target="_blank">http://ref.scielo.org/7sm8wq</a>
+            Naciones Unidas. Departamento de Asuntos Económicos y Sociales. División de Población (2017). World population prospects
+            2017 data booklet.
+            <a href="https://population.un.org/wpp/Publications/Files/WPP2017_DataBooklet.pdf" target="_blank">https://population.un.org/wpp/Publications/Files/WPP2017_DataBooklet.pdf</a>
+            </p>
+
+          <p><b></b> (1994). “How to conduct a heuristic evaluation”. Nielsen Norman Group.
+            <a href="https://www.nngroup.com/articles/how-to-conduct-a-heuristic-evaluation" target="_blank">https://www.nngroup.com/articles/how-to-conduct-a-heuristic-evaluation</a>
+            </p>
+
+          <p><b>Nielsen, Jakob</b> (1992). “Finding usability problems through heuristic evaluation”. In: Proceedings ACM CHI’92 Conference,
+            pp. 373-380.
+            <a href="https://doi.org/10.1145/142750.142834" target="_blank">https://doi.org/10.1145/142750.142834</a>
+            </p>
+
+          <p><b>Nielsen, Jakob</b> (1994). “How to conduct a heuristic evaluation”. Nielsen Norman Group.
+            <a href="https://www.nngroup.com/articles/how-to-conduct-a-heuristic-evaluation" target="_blank">https://www.nngroup.com/articles/how-to-conduct-a-heuristic-evaluation</a>
+            </p>
+
+          <p><b>Nielsen, Jakob; Molich, Rolf</b> (1990). “Heuristic evaluation of user interfaces”. In: CHI ‘90: proceedings of the SIGCHI Conference
+            on Human Factors in Computing Systems, pp. 249-256.
+            <a href="https://doi.org/10.1145/97243.97281" target="_blank">https://doi.org/10.1145/97243.97281</a>
+           </p>
+
+          <p><b>Parra-Valcarce, David</b> (2010). “La accesibilidad web en los cibermedios del Grupo Planeta a ambos lados del Atlántico:
+            los casos de La Razón y El Tiempo”. Naveg@mérica: revista electrónica de la Asociación Española de Americanistas, n.
+            4, pp. 1-13.
+            <a href="https://revistas.um.es/navegamerica/article/view/99961" target="_blank">https://revistas.um.es/navegamerica/article/view/99961</a>
+            </p>
+
+          <p><b>Parra-Valcarce, David; Martínez-Arias, Santiago</b> (2018). Tecnologías de la gestión periodística de la información digital:
+            conceptos básicos. Madrid: Los Autores. ISBN: 978 84 09039821</p>
+
+          <p><b>Quiñones, Daniela; Rusu, Cristian; Rusu, Virginica</b> (2018). “A methodology to develop usability/user experience heuristics”.
+            Computer standards & interfaces, v. 59, n. C, pp. 109-129.
+            <a href="https://doi.org/10.1016/j.csi.2018.03.002" target="_blank">https://doi.org/10.1016/j.csi.2018.03.002</a>
+           </p>
+
+          <p><b>Roa-Amaya, Matilde; Caldera-Serrano, Jorge</b> (2011). “Evaluación heurística de las sedes web de los medios digitales: El
+            País y El Mundo”. Cuadernos de documentación multimedia, v. 22, pp. 28-150.
+            <a href="https://doi.org/10.5209/rev_CDMU.2011.v22.38340" target="_blank">https://doi.org/10.5209/rev_CDMU.2011.v22.38340</a>
+            </p>
+
+          <p><b>Rusu, Cristian; Roncagliolo, Silvana; Rusu, Virginica; Collazos, César A.</b> (2011). “A methodology to establish usability
+            heuristics”. In: Proceedings of the Fourth International Conference on Advances in Computer-Human Interactions,
+            ACHI2011, pp. 59-62. ISBN: 9781612081175</p>
+
+          <a href="" target="_blank"></a>
+          <p><b>Snellen, Herman</b> (1862). Probebuchstaben zur Bestimmung der Sehschärfe, Utrecht: Van de Weijer.</p>
+
+          <p><b>Szpiro, Sarit-Felicia-Anais; Hashash, Shafeka; Zhao, Yuhang; Azenkot, Shiri</b> (2016). “How people with low vision access
+            computing devices: understanding challenges and opportunities”. In: ASSETS ‘16 Proceedings of the 18th International
+            ACM SIGACCESS Conference on Computers and Accessibility, pp. 171-180.
+            <a href="https://dl.acm.org/doi/10.1145/2982142.2982168" target="_blank">https://dl.acm.org/doi/10.1145/2982142.2982168</a>
+            </p>
+
+          <p><b>Utray-Delgado, Francisco</b> (2009). Accesibilidad a la TDT en España para personas con discapacidad sensorial (2005-
+            2007). Madrid: Real Patronato sobre Discapacidad.
+            <a href="http://riberdis.cedd.net/handle/11181/2873" target="_blank">http://riberdis.cedd.net/handle/11181/2873</a>
+            </p>
+
+          <p><b>Van-Greunen, Darelle; Yeratziotis, Alexandros; Pottas, Dalenca</b> (2011). “A three-phase process to develop heuristics”.
+            In: Proceedings of the 13th Anual Conference on World Wide Web Applications, Johannesburg, pp. 5-23.
+            WebAIM (2013). Survey of users with low vision results.
+            <a href="https://webaim.org/projects/lowvisionsurvey" target="_blank">https://webaim.org/projects/lowvisionsurvey</a>
+            </p>
+
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="context mt-5">
+    <div class="row justify-content-center">
+      <span class="col-9 contentText">
+        <p><b>Texto extraído de:</b></p>
+        <p><b>Alcaraz-Martínez, Rubén; Ribera-Turró, Mireia; Granollers-Saltiveri, Toni; Pascual, Afra</b> (2020). “Accesibilidad
+          para personas con baja visión de los gráficos estadísticos en la prensa digital: una propuesta metodológica
+          basada en indicadores heurísticos”. Profesional de la información, v. 29, n. 5, e290515. <a href="https://doi.org/10.3145/epi.2020.sep.15" target="_blank">https://doi.org/10.3145/epi.2020.sep.15</a></p>
+      </span>
     </div>
   </div>
   <p-scrollTop></p-scrollTop>

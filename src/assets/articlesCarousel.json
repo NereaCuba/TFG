@@ -1,29 +1,7 @@
 {
   "articles": [
     {
-      "id": 1,
-      "title": "Evaluación de la accesibilidad de los gráficos estadísticos de Covid-19 de los gobiernos y organizaciones de la salud para personas con baja visión",
-      "briefing": "La mayor parte de información proporcionada a lo largo de la pandemia ayudó a reducir la propagación del virus. En este estudio se comprobará la accesibilidad de los gráficos usados por el gobierno brasileño, británico, español y europeo, así como por la organización mundial de la salud, y la universidad Johns Hopkins...",
-      "date": "11 junio 2020",
-      "abstract":[
-        "During the Covid-19 pandemic, people rely on the Internet in order to obtain information that can help them understand the coronavirus crisis. This situation has exposed the need to ensure that everyone has access to essential information on equal terms. During this situation, statistical charts have been used to display data related to the pandemic, and have had an important role in conveying, clarifying and simplifying information provided by governments and health organisations. Scientific literature and the guidelines published by organizations have focused on proposing solutions to make charts accessible for blind people or people with very little visual rest. However, the same efforts are not made towards people with low vision, despite their higher prevalence in the population of users with visual impairment. This paper reviews the accessibility of the statistical charts about the Covid-19 crisis for people with low vision that were published by the Brazilian, British, Russian, Spanish, European Union, and the United States’ governments and also by the World Health Organization and Johns Hopkins University, relating to the countries most severely affected by the pandemic. The review is based on specific heuristic indicators, with a mixed quantitative and qualitative approach. Overall, the reviewed charts offer a reasonable level of accessibility, although there are some relevant problems affecting many of the low vision profiles that remain to be solved. The main problems identified are: poor text alternatives in both, raster images and SVG charts; the incompatibility with a keyboard interface; insufficient non-text contrast against adjacent colours (in chart elements such as bars, lines or areas), no customization options; and the lack of an optimized print version for users for whom reading on screen is challenging."
-      ],
-      "pdf": "./assets/COVID19-EPI.pdf",
-      "image": "https://1.bp.blogspot.com/-S7Ul6H7CDds/XqsCHUtuh5I/AAAAAAAAOis/9JFES3OiPAMZ_AC3EyzVbUDXZU-DN6TcwCEwYBhgL/s1600/Imagen1.png"
-    },
-    {
-      "id": 2,
-      "title": "Accesibilidad para personas con baja visión de los gráficos estadísticos en la prensa digital: una propuesta metodológica basada en indicadores heurísticos",
-      "briefing": "Estudio que evalúa la accesibilidad de los gráficos proporcionados por la prensa digital y diversos medios de comunicación nacionales e internacionales mediante unas heurísticas dirigidas a las personas con baja visión y visión cromática deficiente (VCD)...",
-      "date": "11 abril 2020",
-      "abstract": [
-        "Se presenta un nuevo conjunto de indicadores heurísticos para la evaluación de la accesibilidad de los gráficos estadísticos para personas con baja visión y visión cromática deficiente (VCD), así como un método para su aplicación. Con el objetivo de validar la propuesta, se ha realizado una evaluación heurística de la accesibilidad de 35 gráficos publicados en 5 diarios españoles y 2 internacionales. Los resultados muestran que los indicadores propuestos consiguen detectar una mayor cantidad de problemas únicos, presentan una mejor distribución de los problemas entre heurísticos y consiguen detectar problemas más severos y específicos que las Web content accessibility guidelines (WCAG). En relación con los problemas detectados, destaca la prácticamente nula presencia de alternativas textuales en los gráficos publicados como imágenes en formato de mapa de bits, un problema que también se da en el caso de los gráficos publicados en formato SVG, donde destaca el nulo etiquetado de las marcas con estándares como WAI-ARIA. En estos últimos también se observa el pobre uso de indicadores para remarcar los elementos que reciben el foco, o su inaccesibilidad mediante una interfaz de teclado. Otros problemas comunes en ambos tipos de gráficos son la ratio de contraste entre elementos no textuales, por debajo en muchos casos del mínimo requerido, un tamaño de fuente demasiado pequeño o la no sistematización del uso de paletas de colores seguras para personas con VCD. Por lo que respecta a la comparación entre medios nacionales e internacionales, si bien las puntuaciones obtenidas por los internacionales son superiores, éstos comparten"
-      ],
-      "pdf": "./assets/PrensaDigital-EPI.pdf",
-      "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/02elpais.PNG"
-    },
-    {
-      "id": 3,
+      "id": 4,
       "title": "Los gráficos son parte de la ecuación en publicaciones accesibles: Una evaluación heurística de las publicaciones de LIS mas relevantes.",
       "briefing": "Los gráficos estadísticos tienen un papel clave en los trabajos académicos, ya que se usan para reflejar o mostrar de manera clara los resultados de la investigación realizada por sus autores, sin embargo, presentan algunas barreras para personas con baja visión. En este articulo se realiza una evaluación de la accesibilidad de los gráficos estadísticos usados en los artículos con mayor relevancia)...",
       "date": "11 marzo 2021",
@@ -37,19 +15,57 @@
         "Paper type:  Research paper"
       ],
       "pdf": "./assets/LISJournals-LibraryHiTech.pdf",
-      "image": "./assets/LISPNG.png"
-      },
-      {
-        "id": 4,
-        "title": "Gráficos estadísticos accesibles para personas con baja visión y visión cromática deficiente",
-        "briefing": "Los gráficos estadísticos tienen un papel crucial en diferentes áreas de nuestra vida diaria, como la información, educación, comunicación o investigación. A pesar de ello, los autores y publicadores de contenido no siempre tienen en cuenta el criterio de la accesibilidad durante el desarrollo de este tipo de contenidos. Este estudio remarca la importancia de tener en cuenta este criterio, además de incluir un acercamiento de como la literatura científica aborda este tema...",
-        "date":"28 junio 2019",
-        "abstract": [
-          "Statistical charts play a primordial role in different areas of our life, such as information, education, communication or research. However, authors and content publishers do not always follow the accessibility criteria in the design and creation of this type of content. Considering these premises, this work includes the main approaches in which the scientific literature has focused so far to improve the accessibility of statistical charts: text alternatives, sonification, tactile alternatives and multimodal alternatives, with the purpose of evaluating their suitability for people with low vision and color blindness. Finally, some solutions are suggested that seem technologically viable and that start from the use of JavaScript libraries for the creation of interactive charts, in combination with other standards such as WAI-ARIA and the use of patterns to fill areas as a strategy to differentiate visual variables."
-        ],
-        "pdf": "./assets/AccesibleStatisticalCharts2019-Interaccion.pdf",
-        "image": "./assets/Acc.png"
-      }
+      "image": "./assets/LISPNG.png",
+      "authors": "Alcaraz Martínez, R., Ribera, M., Roig Marcelino, J., Pascual Almenara, A. and Granollers Saltiveri, T.",
+      "year": "(2022)",
+      "cita": "“Accessible charts are part of the equation of accessible papers: a heuristic evaluation of the highest impact LIS journals”, Library Hi Tech, Vol. 40 No. 3, pp. 594-622. ",
+      "url": "https://doi.org/10.1108/LHT-08-2020-0188"
+    },
+    {
+      "id": 3,
+      "title": "Evaluación de la accesibilidad de los gráficos estadísticos de Covid-19 de los gobiernos y organizaciones de la salud para personas con baja visión",
+      "briefing": "La mayor parte de información proporcionada a lo largo de la pandemia ayudó a reducir la propagación del virus. En este estudio se comprobará la accesibilidad de los gráficos usados por el gobierno brasileño, británico, español y europeo, así como por la organización mundial de la salud, y la universidad Johns Hopkins...",
+      "date": "11 junio 2020",
+      "abstract":[
+        "During the Covid-19 pandemic, people rely on the Internet in order to obtain information that can help them understand the coronavirus crisis. This situation has exposed the need to ensure that everyone has access to essential information on equal terms. During this situation, statistical charts have been used to display data related to the pandemic, and have had an important role in conveying, clarifying and simplifying information provided by governments and health organisations. Scientific literature and the guidelines published by organizations have focused on proposing solutions to make charts accessible for blind people or people with very little visual rest. However, the same efforts are not made towards people with low vision, despite their higher prevalence in the population of users with visual impairment. This paper reviews the accessibility of the statistical charts about the Covid-19 crisis for people with low vision that were published by the Brazilian, British, Russian, Spanish, European Union, and the United States’ governments and also by the World Health Organization and Johns Hopkins University, relating to the countries most severely affected by the pandemic. The review is based on specific heuristic indicators, with a mixed quantitative and qualitative approach. Overall, the reviewed charts offer a reasonable level of accessibility, although there are some relevant problems affecting many of the low vision profiles that remain to be solved. The main problems identified are: poor text alternatives in both, raster images and SVG charts; the incompatibility with a keyboard interface; insufficient non-text contrast against adjacent colours (in chart elements such as bars, lines or areas), no customization options; and the lack of an optimized print version for users for whom reading on screen is challenging."
+      ],
+      "pdf": "./assets/COVID19-EPI.pdf",
+      "image": "https://1.bp.blogspot.com/-S7Ul6H7CDds/XqsCHUtuh5I/AAAAAAAAOis/9JFES3OiPAMZ_AC3EyzVbUDXZU-DN6TcwCEwYBhgL/s1600/Imagen1.png",
+      "authors": "Rubén Alcaraz Martínez, Mireia Ribera Turró",
+      "year": "(2020)",
+      "cita": "“An evaluation of accessibility of Covid-19 statistical charts of governments and health organisations for people with low vision”. Profesional de la información, v. 29, n. 5, e290514.",
+      "url": "https://doi.org/10.3145/epi.2020.sep.14"
+    },
+    {
+      "id": 2,
+      "title": "Accesibilidad para personas con baja visión de los gráficos estadísticos en la prensa digital: una propuesta metodológica basada en indicadores heurísticos",
+      "briefing": "Estudio que evalúa la accesibilidad de los gráficos proporcionados por la prensa digital y diversos medios de comunicación nacionales e internacionales mediante unas heurísticas dirigidas a las personas con baja visión y visión cromática deficiente (VCD)...",
+      "date": "1 abril 2020",
+      "abstract": [
+        "Se presenta un nuevo conjunto de indicadores heurísticos para la evaluación de la accesibilidad de los gráficos estadísticos para personas con baja visión y visión cromática deficiente (VCD), así como un método para su aplicación. Con el objetivo de validar la propuesta, se ha realizado una evaluación heurística de la accesibilidad de 35 gráficos publicados en 5 diarios españoles y 2 internacionales. Los resultados muestran que los indicadores propuestos consiguen detectar una mayor cantidad de problemas únicos, presentan una mejor distribución de los problemas entre heurísticos y consiguen detectar problemas más severos y específicos que las Web content accessibility guidelines (WCAG). En relación con los problemas detectados, destaca la prácticamente nula presencia de alternativas textuales en los gráficos publicados como imágenes en formato de mapa de bits, un problema que también se da en el caso de los gráficos publicados en formato SVG, donde destaca el nulo etiquetado de las marcas con estándares como WAI-ARIA. En estos últimos también se observa el pobre uso de indicadores para remarcar los elementos que reciben el foco, o su inaccesibilidad mediante una interfaz de teclado. Otros problemas comunes en ambos tipos de gráficos son la ratio de contraste entre elementos no textuales, por debajo en muchos casos del mínimo requerido, un tamaño de fuente demasiado pequeño o la no sistematización del uso de paletas de colores seguras para personas con VCD. Por lo que respecta a la comparación entre medios nacionales e internacionales, si bien las puntuaciones obtenidas por los internacionales son superiores, éstos comparten"
+      ],
+      "pdf": "./assets/PrensaDigital-EPI.pdf",
+      "image": "https://www.ub.edu/adaptabit/charts-accessibility/press/02elpais.PNG",
+      "authors": "Alcaraz-Martínez, Rubén; Ribera-Turró, Mireia; Granollers-Saltiveri, Toni; Pascual, Afra",
+      "year": "(2020)",
+      "cita": "“Accesibilidad para personas con baja visión de los gráficos estadísticos en la prensa digital: una propuesta metodológica basada en indicadores heurísticos”. Profesional de la información, v. 29, n. 5, e290515.",
+      "url": "https://doi.org/10.3145/epi.2020.sep.15"
+    },
+    {
+      "id": 1,
+      "title": "Gráficos estadísticos accesibles para personas con baja visión y visión cromática deficiente",
+      "briefing": "Los gráficos estadísticos tienen un papel crucial en diferentes áreas de nuestra vida diaria, como la información, educación, comunicación o investigación. A pesar de ello, los autores y publicadores de contenido no siempre tienen en cuenta el criterio de la accesibilidad durante el desarrollo de este tipo de contenidos. Este estudio remarca la importancia de tener en cuenta este criterio, además de incluir un acercamiento de como la literatura científica aborda este tema...",
+      "date":"28 junio 2019",
+      "abstract": [
+        "Statistical charts play a primordial role in different areas of our life, such as information, education, communication or research. However, authors and content publishers do not always follow the accessibility criteria in the design and creation of this type of content. Considering these premises, this work includes the main approaches in which the scientific literature has focused so far to improve the accessibility of statistical charts: text alternatives, sonification, tactile alternatives and multimodal alternatives, with the purpose of evaluating their suitability for people with low vision and color blindness. Finally, some solutions are suggested that seem technologically viable and that start from the use of JavaScript libraries for the creation of interactive charts, in combination with other standards such as WAI-ARIA and the use of patterns to fill areas as a strategy to differentiate visual variables."
+      ],
+      "pdf": "./assets/AccesibleStatisticalCharts2019-Interaccion.pdf",
+      "image": "./assets/Acc.png",
+      "authors": "Rubén Alcaraz Martínez, Mireia Ribera Turró, Toni Granollers Saltiveri",
+      "year": "(2019)",
+      "cita": "Gráficos estadísticos accesibles para personas con baja visión y visión cromática deficiente. In XX International Conference on Human Computer Interaction (Interacción 2019), June 25–28, 2019, Donostia, Gipuzkoa, Spain. ACM, New York, NY, USA, 2 pages.",
+      "url": "https://doi.org/10.1145/3335595.3335618"
+    }
   ],
   "authors": [
       {

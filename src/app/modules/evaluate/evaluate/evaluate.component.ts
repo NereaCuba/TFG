@@ -5,6 +5,8 @@ import { EvaluateService } from '../services/evaluate.service';
 import AOS from "aos";
 import { AuthService } from 'app/shared/services/auth.service';
 import { fireStoreService } from 'app/shared/services/fireStore.service';
+import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
+import { ModalChartsComponent } from 'app/components/modal-charts/modal-charts/modal-charts.component';
 
 @Component({
   selector: 'app-evaluate',
@@ -14,7 +16,10 @@ import { fireStoreService } from 'app/shared/services/fireStore.service';
 export class EvaluateComponent {
   typeImport: string = 'imgUpload';
   nameFile: string = 'No se ha seleccionado ningún archivo';
+  modalRef: MdbModalRef<ModalChartsComponent> | null = null;
   file:any = null;
+  errorOnSubmit: boolean = true;
+  errorOnRetry: boolean = false;
   inputValue: any = '';
   imgURL: any = null;
   URLLink: string = '';
@@ -22,14 +27,17 @@ export class EvaluateComponent {
   @ViewChild('pdfResults')
   pdfResults!: ElementRef;
   dataSource: Object;
+  showChartsToDelete: boolean = false;
   startEvaluation: boolean = false;
   showResultsBrief: boolean = false;
   showResults: boolean =  false;
   showIntroduction: boolean = true;
   isComingFromBrief: boolean = false;
   visible: boolean = false;
+  visibleDelete: boolean = false;
   isIFrame:boolean = false;
   totalResult: any = 0;
+  saving: boolean = true;
   _idValueHeuristics: any = 0;
   _okImageInput: boolean = true;
   _loadedImageInput: boolean = false;
@@ -68,7 +76,8 @@ export class EvaluateComponent {
     private messageService: MessageService,
     private evaluateService: EvaluateService,
     public authService: AuthService,
-    public fireStoreSvc: fireStoreService
+    public fireStoreSvc: fireStoreService,
+    private modalService: MdbModalService
   ) {}
 
   ngOnInit() {
@@ -76,6 +85,7 @@ export class EvaluateComponent {
     this.showResultsBrief = false;
     this.showResults =  false;
     this.showIntroduction = true;
+    this.saving = true;
     this.isComingFromBrief = false;
     this._loadedImageInput = false;
     this._okImageInput = true;
@@ -93,6 +103,10 @@ export class EvaluateComponent {
     this.formValue = [];
     this.oldFormValue = [];
     AOS.init();
+  }
+  
+  openModal() {
+    this.modalRef = this.modalService.open(ModalChartsComponent, {modalClass: 'modal-dialog-centered', backdrop: true})
   }
   showDialog() {
       this.visible = true;
@@ -127,11 +141,14 @@ export class EvaluateComponent {
       this.file = event.target.files[0];
       this.nameFile = this.file.name;
       var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif|\.svg|\.pjeg|\.ico|\.apng)$/i;
-      console.log(this.file);
       
       if (!allowedExtensions.exec(this.nameFile)) {
           return false;
-      } 
+      }
+      const fileMb = this.file.size / 1024 ** 2;
+      if (fileMb >= 2 && this.authService.isLoggedIn) {
+        this.saving = false;
+      }
       var reader = new FileReader();
       reader.readAsDataURL(this.file);
       reader.onload = (_event) => {
@@ -222,7 +239,7 @@ export class EvaluateComponent {
   downloadResults() {
     this.evaluateService.csvDownload(this.headers, this.globalResults);
   }
-  calculatePonderation() {
+  async calculatePonderation() {
     var summatoryCurrentAsignation = 0;
     var summatoryTotalAsignation = 0;
     this.formValue.forEach((value, index) => {
@@ -307,11 +324,14 @@ export class EvaluateComponent {
       }
     }
     this.dataSource = dataSource;    
-    if(this.authService.isLoggedIn) {
-      this.fireStoreSvc.updateUserCharts(this.authService.userData.email, this.formValue, this.URLLink || this.imgURL, this.isIFrame);
+    if(this.authService.isLoggedIn && this.saving) {
+      try {
+        await this.fireStoreSvc.updateUserCharts(this.authService.userData.email, this.formValue, this.URLLink || this.imgURL, this.isIFrame).then( x=> this.errorOnSubmit = x);
+      } catch (error) {
+        this.errorOnSubmit = true;
+      }
     }
   }
-
   deleteImage() {
     this.imgURL = null;
     this.nameFile = 'No se ha seleccionado ningún archivo';
@@ -319,7 +339,7 @@ export class EvaluateComponent {
     this._loadedImageInput = false;
     this._okImageInput = false;
   }
-  goToResults() {
+  async goToResults() {
     var isValidForm = true;
     this.formValue.forEach(function(element) {
       if (!element || !element.optionLinkert) {
@@ -329,13 +349,41 @@ export class EvaluateComponent {
     if(!isValidForm) {
       this.messageService.add({severity: 'error', summary:'Error', detail: 'Aun quedan heurísticas por responder'});
     } else {
-      this.calculatePonderation();
-      this.startEvaluation = false;
-      this.showResultsBrief = false;
-      this.showResults =  true;
-      this.showIntroduction = false;
+      await this.calculatePonderation();
+      
+      if(this.authService.isLoggedIn && this.saving && this.errorOnSubmit) {
+        this.visibleDelete = true;
+      } else {
+        this.startEvaluation = false;
+        this.showResultsBrief = false;
+        this.showIntroduction = false;
+        this.showResults =  true;
+      }
       document.getElementsByClassName('wrapper')[0].scrollTo(0,0);    
     }
   }
-
+  goToRetry() {
+    this.visibleDelete = false;
+    this.startEvaluation = false;
+    this.showResultsBrief = false;
+    this.showIntroduction = false;
+    this.showChartsToDelete = true;
+  }
+  async retrySaving(){
+    try {
+      await this.fireStoreSvc.updateUserCharts(this.authService.userData.email, this.formValue, this.URLLink || this.imgURL, this.isIFrame).then( x=> this.errorOnRetry = x);             
+    } catch (error) {
+      this.errorOnRetry = true;
+    }
+    this.showChartsToDelete = false;
+    this.continueWithoutSaving();
+  }
+  continueWithoutSaving() {
+    this.visibleDelete = false;
+    this.startEvaluation = false;
+    this.showResultsBrief = false;
+    this.showIntroduction = false;
+    this.showResults =  true;
+    this.errorOnRetry = false;
+  }
 }

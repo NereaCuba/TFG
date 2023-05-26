@@ -21,7 +21,7 @@
       <p-progressBar class="mb-4 mt-4 progressBar" [value]="_valueProgressBar"></p-progressBar>
       <form #myForm="ngForm" class="text-center mt-4" (submit)="templateForm(myForm.value)">
         <div class="containerForm">
-          <p class="subTitle mb-4 rateChart">PUNTUA EL GRÁFICO - {{_idHeuristic}} {{_heuristic.name}}  <button pButton icon="pi pi-question-circle" (click)="showDialog()" class="circleButton p-button-rounded"></button></p>
+          <p class="subTitle mb-4 rateChart">PUNTUA EL GRÁFICO - {{_idHeuristic}} {{_heuristic.name}}  <button pButton icon="pi pi-question-circle" (click)="showDialog($event)" class="circleButton p-button-rounded"></button></p>
           <div *ngIf=" _heuristic.example_images.length > 0">
             <p-dialog [(visible)]="visible" [draggable]="false" [resizable]="false" [breakpoints]="{ '960px': '80vw'}" [modal]="true">
               <div class="d-flex flex-column align-items-center justify-content-center p-3 addBorder" *ngFor="let example of _heuristic.example_images; let i = index" [ngClass]="i === 0 ? '': 'mt-4'">
@@ -41,31 +41,31 @@
             <div class="col-lg-6 col-md-12 d-flex justify-content-center">
               <div class="containerForm">
                 <div class="field-radiobutton">
-                  <p-radioButton name="optionLinkert0" [disabled]="checkIfDisabled(0)" value=0 [(ngModel)]="optionLinkert" inputId="optionLinkert1"></p-radioButton>
+                  <p-radioButton name="optionLinkert0" [disabled]="checkIfDisabled(0)" value=0 [(ngModel)]="optionLinkert" inputId="optionLinkert1" (onClick)="isAnswered = true"></p-radioButton>
                   <label for="optionLinkert1">(NA) - No aplica</label>
                 </div>
                 <div class="field-radiobutton">
-                  <p-radioButton name="optionLinkert1" [disabled]="checkIfDisabled(1)" value=1 [(ngModel)]="optionLinkert" inputId="optionLinkert2"></p-radioButton>
+                  <p-radioButton name="optionLinkert1" [disabled]="checkIfDisabled(1)" value=1 [(ngModel)]="optionLinkert" inputId="optionLinkert2" (onClick)="isAnswered = true"></p-radioButton>
                   <label for="optionLinkert2">(NP) - No es problema</label>
                 </div>
                 <div class="field-radiobutton">
-                  <p-radioButton name="optionLinkert2" [disabled]="checkIfDisabled(2)" value=2 [(ngModel)]="optionLinkert" inputId="optionLinkert3"></p-radioButton>
+                  <p-radioButton name="optionLinkert2" [disabled]="checkIfDisabled(2)" value=2 [(ngModel)]="optionLinkert" inputId="optionLinkert3" (onClick)="isAnswered = true"></p-radioButton>
                   <label for="optionLinkert3">0 - No cumplimiento</label>
                 </div>
                 <div class="field-radiobutton">
-                  <p-radioButton name="optionLinkert3" [disabled]="checkIfDisabled(3)" value=3 [(ngModel)]="optionLinkert" inputId="optionLinkert4"></p-radioButton>
+                  <p-radioButton name="optionLinkert3" [disabled]="checkIfDisabled(3)" value=3 [(ngModel)]="optionLinkert" inputId="optionLinkert4" (onClick)="isAnswered = true"></p-radioButton>
                   <label for="optionLinkert4">1 - Cumplimiento bajo</label>
                 </div>
                 <div class="field-radiobutton">
-                  <p-radioButton name="optionLinkert4" [disabled]="checkIfDisabled(4)" value=4 [(ngModel)]="optionLinkert" inputId="optionLinkert5"></p-radioButton>
+                  <p-radioButton name="optionLinkert4" [disabled]="checkIfDisabled(4)" value=4 [(ngModel)]="optionLinkert" inputId="optionLinkert5" (onClick)="isAnswered = true"></p-radioButton>
                   <label for="optionLinkert5">2 - Cumplimiento aceptable</label>
                 </div>
                 <div class="field-radiobutton">
-                  <p-radioButton name="optionLinkert5" [disabled]="checkIfDisabled(5)" value=5 [(ngModel)]="optionLinkert" inputId="optionLinkert6"></p-radioButton>
+                  <p-radioButton name="optionLinkert5" [disabled]="checkIfDisabled(5)" value=5 [(ngModel)]="optionLinkert" inputId="optionLinkert6" (onClick)="isAnswered = true"></p-radioButton>
                   <label for="optionLinkert6">3 - Cumplimiento alto</label>
                 </div>
                 <div class="field-radiobutton">
-                  <p-radioButton name="optionLinkert6" [disabled]="checkIfDisabled(6)" value=6 [(ngModel)]="optionLinkert" inputId="optionLinkert7"></p-radioButton>
+                  <p-radioButton name="optionLinkert6" [disabled]="checkIfDisabled(6)" value=6 [(ngModel)]="optionLinkert" inputId="optionLinkert7" (onClick)="isAnswered = true"></p-radioButton>
                   <label for="optionLinkert7">4 - Cumplimiento excelente</label>
                 </div>
               </div>
@@ -74,7 +74,7 @@
         </div>
         <div class="containerButtons row justify-content-center mt-3" *ngIf="!comesFromBrief">
           <button class="col-lg-5 col-12 submitButtons mb-2 mb-lg-0n d-none d-lg-block" type="submit" (click)="backButton()"><i class="pi pi-times"></i> {{_idHeuristic === 'H1' ? 'IR AL INICIO' : 'VOLVER A '}}{{_idHeuristic === 'H1' ? '' : 'H' + lastValue}}</button>
-          <button class="ms-lg-2  col-lg-5 col-12 submitButtons mb-2" type="submit" >{{_idHeuristic === 'H18' ? 'FINALIZAR' : 'CONTINUAR EN '}}{{_idHeuristic === 'H18' ? '' : ('H' + nextValue)}}</button>
+          <button class="ms-lg-2  col-lg-5 col-12 submitButtons mb-2" [disabled]="!isAnswered" type="submit" [ngClass]="isAnswered ? '' : 'disabledButton'">{{_idHeuristic === 'H18' ? 'FINALIZAR' : 'CONTINUAR EN '}}{{_idHeuristic === 'H18' ? '' : ('H' + nextValue)}}</button>
           <button class="col-lg-5 col-12 submitButtons mb-2 mb-lg-0 d-lg-none" type="submit" (click)="backButton()"><i class="pi pi-times"></i> {{_idHeuristic === 'H1' ? 'IR AL INICIO' : 'VOLVER A '}}{{_idHeuristic === 'H1' ? '' : 'H' + lastValue}}</button>
         </div>
         <div class="containerButtons row justify-content-center mt-3" *ngIf="comesFromBrief">

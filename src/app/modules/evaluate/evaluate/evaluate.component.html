@@ -11,6 +11,15 @@
       </div>
     </div>
 </p-dialog>
+<p-dialog [(visible)]="!saving" [draggable]="false" [resizable]="false" [breakpoints]="{ '960px': '80vw'}" [modal]="true">
+  <h4 class="text-center">ATENCIÓN</h4>
+  <div class="container mt-4">
+    <p>La imagen que has subido supera el tamaño máximo permitido por la base de datos por lo que no se podrá guardar en tu perfil. Podrás descargar los resultados en CSV.</p>
+    <div class="row mt-4 d-flex justify-content-center">
+      <button class="col-12 col-lg-5 buttonEndForm" (click)="saving = !saving">ENTENDIDO</button>
+    </div>
+  </div>
+</p-dialog>
   <div class="introduction">
     <div class="ps-lg-5 ms-5 me-5 pe-lg-5">
       <h5 class="text-center">Introducción a la evaluación</h5>
@@ -32,7 +41,7 @@
         </div>
         <div class="d-flex flex-row">
           <i class="pi pi-angle-right mt-1"></i>
-          <p class="mt-0">1 indicador pensado para satisfacer las necesidades de los usuarios con <b>VCD</b>.</p>
+          <p class="mt-0">1 indicador pensado para satisfacer las necesidades de los usuarios con <b>visión cromática deficiente (VCD)</b>.</p>
         </div>
         <div class="d-flex flex-row">
           <i class="pi pi-angle-right mt-1"></i>
@@ -91,7 +100,7 @@
               </tbody>
           </table>
           <p class="text-center mt-4 p-3" >Adicionalmente, se han añadido las opciones <b>“No aplica” y “No es problema”</b>, para aquellos casos en los cuales no sea pertinente la pregunta, o en los que el hecho de no cumplir con el indicador no deriva en un problema de accesibilidad, respectivamente.</p>
-          <p class="text-center mb-4 p-3" >Tras la aplicación de la escala, se utiliza un <b>sistema de ponderación</b> que posibilita asignar pesos distintos según la importancia de cada indicador. Su importancia viene determinada por los criterios especificados en la tabla 2.</p>
+          <p class="text-center mb-4 p-3" >Tras la aplicación de la escala, se utiliza un <b>sistema de ponderación</b> que posibilita asignar pesos distintos según la importancia de cada indicador. Su importancia viene determinada por los criterios especificados en la siguiente tabla.</p>
           <table class="table text-center table-bordered container mt-4" >
               <thead>
                 <tr>
@@ -121,6 +130,10 @@
               </tbody>
           </table>
           <p class="text-center mt-4">La lista de indicadores heurísticos utilizada, junto con su definición, el perfil de usuario beneficiado de su cumplimiento y su ponderación se puede consultar <a routerLink="/heuristics-list" (click)="redirectToHeuristics()">en el detalle de las heurísticas</a></p>
+          <p class="text-center mt-4">Para obtener un valor final ponderado sobre 10, se emplea la siguiente fórmula:</p>
+          <div class="mt-2 row justify-content-center">
+            <img class="w-50" src='./assets/formula.png' alt="Formula utilizada">
+          </div>
           <div class="evaluate container">
               <div class="row justify-content-center">
                   <div class="col-md-12 mb-4 d-flex justify-content-center">
@@ -171,7 +184,7 @@
           <span class="first titleSection">
             <h5 class="titles articleTitles mt-5">Instrucciones</h5>
           </span>
-          <p class="text-center mb-4">Se va a utilizar una <b>escala de Likert</b> de 7 puntos para el cálculo del grado de cumplimiento de cada ítem, cuyo rango va de 0 (peor puntuación posible) a 6 (mejor puntuación posible). </p>
+          <p class="text-center mb-4">Se va a utilizar una <b>escala de Likert</b> de 5 puntos para el cálculo del grado de cumplimiento de cada ítem, cuyo rango va de 0 (peor puntuación posible) a 4 (mejor puntuación posible). </p>
           <table class="table text-center table-bordered container"  >
               <thead>
                 <tr>
@@ -241,6 +254,10 @@
               </tbody>
           </table>
           <p class="text-center mt-4">La lista de indicadores heurísticos utilizada, junto con su definición, el perfil de usuario beneficiado de su cumplimiento y su ponderación se puede consultar <a routerLink="/heuristics-list" (click)="redirectToHeuristics()">en el detalle de las heurísticas</a></p>
+          <p class="text-center mt-4">Para obtener un valor final ponderado sobre 10, se emplea la siguiente fórmula:</p>
+          <div class="mt-2 row justify-content-center">
+            <img class="w-100" src='./assets/formula.png' alt="Formula utilizada">
+          </div>
           <div class="evaluate container">
               <div class="row justify-content-center">
                   <div class="col-md-12 mb-4 d-flex justify-content-center">
@@ -307,7 +324,7 @@
     <div class="col-12 d-flex justify-content-center globalContainer"  [ngClass]="isIFrame ? '' : 'col-lg-6'">
       <div class="containerResults">
         <div class="mt-3 d-flex row justify-content-end align-items-center">
-          <div class="col-12 col-lg-3 d-flex">
+          <div class="col-12 col-lg-3 d-flex d-none">
             <div class="elementSquareRed"></div>
             <p class="ms-2 legend">No respondido</p>
           </div>
@@ -344,6 +361,31 @@
     <button class="col-5 buttonEndForm" (click)="goToResults()">FINALIZAR</button>
   </div>
 </div>
+<p-dialog [(visible)]="visibleDelete" [draggable]="false" [resizable]="false" [breakpoints]="{ '960px': '80vw'}" [modal]="true">
+  <h4 class="text-center">ATENCIÓN</h4>
+  <div class="container mt-4">
+    <p>Su gráfico no ha podido ser guardado con éxito debido a que ya ha superado la capacidad máxima de almacenamiento. Si desea guardarlo en su perfil puede borrar alguno de los ya existentes o continuar a la visualización de los resultados sin guardarlo en su perfil.</p>
+    <div class="row mt-4 d-flex justify-content-center">
+      <button class="col-12 col-lg-5 buttonEndForm" (click)="continueWithoutSaving()">CONTINUAR SIN GUARDAR</button>
+      <button class="col-12 col-lg-5 offset-lg-2 buttonEndForm" (click)="goToRetry()">GESTIONAR MIS GRÁFICOS</button>
+    </div>
+  </div>
+</p-dialog>
+<p-dialog [(visible)]="errorOnRetry" [draggable]="false" [resizable]="false" [breakpoints]="{ '960px': '80vw'}" [modal]="true">
+  <div class="container mt-4">
+    <p>No hemos podido guardar tu gráfico con éxito. Esto puede deberse a un error interno o a que el gráfico a guardar es más grande que la capacidad restante en su perfil. Puede volver a intentarlo más tarde o gestionar sus gráficos si desea borrar alguno más accediendo a su perfil. Rogamos disculpen las molestias que esto haya podido ocasionar.</p>
+    <div class="row mt-4 d-flex justify-content-center">
+      <button class="col-12 col-lg-5 buttonEndForm" (click)="continueWithoutSaving()">FINALIZAR</button>
+    </div>
+  </div>
+</p-dialog>
+<div class="mt-5" *ngIf=showChartsToDelete id=pdfResults>
+  <h2 class="text-center">TUS GRÁFICOS</h2>
+  <app-modal-charts></app-modal-charts>
+  <div class="row mt-4 d-flex justify-content-center">
+    <button class="col-12 col-lg-5 buttonEndForm" (click)="retrySaving()">FINALIZAR</button>
+  </div>
+</div>
 <div class="mt-5" *ngIf=showResults id=pdfResults>
   <h2 class="text-center">RESULTADOS</h2>
   <div class="mt-5 container">
@@ -357,7 +399,7 @@
         <fusioncharts class="d-none d-lg-block" width="700" height="400" type="angulargauge" dataFormat="json" [dataSource]="dataSource"></fusioncharts>
         <span class="mt-2"><p>Se ha calculado utilizando la siguiente fórmula matemática</p></span>
         <div class="mt-2">
-          <img class="w-100" src='./../../../../assets/formula.png' alt="Formula utilizada">
+          <img class="w-100" src='./assets/formula.png' alt="Formula utilizada">
         </div>
       </div>
     </div>
@@ -403,6 +445,6 @@
   </div>
   <div class="containerButtons row justify-content-around mt-5 p-4">
     <button class="col-12 col-lg-5 buttonEndForm w-md-25 mb-4" (click)="downloadResults()"><i class="pi pi-download"></i> DESCARGAR</button>
-    <button class="ms-lg-2 col-12 col-lg-5 buttonEndForm w-md-25 mb-4" pButton pRipple (click)="redirectToEvaluate()" >FINALIZAR</button>
+    <button class="ms-lg-2 col-12 col-lg-5 buttonEndForm w-md-25 mb-4 text-center" (click)="redirectToEvaluate()" >FINALIZAR</button>
   </div>
 </div>

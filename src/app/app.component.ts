@@ -8,6 +8,7 @@ import { Title } from '@angular/platform-browser';
 import { filter, map } from 'rxjs/operators';
 import { AuthService } from './shared/services/auth.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -21,7 +22,9 @@ export class AppComponent implements OnInit {
   paletteSelected: number = 0;
   fontSize:number = 16;
   size: string = null;
-
+  isLogginIn: boolean = true;
+  currentUser: any;
+  isLoggedIn: Observable<boolean>;
   public static readonly DEFAULT_THEME = 'default-theme';
   public static readonly GRAY_THEME = 'gray-theme';
   public static readonly VIOLET_THEME = 'violet-theme';
@@ -31,16 +34,18 @@ export class AppComponent implements OnInit {
       private router: Router,
       private titleService: Title,
       private activatedRoute: ActivatedRoute,
-      private authService: AuthService,
+      public authService: AuthService,
       public afAuth: AngularFireAuth,
       @Inject(DOCUMENT) private document: Document
       ) {     
+        this.isLoggedIn = this.authService.isLoggedInTest();
         this.theme = this.document.documentElement.classList.contains(AppComponent.GRAY_THEME) ? AppComponent.GRAY_THEME : this.document.documentElement.classList.contains(AppComponent.VIOLET_THEME) ?  AppComponent.VIOLET_THEME : AppComponent.DEFAULT_THEME;
       }
     setDocTitle(title: string) {
         this.titleService.setTitle(title);
      }
     ngOnInit(): void {
+
       this.items = [
         {
             icon: 'pi pi-chart-bar',
@@ -85,6 +90,14 @@ export class AppComponent implements OnInit {
         ).subscribe((ttl: string) => {
           this.titleService.setTitle(ttl);
         });
+    }
+    login() {
+      this.isLogginIn = null;
+      this.redirectTo('/dashboard')
+    }
+    logOut() {
+      this.isLogginIn = true;
+      this.authService.SignOut();
     }
     openModal() {
       this.visible = true;

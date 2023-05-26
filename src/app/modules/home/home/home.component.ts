@@ -13,9 +13,9 @@ import AOS from "aos";
 export class HomeComponent implements OnInit{
   articles: any = [];
   articlesCarousel: ArticleBasicInfo[] = [];
-  blueBackground:string = "./../../../../assets/Fondo_bueno_azul.png";
-  grayBackground:string = "./../../../../assets/Fondo_bueno_gris.png";
-  purpleBackground:string = "./../../../../assets/Fondo_bueno_violeta.png";
+  blueBackground:string = "./assets/Fondo_bueno_azul.png";
+  grayBackground:string = "./assets/Fondo_bueno_gris.png";
+  purpleBackground:string = "./assets/Fondo_bueno_violeta.png";
   image: string = this.blueBackground;
   loading:boolean = true;
   loaded:boolean = false;

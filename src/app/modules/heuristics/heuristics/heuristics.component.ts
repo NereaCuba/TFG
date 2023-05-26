@@ -47,7 +47,7 @@ export class HeuristicsComponent implements OnInit {
     this.first3 = 0;
     this.rows3 = 6;     
     this._listHeuristics = this._listHeuristicsStatics.filter((element:any) => {
-      if(this.removeAccents(element.name!.toLowerCase()).indexOf(this.removeAccents(this.data.toLowerCase())) > -1) {
+      if(this.removeAccents(element.name!.toLowerCase()).indexOf(this.removeAccents(this.data.toLowerCase())) > -1 || element.id!.toLowerCase().indexOf(this.data.toLowerCase())  > -1) {
         return element;
       }
     });

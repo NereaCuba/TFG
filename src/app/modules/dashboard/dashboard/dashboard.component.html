@@ -15,7 +15,7 @@
                                     <div class="col-12 col-lg-4 col-xl-2 p-4">
                                         <div class="media mt-2">
                                             <div class="justify-content-center align-items-center headerCard">
-                                                <img class="img-thumbnail rounded-circle mb-4" src="{{(user.photoURL) ? user.photoURL : '/assets/avatar-default-icon.png'}}"
+                                                <img class="img-thumbnail rounded-circle mb-4" src="{{(user.photoURL) ? user.photoURL : './assets/avatar-default-icon.png'}}"
                                                 alt="{{user.displayName}}">
                                                 <h4 class="mb-2 text-lg-start text-center" *ngIf="user.displayName">{{(user.displayName) ? user.displayName : 'User'}}</h4>
                                                 <p class="d-lg-flex align-items-center justify-lg-content-center text-lg-start text-center"><i class="pi pi-envelope me-2"></i> {{user.email}} </p>
@@ -30,13 +30,6 @@
                                         <h6 class="mt-5">Gráficos con una puntuación superior a 8</h6>
                                         <p>{{numAproved ? numAproved : '0'}}</p>
                                     </div>
-                                    <div class="col-xl-2 col-lg-2 col-12 d-flex align-items-end justify-content-end pb-2">
-                                        <!-- <p>User ID: <strong>{{user.uid}}</strong></p> -->
-                                        <!-- <p>Email Verified: <strong>{{user.emailVerified}}</strong></p> -->
-                                        <button class="align-self-end buttonLogOut p-2" (click)="authService.SignOut()">
-                                            Cerrar sesión
-                                        </button>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -47,7 +40,7 @@
         <div class="container dashBoard2" *ngIf="user.charts && user.charts.length !== 0">
             <div class="card" data-aos="fade-up" data-aos-duration="2000">
                 <div class="container p-4">
-                    <p-dataView #dv [value]="user.charts" [rows]="5" [paginator]="true" [sortField]="sortField" [sortOrder]="sortOrder">
+                    <p-dataView #dv [value]="user.charts" [rows]="3" [paginator]="true" [sortField]="sortField" [sortOrder]="sortOrder">
                         <ng-template pTemplate="header">
                             <div class="d-flex justify-content-between">
                                 <div class="flex flex-column lg:flex-row lg:justify-content-between">
@@ -82,7 +75,8 @@
                                                 <h6>PUNTUACIÓN TOTAL: {{getPunctuation(product.formValue)}}</h6>
                                                 <div class="d-flex">
                                                     <button pButton icon="pi pi-download" (click)="downloadResults(product.formValue)" class="lg:align-self-end mb-2 p-button-rounded"></button>
-                                                    <button pButton icon="pi pi-eye" (click)="evaluateShow(index)" class="ms-4 lg:align-self-end mb-2 p-button-rounded"></button>
+                                                    <button pButton icon="pi pi-eye" (click)="evaluateShow(sortOrder == -1 ? 5-index : index)" class="ms-4 lg:align-self-end mb-2 p-button-rounded"></button>
+                                                    <button pButton icon="pi pi-trash" (click)="deleteElement(user.email, product)" class="ms-4 lg:align-self-end mb-2 p-button-rounded p-button-danger"></button>
                                                 </div>
                                             </div>
                                         </div>

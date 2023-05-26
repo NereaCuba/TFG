@@ -10,9 +10,9 @@ import { AuthService } from 'app/shared/services/auth.service';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent {
-  blueBackground:string = "./../../../../assets/Fondo_bueno_azul.png";
-  grayBackground:string = "./../../../../assets/Fondo_bueno_gris.png";
-  purpleBackground:string = "./../../../../assets/Fondo_bueno_violeta.png";
+  blueBackground:string = "./assets/Fondo_bueno_azul.png";
+  grayBackground:string = "./assets/Fondo_bueno_gris.png";
+  purpleBackground:string = "./assets/Fondo_bueno_violeta.png";
   image: string = this.blueBackground;
 
   constructor(

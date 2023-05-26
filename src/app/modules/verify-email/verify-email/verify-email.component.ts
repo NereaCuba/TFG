@@ -9,9 +9,9 @@ import { AppComponent } from 'app/app.component';
   styleUrls: ['./verify-email.component.scss']
 })
 export class VerifyEmailComponent {
-  blueBackground:string = "./../../../../assets/Fondo_bueno_azul.png";
-  grayBackground:string = "./../../../../assets/Fondo_bueno_gris.png";
-  purpleBackground:string = "./../../../../assets/Fondo_bueno_violeta.png";
+  blueBackground:string = "./assets/Fondo_bueno_azul.png";
+  grayBackground:string = "./assets/Fondo_bueno_gris.png";
+  purpleBackground:string = "./assets/Fondo_bueno_violeta.png";
   image: string = this.blueBackground;
   constructor(
     private router: Router,

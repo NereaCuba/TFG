@@ -44,6 +44,7 @@
             <div class="card info p-4 mb-4 d-flex flex-column justify-content-between" *ngFor="let example of _heuristic.example_images; let i = index " [ngClass]="_heuristic.is_col_12? 'col-12' : i%2 === 0 ? 'col-lg-5 col-md-12' : ' col-lg-5 offset-lg-2 col-sm-12'"  data-aos="fade-up" data-aos-duration="2000">
               <img src={{example.image}} alt={{example.text}}>
               <p class="text-center info">{{example.text}}</p>
+              <a class="text-center info" href={{example.source}} target="_blank">Fuente original</a>
             </div>
           </div>
         </div>
@@ -52,8 +53,8 @@
     <div class="col-sm-12 col-lg-3  mt-5">
       <div class="container heuristicDetail"  data-aos="fade-up" data-aos-duration="2000">
         <div class="row">
-          <div class="col-12" *ngFor="let heuristic of _listHeuristicsRedirects; let i = index">
-            <titles-inline *ngIf="heuristic.example_images.length > 0" [image]="heuristic.example_images[0].image!" [comesFromHeuristicDetail]="true" [title]="heuristic.name!" (click)="heuristicInformationShow(heuristic)"></titles-inline>
+          <div class="col-12 mb-4" *ngFor="let heuristic of _listHeuristicsRedirects; let i = index">
+            <titles-inline [comesFromHeuristicDetail]="true" [title]="heuristic.full_name!" (click)="heuristicInformationShow(heuristic)"></titles-inline>
           </div>
         </div>
       </div>

@@ -11,6 +11,11 @@
     margin-bottom: 2em;
   }
 }
+.cursor {
+   &:hover {
+    cursor: pointer;
+   }
+}
 .letterSection {
   font-weight: 600;
   letter-spacing: 0.2em;

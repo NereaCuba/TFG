@@ -8,6 +8,6 @@ export class AboutService {
     constructor(private http: HttpClient){}
 
 	getContext(): Observable<any>{
-        return this.http.get('./../../../../assets/introduction.json');
+        return this.http.get('./assets/introduction.json');
     }
 }

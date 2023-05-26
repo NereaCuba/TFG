@@ -1,14 +1,15 @@
 <div class="hovered {{comesFromList ? 'fromList' : article ? 'article' : 'home'}}">
   <div class="card d-none d-lg-block">
     <div class="card-header">
-      <img [ngClass]="_comesFromHeuristicDetail ? 'imgHeuristicDetail': ''" src={{image_source}} alt={{_title}}>
-      <button class="btnOnProducts hidden">{{!comesFromHeuristicDetail ? 'Explora este artículo' : 'Explora esta heurística'}}</button>
+      <p [ngClass]="!_comesFromHeuristicDetail ? 'd-none': 'text-center'">{{_title}}</p>
+      <img [ngClass]="_comesFromHeuristicDetail ? 'd-none': ''" src={{image_source}} alt={{_title}}>
+      <button class="btnOnProducts hidden">{{!_comesFromHeuristicDetail ? 'Explora este artículo' : 'Explora esta heurística'}}</button>
     </div>
   </div>
-  <p class="{{article ? 'text-left articleText' : comesFromList  && !_comesFromHeuristicDetail ? 'd-none' : 'text-center'}} mt-3">{{_title}}</p>
+  <p [ngClass]="!_comesFromHeuristicDetail ? 'text-left articleText mt-3' : 'd-none'"><b>{{_title.authors}}</b> {{_title.year}}. {{_title.title!}} <a href={{_title.url}} target="_blank">{{_title.url}}</a></p>
   <div class="card d-lg-none">
     <div class="card-header">
-      <button class="btnOnProducts hidden">{{!comesFromHeuristicDetail ? 'Explora este artículo' : 'Explora esta heurística'}}</button>
+      <button class="btnOnProducts hidden">{{!_comesFromHeuristicDetail ? 'Explora este artículo' : 'Explora esta heurística'}}</button>
     </div>
   </div>
 </div>

@@ -11,6 +11,7 @@ import { SettingsModule } from './components/settings/settings.module';
 import { environment } from './../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AuthService } from './shared/services/auth.service';
+import { ModalChartsComponent } from './components/modal-charts/modal-charts/modal-charts.component';
 
 @NgModule({
   declarations: [
